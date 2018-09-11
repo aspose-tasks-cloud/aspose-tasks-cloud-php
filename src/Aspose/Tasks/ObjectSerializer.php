@@ -62,10 +62,24 @@ class ObjectSerializer
                 if ($value !== null
                     && !in_array($swaggerType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)
                     && method_exists($swaggerType, 'getAllowableEnumValues')
-                    && !in_array($value, $swaggerType::getAllowableEnumValues())
-                ) {
-                        $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
-                        throw new \InvalidArgumentException("Invalid value for enum '$swaggerType', must be one of: '$imploded'");
+                    && method_exists($swaggerType, 'getIsBitwise'))
+                {
+                        if ($swaggerType::getIsBitwise()) {
+                            $valuesList = explode(",", $value);
+                            foreach ($valuesList as $currentValue) {
+                                $currentValue = trim($currentValue);
+                                if (!in_array($currentValue, $swaggerType::getAllowableEnumValues())) {
+                                    $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
+                                    throw new \InvalidArgumentException("Invalid value '$currentValue' for enum '$swaggerType', must be one of: '$imploded'");
+                                 }
+                            }
+                        }
+			else {
+                            if (!in_array($value, $swaggerType::getAllowableEnumValues())) {
+                                $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
+                                throw new \InvalidArgumentException("Invalid value '$value' for enum '$swaggerType', must be one of: '$imploded'");
+                            }
+                        }
                 }
                 if ($value !== null) {
                     $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $swaggerType, $formats[$property]);

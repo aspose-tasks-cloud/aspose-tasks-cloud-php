@@ -35,7 +35,7 @@ use \Aspose\Tasks\ObjectSerializer;
 /*
  * Timescale
  *
- * @description The minimal time period to render when saving project view data to some of .
+ * @description The minimal time period to render when saving project view data to some of SaveFileFormat.
  */
 class Timescale
 {
@@ -57,6 +57,15 @@ class Timescale
             self::THIRDS_OF_MONTHS,
             self::MONTHS,
         ];
+    }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
     }
 }
 

@@ -35,7 +35,7 @@ use \Aspose\Tasks\ObjectSerializer;
 /*
  * WeekDayType
  *
- * @description Represents a weekday of a project in the instance of  class.
+ * @description Represents a weekday of a project in the instance of RecurringInfo class.
  */
 class WeekDayType
 {
@@ -67,6 +67,15 @@ class WeekDayType
             self::FRIDAY,
             self::SATURDAY,
         ];
+    }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return true;
     }
 }
 

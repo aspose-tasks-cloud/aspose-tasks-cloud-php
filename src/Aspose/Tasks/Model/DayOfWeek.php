@@ -66,6 +66,15 @@ class DayOfWeek
             self::SATURDAY,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

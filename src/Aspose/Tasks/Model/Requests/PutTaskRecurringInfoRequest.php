@@ -1,7 +1,8 @@
 <?php
+
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="WorkContourType.php">
+ * <copyright company="Aspose" file="PutTaskRecurringInfoRequest.php">
  *   Copyright (c) 2018 Aspose.Tasks for Cloud
  * </copyright>
  * <summary>
@@ -25,62 +26,60 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
- * WorkContourType
- */
-
-namespace Aspose\Tasks\Model;
-use \Aspose\Tasks\ObjectSerializer;
+namespace Aspose\Tasks\Model\Requests;
 
 /*
- * WorkContourType
- *
- * @description Specifies the contour of a work.
+ * Request model for putTaskRecurringInfo" operation.
  */
-class WorkContourType
+class PutTaskRecurringInfoRequest
 {
     /*
-     * Possible values of this enum
+     * Initializes a new instance of the PutTaskRecurringInfoRequest class.
+     *  
+     * @param string $name The name of the file.
+     * @param int $task_uid Task Uid.
+     * @param \Aspose\Tasks\Model\RecurringInfo $recurring_info A modified DTO of task's recurring info.
+     * @param string $file_name File name to save changes to.
+     * @param string $storage The document storage.
+     * @param string $folder The document folder.
      */
-    const FLAT = 'Flat';
-    const BACK_LOADED = 'BackLoaded';
-    const FRONT_LOADED = 'FrontLoaded';
-    const DOUBLE_PEAK = 'DoublePeak';
-    const EARLY_PEAK = 'EarlyPeak';
-    const LATE_PEAK = 'LatePeak';
-    const BELL = 'Bell';
-    const TURTLE = 'Turtle';
-    const CONTOURED = 'Contoured';
-    const UNDEFINED = 'Undefined';
-    
-    /*
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
+    public function __construct($name, $task_uid, $recurring_info, $file_name = null, $storage = null, $folder = null)             
     {
-        return [
-            self::FLAT,
-            self::BACK_LOADED,
-            self::FRONT_LOADED,
-            self::DOUBLE_PEAK,
-            self::EARLY_PEAK,
-            self::LATE_PEAK,
-            self::BELL,
-            self::TURTLE,
-            self::CONTOURED,
-            self::UNDEFINED,
-        ];
+        $this->name = $name;
+        $this->task_uid = $task_uid;
+        $this->recurring_info = $recurring_info;
+        $this->file_name = $file_name;
+        $this->storage = $storage;
+        $this->folder = $folder;
     }
 
     /*
-     * Gets whether enum is bitwise
-     * @return bool
+     * The name of the file.
      */
-    public static function getIsBitwise()
-    {
-        return false;
-    }
+    public $name;
+	
+    /*
+     * Task Uid.
+     */
+    public $task_uid;
+	
+    /*
+     * A modified DTO of task's recurring info.
+     */
+    public $recurring_info;
+	
+    /*
+     * File name to save changes to.
+     */
+    public $file_name;
+	
+    /*
+     * The document storage.
+     */
+    public $storage;
+	
+    /*
+     * The document folder.
+     */
+    public $folder;
 }
-
-

@@ -1249,7 +1249,7 @@ class Resource implements ArrayAccess
     /*
      * Sets material_label
      *
-     * @param string $material_label The unit of measure for the material resource. Read/write .
+     * @param string $material_label The unit of measure for the material resource. Read/write String.
      *
      * @return $this
      */
@@ -1393,7 +1393,7 @@ class Resource implements ArrayAccess
     /*
      * Sets hyperlink_sub_address
      *
-     * @param string $hyperlink_sub_address The document bookmark of a hyperlink associated with a resource. Read/write .
+     * @param string $hyperlink_sub_address The document bookmark of a hyperlink associated with a resource. Read/write String.
      *
      * @return $this
      */

@@ -2083,7 +2083,7 @@ class ResourceAssignment implements ArrayAccess
     /*
      * Sets vac
      *
-     * @param double $vac Returns or sets the difference between basline cost and total cost. Read/write .
+     * @param double $vac Returns or sets the difference between basline cost and total cost. Read/write Double.
      *
      * @return $this
      */
@@ -2107,7 +2107,7 @@ class ResourceAssignment implements ArrayAccess
     /*
      * Sets work
      *
-     * @param string $work Returns or sets the amount of scheduled work for an assignment. Read/write .
+     * @param string $work Returns or sets the amount of scheduled work for an assignment. Read/write TimeSpan.
      *
      * @return $this
      */

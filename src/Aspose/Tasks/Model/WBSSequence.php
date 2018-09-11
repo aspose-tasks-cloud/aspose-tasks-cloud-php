@@ -60,6 +60,15 @@ class WBSSequence
             self::UNORDERED_CHARACTERS,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

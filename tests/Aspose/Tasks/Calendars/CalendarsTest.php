@@ -46,7 +46,7 @@ class CalendarsTest extends BaseTestContext
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotNull($response->getCalendars());
         Assert::assertNotNull($response->getCalendars()->getList());
-        Assert::assertEquals(2, count($response->getCalendars()->getList()));
+        Assert::assertEquals(1, count($response->getCalendars()->getList()));
         
         Assert::assertEquals("Standard", $response->getCalendars()->getList()[0]->getName());
         Assert::assertEquals(1, $response->getCalendars()->getList()[0]->getUid());
@@ -253,9 +253,9 @@ class CalendarsTest extends BaseTestContext
     public function testDeleteCalendarByUid()
     {
         $remoteName = "testDeleteCalendarByUid.mpp";
-        $folder = $this->uploadTestFile("Home move plan.mpp", $remoteName, '');
+        $folder = $this->uploadTestFile("CalendarWorkWeeks.mpp", $remoteName, '');
         
-        $response = $this->tasks->deleteCalendar(new Requests\DeleteCalendarRequest($remoteName, 2, self::$storageName, $folder, null));
+        $response = $this->tasks->deleteCalendar(new Requests\DeleteCalendarRequest($remoteName, 3, self::$storageName, $folder, null));
         
         Assert::assertEquals(200, $response->getCode());
         
@@ -266,7 +266,6 @@ class CalendarsTest extends BaseTestContext
         Assert::assertNotNull($response->getCalendars()->getList());
         Assert::assertEquals(1, count($response->getCalendars()->getList()));
         Assert::assertEquals(1, $response->getCalendars()->getList()[0]->getUid());
-        Assert::assertEquals("Standard", $response->getCalendars()->getList()[0]->getName());
     }
 
 }

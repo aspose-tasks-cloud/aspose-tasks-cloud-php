@@ -38,12 +38,12 @@ class PutDocumentPropertyRequest
      *  
      * @param string $name The document name.
      * @param string $property_name The property name.
-     * @param \Aspose\Tasks\Model\DocumentProperty $property with new property value.
+     * @param \Aspose\Tasks\Model\DocumentProperty $property DocumentProperty with new property value.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      * @param string $filename Name of the project document to save changes to. If this parameter is omitted then the changes will be saved to the source project document.
      */
-    public function __construct($name, $property_name, $property = null, $storage = null, $folder = null, $filename = null)             
+    public function __construct($name, $property_name, $property, $storage = null, $folder = null, $filename = null)             
     {
         $this->name = $name;
         $this->property_name = $property_name;
@@ -64,7 +64,7 @@ class PutDocumentPropertyRequest
     public $property_name;
 	
     /*
-     * with new property value.
+     * DocumentProperty with new property value.
      */
     public $property;
 	

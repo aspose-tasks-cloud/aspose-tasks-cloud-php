@@ -37,7 +37,7 @@ use \Aspose\Tasks\ObjectSerializer;
 /*
  * VbaModuleAttribute
  *
- * @description The attribute of the  object
+ * @description The attribute of the VbaModule object
  */
 class VbaModuleAttribute implements ArrayAccess
 {

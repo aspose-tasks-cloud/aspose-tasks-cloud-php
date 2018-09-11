@@ -607,7 +607,7 @@ class RecurringInfo implements ArrayAccess
     /*
      * Sets daily_repetitions
      *
-     * @param int $daily_repetitions Specifies a number of repetitions for the daily recurrence pattern.
+     * @param int $daily_repetitions Specifies an interval between repetitions for the daily recurrence pattern.
      *
      * @return $this
      */
@@ -655,7 +655,7 @@ class RecurringInfo implements ArrayAccess
     /*
      * Sets weekly_repetitions
      *
-     * @param int $weekly_repetitions Specifies a number of repetitions for the weekly recurrence pattern.
+     * @param int $weekly_repetitions Specifies an interval between repetitions for the weekly recurrence pattern.
      *
      * @return $this
      */

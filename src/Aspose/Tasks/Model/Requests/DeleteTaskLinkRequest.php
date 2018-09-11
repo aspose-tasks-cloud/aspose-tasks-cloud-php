@@ -40,7 +40,7 @@ class DeleteTaskLinkRequest
      * @param int $index Index of the task link object. See TaskLink.Index property.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
-     * @param string $file_name The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
+     * @param string $file_name The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
      */
     public function __construct($name, $index, $storage = null, $folder = null, $file_name = null)             
     {
@@ -72,7 +72,7 @@ class DeleteTaskLinkRequest
     public $folder;
 	
     /*
-     * The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
+     * The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
      */
     public $file_name;
 }

@@ -214,7 +214,7 @@ class RecurringInfoResponse extends AsposeResponse
     /*
      * Sets recurring_info
      *
-     * @param \Aspose\Tasks\Model\RecurringInfo $recurring_info DTO RecurringInfo
+     * @param \Aspose\Tasks\Model\RecurringInfo $recurring_info Gets or sets RecurringInfo
      *
      * @return $this
      */

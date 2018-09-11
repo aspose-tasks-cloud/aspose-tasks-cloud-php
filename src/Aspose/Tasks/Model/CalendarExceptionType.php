@@ -70,6 +70,15 @@ class CalendarExceptionType
             self::NO_EXCEPTION_TYPE,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

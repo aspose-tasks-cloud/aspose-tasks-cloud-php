@@ -51,6 +51,8 @@ class CustomFieldType
     const NUMBER = 'Number';
     const START = 'Start';
     const TEXT = 'Text';
+    const OUTLINE_CODE = 'OutlineCode';
+    const RBS = 'RBS';
     
     /*
      * Gets allowable values of the enum
@@ -68,7 +70,18 @@ class CustomFieldType
             self::NUMBER,
             self::START,
             self::TEXT,
+            self::OUTLINE_CODE,
+            self::RBS,
         ];
+    }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
     }
 }
 

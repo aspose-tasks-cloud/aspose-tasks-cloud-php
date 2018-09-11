@@ -38,13 +38,15 @@ class GetTaskDocumentWithFormatRequest
      *  
      * @param string $name The name of the file.
      * @param string $format The format of the resulting file.
+     * @param bool $return_as_zip_archive If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      */
-    public function __construct($name, $format, $storage = null, $folder = null)             
+    public function __construct($name, $format, $return_as_zip_archive = null, $storage = null, $folder = null)             
     {
         $this->name = $name;
         $this->format = $format;
+        $this->return_as_zip_archive = $return_as_zip_archive;
         $this->storage = $storage;
         $this->folder = $folder;
     }
@@ -58,6 +60,11 @@ class GetTaskDocumentWithFormatRequest
      * The format of the resulting file.
      */
     public $format;
+	
+    /*
+     * If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.
+     */
+    public $return_as_zip_archive;
 	
     /*
      * The document storage.

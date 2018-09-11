@@ -66,6 +66,15 @@ class PageSize
             self::A4,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

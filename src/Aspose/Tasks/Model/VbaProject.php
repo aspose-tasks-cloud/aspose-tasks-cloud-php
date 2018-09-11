@@ -355,7 +355,7 @@ class VbaProject implements ArrayAccess
     /*
      * Sets modules
      *
-     * @param \Aspose\Tasks\Model\VbaModule[] $modules Gets a collection of
+     * @param \Aspose\Tasks\Model\VbaModule[] $modules Gets a collection of VbaModuleCollection
      *
      * @return $this
      */
@@ -403,7 +403,7 @@ class VbaProject implements ArrayAccess
     /*
      * Sets references
      *
-     * @param \Aspose\Tasks\Model\VbaReference[] $references Gets a collection of
+     * @param \Aspose\Tasks\Model\VbaReference[] $references Gets a collection of VbaReferenceCollection
      *
      * @return $this
      */

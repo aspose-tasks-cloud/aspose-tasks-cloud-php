@@ -203,27 +203,7 @@ class TasksTest extends BaseTestContext
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotNull($response->getAssignments());
     }
-    
-    public function testGetTaskRecurringInfo()
-    {
-        $remoteName = "testGetTaskRecurringInfo.mpp";
-        $folder = $this->uploadTestFile("sample.mpp", $remoteName, '');
-        
-        $response = $this->tasks->getTaskRecurringInfo(new Requests\GetTaskRecurringInfoRequest($remoteName, 6, self::$storageName, $folder));
-        
-        Assert::assertEquals(200, $response->getCode());
-        Assert::assertNotNull($response->getRecurringInfo());
-        
-        $entity = $response->getRecurringInfo();
-        Assert::assertEquals(2, $entity->getOccurrences());
-        Assert::assertEquals(Model\RecurrencePattern::MONTHLY, $entity->getRecurrencePattern());
-        Assert::assertEquals(true, $entity->getUseEndDate());
-        Assert::assertEquals(false, $entity->getMonthlyUseOrdinalDay());
-        Assert::assertEquals(1, $entity->getMonthlyDay());
-        Assert::assertEquals(Model\WeekDayType::NONE, $entity->getWeeklyDays());
-        Assert::assertEquals(Model\OrdinalNumber::SECOND, $entity->getYearlyOrdinalNumber());
-    }
-    
+      
     public function testMoveTask()
     {
         $remoteName = "testMoveTask.mpp";

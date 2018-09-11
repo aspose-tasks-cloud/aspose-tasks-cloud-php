@@ -2695,7 +2695,7 @@ class Task implements ArrayAccess
     /*
      * Sets subproject_name
      *
-     * @param string $subproject_name The source location of a subproject. Read/write .
+     * @param string $subproject_name The source location of a subproject. Read/write String.
      *
      * @return $this
      */

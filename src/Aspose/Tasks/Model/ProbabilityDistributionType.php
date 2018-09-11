@@ -56,6 +56,15 @@ class ProbabilityDistributionType
             self::NORMAL,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

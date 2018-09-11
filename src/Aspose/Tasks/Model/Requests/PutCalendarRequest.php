@@ -43,7 +43,7 @@ class PutCalendarRequest
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      */
-    public function __construct($name, $calendar_uid, $calendar = null, $file_name = null, $storage = null, $folder = null)             
+    public function __construct($name, $calendar_uid, $calendar, $file_name = null, $storage = null, $folder = null)             
     {
         $this->name = $name;
         $this->calendar_uid = $calendar_uid;

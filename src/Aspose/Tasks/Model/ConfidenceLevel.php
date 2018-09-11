@@ -62,6 +62,15 @@ class ConfidenceLevel
             self::CL99,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

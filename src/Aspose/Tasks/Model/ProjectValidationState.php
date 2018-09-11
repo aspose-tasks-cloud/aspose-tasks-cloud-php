@@ -60,6 +60,15 @@ class ProjectValidationState
             self::HAS_ERRORS,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

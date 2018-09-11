@@ -45,7 +45,7 @@ class PutTaskRequest
      * @param string $folder The document folder
      * @param string $file_name The name of the file to save changes
      */
-    public function __construct($name, $task_uid, $task = null, $mode = null, $recalculate = null, $storage = null, $folder = null, $file_name = null)             
+    public function __construct($name, $task_uid, $task, $mode = null, $recalculate = null, $storage = null, $folder = null, $file_name = null)             
     {
         $this->name = $name;
         $this->task_uid = $task_uid;

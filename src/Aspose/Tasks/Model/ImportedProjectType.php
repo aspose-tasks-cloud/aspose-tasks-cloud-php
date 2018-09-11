@@ -58,6 +58,15 @@ class ImportedProjectType
             self::PRIMAVERA_XML,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

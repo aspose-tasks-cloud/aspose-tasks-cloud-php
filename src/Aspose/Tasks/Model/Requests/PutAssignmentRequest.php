@@ -45,7 +45,7 @@ class PutAssignmentRequest
      * @param string $folder The document storage
      * @param string $file_name The filename to save Changes
      */
-    public function __construct($name, $assignment_uid, $assignment = null, $mode = null, $recalculate = null, $storage = null, $folder = null, $file_name = null)             
+    public function __construct($name, $assignment_uid, $assignment, $mode = null, $recalculate = null, $storage = null, $folder = null, $file_name = null)             
     {
         $this->name = $name;
         $this->assignment_uid = $assignment_uid;

@@ -37,19 +37,19 @@ class PutImportProjectFromDbRequest
      * Initializes a new instance of the PutImportProjectFromDbRequest class.
      *  
      * @param string $database_type The type of source database. The supported values are (Msp, Mpd, Primavera).
+     * @param string $connection_string The connection string to the source database.
      * @param string $project_uid Uid of the project to import.
      * @param string $filename The name of the resulting file.
-     * @param string $connection_string The connection string to the source database.
      * @param string $format Format of the resulting file. The import to Mpp format is not supported.
      * @param string $folder The document folder.
      * @param string $database_schema Schema of Microsoft project database (if applicable)
      */
-    public function __construct($database_type, $project_uid, $filename, $connection_string = null, $format = null, $folder = null, $database_schema = null)             
+    public function __construct($database_type, $connection_string, $project_uid, $filename, $format = null, $folder = null, $database_schema = null)             
     {
         $this->database_type = $database_type;
+        $this->connection_string = $connection_string;
         $this->project_uid = $project_uid;
         $this->filename = $filename;
-        $this->connection_string = $connection_string;
         $this->format = $format;
         $this->folder = $folder;
         $this->database_schema = $database_schema;
@@ -61,6 +61,11 @@ class PutImportProjectFromDbRequest
     public $database_type;
 	
     /*
+     * The connection string to the source database.
+     */
+    public $connection_string;
+	
+    /*
      * Uid of the project to import.
      */
     public $project_uid;
@@ -69,11 +74,6 @@ class PutImportProjectFromDbRequest
      * The name of the resulting file.
      */
     public $filename;
-	
-    /*
-     * The connection string to the source database.
-     */
-    public $connection_string;
 	
     /*
      * Format of the resulting file. The import to Mpp format is not supported.

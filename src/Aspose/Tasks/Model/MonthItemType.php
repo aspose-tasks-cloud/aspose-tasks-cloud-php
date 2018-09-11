@@ -74,6 +74,15 @@ class MonthItemType
             self::UNDEFINED,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

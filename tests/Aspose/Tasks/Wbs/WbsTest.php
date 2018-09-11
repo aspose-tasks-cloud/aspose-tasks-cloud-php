@@ -49,7 +49,7 @@ class WbsTest extends BaseTestContext
         $remoteName = "testRenumberWbsCode.mpp";
         $folder = $this->uploadTestFile("WBSDefinition.mpp", $remoteName, '');
         
-        $response = $this->tasks->putRenumberWbsCode(new Requests\PutRenumberWbsCodeRequest($remoteName, null, self::$storageName, null, $folder));
+        $response = $this->tasks->putRenumberWbsCode(new Requests\PutRenumberWbsCodeRequest($remoteName, [], self::$storageName, null, $folder));
         Assert::assertEquals(200, $response->getCode());
     }
 }

@@ -37,9 +37,9 @@ class GetPageCountRequest
      * Initializes a new instance of the GetPageCountRequest class.
      *  
      * @param string $name The name of the file.
-     * @param string $page_size to get page count for.
-     * @param string $presentation_format to get page count for.
-     * @param string $timescale to get page count for.
+     * @param string $page_size PageSize to get page count for.
+     * @param string $presentation_format PresentationFormat to get page count for.
+     * @param string $timescale Timescale to get page count for.
      * @param \DateTime $start_date Start date to get page count for.
      * @param \DateTime $end_date End date to get page count for.
      * @param string $folder The document folder
@@ -61,17 +61,17 @@ class GetPageCountRequest
     public $name;
 	
     /*
-     * to get page count for.
+     * PageSize to get page count for.
      */
     public $page_size;
 	
     /*
-     * to get page count for.
+     * PresentationFormat to get page count for.
      */
     public $presentation_format;
 	
     /*
-     * to get page count for.
+     * Timescale to get page count for.
      */
     public $timescale;
 	

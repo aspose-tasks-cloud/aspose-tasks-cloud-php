@@ -41,9 +41,9 @@ class PutTaskLinkRequest
      * @param \Aspose\Tasks\Model\TaskLink $task_link The representation of the modified TaskLink object.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
-     * @param string $file_name The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
+     * @param string $file_name The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
      */
-    public function __construct($name, $index, $task_link = null, $storage = null, $folder = null, $file_name = null)             
+    public function __construct($name, $index, $task_link, $storage = null, $folder = null, $file_name = null)             
     {
         $this->name = $name;
         $this->index = $index;
@@ -79,7 +79,7 @@ class PutTaskLinkRequest
     public $folder;
 	
     /*
-     * The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
+     * The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
      */
     public $file_name;
-}
+}

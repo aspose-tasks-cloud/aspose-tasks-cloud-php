@@ -42,7 +42,7 @@ class PutExtendedAttributeRequest
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      */
-    public function __construct($name, $extended_attribute = null, $file_name = null, $storage = null, $folder = null)             
+    public function __construct($name, $extended_attribute, $file_name = null, $storage = null, $folder = null)             
     {
         $this->name = $name;
         $this->extended_attribute = $extended_attribute;

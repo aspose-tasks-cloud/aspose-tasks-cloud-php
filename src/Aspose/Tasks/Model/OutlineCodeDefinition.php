@@ -457,7 +457,7 @@ class OutlineCodeDefinition implements ArrayAccess
     /*
      * Sets values
      *
-     * @param \Aspose\Tasks\Model\OutlineValue[] $values Returns List<OutlineValue> Values. The values of the table associated with this outline code.
+     * @param \Aspose\Tasks\Model\OutlineValue[] $values Returns List&lt;OutlineValue&gt; Values. The values of the table associated with this outline code.
      *
      * @return $this
      */
@@ -625,7 +625,7 @@ class OutlineCodeDefinition implements ArrayAccess
     /*
      * Sets masks
      *
-     * @param \Aspose\Tasks\Model\OutlineMask[] $masks Returns List<OutlineMask> Masks. The table of entries that define the outline code mask.
+     * @param \Aspose\Tasks\Model\OutlineMask[] $masks Returns List&lt;OutlineMask&gt; Masks. The table of entries that define the outline code mask.
      *
      * @return $this
      */

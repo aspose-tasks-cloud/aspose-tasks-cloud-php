@@ -40,7 +40,7 @@ class TaskDocumentFormatTest extends BaseTestContext
         $folder = $this->uploadTestFile("Home move plan.mpp", $remoteName, '');
         
         $response = $this->tasks->getTaskDocumentWithFormat(new GetTaskDocumentWithFormatRequest($remoteName,
-            Model\ProjectFileFormat::CSV, self::$storageName, $folder));
+            Model\ProjectFileFormat::CSV, false, self::$storageName, $folder));
         
         Assert::assertNotNull($response);
         Assert::assertEquals("ID;Task_Name;Outline_Level;Duration;Start_Date;Finish_Date;Percent_Comp;Cost;Work\r\n", $response->current());
@@ -78,9 +78,20 @@ class TaskDocumentFormatTest extends BaseTestContext
         $saveOptionsSerialized->View->Columns = array($column1, $column2);
 
         $response = $this->tasks->postTaskDocumentWithFormat(new PostTaskDocumentWithFormatRequest($remoteName,
-            Model\ProjectFileFormat::CSV, $saveOptionsSerialized, self::$storageName, $folder));
+            Model\ProjectFileFormat::CSV, $saveOptionsSerialized, false, self::$storageName, $folder));
         
         Assert::assertNotNull($response);
         Assert::assertEquals("Five to Eight Weeks Before Moving,16 days\r\n", $response->current());
+    }
+    
+    public function testGetDocumentAsZippedHtml()
+    {
+        $remoteName = "testGetDocumentAsZippedHtml.mpp";
+        $folder = $this->uploadTestFile("Home move plan.mpp", $remoteName, '');
+        
+        $response = $this->tasks->getTaskDocumentWithFormat(new GetTaskDocumentWithFormatRequest($remoteName,
+            Model\ProjectFileFormat::HTML, true, self::$storageName, $folder));
+        
+        Assert::assertNotNull($response);
     }
 }

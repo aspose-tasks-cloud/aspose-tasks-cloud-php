@@ -60,6 +60,15 @@ class TaskLinkType
             self::START_TO_START,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

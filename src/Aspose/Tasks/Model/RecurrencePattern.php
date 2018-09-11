@@ -35,7 +35,7 @@ use \Aspose\Tasks\ObjectSerializer;
 /*
  * RecurrencePattern
  *
- * @description Represents a type of recurrence pattern of a recurrent task.
+ * @description Represents a type of recurrence pattern of a recurring task.
  */
 class RecurrencePattern
 {
@@ -59,6 +59,15 @@ class RecurrencePattern
             self::MONTHLY,
             self::YEARLY,
         ];
+    }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
     }
 }
 

@@ -42,7 +42,7 @@ class PutRenumberWbsCodeRequest
      * @param string $file_name The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
      * @param string $folder The document folder.
      */
-    public function __construct($name, $task_uids = null, $storage = null, $file_name = null, $folder = null)             
+    public function __construct($name, $task_uids, $storage = null, $file_name = null, $folder = null)             
     {
         $this->name = $name;
         $this->task_uids = $task_uids;

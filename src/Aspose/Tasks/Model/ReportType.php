@@ -84,6 +84,15 @@ class ReportType
             self::CASH_FLOW,
         ];
     }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
+    }
 }
 
 

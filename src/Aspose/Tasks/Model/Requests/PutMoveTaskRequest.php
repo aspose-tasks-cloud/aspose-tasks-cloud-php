@@ -37,8 +37,8 @@ class PutMoveTaskRequest
      * Initializes a new instance of the PutMoveTaskRequest class.
      *  
      * @param string $name The name of the file.
-     * @param int $task_uid Task Uid
-     * @param int $parent_task_uid Uniquer id of the task.This task represent parent task for another task.
+     * @param int $task_uid Unique id of the task to be moved.
+     * @param int $parent_task_uid Unique id of the new parent task.
      * @param string $file_name The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
@@ -59,12 +59,12 @@ class PutMoveTaskRequest
     public $name;
 	
     /*
-     * Task Uid
+     * Unique id of the task to be moved.
      */
     public $task_uid;
 	
     /*
-     * Uniquer id of the task.This task represent parent task for another task.
+     * Unique id of the new parent task.
      */
     public $parent_task_uid;
 	

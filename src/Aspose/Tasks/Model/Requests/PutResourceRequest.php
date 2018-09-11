@@ -45,7 +45,7 @@ class PutResourceRequest
      * @param string $folder The document storage
      * @param string $file_name The filename to save Changes
      */
-    public function __construct($name, $resource_uid, $resource = null, $mode = null, $recalculate = null, $storage = null, $folder = null, $file_name = null)             
+    public function __construct($name, $resource_uid, $resource, $mode = null, $recalculate = null, $storage = null, $folder = null, $file_name = null)             
     {
         $this->name = $name;
         $this->resource_uid = $resource_uid;

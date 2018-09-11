@@ -229,7 +229,7 @@ class VbaModule implements ArrayAccess
     /*
      * Sets attributes
      *
-     * @param \Aspose\Tasks\Model\VbaModuleAttribute[] $attributes Gets a collection of
+     * @param \Aspose\Tasks\Model\VbaModuleAttribute[] $attributes Gets a collection of  VbaModuleAttributeCollection
      *
      * @return $this
      */

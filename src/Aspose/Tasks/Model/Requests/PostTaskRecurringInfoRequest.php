@@ -2,7 +2,7 @@
 
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostTaskDocumentWithFormatRequest.php">
+ * <copyright company="Aspose" file="PostTaskRecurringInfoRequest.php">
  *   Copyright (c) 2018 Aspose.Tasks for Cloud
  * </copyright>
  * <summary>
@@ -29,26 +29,30 @@
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for postTaskDocumentWithFormat" operation.
+ * Request model for postTaskRecurringInfo" operation.
  */
-class PostTaskDocumentWithFormatRequest
+class PostTaskRecurringInfoRequest
 {
     /*
-     * Initializes a new instance of the PostTaskDocumentWithFormatRequest class.
+     * Initializes a new instance of the PostTaskRecurringInfoRequest class.
      *  
      * @param string $name The name of the file.
-     * @param string $format The format of the resulting file.
-     * @param object $save_options Instance of inheritor of SaveOptions class which contains format-specific settings for saving a project.
-     * @param bool $return_as_zip_archive If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.
+     * @param int $parent_task_uid The Uid of parent task for the created recurring task
+     * @param string $task_name Name of the task to create.
+     * @param \Aspose\Tasks\Model\RecurringInfo $recurring_info DTO which defines task's recurring info.
+     * @param string $calendar_name Name of the project's calendar to use for recurring task's scheduling.
+     * @param string $file_name File name to save changes to.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      */
-    public function __construct($name, $format, $save_options, $return_as_zip_archive = null, $storage = null, $folder = null)             
+    public function __construct($name, $parent_task_uid, $task_name, $recurring_info, $calendar_name, $file_name = null, $storage = null, $folder = null)             
     {
         $this->name = $name;
-        $this->format = $format;
-        $this->save_options = $save_options;
-        $this->return_as_zip_archive = $return_as_zip_archive;
+        $this->parent_task_uid = $parent_task_uid;
+        $this->task_name = $task_name;
+        $this->recurring_info = $recurring_info;
+        $this->calendar_name = $calendar_name;
+        $this->file_name = $file_name;
         $this->storage = $storage;
         $this->folder = $folder;
     }
@@ -59,19 +63,29 @@ class PostTaskDocumentWithFormatRequest
     public $name;
 	
     /*
-     * The format of the resulting file.
+     * The Uid of parent task for the created recurring task
      */
-    public $format;
+    public $parent_task_uid;
 	
     /*
-     * Instance of inheritor of SaveOptions class which contains format-specific settings for saving a project.
+     * Name of the task to create.
      */
-    public $save_options;
+    public $task_name;
 	
     /*
-     * If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.
+     * DTO which defines task's recurring info.
      */
-    public $return_as_zip_archive;
+    public $recurring_info;
+	
+    /*
+     * Name of the project's calendar to use for recurring task's scheduling.
+     */
+    public $calendar_name;
+	
+    /*
+     * File name to save changes to.
+     */
+    public $file_name;
 	
     /*
      * The document storage.

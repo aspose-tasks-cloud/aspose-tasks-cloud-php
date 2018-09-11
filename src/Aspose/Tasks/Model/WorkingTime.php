@@ -234,7 +234,7 @@ class WorkingTime implements ArrayAccess
     /*
      * Sets from_time
      *
-     * @param \DateTime $from_time Returns or sets the beginning of a working time. Read/write .
+     * @param \DateTime $from_time Returns or sets the beginning of a working time. Read/write DateTime.
      *
      * @return $this
      */
@@ -258,7 +258,7 @@ class WorkingTime implements ArrayAccess
     /*
      * Sets to_time
      *
-     * @param \DateTime $to_time Returns or sets the end of a working time. Read/write .
+     * @param \DateTime $to_time Returns or sets the end of a working time. Read/write DateTime.
      *
      * @return $this
      */

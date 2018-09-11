@@ -35,7 +35,7 @@ use \Aspose\Tasks\ObjectSerializer;
 /*
  * OrdinalNumber
  *
- * @description Represents an ordinal number in the instance of  class.
+ * @description Represents an ordinal number in the instance of RecurringInfo class.
  */
 class OrdinalNumber
 {
@@ -61,6 +61,15 @@ class OrdinalNumber
             self::FOURTH,
             self::LAST,
         ];
+    }
+
+    /*
+     * Gets whether enum is bitwise
+     * @return bool
+     */
+    public static function getIsBitwise()
+    {
+        return false;
     }
 }
 
