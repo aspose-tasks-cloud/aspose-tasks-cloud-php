@@ -37,7 +37,7 @@ class GetExtendedAttributeByIndexRequest
      * Initializes a new instance of the GetExtendedAttributeByIndexRequest class.
      *  
      * @param string $name The name of the file.
-     * @param int $index Index of the extended attribute. See ExtendedAttributeItem.Index property.
+     * @param int $index Index (See ExtendedAttributeItem.Index property) or FieldId of the extended attribute.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      */
@@ -55,7 +55,7 @@ class GetExtendedAttributeByIndexRequest
     public $name;
 	
     /*
-     * Index of the extended attribute. See ExtendedAttributeItem.Index property.
+     * Index (See ExtendedAttributeItem.Index property) or FieldId of the extended attribute.
      */
     public $index;
 	

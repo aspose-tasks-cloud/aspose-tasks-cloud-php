@@ -53,7 +53,8 @@ class TasksApiTest extends BaseTestContext
             'Resources\ResourcesTest',
             'TaskLinks\TaskLinksTest',
             'Tasks\TasksTest',
-            'Tasks\TasksRecurringInfoTest',
+            'Tasks\TasksExtendedAttributesTest',
+            'Tasks\TaskRecurringInfoTest',
             'TimephasedData\TimephasedDataTest',
             'Vba\VbaTest',
             'Wbs\WbsTest'

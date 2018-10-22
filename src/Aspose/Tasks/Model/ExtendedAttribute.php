@@ -57,10 +57,14 @@ class ExtendedAttribute implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'field_id' => 'string',
-        'value' => 'string',
+        'attribute_type' => '\Aspose\Tasks\Model\CustomFieldType',
         'value_guid' => 'string',
-        'duration_format' => '\Aspose\Tasks\Model\TimeUnitType',
-        'lookup_value_id' => 'int'
+        'lookup_value_id' => 'int',
+        'duration_value' => '\Aspose\Tasks\Model\Duration',
+        'numeric_value' => 'float',
+        'date_value' => '\DateTime',
+        'flag_value' => 'bool',
+        'text_value' => 'string'
     ];
 
     /*
@@ -70,10 +74,14 @@ class ExtendedAttribute implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'field_id' => null,
-        'value' => null,
+        'attribute_type' => null,
         'value_guid' => null,
-        'duration_format' => null,
-        'lookup_value_id' => 'int32'
+        'lookup_value_id' => 'int32',
+        'duration_value' => null,
+        'numeric_value' => 'decimal',
+        'date_value' => 'date-time',
+        'flag_value' => null,
+        'text_value' => null
     ];
 
     /*
@@ -104,10 +112,14 @@ class ExtendedAttribute implements ArrayAccess
      */
     protected static $attributeMap = [
         'field_id' => 'FieldId',
-        'value' => 'Value',
+        'attribute_type' => 'AttributeType',
         'value_guid' => 'ValueGuid',
-        'duration_format' => 'DurationFormat',
-        'lookup_value_id' => 'LookupValueId'
+        'lookup_value_id' => 'LookupValueId',
+        'duration_value' => 'DurationValue',
+        'numeric_value' => 'NumericValue',
+        'date_value' => 'DateValue',
+        'flag_value' => 'FlagValue',
+        'text_value' => 'TextValue'
     ];
 
     /*
@@ -117,10 +129,14 @@ class ExtendedAttribute implements ArrayAccess
      */
     protected static $setters = [
         'field_id' => 'setFieldId',
-        'value' => 'setValue',
+        'attribute_type' => 'setAttributeType',
         'value_guid' => 'setValueGuid',
-        'duration_format' => 'setDurationFormat',
-        'lookup_value_id' => 'setLookupValueId'
+        'lookup_value_id' => 'setLookupValueId',
+        'duration_value' => 'setDurationValue',
+        'numeric_value' => 'setNumericValue',
+        'date_value' => 'setDateValue',
+        'flag_value' => 'setFlagValue',
+        'text_value' => 'setTextValue'
     ];
 
     /*
@@ -130,10 +146,14 @@ class ExtendedAttribute implements ArrayAccess
      */
     protected static $getters = [
         'field_id' => 'getFieldId',
-        'value' => 'getValue',
+        'attribute_type' => 'getAttributeType',
         'value_guid' => 'getValueGuid',
-        'duration_format' => 'getDurationFormat',
-        'lookup_value_id' => 'getLookupValueId'
+        'lookup_value_id' => 'getLookupValueId',
+        'duration_value' => 'getDurationValue',
+        'numeric_value' => 'getNumericValue',
+        'date_value' => 'getDateValue',
+        'flag_value' => 'getFlagValue',
+        'text_value' => 'getTextValue'
     ];
 
     /*
@@ -197,10 +217,14 @@ class ExtendedAttribute implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['field_id'] = isset($data['field_id']) ? $data['field_id'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['attribute_type'] = isset($data['attribute_type']) ? $data['attribute_type'] : null;
         $this->container['value_guid'] = isset($data['value_guid']) ? $data['value_guid'] : null;
-        $this->container['duration_format'] = isset($data['duration_format']) ? $data['duration_format'] : null;
         $this->container['lookup_value_id'] = isset($data['lookup_value_id']) ? $data['lookup_value_id'] : null;
+        $this->container['duration_value'] = isset($data['duration_value']) ? $data['duration_value'] : null;
+        $this->container['numeric_value'] = isset($data['numeric_value']) ? $data['numeric_value'] : null;
+        $this->container['date_value'] = isset($data['date_value']) ? $data['date_value'] : null;
+        $this->container['flag_value'] = isset($data['flag_value']) ? $data['flag_value'] : null;
+        $this->container['text_value'] = isset($data['text_value']) ? $data['text_value'] : null;
     }
 
     /*
@@ -212,8 +236,17 @@ class ExtendedAttribute implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['duration_format'] === null) {
-            $invalidProperties[] = "'duration_format' can't be null";
+        if ($this->container['attribute_type'] === null) {
+            $invalidProperties[] = "'attribute_type' can't be null";
+        }
+        if ($this->container['numeric_value'] === null) {
+            $invalidProperties[] = "'numeric_value' can't be null";
+        }
+        if ($this->container['date_value'] === null) {
+            $invalidProperties[] = "'date_value' can't be null";
+        }
+        if ($this->container['flag_value'] === null) {
+            $invalidProperties[] = "'flag_value' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,7 +260,16 @@ class ExtendedAttribute implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['duration_format'] === null) {
+        if ($this->container['attribute_type'] === null) {
+            return false;
+        }
+        if ($this->container['numeric_value'] === null) {
+            return false;
+        }
+        if ($this->container['date_value'] === null) {
+            return false;
+        }
+        if ($this->container['flag_value'] === null) {
             return false;
         }
         return true;
@@ -247,7 +289,7 @@ class ExtendedAttribute implements ArrayAccess
     /*
      * Sets field_id
      *
-     * @param string $field_id Returns or sets the id of a field.
+     * @param string $field_id Gets or sets the id of a field.
      *
      * @return $this
      */
@@ -259,25 +301,25 @@ class ExtendedAttribute implements ArrayAccess
     }
 
     /*
-     * Gets value
+     * Gets attribute_type
      *
-     * @return string
+     * @return \Aspose\Tasks\Model\CustomFieldType
      */
-    public function getValue()
+    public function getAttributeType()
     {
-        return $this->container['value'];
+        return $this->container['attribute_type'];
     }
 
     /*
-     * Sets value
+     * Sets attribute_type
      *
-     * @param string $value Returns or sets the value of a field.
+     * @param \Aspose\Tasks\Model\CustomFieldType $attribute_type Gets the type of a custom field.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setAttributeType($attribute_type)
     {
-        $this->container['value'] = $value;
+        $this->container['attribute_type'] = $attribute_type;
 
         return $this;
     }
@@ -295,37 +337,13 @@ class ExtendedAttribute implements ArrayAccess
     /*
      * Sets value_guid
      *
-     * @param string $value_guid Returns or sets the guid of a value.
+     * @param string $value_guid Gets or sets the guid of a value.
      *
      * @return $this
      */
     public function setValueGuid($value_guid)
     {
         $this->container['value_guid'] = $value_guid;
-
-        return $this;
-    }
-
-    /*
-     * Gets duration_format
-     *
-     * @return \Aspose\Tasks\Model\TimeUnitType
-     */
-    public function getDurationFormat()
-    {
-        return $this->container['duration_format'];
-    }
-
-    /*
-     * Sets duration_format
-     *
-     * @param \Aspose\Tasks\Model\TimeUnitType $duration_format Returns or sets the duration format.
-     *
-     * @return $this
-     */
-    public function setDurationFormat($duration_format)
-    {
-        $this->container['duration_format'] = $duration_format;
 
         return $this;
     }
@@ -343,13 +361,133 @@ class ExtendedAttribute implements ArrayAccess
     /*
      * Sets lookup_value_id
      *
-     * @param int $lookup_value_id Id of the lookup value (if value is lookup value)
+     * @param int $lookup_value_id Gets or sets Id of the lookup value (if value is lookup value)
      *
      * @return $this
      */
     public function setLookupValueId($lookup_value_id)
     {
         $this->container['lookup_value_id'] = $lookup_value_id;
+
+        return $this;
+    }
+
+    /*
+     * Gets duration_value
+     *
+     * @return \Aspose\Tasks\Model\Duration
+     */
+    public function getDurationValue()
+    {
+        return $this->container['duration_value'];
+    }
+
+    /*
+     * Sets duration_value
+     *
+     * @param \Aspose\Tasks\Model\Duration $duration_value Gets or sets value for attributes with 'Duration' type.
+     *
+     * @return $this
+     */
+    public function setDurationValue($duration_value)
+    {
+        $this->container['duration_value'] = $duration_value;
+
+        return $this;
+    }
+
+    /*
+     * Gets numeric_value
+     *
+     * @return float
+     */
+    public function getNumericValue()
+    {
+        return $this->container['numeric_value'];
+    }
+
+    /*
+     * Sets numeric_value
+     *
+     * @param float $numeric_value Gets or sets a value for attributes with numeric types (Cost, Number).
+     *
+     * @return $this
+     */
+    public function setNumericValue($numeric_value)
+    {
+        $this->container['numeric_value'] = $numeric_value;
+
+        return $this;
+    }
+
+    /*
+     * Gets date_value
+     *
+     * @return \DateTime
+     */
+    public function getDateValue()
+    {
+        return $this->container['date_value'];
+    }
+
+    /*
+     * Sets date_value
+     *
+     * @param \DateTime $date_value Gets or sets a value for attributes with date types (Date, Start, Finish).
+     *
+     * @return $this
+     */
+    public function setDateValue($date_value)
+    {
+        $this->container['date_value'] = $date_value;
+
+        return $this;
+    }
+
+    /*
+     * Gets flag_value
+     *
+     * @return bool
+     */
+    public function getFlagValue()
+    {
+        return $this->container['flag_value'];
+    }
+
+    /*
+     * Sets flag_value
+     *
+     * @param bool $flag_value Gets or sets a value indicating whether a flag is set for an attribute with 'Flag' type.
+     *
+     * @return $this
+     */
+    public function setFlagValue($flag_value)
+    {
+        $this->container['flag_value'] = $flag_value;
+
+        return $this;
+    }
+
+    /*
+     * Gets text_value
+     *
+     * @return string
+     */
+    public function getTextValue()
+    {
+        return $this->container['text_value'];
+    }
+
+    /*
+     * Sets text_value
+     *
+     * @param string $text_value Gets or sets a value for attributes with 'Text' type.
+     *
+     * @return $this
+     */
+    public function setTextValue($text_value)
+    {
+        $this->container['text_value'] = $text_value;
 
         return $this;
     }

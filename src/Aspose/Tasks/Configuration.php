@@ -97,6 +97,13 @@ class Configuration
     protected $host = 'https://localhost/v1.0';
 
     /*
+     * The version
+     *
+     * @var string
+     */
+    protected $version = 'v2.0';
+
+    /*
      * User agent of the HTTP request, set to "PHP-Swagger" by default
      *
      * @var string
@@ -128,7 +135,7 @@ class Configuration
      * Version of Aspose.Tasks Cloud API
      *
      */
-    protected $clientVersion = '18.8';
+    protected $clientVersion = '18.9';
 
     /*
      * Constructor
@@ -356,6 +363,16 @@ class Configuration
     public function getHost()
     {
         return $this->host;
+    }
+
+    /*
+     * Gets the API version
+     *
+     * @return string Version
+     */
+    public function getVersion()
+    {
+        return $this->version;
     }
 
     /*

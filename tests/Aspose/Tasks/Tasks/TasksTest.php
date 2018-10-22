@@ -144,55 +144,6 @@ class TasksTest extends BaseTestContext
         Assert::assertEquals("2015-10-01T17:15:00", $response->getTask()->getManualFinish()->format("Y-m-d\\TH:i:s"));
     }
     
-    public function testEditTaskExtendedAttributeLookupValue()
-    {
-        $remoteName = "testEditTaskExtendedAttributeLookupValue.mpp";
-        $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
-        
-        $newExtendedAttribute = new ExtendedAttributeDefinition();
-        $newExtendedAttribute->setCalculationType(Model\CalculationType::LOOKUP);
-        $newExtendedAttribute->setCfType(Model\CustomFieldType::TEXT);
-        $newExtendedAttribute->setFieldName("Text3");
-        $newExtendedAttribute->setElementType(Model\ElementType::TASK);
-        $newExtendedAttribute->setAlias("New Field");
-        
-        $val1 = new Model\Value();
-        $val1->setDescription("descr1");
-        $val1->setVal("Internal");
-        $val1->setId(111);
-        $val2 = new Model\Value();
-        $val2->setDescription("descr2");
-        $val2->setVal("External");
-        $val2->setId(112);
-        $newExtendedAttribute->setValueList(array($val1, $val2));
-        
-        $response = $this->tasks->putExtendedAttribute(new Requests\PutExtendedAttributeRequest($remoteName, $newExtendedAttribute, null, self::$storageName, $folder));
-        Assert::assertEquals(200, $response->getCode());
-        $addedFieldId = $response->getExtendedAttribute()->getFieldId();
-        
-        $response = $this->tasks->getTask(new Requests\GetTaskRequest($remoteName, 27, self::$storageName, $folder));
-        Assert::assertEquals(200, $response->getCode());
-        Assert::assertNotNull($response->getTask());
-        $task = $response->getTask();
-        
-        $extendedAttributeValue = new ExtendedAttribute();
-        $extendedAttributeValue->setLookupValueId(112);
-        $extendedAttributeValue->setFieldId($addedFieldId);
-        
-        $task->setExtendedAttributes(array_merge($task->getExtendedAttributes(), array($extendedAttributeValue)));
-        
-        $response = $this->tasks->putTask(new Requests\PutTaskRequest($remoteName, 27, $task, null, null, self::$storageName, $folder));
-        Assert::assertEquals(200, $response->getCode());
-        
-        $response = $this->tasks->getTask(new Requests\GetTaskRequest($remoteName, 27, self::$storageName, $folder));
-        Assert::assertEquals(200, $response->getCode());
-        Assert::assertNotNull($response->getTask());
-
-        Assert::assertEquals(1, count($response->getTask()->getExtendedAttributes()));
-        Assert::assertEquals(188743737, $response->getTask()->getExtendedAttributes()[0]->getFieldId());
-        Assert::assertEquals(112, $response->getTask()->getExtendedAttributes()[0]->getLookupValueId());
-    }
-    
     public function testGetTaskAssignments()
     {
         $remoteName = "testGetTaskAssignments.mpp";

@@ -1,87 +1,38 @@
 {
-	"description" : "This repository contains Aspose Tasks SDK for PHP source code. Aspose Tasks Cloud SDK for PHP lets PHP developers manipulate or convert Microsoft Project documents hosted on a cloud platform quickly and easily.",
-	"name" : "aspose/tasks-sdk-php",
-	"type" : "library",
-	"keywords" : [
-		"aspose",
-		"php",
-		"aspose cloud",
-		"mpp",
-		"microsoft project",
-		"ms project",
-		"primavera"
-	],
-	"homepage" : "https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-php",
-	"authors" : [{
-  		"name" : "aspose-tasks-cloud",
-      "homepage": "https://github.com/aspose-tasks-cloud"
-		}
-	],
-	"config" : {
-		"platform" : {
-			"php" : "5.6.32"
-		}
-	},
-	"require" : {
-		"php" : ">=5.5",
-		"ext-curl" : "*",
-		"ext-json" : "*",
-		"ext-mbstring" : "*",
-		"guzzlehttp/guzzle" : "^6.2",
-		"aspose/storage-sdk-php" : "1.0.*",
-		"friendsofphp/php-cs-fixer" : "2.10.*"
-	},
-	"require-dev" : {
-		"squizlabs/php_codesniffer" : "3.*",
-		"phpunit/phpunit" : "^4.8"
-	},
-	"autoload" : {
-		"psr-0" : {
-			"Aspose" : [
-				"src",
-				"src/Aspose",
-				"src/Aspose/Tasks",
-				"src/Aspose/Tasks/Model",
-				"src/Aspose/Tasks/Model/Requests"
-			],
-			"BaseTest" : [
-				"tests",
-				"tests/Aspose",
-				"tests/Aspose/Tasks",
-				"tests/Aspose/Tasks/Assignments",
-				"tests/Aspose/Tasks/Calendars",
-				"tests/Aspose/Tasks/DocumentProperties",
-				"tests/Aspose/Tasks/ExtendedAttributes",
-				"tests/Aspose/Tasks/OutlineCodes",
-				"tests/Aspose/Tasks/Project",
-				"tests/Aspose/Tasks/Recalculation",
-				"tests/Aspose/Tasks/Reports",
-				"tests/Aspose/Tasks/Resources",
-				"tests/Aspose/Tasks/TaskLinks",
-				"tests/Aspose/Tasks/Tasks",
-				"tests/Aspose/Tasks/TimephasedData",
-				"tests/Aspose/Tasks/Vba",
-				"tests/Aspose/Tasks/Wbs"
-			]
-		},
-		"psr-4" : {
-			"" : [
-				"tests/Aspose/Tasks",
-				"tests/Aspose/Tasks/Assignments",
-				"tests/Aspose/Tasks/Calendars",
-				"tests/Aspose/Tasks/DocumentProperties",
-				"tests/Aspose/Tasks/ExtendedAttributes",
-				"tests/Aspose/Tasks/OutlineCodes",
-				"tests/Aspose/Tasks/Project",
-				"tests/Aspose/Tasks/Recalculation",
-				"tests/Aspose/Tasks/Reports",
-				"tests/Aspose/Tasks/Resources",
-				"tests/Aspose/Tasks/TaskLinks",
-				"tests/Aspose/Tasks/Tasks",
-				"tests/Aspose/Tasks/TimephasedData",
-				"tests/Aspose/Tasks/Vba",
-				"tests/Aspose/Tasks/Wbs"
-			]
-		}
-	}
+    "description": 	"This repository contains Aspose Tasks SDK for PHP source code. Aspose Tasks Cloud SDK for PHP lets PHP developers manipulate or convert Microsoft Project documents hosted on a cloud platform quickly and easily.",
+    "name": 		"aspose-tasks-cloud/php-sdk",
+    "type": 		"library",
+    "keywords" : 	["aspose", "php", "aspose cloud", "mpp", "microsoft project", "ms project", "primavera"],
+    "homepage": "https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "VasiliySinitsyn",
+			"homepage": "https://github.com/aspose-tasks-cloud"
+        }
+    ],
+	"config": {
+        "platform": {
+            "php": "5.6.32"
+        }
+    },
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2",
+		"aspose/storage-sdk-php": "1.0.*",
+        "friendsofphp/php-cs-fixer": "2.10.*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*",
+        "phpunit/phpunit": "^4.8"
+    },
+	"autoload": {
+        "psr-0": {
+            "Aspose": "src/",
+            "BaseTest": "tests/"
+        }
+    }
 }
