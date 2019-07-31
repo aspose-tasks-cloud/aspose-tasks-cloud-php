@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TaskItemsResponse.php">
+ * <copyright company="Aspose" file="ErrorDetails.php">
  *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,95 +25,88 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
- * TaskItemsResponse
- */
-
 namespace Aspose\Tasks\Model;
+
+use \ArrayAccess;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
- * TaskItemsResponse
- *
+ * ErrorDetails Class
  */
-class TaskItemsResponse extends AsposeResponse 
+class ErrorDetails implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
-
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "TaskItemsResponse";
-
-    /*
+    protected static $swaggerModelName = 'ErrorDetails';
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'tasks' => '\Aspose\Tasks\Model\TaskItems'
+        'request_id' => 'string',
+        'date' => '\DateTime'
     ];
-
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'tasks' => null
+        'request_id' => null,
+        'date' => 'date-time'
     ];
-
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
-
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
-
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'tasks' => 'Tasks'
+        'request_id' => 'RequestId',
+        'date' => 'Date'
     ];
-
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
     protected static $setters = [
-        'tasks' => 'setTasks'
+        'request_id' => 'setRequestId',
+        'date' => 'setDate'
     ];
-
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
     protected static $getters = [
-        'tasks' => 'getTasks'
+        'request_id' => 'getRequestId',
+        'date' => 'getDate'
     ];
-
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -121,30 +114,27 @@ class TaskItemsResponse extends AsposeResponse
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
-
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
-
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
-
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -154,12 +144,14 @@ class TaskItemsResponse extends AsposeResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
-
-
-    /*
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -167,24 +159,23 @@ class TaskItemsResponse extends AsposeResponse
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
-        $this->container['tasks'] = isset($data['tasks']) ? $data['tasks'] : null;
+        $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
     }
-
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
-
+        $invalidProperties = [];
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
+        }
         return $invalidProperties;
     }
-
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -192,38 +183,54 @@ class TaskItemsResponse extends AsposeResponse
      */
     public function valid()
     {
-        if (!parent::valid()) {
+        if ($this->container['date'] === null) {
             return false;
         }
-
         return true;
     }
-
-
-    /*
-     * Gets tasks
+    /**
+     * Gets request_id
      *
-     * @return \Aspose\Tasks\Model\TaskItems
+     * @return string
      */
-    public function getTasks()
+    public function getRequestId()
     {
-        return $this->container['tasks'];
+        return $this->container['request_id'];
     }
-
-    /*
-     * Sets tasks
+    /**
+     * Sets request_id
      *
-     * @param \Aspose\Tasks\Model\TaskItems $tasks tasks
+     * @param string $request_id The request id
      *
      * @return $this
      */
-    public function setTasks($tasks)
+    public function setRequestId($request_id)
     {
-        $this->container['tasks'] = $tasks;
-
+        $this->container['request_id'] = $request_id;
         return $this;
     }
-    /*
+    /**
+     * Gets date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+    /**
+     * Sets date
+     *
+     * @param \DateTime $date Date
+     *
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->container['date'] = $date;
+        return $this;
+    }
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -234,8 +241,7 @@ class TaskItemsResponse extends AsposeResponse
     {
         return isset($this->container[$offset]);
     }
-
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -246,8 +252,7 @@ class TaskItemsResponse extends AsposeResponse
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -263,8 +268,7 @@ class TaskItemsResponse extends AsposeResponse
             $this->container[$offset] = $value;
         }
     }
-
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -275,8 +279,7 @@ class TaskItemsResponse extends AsposeResponse
     {
         unset($this->container[$offset]);
     }
-
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string
@@ -289,9 +292,6 @@ class TaskItemsResponse extends AsposeResponse
                 JSON_PRETTY_PRINT
             );
         }
-
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

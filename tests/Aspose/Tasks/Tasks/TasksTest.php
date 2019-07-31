@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="TasksTest.php">
-*   Copyright (c) 2018 Aspose.Tasks for Cloud
+*   Copyright (c) 2018 Aspose.Tasks Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -202,9 +202,9 @@ class TasksTest extends BaseTestContext
         }
         catch (Aspose\Tasks\ApiException $e)
         {
-            Assert::assertEquals(400, $e->getCode());
+            Assert::assertEquals(404, $e->getCode());
             $errorObject = json_decode($e->getResponseBody(), true);
-            Assert::assertEquals("TaskDoesntExist", $errorObject["Code"]);
+            Assert::assertEquals("TaskDoesntExist", $errorObject["Error"]["Code"]);
             $catched = true;
         }
         

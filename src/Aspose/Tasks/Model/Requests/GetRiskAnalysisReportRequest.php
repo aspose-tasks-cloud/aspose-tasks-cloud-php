@@ -3,7 +3,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetRiskAnalysisReportRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks for Cloud
+ *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -110,4 +110,4 @@ class GetRiskAnalysisReportRequest
      * The resulting report fileName.
      */
     public $file_name;
-}
+}

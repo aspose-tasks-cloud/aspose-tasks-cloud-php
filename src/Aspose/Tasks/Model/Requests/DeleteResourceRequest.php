@@ -3,7 +3,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteResourceRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks for Cloud
+ *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -75,4 +75,4 @@ class DeleteResourceRequest
      * The name of the project document to save changes to.              If this parameter is omitted then the changes will be saved to the source project document.
      */
     public $file_name;
-}
+}

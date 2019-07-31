@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="CalendarWorkWeeksTest.php">
-*   Copyright (c) 2018 Aspose.Tasks for Cloud
+*   Copyright (c) 2018 Aspose.Tasks Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -65,7 +65,7 @@ class CalendarWorkWeeksTest extends BaseTestContext
         Assert::assertEquals("2018-01-07", $workWeek->getToDate()->format("Y-m-d"));
         
         Assert::assertEquals(4, count($workWeek->getWeekDays()));
-        Assert::assertEquals(true, count($workWeek->getWeekDays()[0]->getDayWorking()));
+        Assert::assertEquals(true, $workWeek->getWeekDays()[0]->getDayWorking());
         Assert::assertEquals(DayType::MONDAY, $workWeek->getWeekDays()[0]->getDayType());
         Assert::assertEquals(1, count($workWeek->getWeekDays()[0]->getWorkingTimes()));
         Assert::assertEquals("11:30:00", $workWeek->getWeekDays()[0]->getWorkingTimes()[0]->getFromTime()->format("H:i:s"));

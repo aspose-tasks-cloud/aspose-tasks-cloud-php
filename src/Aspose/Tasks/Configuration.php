@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Configuration.php">
- *   Copyright (c) 2018 Aspose.Tasks for Cloud
+ *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -94,14 +94,14 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://localhost/v1.0';
+    protected $host = 'https://api.aspose.cloud';
 
     /*
      * The version
      *
      * @var string
      */
-    protected $version = 'v2.0';
+    protected $version = 'v3.0';
 
     /*
      * User agent of the HTTP request, set to "PHP-Swagger" by default
@@ -135,7 +135,7 @@ class Configuration
      * Version of Aspose.Tasks Cloud API
      *
      */
-    protected $clientVersion = '18.9';
+    protected $clientVersion = '19.4';
 
     /*
      * Constructor

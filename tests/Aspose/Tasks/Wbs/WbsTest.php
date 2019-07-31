@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="WbsTest.php">
-*   Copyright (c) 2018 Aspose.Tasks for Cloud
+*   Copyright (c) 2018 Aspose.Tasks Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,8 +40,8 @@ class WbsTest extends BaseTestContext
         $response = $this->tasks->getWbsDefinition(new Requests\GetWbsDefinitionRequest($remoteName, self::$storageName, $folder));
         
         Assert::assertEquals(200, $response->getCode());
-        Assert::assertEquals(true, count($response->getWBSDefinition()->getGenerateWBSCode()));
-        Assert::assertEquals(true, count($response->getWBSDefinition()->getVerifyUniqueness()));
+        Assert::assertEquals(true, $response->getWBSDefinition()->getGenerateWBSCode());
+        Assert::assertEquals(true, $response->getWBSDefinition()->getVerifyUniqueness());
     }
     
     public function testRenumberWbsCode()

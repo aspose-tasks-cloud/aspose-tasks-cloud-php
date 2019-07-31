@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="TaskRecurringInfoTest.php">
-*   Copyright (c) 2018 Aspose.Tasks for Cloud
+*   Copyright (c) 2018 Aspose.Tasks Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -101,7 +101,7 @@ class TaskRecurringInfoTest extends BaseTestContext
         $recurringInfo->setOccurrences(4);
         $recurringInfo->setWeeklyRepetitions(3);
         $recurringInfo->setWeeklyDays("Wednesday, Thursday");
-        $recurringInfo->setStartDate(new DateTime("2018-01-01T00:00:00"));
+        $recurringInfo->setStartDate(new DateTime("2018-01-01T08:00:00"));
         $recurringInfo->setEndDate(new DateTime("2018-12-31T00:00:00"));
         $recurringInfo->setUseEndDate(true);
         

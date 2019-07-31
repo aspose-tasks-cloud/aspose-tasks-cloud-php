@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="CalendarsTest.php">
-*   Copyright (c) 2018 Aspose.Tasks for Cloud
+*   Copyright (c) 2018 Aspose.Tasks Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -171,8 +171,8 @@ class CalendarsTest extends BaseTestContext
         {
             Assert::assertEquals(400, $e->getCode());
             $errorObject = json_decode($e->getResponseBody(), true);
-            Assert::assertEquals("InvalidParameters", $errorObject["Code"]);
-            Assert::assertEquals("Calendar should have at least one working time defined", $errorObject["Message"]);
+            Assert::assertEquals("InvalidParameters", $errorObject["Error"]["Code"]);
+            Assert::assertEquals("Calendar should have at least one working time defined", $errorObject["Error"]["Message"]);
             $catched = true;
         }
         
@@ -207,8 +207,8 @@ class CalendarsTest extends BaseTestContext
         $working_times[] = new WorkingTime();
         $working_times[0]->setFromTime(DateTime::createFromFormat("Y-m-d\\TH:i:s", '0001-01-01T08:00:00')->format("Y-m-d\\TH:i:s"));
         $working_times[0]->setToTime(DateTime::createFromFormat("Y-m-d\\TH:i:s", '0001-01-01T13:00:00')->format("Y-m-d\\TH:i:s"));
-        $working_times[1]->setFromTime(DateTime::createFromFormat('H:i', '14:00')->format("Y-m-d\\TH:i:sT"));
-        $working_times[1]->setToTime(DateTime::createFromFormat('H:i', '17:00')->format("Y-m-d\\TH:i:sT"));
+        $working_times[1]->setFromTime(DateTime::createFromFormat('H:i', '14:00')->format("Y-m-d\\TH:i:s"));
+        $working_times[1]->setToTime(DateTime::createFromFormat('H:i', '17:00')->format("Y-m-d\\TH:i:s"));
         $weekDay->setWorkingTimes($working_times);
         $weekDays[] = $weekDay;
         $calendar->setDays($weekDays);

@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="BaseTestContext.php">
-*   Copyright (c) 2018 Aspose.Tasks for Cloud
+*   Copyright (c) 2018 Aspose.Tasks Cloud
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,37 +27,43 @@
 */
 // 
 
-use Aspose\Storage\StorageApi;
 use Aspose\Tasks\Configuration;
 use Aspose\Tasks\TasksApi;
 abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
 {
     protected $tasks;
 
-    protected $storage;
-
     protected $config;
+    protected $uploadedTestFiles;
     protected static $baseTestPath = "Temp/SdkTests/TestData/";
     protected static $baseTestOut = "TestOut/";
-    protected static $storageName = "Tasks";
+    protected static $storageName = "";
 
     /**
      * Setup before running each test case
      */
     public function setUp()
     {
-        $this->storage = new StorageApi();
         $this->config = new Configuration();
+        $this->uploadedTestFiles = array();
         /*
          * To run with your own credentials please, replace parameter in methods 'setAppKey' and 'setAppSid' accordingly to your's AppSid and AppKey
          */
         $this->config->setAppKey("your_app_key");
         $this->config->setAppSid("your_app_sid");
-       
-        $this->storage->apiClient->apiKey = $this->config->getAppKey();
-        $this->storage->apiClient->appSid = $this->config->getAppSid();
-        $this->storage->apiClient->apiServer = $this->config->getHost() . "/v1.1/";
+
         $this->tasks = new TasksApi(null, $this->config);
+    }
+
+    /**
+     * Clean after running each test case
+     */
+    public function tearDown()
+    {
+        foreach ($this->uploadedTestFiles as $uploadedTestFile) {
+           $this->tasks->deleteFile($uploadedTestFile);
+        }
+
     }
     
     public function uploadTestFile($localName, $remoteName, $subfolder = '')
@@ -69,7 +75,8 @@ abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . $remoteName;
         
         $file = realpath(__DIR__ . '/../../..') . '/TestData/' . $localName;
-        $response = $this->storage->PutCreate($Path = $fullName, $versionId = null, null, $file);
+        $response = $this->tasks->uploadFile($Path = $fullName, $file);
+        $this->uploadedTestFiles[] = $fullName;
         return self::$baseTestPath . $subfolder;
     }
 }

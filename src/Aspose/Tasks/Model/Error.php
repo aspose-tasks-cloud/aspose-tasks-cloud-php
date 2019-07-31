@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TaskItemsResponse.php">
+ * <copyright company="Aspose" file="Error.php">
  *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,95 +25,98 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
- * TaskItemsResponse
- */
-
 namespace Aspose\Tasks\Model;
+
+use \ArrayAccess;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
- * TaskItemsResponse
- *
+ *  Error class
  */
-class TaskItemsResponse extends AsposeResponse 
+class Error implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
-
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "TaskItemsResponse";
-
-    /*
+    protected static $swaggerModelName = 'Error';
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'tasks' => '\Aspose\Tasks\Model\TaskItems'
+        'code' => 'string',
+        'message' => 'string',
+        'description' => 'string',
+        'inner_error' => '\Aspose\Tasks\Model\ErrorDetails'
     ];
-
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'tasks' => null
+        'code' => null,
+        'message' => null,
+        'description' => null,
+        'inner_error' => null
     ];
-
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
-
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
-
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'tasks' => 'Tasks'
+        'code' => 'Code',
+        'message' => 'Message',
+        'description' => 'Description',
+        'inner_error' => 'InnerError'
     ];
-
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
     protected static $setters = [
-        'tasks' => 'setTasks'
+        'code' => 'setCode',
+        'message' => 'setMessage',
+        'description' => 'setDescription',
+        'inner_error' => 'setInnerError'
     ];
-
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
     protected static $getters = [
-        'tasks' => 'getTasks'
+        'code' => 'getCode',
+        'message' => 'getMessage',
+        'description' => 'getDescription',
+        'inner_error' => 'getInnerError'
     ];
-
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -121,30 +124,27 @@ class TaskItemsResponse extends AsposeResponse
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
-
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
-
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
-
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -154,12 +154,14 @@ class TaskItemsResponse extends AsposeResponse
         return self::$swaggerModelName;
     }
 
-    
 
-    
-
-
-    /*
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -167,24 +169,22 @@ class TaskItemsResponse extends AsposeResponse
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
-        $this->container['tasks'] = isset($data['tasks']) ? $data['tasks'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['inner_error'] = isset($data['inner_error']) ? $data['inner_error'] : null;
     }
-
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
-
+        $invalidProperties = [];
         return $invalidProperties;
     }
-
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -192,38 +192,93 @@ class TaskItemsResponse extends AsposeResponse
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
-
         return true;
     }
-
-
-    /*
-     * Gets tasks
+    /**
+     * Gets code
      *
-     * @return \Aspose\Tasks\Model\TaskItems
+     * @return string
      */
-    public function getTasks()
+    public function getCode()
     {
-        return $this->container['tasks'];
+        return $this->container['code'];
     }
-
-    /*
-     * Sets tasks
+    /**
+     * Sets code
      *
-     * @param \Aspose\Tasks\Model\TaskItems $tasks tasks
+     * @param string $code Code
      *
      * @return $this
      */
-    public function setTasks($tasks)
+    public function setCode($code)
     {
-        $this->container['tasks'] = $tasks;
-
+        $this->container['code'] = $code;
         return $this;
     }
-    /*
+    /**
+     * Gets message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+    /**
+     * Sets message
+     *
+     * @param string $message Message
+     *
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+        return $this;
+    }
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+    /**
+     * Sets description
+     *
+     * @param string $description Description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+        return $this;
+    }
+    /**
+     * Gets inner_error
+     *
+     * @return \Aspose\Tasks\Model\ErrorDetails
+     */
+    public function getInnerError()
+    {
+        return $this->container['inner_error'];
+    }
+    /**
+     * Sets inner_error
+     *
+     * @param \Aspose\Tasks\Model\ErrorDetails $inner_error Inner Error
+     *
+     * @return $this
+     */
+    public function setInnerError($inner_error)
+    {
+        $this->container['inner_error'] = $inner_error;
+        return $this;
+    }
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -234,8 +289,7 @@ class TaskItemsResponse extends AsposeResponse
     {
         return isset($this->container[$offset]);
     }
-
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -246,8 +300,7 @@ class TaskItemsResponse extends AsposeResponse
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -263,8 +316,7 @@ class TaskItemsResponse extends AsposeResponse
             $this->container[$offset] = $value;
         }
     }
-
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -275,8 +327,7 @@ class TaskItemsResponse extends AsposeResponse
     {
         unset($this->container[$offset]);
     }
-
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string
@@ -289,9 +340,6 @@ class TaskItemsResponse extends AsposeResponse
                 JSON_PRETTY_PRINT
             );
         }
-
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

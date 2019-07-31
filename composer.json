@@ -1,5 +1,5 @@
 {
-    "description": 	"This repository contains Aspose Tasks SDK for PHP source code. Aspose Tasks Cloud SDK for PHP lets PHP developers manipulate or convert Microsoft Project documents hosted on a cloud platform quickly and easily.",
+    "description": 	"This repository contains Aspose.Tasks Cloud SDK for PHP source code. Aspose.Tasks Cloud SDK for PHP lets PHP developers manipulate or convert Microsoft Project documents hosted on a cloud platform quickly and easily.",
     "name": 		"aspose-tasks-cloud/php-sdk",
     "type": 		"library",
     "keywords" : 	["aspose", "php", "aspose cloud", "mpp", "microsoft project", "ms project", "primavera"],
@@ -7,7 +7,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "VasiliySinitsyn",
+            "name": "Ivan Andreychikov",
 			"homepage": "https://github.com/aspose-tasks-cloud"
         }
     ],

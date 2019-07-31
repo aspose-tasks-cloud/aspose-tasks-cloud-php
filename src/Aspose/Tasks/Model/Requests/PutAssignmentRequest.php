@@ -3,7 +3,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutAssignmentRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks for Cloud
+ *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -96,4 +96,4 @@ class PutAssignmentRequest
      * The filename to save Changes
      */
     public $file_name;
-}
+}

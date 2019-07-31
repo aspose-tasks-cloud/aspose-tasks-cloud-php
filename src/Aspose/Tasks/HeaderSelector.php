@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="HeaderSelector.php">
- *   Copyright (c) 2017 Aspose.Tasks for Cloud
+ *   Copyright (c) 2017 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy

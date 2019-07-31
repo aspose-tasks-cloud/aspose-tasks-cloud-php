@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CalendarException.php">
- *   Copyright (c) 2018 Aspose.Tasks for Cloud
+ *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -254,13 +254,13 @@ class CalendarException implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['period'] = isset($data['period']) ? $data['period'] : null;
-        $this->container['days_of_week'] = isset($data['days_of_week']) ? $data['days_of_week'] : null;
+        $this->container['days_of_week'] = isset($data['days_of_week']) ? $data['days_of_week'] : array();
         $this->container['month_item'] = isset($data['month_item']) ? $data['month_item'] : null;
         $this->container['month_position'] = isset($data['month_position']) ? $data['month_position'] : null;
         $this->container['month'] = isset($data['month']) ? $data['month'] : null;
         $this->container['month_day'] = isset($data['month_day']) ? $data['month_day'] : null;
         $this->container['day_working'] = isset($data['day_working']) ? $data['day_working'] : null;
-        $this->container['working_times'] = isset($data['working_times']) ? $data['working_times'] : null;
+        $this->container['working_times'] = isset($data['working_times']) ? $data['working_times'] : array();
     }
 
     /*

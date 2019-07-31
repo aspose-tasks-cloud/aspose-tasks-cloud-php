@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ObjectSerializer.php">
- *   Copyright (c) 2019 Aspose.Tasks for Cloud
+ *   Copyright (c) 2019 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -135,6 +135,12 @@ class ObjectSerializer
     {
         if (is_array($object)) {
             return implode(',', $object);
+        } elseif (is_bool($object)){
+            if ($object) {
+                return "true";
+            } else {
+                return "false";
+            }
         } else {
             return self::toString($object);
         }
@@ -265,15 +271,11 @@ class ObjectSerializer
             if (!empty($data)) {
 
 		// Parse MS date format ()
-                if(preg_match('/Date\\(([-+]*\\d{0,11})(\\d{3})([+-]\\d{4})*\\)/', $data, $matches)) {
-                    if(count($matches) < 4) {
-                        $matches[] = "+0000";
-                    }
-                    
-	            $dateInUtc = \DateTime::createFromFormat("U.u", vsprintf('%2$s.%3$s', $matches), new \DateTimeZone("UTC"));
-                    return $dateInUtc->setTimeZone(new \DateTimeZone($matches[3]));
+                if(preg_match('/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/', $data)) {
+	                $dateInUtc = $data . "+0000";
+                    return \DateTime::createFromFormat(DATE_ISO8601, $dateInUtc);
                 }
-                
+
                 return \DateTime::createFromFormat(DATE_ISO8601, $data);
             } else {
                 return null;

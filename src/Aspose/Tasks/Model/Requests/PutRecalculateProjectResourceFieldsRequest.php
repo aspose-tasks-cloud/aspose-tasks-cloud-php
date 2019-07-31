@@ -3,7 +3,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutRecalculateProjectResourceFieldsRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks for Cloud
+ *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,4 +68,4 @@ class PutRecalculateProjectResourceFieldsRequest
      * The document fileName
      */
     public $file_name;
-}
+}

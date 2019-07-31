@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TasksApi.php">
- *   Copyright (c) 2018 Aspose.Tasks for Cloud
+ *   Copyright (c) 2018 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,11 +33,11 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
 use Aspose\Tasks\Model\Requests;
+use GuzzleHttp\RequestOptions;
 
 /*
- * TasksApi Aspose.Tasks for Cloud API.
+ * TasksApi Aspose.Tasks Cloud API.
  */
 class TasksApi
 {
@@ -52,7 +52,7 @@ class TasksApi
      * @var Configuration configuration info
      */
     protected $config;
-  
+
     /*
      * Stores header selector
      * HeaderSelector class for header selection
@@ -60,7 +60,7 @@ class TasksApi
     protected $headerSelector;
 
     /*
-     * Initialize a new instance of TasksApi
+     * Initialize a new instance of StorageApi
      * @param ClientInterface   $client client for calling api
      * @param Configuration   $config configuration info
      * @param HeaderSelector   $selector class for header selection
@@ -132,7 +132,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -234,7 +234,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -442,7 +442,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -544,7 +544,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -752,7 +752,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -854,7 +854,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -1071,7 +1071,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -1173,7 +1173,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -1371,7 +1371,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -1473,7 +1473,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -1671,7 +1671,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -1773,7 +1773,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -1981,7 +1981,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -2083,7 +2083,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -2291,7 +2291,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -2393,7 +2393,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -2601,7 +2601,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -2703,7 +2703,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -2901,7 +2901,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -3003,7 +3003,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -3221,7 +3221,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -3323,7 +3323,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -3512,7 +3512,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -3614,7 +3614,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -3812,7 +3812,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -3914,7 +3914,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -4112,7 +4112,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -4214,7 +4214,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -4412,7 +4412,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -4514,7 +4514,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -4703,7 +4703,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -4805,7 +4805,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -4994,7 +4994,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -5096,7 +5096,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -5285,7 +5285,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -5387,7 +5387,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -5585,7 +5585,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -5687,7 +5687,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -5885,7 +5885,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -5987,7 +5987,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -6176,7 +6176,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -6278,7 +6278,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -6476,7 +6476,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -6578,7 +6578,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -6767,7 +6767,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -6869,7 +6869,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -7098,7 +7098,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -7200,7 +7200,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -7389,7 +7389,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -7491,7 +7491,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -7694,7 +7694,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -7796,7 +7796,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -7994,7 +7994,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -8096,7 +8096,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -8294,7 +8294,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -8396,7 +8396,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -8614,7 +8614,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -8716,7 +8716,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -8905,7 +8905,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -9007,7 +9007,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -9270,7 +9270,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -9372,7 +9372,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -9570,7 +9570,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -9672,7 +9672,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -9870,7 +9870,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -9972,7 +9972,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -10161,7 +10161,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -10263,7 +10263,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -10476,7 +10476,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -10578,7 +10578,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -10767,7 +10767,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -10869,7 +10869,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -11067,7 +11067,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -11169,7 +11169,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -11387,7 +11387,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -11489,7 +11489,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -11678,7 +11678,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -11780,7 +11780,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -11959,7 +11959,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -12061,7 +12061,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -12250,7 +12250,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -12352,7 +12352,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -12589,7 +12589,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -12691,7 +12691,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -12770,7 +12770,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->calendar);
+        $_tempBody = $this->_prepareBodyParameter($request->calendar);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -12895,7 +12895,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -12997,7 +12997,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -13085,7 +13085,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->calendar_exception);
+        $_tempBody = $this->_prepareBodyParameter($request->calendar_exception);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -13210,7 +13210,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -13312,7 +13312,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -13400,7 +13400,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->property);
+        $_tempBody = $this->_prepareBodyParameter($request->property);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -13525,7 +13525,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -13627,7 +13627,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -13846,7 +13846,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -13948,7 +13948,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -14167,7 +14167,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -14269,7 +14269,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -14362,7 +14362,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->save_options);
+        $_tempBody = $this->_prepareBodyParameter($request->save_options);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -14487,7 +14487,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -14589,7 +14589,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -14668,7 +14668,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->task_link);
+        $_tempBody = $this->_prepareBodyParameter($request->task_link);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -14793,7 +14793,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -14895,7 +14895,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -15016,7 +15016,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->recurring_info);
+        $_tempBody = $this->_prepareBodyParameter($request->recurring_info);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -15141,7 +15141,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -15243,7 +15243,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -15351,7 +15351,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->assignment);
+        $_tempBody = $this->_prepareBodyParameter($request->assignment);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -15476,7 +15476,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -15578,7 +15578,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -15671,7 +15671,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->calendar);
+        $_tempBody = $this->_prepareBodyParameter($request->calendar);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -15796,7 +15796,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -15898,7 +15898,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -15995,7 +15995,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->calendar_exception);
+        $_tempBody = $this->_prepareBodyParameter($request->calendar_exception);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -16120,7 +16120,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -16222,7 +16222,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -16310,7 +16310,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->property);
+        $_tempBody = $this->_prepareBodyParameter($request->property);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -16435,7 +16435,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -16537,7 +16537,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -16616,7 +16616,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->extended_attribute);
+        $_tempBody = $this->_prepareBodyParameter($request->extended_attribute);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -16741,7 +16741,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -16843,7 +16843,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -16955,7 +16955,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->connection_string);
+        $_tempBody = $this->_prepareBodyParameter($request->connection_string);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -17080,7 +17080,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -17182,7 +17182,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -17409,7 +17409,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -17511,7 +17511,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -17733,7 +17733,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -17835,7 +17835,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -18057,7 +18057,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -18159,7 +18159,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -18378,7 +18378,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -18480,7 +18480,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -18679,7 +18679,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -18781,7 +18781,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -18860,7 +18860,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->after);
+        $_tempBody = $this->_prepareBodyParameter($request->after);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -18985,7 +18985,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -19087,7 +19087,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -19176,7 +19176,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->complete_through);
+        $_tempBody = $this->_prepareBodyParameter($request->complete_through);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -19301,7 +19301,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -19403,7 +19403,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -19482,7 +19482,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->task_uids);
+        $_tempBody = $this->_prepareBodyParameter($request->task_uids);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -19607,7 +19607,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -19709,7 +19709,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -19817,7 +19817,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->resource);
+        $_tempBody = $this->_prepareBodyParameter($request->resource);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -19942,7 +19942,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -20044,7 +20044,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -20152,7 +20152,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->task);
+        $_tempBody = $this->_prepareBodyParameter($request->task);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -20277,7 +20277,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -20379,7 +20379,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -20467,7 +20467,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->task_link);
+        $_tempBody = $this->_prepareBodyParameter($request->task_link);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -20592,7 +20592,7 @@ class TasksApi
 
             if ($statusCode < 200 || $statusCode > 299) {
                 if ($statusCode === 401) {
-                    $this->_refreshToken();
+                    $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
           
@@ -20694,7 +20694,7 @@ class TasksApi
                     $statusCode = $response->getStatusCode();
           
                     if ($exception instanceof RepeatRequestException) {
-                        $this->_refreshToken();
+                        $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
           
@@ -20782,7 +20782,7 @@ class TasksApi
 
         // body params
         $_tempBody = null;
-        $_tempBody = $this->prepareBodyParameter($request->recurring_info);
+        $_tempBody = $this->_prepareBodyParameter($request->recurring_info);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -20855,25 +20855,6 @@ class TasksApi
         
         return $req;
     }
-
-    /*
-     * Create http client option
-     *
-     * @throws \RuntimeException on file opening failure
-     * @return array of http client options
-     */
-    private function _createHttpClientOption() 
-    {
-        $options = [];
-        if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
-            }
-        }
-
-        return $options;
-    }
     
     /*
      * Executes response logging
@@ -20918,37 +20899,11 @@ class TasksApi
         
         return $urlPartToSign;
     }
-  
-    /*
-     * Gets a request token from server
-     */
-    private function _requestToken() 
-    {
-        $requestUrl = $this->config->getHost() . "/oauth2/token";
-        $postData = "grant_type=client_credentials" . "&client_id=" . $this->config->getAppSid() . "&client_secret=" . $this->config->getAppKey();
-        $response = $this->client->send(new Request('POST', $requestUrl, [], $postData));
-        $result = json_decode($response->getBody()->getContents(), true);
-        $this->config->setAccessToken($result["access_token"]);
-        $this->config->setRefreshToken($result["refresh_token"]);
-    }
-  
-    /*
-     * Refresh token
-     */
-    private function _refreshToken() 
-    {
-        $requestUrl = $this->config->getHost() . "/oauth2/token";
-        $postData = "grant_type=refresh_token&refresh_token=" . $this->config->getRefreshToken();
-        $response = $this->client->send(new Request('POST', $requestUrl, [], $postData));
-        $result = json_decode($response->getBody()->getContents(), true);
-        $this->config->setAccessToken($result["access_token"]);
-        $this->config->setRefreshToken($result["refresh_token"]);
-    }
 
      /*
      * Prepare body parameter
      */
-    private function prepareBodyParameter($bodyParameterValue) 
+    private function _prepareBodyParameter($bodyParameterValue)
     {
     	$tempBody = null;
     	if (isset($bodyParameterValue)) {
@@ -20966,4 +20921,397 @@ class TasksApi
         }
         return $tempBody;
     }
-}
+
+
+    /**
+     * Operation uploadFile
+     *
+     * Upload file
+     *
+     * @param  string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. (required)
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $storage_name Storage name (optional)
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\FilesUploadResult
+     */
+    public function uploadFile($path, $file, $storage_name = null){
+        try
+        {
+            list($response) = $this->_postCreateWithHttpInfo($path, $file, $storage_name);
+            return $response;
+        }
+        catch (ApiException $ex)
+        {
+            if ($ex->getCode() == 401)
+            {
+                $this->_requestToken();
+                list($response) = $this->_postCreateWithHttpInfo($path, $file, $storage_name);
+                return $response;
+            }
+            else
+            {
+                throw $ex;
+            }
+        }
+    }
+
+    /**
+     * Operation deleteFile
+     *
+     * Delete file
+     *
+     * @param  string $path Path where to delete including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. (required)
+     * @param  string $storage_name Storage name (optional)
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\AsposeResponse
+     */
+    public function deleteFile($path, $storage_name = null){
+
+        // verify the required parameter 'path' is set
+        if ($path === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $path when calling uploadFile'
+            );
+        }
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $resourcePath = '/v3.0/tasks/storage/file/{path}';
+        $queryParams = [];
+        $httpBody = '';
+
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($path !== null) {
+            $resourcePath = str_replace(
+                '{' . 'path' . '}',
+                ObjectSerializer::toPathValue($path),
+                $resourcePath
+            );
+        }
+        $headers = $this->headerSelector->selectHeadersForMultipart(['application/json']);
+
+        if (!$this->config->getAccessToken())
+        {
+            $this->_requestToken();
+        }
+        if ($this->config->getAccessToken() !== null)
+        {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $request = new Request('DELETE',$this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers, $httpBody);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+
+            $content = $responseBody->getContents();
+            $content = json_decode($content);
+
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Tasks\Model\FilesUploadResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+
+    }
+
+    /**
+     * Operation postCreateWithHttpInfo
+     *
+     * Upload file
+     *
+     * @param  string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. (required)
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $storage_name Storage name (optional)
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\FilesUploadResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    private function _postCreateWithHttpInfo($path, $file, $storage_name = null){
+        $returnType = '\Aspose\Tasks\Model\FilesUploadResult';
+        $request = $this->_uploadFileRequest($path, $file, $storage_name);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Tasks\Model\FilesUploadResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Create request for operation 'uploadFile'
+     *
+     * @param  string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. (required)
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $storage_name Storage name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    private function _uploadFileRequest($path, $file, $storage_name = null)
+    {
+        // verify the required parameter 'path' is set
+        if ($path === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $path when calling uploadFile'
+            );
+        }
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file when calling uploadFile'
+            );
+        }
+
+        $resourcePath = '/v3.0/tasks/storage/file/{path}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($path !== null) {
+            $resourcePath = str_replace(
+                '{' . 'path' . '}',
+                ObjectSerializer::toPathValue($path),
+                $resourcePath
+            );
+        }
+
+        // form params
+        if ($file !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($file);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['file'] = $contents;
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+                // array of objects
+            } elseif (is_array($httpBody)) {
+                $httpBody = "[" . ObjectSerializer::serializeCollection($httpBody, "") . "]";
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                //$httpBody = new MultipartStream($multipartContents);
+                $httpBody = $formParams['file'];
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        if (!$this->config->getAccessToken())
+        {
+            $this->_requestToken();
+        }
+        if ($this->config->getAccessToken() !== null)
+        {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /*
+     * Gets a request token from server
+     */
+    private function _requestToken()
+    {
+        $requestUrl = $this->config->getHost() . "/connect/token";
+        $postData = "grant_type=client_credentials" . "&client_id=" . $this->config->getAppSid() . "&client_secret=" . $this->config->getAppKey();
+        $header = ["Content-Type" => "application/x-www-form-urlencoded"];
+        $response = $this->client->send(new Request('POST', $requestUrl, $header, $postData));
+        $result = json_decode($response->getBody()->getContents(), true);
+        $this->config->setAccessToken($result["access_token"]);
+    }
+
+    /*
+     * Create http client option
+     *
+     * @throws \RuntimeException on file opening failure
+     * @return array of http client options
+     */
+    private function _createHttpClientOption()
+    {
+        $options = [];
+        if ($this->config->getDebug()) {
+            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            }
+        }
+
+        return $options;
+    }
+}
