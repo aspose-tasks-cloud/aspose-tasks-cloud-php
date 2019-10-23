@@ -54,24 +54,44 @@ class ImportProjectTest extends BaseTestContext
         Assert::assertEquals(1, count($response->getProjectIds()));
         Assert::assertEquals("0", $response->getProjectIds()[0]);
     }
-    
-    
+
+
     public function testImportFromPrimaveraFile()
     {
         $remoteName = "testImportFromPrimaveraFile.xml";
         $folder = $this->uploadTestFile("p6_multiproject.xml", $remoteName, '');
-        
+
         $response = $this->tasks->putImportProjectFromFile(new Requests\PutImportProjectFromFileRequest($remoteName,
             "111",
             "imported_from_primavera.xml",
             Model\ImportedProjectType::PRIMAVERA_XML,
             $folder,
             Model\ProjectFileFormat::P6XML));
-        
+
         Assert::assertEquals(200, $response->getCode());
-        
+
         $response = $this->tasks->getTasks(new Requests\GetTasksRequest("imported_from_primavera.xml", self::$storageName, $folder));
         Assert::assertEquals(200, $response->getCode());
         Assert::assertEquals(12, count($response->getTasks()->getTaskItem()));
+    }
+
+
+    public function testImportFromProjectOnline()
+    {
+        static::markTestSkipped('Ignored because real credentials for project server online is required');
+
+        $remoteName = "testImportFromProjectOnline.pdf";
+
+        $response = $this->tasks->putImportFromProjectOnline(new Requests\PutImportFromProjectOnlineRequest($remoteName,
+            "https://your_company_name.sharepoint.com",
+            "262e5ead-1048-4a26-b558-c5eab06bcc5b",
+            "SOMESECRETTOKEN",
+            Model\ProjectFileFormat::PDF));
+
+        Assert::assertEquals(200, $response->getCode());
+
+        $response = $this->tasks->downloadFile($remoteName);
+
+        Assert::assertNotNull($response);
     }
 }

@@ -245,9 +245,21 @@ class CalendarsTest extends BaseTestContext
     {
         $remoteName = "testDeleteNonExistingCalendar.mpp";
         $folder = $this->uploadTestFile("Home move plan.mpp", $remoteName, '');
-        
-        $response = $this->tasks->deleteCalendar(new Requests\DeleteCalendarRequest($remoteName, 20, self::$storageName, $folder, null));
-        Assert::assertEquals(404, $response->getCode());
+        try
+        {
+            $this->tasks->deleteCalendar(new Requests\DeleteCalendarRequest($remoteName, 20, self::$storageName, $folder, null));
+            $catched = false;
+        }
+        catch(Aspose\Tasks\ApiException $e)
+        {
+            Assert::assertEquals(404, $e->getCode());
+            $errorObject = json_decode($e->getResponseBody(), true);
+            Assert::assertEquals("NonexistentCalendar", $errorObject["Error"]["Code"]);
+            Assert::assertEquals("Specified calendar does not exist", $errorObject["Error"]["Message"]);
+            $catched = true;
+        }
+
+        Assert::assertTrue($catched, "Expected ApiException is not thrown");
     }
     
     public function testDeleteCalendarByUid()
