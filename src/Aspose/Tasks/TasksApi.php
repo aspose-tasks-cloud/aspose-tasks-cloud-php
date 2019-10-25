@@ -2851,6 +2851,116 @@ class TasksApi
     }
 
     /*
+     * Create request for operation 'getProjectList'
+     *
+     * @param Requests\GetProjectListRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function GetProjectListRequest(Requests\GetProjectListRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->site_url === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $site_url when calling getAssignment');
+        }
+        // verify the required parameter 'assignment_uid' is set
+        if ($request->token === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $token when calling getAssignment');
+        }
+
+        $resourcePath = '/tasks/projectonline/projectlist';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+
+        // custom header params
+        $headerParams['x-project-online-token'] = $request->token;
+
+        // query params
+        $localName = lcfirst('SiteUrl');
+        $queryParams[$localName] = ObjectSerializer::toQueryValue($request->site_url);
+
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $req = new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+
+        return $req;
+    }
+
+    /*
      * Operation getAssignmentTimephasedData
      *
      * Get timescaled data for an assignment with the specified Uid.
@@ -17358,6 +17468,334 @@ class TasksApi
         return $req;
     }
 
+
+    /*
+    *
+    * Operation putImportFromProjectOnline
+    * Imports project from Project Online and saves it to specified file.
+    *
+    * @param Requests\PutImportFromProjectOnlineRequest $request is a request object for operation
+    *
+    * @throws \Aspose\Tasks\ApiException on non-2xx response
+    * @throws \InvalidArgumentException
+    * @return \Aspose\Tasks\Model\AsposeResponse
+    */
+    public function putImportFromProjectOnline(Requests\PutImportFromProjectOnlineRequest $request)
+    {
+        try {
+            list($response) = $this->putImportFromProjectOnlineWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+            list($response) = $this->putImportFromProjectOnlineWithHttpInfo($request);
+            return $response;
+        }
+    }
+
+    /*
+    * Operation putImportFromProjectOnlineWithHttpInfo
+    *
+    * Imports project from Project Online and saves it to specified file.
+    *
+    * @param Requests\PutImportFromProjectOnlineRequest $request is a request object for operation
+    *
+    * @throws \Aspose\Tasks\ApiException on non-2xx response
+    * @throws \InvalidArgumentException
+    * @return array of \Aspose\Tasks\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
+    */
+    public function putImportFromProjectOnlineWithHttpInfo(Requests\PutImportFromProjectOnlineRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $request = $this->PutImportFromProjectOnlineRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\AsposeResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation putImportFromProjectOnlineAsync
+     *
+     * Imports project from Project Online and saves it to specified file.
+     *
+     * @param Requests\PutImportFromProjectOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putImportFromProjectOnlineAsync(Requests\PutImportFromProjectOnlineRequest $request)
+    {
+        return $this->putImportFromProjectOnlineAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation putImportFromProjectOnlineAsyncWithHttpInfo
+     *
+     * Imports project from Project Online and saves it to specified file.
+     *
+     * @param Requests\PutImportFromProjectOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putImportFromProjectOnlineAsyncWithHttpInfo(Requests\PutImportFromProjectOnlineRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $request = $this->PutImportFromProjectOnlineRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'putImportFromProjectOnline'
+     *
+     * @param Requests\PutImportFromProjectOnlineRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function PutImportFromProjectOnlineRequest(Requests\PutImportFromProjectOnlineRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling putImportFromProjectOnline');
+        }
+        // verify the required parameter 'site_url' is set
+        if ($request->site_url === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $site_url when calling putImportFromProjectOnline');
+        }
+        // verify the required parameter 'token' is set
+        if ($request->token === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $token when calling putImportFromProjectOnline');
+        }
+        // verify the required parameter 'guid' is set
+        if ($request->guid === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $guid when calling putImportFromProjectOnline');
+        }
+
+        $resourcePath = '/tasks/{name}/importfromprojectonline';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+
+        // custom header params
+        $headerParams['x-project-online-token'] = $request->token;
+
+        // query params
+        if ($request->site_url !== null) {
+            $localName = lcfirst('SiteUrl');
+            $localValue = is_bool($request->site_url) ? ($request->site_url ? 'true' : 'false') : $request->site_url;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->format !== null) {
+            $localName = lcfirst('Format');
+            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+
+
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        $_tempBody = $this->_prepareBodyParameter($request->guid);
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+
+        return $req;
+    }
+
     /*
      * Operation putMoveTask
      *
@@ -20855,6 +21293,171 @@ class TasksApi
         
         return $req;
     }
+
+
+    /*
+     * Operation getProjectList
+     *
+     * Gets the list of published projects in the current Project Online account.
+     *
+     * @param Requests\GetProjectListRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\ProjectListResponse
+     */
+    public function getProjectList(Requests\GetProjectListRequest $request)
+    {
+        try {
+            list($response) = $this->getProjectListWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+            list($response) = $this->getProjectListWithHttpInfo($request);
+            return $response;
+        }
+    }
+
+    /*
+     * Operation getProjectListAsync
+     *
+     * Gets the list of published projects in the current Project Online account.
+     *
+     * @param Requests\GetProjectListRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProjectListAsync(Requests\GetProjectListRequest $request)
+    {
+        return $this->getProjectListAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getProjectListAsyncWithHttpInfo
+     *
+     * Gets the list of published projects in the current Project Online account.
+     *
+     * @param Requests\GetProjectListRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProjectListAsyncWithHttpInfo(Requests\GetProjectListRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\ProjectListResponse';
+        $request = $this->GetProjectListRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Operation getProjectListWithHttpInfo
+     *
+     * Gets the list of published projects in the current Project Online account.
+     *
+     * @param Requests\GetProjectListRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\ProjectListResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getProjectListWithHttpInfo(Requests\GetProjectListRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\ProjectListResponse';
+        $request = $this->GetProjectListRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\AssignmentResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
     
     /*
      * Executes response logging
@@ -20889,13 +21492,13 @@ class TasksApi
     /*
      * Executes url parsing
      */
-    private function _parseURL($url, $queryParams) 
+    private function _parseURL($url, $queryParams)
     {
         // parse the url
          $UrlToSign = trim($url, "/");
          $urlQuery = http_build_query($queryParams);
  
-         $urlPartToSign = parse_url($UrlToSign, PHP_URL_SCHEME) . '://' . $this->config->getVersion() . "/" . parse_url($UrlToSign, PHP_URL_HOST) . parse_url($UrlToSign, PHP_URL_PATH) . "?" . $urlQuery;
+         $urlPartToSign = parse_url($UrlToSign, PHP_URL_SCHEME) . '/' . $this->config->getVersion() . "/" . parse_url($UrlToSign, PHP_URL_HOST) . parse_url($UrlToSign, PHP_URL_PATH) . "?" . $urlQuery;
         
         return $urlPartToSign;
     }
@@ -20922,6 +21525,85 @@ class TasksApi
         return $tempBody;
     }
 
+    /*
+     * Operation uploadFileAsync
+     *
+     * Upload file
+     *
+     * @param  string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. (required)
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $storage_name Storage name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function uploadFileAsync($path, $file, $storage_name = null)
+    {
+        return $this->uploadFileAsyncWithHttpInfo($path, $file, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation uploadFileAsyncWithHttpInfo
+     *
+     * Upload file
+     *
+     * @param  string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. (required)
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $storage_name Storage name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function uploadFileAsyncWithHttpInfo($path, $file, $storage_name = null)
+    {
+        $returnType = '\Aspose\Tasks\Model\FilesUploadResult';
+        $request = $this->_uploadFileRequest($path, $file, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
 
     /**
      * Operation uploadFile
@@ -20939,7 +21621,7 @@ class TasksApi
     public function uploadFile($path, $file, $storage_name = null){
         try
         {
-            list($response) = $this->_postCreateWithHttpInfo($path, $file, $storage_name);
+            list($response) = $this->uploadFileWithHttpInfo($path, $file, $storage_name);
             return $response;
         }
         catch (ApiException $ex)
@@ -20947,7 +21629,7 @@ class TasksApi
             if ($ex->getCode() == 401)
             {
                 $this->_requestToken();
-                list($response) = $this->_postCreateWithHttpInfo($path, $file, $storage_name);
+                list($response) = $this->uploadFileWithHttpInfo($path, $file, $storage_name);
                 return $response;
             }
             else
@@ -20955,6 +21637,195 @@ class TasksApi
                 throw $ex;
             }
         }
+    }
+
+    /**
+     * Operation downloadFile
+     *
+     * Download file
+     *
+     * @param  string $path File path e.g. &#39;/folder/file.ext&#39; (required)
+     * @param  string $storage_name Storage name (optional)
+     * @param  string $version_id File version ID to download (optional)
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject
+     */
+    public function downloadFile($path, $storage_name = null, $version_id = null){
+        try
+        {
+            list($response) = $this->downloadFileWithHttpInfo($path, $storage_name, $version_id);
+            return $response;
+        }
+        catch (ApiException $ex)
+        {
+            if ($ex->getCode() == 401)
+            {
+                $this->_requestToken();
+                list($response) = $this->downloadFileWithHttpInfo($path, $storage_name, $version_id);
+                return $response;
+            }
+            else
+            {
+                throw $ex;
+            }
+        }
+    }
+
+    /**
+     * Operation downloadFileWithHttpInfo
+     *
+     * Download file
+     *
+     * @param  string $path File path e.g. &#39;/folder/file.ext&#39; (required)
+     * @param  string $storage_name Storage name (optional)
+     * @param  string $version_id File version ID to download (optional)
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function downloadFileWithHttpInfo($path, $storage_name = null, $version_id = null){
+        $returnType = '\SplFileObject';
+        $request = $this->_downloadFileRequest($path, $storage_name, $version_id);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SplFileObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation downloadFileAsync
+     *
+     * Download file
+     *
+     * @param  string $path File path e.g. &#39;/folder/file.ext&#39; (required)
+     * @param  string $storage_name Storage name (optional)
+     * @param  string $version_id File version ID to download (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function downloadFileAsync($path, $storage_name = null, $version_id = null)
+    {
+        return $this->downloadFileAsyncWithHttpInfo($path, $storage_name, $version_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation downloadFileAsyncWithHttpInfo
+     *
+     * Download file
+     *
+     * @param  string $path File path e.g. &#39;/folder/file.ext&#39; (required)
+     * @param  string $storage_name Storage name (optional)
+     * @param  string $version_id File version ID to download (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function downloadFileAsyncWithHttpInfo($path, $storage_name = null, $version_id = null)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->_downloadFileRequest($path, $storage_name, $version_id);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
     }
 
     /**
@@ -21077,7 +21948,7 @@ class TasksApi
     }
 
     /**
-     * Operation postCreateWithHttpInfo
+     * Operation uploadFileWithHttpInfo
      *
      * Upload file
      *
@@ -21089,7 +21960,7 @@ class TasksApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Tasks\Model\FilesUploadResult, HTTP status code, HTTP response headers (array of strings)
      */
-    private function _postCreateWithHttpInfo($path, $file, $storage_name = null){
+    public function uploadFileWithHttpInfo($path, $file, $storage_name = null){
         $returnType = '\Aspose\Tasks\Model\FilesUploadResult';
         $request = $this->_uploadFileRequest($path, $file, $storage_name);
 
@@ -21277,6 +22148,126 @@ class TasksApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Create request for operation 'downloadFile'
+     *
+     * @param  string $path File path e.g. &#39;/folder/file.ext&#39; (required)
+     * @param  string $storage_name Storage name (optional)
+     * @param  string $version_id File version ID to download (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    private function _downloadFileRequest($path, $storage_name = null, $version_id = null)
+    {
+        // verify the required parameter 'path' is set
+        if ($path === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $path when calling downloadFile'
+            );
+        }
+
+        $resourcePath = '/tasks/storage/file/{path}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+        // query params
+        if ($version_id !== null) {
+            $queryParams['versionId'] = ObjectSerializer::toQueryValue($version_id);
+        }
+
+        // path params
+        if ($path !== null) {
+            $resourcePath = str_replace(
+                '{' . 'path' . '}',
+                ObjectSerializer::toPathValue($path),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['multipart/form-data']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['multipart/form-data'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+                // array of objects
+            } elseif (is_array($httpBody)) {
+                $httpBody = "[" . ObjectSerializer::serializeCollection($httpBody, "") . "]";
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                //$httpBody = new MultipartStream($multipartContents);
+                $httpBody = $formParams[''];
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        if (!$this->config->getAccessToken())
+        {
+            $this->_requestToken();
+        }
+        if ($this->config->getAccessToken() !== null)
+        {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
