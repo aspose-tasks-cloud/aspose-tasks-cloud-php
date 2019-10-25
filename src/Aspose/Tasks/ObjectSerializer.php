@@ -271,8 +271,8 @@ class ObjectSerializer
             if (!empty($data)) {
 
 		// Parse MS date format ()
-                if(preg_match('/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/', $data)) {
-	                $dateInUtc = $data . "+0000";
+                if(preg_match('/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})*/', $data, $matches)) {
+	                $dateInUtc = $matches[0] . "+0000";
                     return \DateTime::createFromFormat(DATE_ISO8601, $dateInUtc);
                 }
 
