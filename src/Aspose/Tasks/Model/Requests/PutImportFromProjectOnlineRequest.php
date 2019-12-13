@@ -39,7 +39,7 @@ class PutImportFromProjectOnlineRequest
      * @param string $site_url The url of sharepoint site. For example, "https://your_company_name.sharepoint.com"
      * @param string $guid Guid of the project to import.
      * @param string $token Authorization token for the SharePoint.
-     * @param string $format Format of the resulting file. The import to Mpp format is not supported.
+     * @param string $format Format of the resulting file.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      */
@@ -75,7 +75,7 @@ class PutImportFromProjectOnlineRequest
     public $token;
 
     /*
-     * Format of the resulting file. The import to Mpp format is not supported.
+     * Format of the resulting file.
      */
     public $format;
 

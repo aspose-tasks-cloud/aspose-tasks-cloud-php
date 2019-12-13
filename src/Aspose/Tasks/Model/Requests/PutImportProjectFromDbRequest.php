@@ -40,7 +40,7 @@ class PutImportProjectFromDbRequest
      * @param string $connection_string The connection string to the source database.
      * @param string $project_uid Uid of the project to import.
      * @param string $filename The name of the resulting file.
-     * @param string $format Format of the resulting file. The import to Mpp format is not supported.
+     * @param string $format Format of the resulting file.
      * @param string $folder The document folder.
      * @param string $database_schema Schema of Microsoft project database (if applicable)
      */
@@ -76,7 +76,7 @@ class PutImportProjectFromDbRequest
     public $filename;
 	
     /*
-     * Format of the resulting file. The import to Mpp format is not supported.
+     * Format of the resulting file.
      */
     public $format;
 	
