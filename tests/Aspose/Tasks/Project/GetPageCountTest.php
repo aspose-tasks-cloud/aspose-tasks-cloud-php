@@ -47,7 +47,7 @@ class GetPageCountTest extends BaseTestContext
             $folder));
         
         Assert::assertEquals(200, $response->getCode());
-        Assert::assertEquals(2, $response->getPageCount());
+        Assert::assertEquals(4, $response->getPageCount());
     }
     
     public function testGetPageCountWithPresentationFormatAndDateInterval()
@@ -64,6 +64,6 @@ class GetPageCountTest extends BaseTestContext
             $folder));
         
         Assert::assertEquals(200, $response->getCode());
-        Assert::assertEquals(2, $response->getPageCount());
+        Assert::assertEquals(4, $response->getPageCount());
     }
 }

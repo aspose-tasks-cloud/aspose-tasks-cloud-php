@@ -39,17 +39,19 @@ class PostAssignmentRequest
      * @param string $name The name of the file.
      * @param int $task_uid The unique id of the task to be assigned.
      * @param int $resource_uid The unique id of the resource to be assigned.
-     * @param double $units The units for the new assignment. Default value is 1.
+     * @param double $units The units for the new assignment. If not specified, 'cost' value is used.
+     * @param double $cost The cost for a new assignment. If not specified, default value is used.
      * @param string $file_name The name of the project document to save changes to. If this parameter is omitted then the changes will be saved to the source project document.
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      */
-    public function __construct($name, $task_uid, $resource_uid, $units = null, $file_name = null, $storage = null, $folder = null)             
+    public function __construct($name, $task_uid, $resource_uid, $units = null, $cost = null, $file_name = null, $storage = null, $folder = null)
     {
         $this->name = $name;
         $this->task_uid = $task_uid;
         $this->resource_uid = $resource_uid;
         $this->units = $units;
+        $this->cost = $cost;
         $this->file_name = $file_name;
         $this->storage = $storage;
         $this->folder = $folder;
@@ -69,11 +71,16 @@ class PostAssignmentRequest
      * The unique id of the resource to be assigned.
      */
     public $resource_uid;
-	
+
     /*
      * The units for the new assignment. Default value is 1.
      */
     public $units;
+
+    /*
+     * The cost for a new assignment. If not specified, default value is used.
+     */
+    public $cost;
 	
     /*
      * The name of the project document to save changes to. If this parameter is omitted then the changes will be saved to the source project document.

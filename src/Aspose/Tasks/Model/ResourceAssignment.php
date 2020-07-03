@@ -57,6 +57,7 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'task_uid' => 'int',
+        'guid' => 'string',
         'resource_uid' => 'int',
         'uid' => 'int',
         'percent_work_complete' => 'int',
@@ -129,6 +130,7 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'task_uid' => 'int32',
+        'guid' => null,
         'resource_uid' => 'int32',
         'uid' => 'int32',
         'percent_work_complete' => 'int32',
@@ -222,6 +224,7 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $attributeMap = [
         'task_uid' => 'TaskUid',
+        'guid' => 'Guid',
         'resource_uid' => 'ResourceUid',
         'uid' => 'Uid',
         'percent_work_complete' => 'PercentWorkComplete',
@@ -294,6 +297,7 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $setters = [
         'task_uid' => 'setTaskUid',
+        'guid' => 'setGuid',
         'resource_uid' => 'setResourceUid',
         'uid' => 'setUid',
         'percent_work_complete' => 'setPercentWorkComplete',
@@ -366,6 +370,7 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $getters = [
         'task_uid' => 'getTaskUid',
+        'guid' => 'getGuid',
         'resource_uid' => 'getResourceUid',
         'uid' => 'getUid',
         'percent_work_complete' => 'getPercentWorkComplete',
@@ -492,6 +497,7 @@ class ResourceAssignment implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['task_uid'] = isset($data['task_uid']) ? $data['task_uid'] : -1;
+        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['resource_uid'] = isset($data['resource_uid']) ? $data['resource_uid'] : -1;
         $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
         $this->container['percent_work_complete'] = isset($data['percent_work_complete']) ? $data['percent_work_complete'] : null;
@@ -938,6 +944,30 @@ class ResourceAssignment implements ArrayAccess
     public function setTaskUid($task_uid)
     {
         $this->container['task_uid'] = $task_uid;
+
+        return $this;
+    }
+
+    /*
+     * Gets guid
+     *
+     * @return string
+     */
+    public function getGuid()
+    {
+        return $this->container['guid'];
+    }
+
+    /*
+     * Sets guid
+     *
+     * @param int $guid Returns or sets the global unique identifier of an assignment.
+     *
+     * @return $this
+     */
+    public function setGuid($guid)
+    {
+        $this->container['guid'] = $guid;
 
         return $this;
     }

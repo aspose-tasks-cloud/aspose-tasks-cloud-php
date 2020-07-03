@@ -37,30 +37,51 @@ class AssignmentsTest extends BaseTestContext
     {
         $remoteName = "testAddAssignment.mpp";
         $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
-        
-        $request = new Requests\PostAssignmentRequest($remoteName, 0, 1, 0.5, null, self::$storageName, $folder);
+
+        $request = new Requests\PostAssignmentRequest($remoteName, 0, 1, 0.5, null, null, self::$storageName, $folder);
         $result = $this->tasks->postAssignment($request);
-        
+
         Assert::assertEquals(200, $result->getCode());
         Assert::assertNotNull($result->getAssignmentItem());
-        
+
         $assignmentUid = $result->getAssignmentItem()->getUid();
-        
+
         $getResponse = $this->tasks->getAssignment(new Requests\GetAssignmentRequest($remoteName, $assignmentUid, self::$storageName, $folder));
         $getTaskResponse = $this->tasks->getTask(new Requests\GetTaskRequest($remoteName, 0, $storage = self::$storageName, $folder = $folder));
-        
+
         Assert::assertEquals(200, $getResponse->getCode());
         Assert::assertNotNull($getResponse->getAssignment());
         Assert::assertEquals(0, $getResponse->getAssignment()->getTaskUid());
         Assert::assertEquals(1, $getResponse->getAssignment()->getResourceUid());
-        
+
         Assert::assertEquals(200, $getTaskResponse->getCode());
         Assert::assertNotNull($getTaskResponse->getTask());
-        
+
         Assert::assertEquals($getTaskResponse->getTask()->getStart()->format(\DATE_ISO8601), $getResponse->getAssignment()->getStart()->format(\DATE_ISO8601));
         Assert::assertEquals($getTaskResponse->getTask()->getFinish()->format(\DATE_ISO8601), $getResponse->getAssignment()->getFinish()->format(\DATE_ISO8601));
         Assert::assertEquals($getTaskResponse->getTask()->getWork(), $getResponse->getAssignment()->getWork());
         Assert::assertEquals($getTaskResponse->getTask()->getCost(), $getResponse->getAssignment()->getCost());
+    }
+
+    public function testAddAssignmentWithCost()
+    {
+        $remoteName = "testAddAssignmentWithCost.mpp";
+        $folder = $this->uploadTestFile("Cost_Res.mpp", $remoteName, '');
+
+        $request = new Requests\PostAssignmentRequest($remoteName, 0, 1, null, 2, null, self::$storageName, $folder);
+        $result = $this->tasks->postAssignment($request);
+
+        Assert::assertEquals(200, $result->getCode());
+        Assert::assertNotNull($result->getAssignmentItem());
+
+        $assignmentUid = $result->getAssignmentItem()->getUid();
+
+        $getResponse = $this->tasks->getAssignment(new Requests\GetAssignmentRequest($remoteName, $assignmentUid, self::$storageName, $folder));
+
+        Assert::assertEquals(200, $getResponse->getCode());
+        Assert::assertNotNull($getResponse->getAssignment());
+        Assert::assertEquals(0, $getResponse->getAssignment()->getTaskUid());
+        Assert::assertEquals(2, $getResponse->getAssignment()->getCost());
     }
     
     public function testGetAssignment()

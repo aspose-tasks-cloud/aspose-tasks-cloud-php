@@ -76,16 +76,39 @@ class ImportProjectTest extends BaseTestContext
     }
 
 
-    public function testImportFromProjectOnline()
+    public function testImportFromProjectOnlineByTokenCredentials()
     {
         static::markTestSkipped('Ignored because real credentials for project server online is required');
 
         $remoteName = "testImportFromProjectOnline.pdf";
 
         $response = $this->tasks->putImportFromProjectOnline(new Requests\PutImportFromProjectOnlineRequest($remoteName,
-            "https://your_company_name.sharepoint.com",
+            "your_company_name.sharepoint.com",
             "262e5ead-1048-4a26-b558-c5eab06bcc5b",
             "SOMESECRETTOKEN",
+            null,
+            null,
+            Model\ProjectFileFormat::PDF));
+
+        Assert::assertEquals(200, $response->getCode());
+
+        $response = $this->tasks->downloadFile($remoteName);
+
+        Assert::assertNotNull($response);
+    }
+
+    public function testImportFromProjectOnlineByLoginAndPasswordCredentials()
+    {
+        static::markTestSkipped('Ignored because real credentials for project server online is required');
+
+        $remoteName = "testImportFromProjectOnline.pdf";
+
+        $response = $this->tasks->putImportFromProjectOnline(new Requests\PutImportFromProjectOnlineRequest($remoteName,
+            "your_company_name.sharepoint.com",
+            "262e5ead-1048-4a26-b558-c5eab06bcc5b",
+            null,
+            "SomeLogin",
+            "SomePassword",
             Model\ProjectFileFormat::PDF));
 
         Assert::assertEquals(200, $response->getCode());

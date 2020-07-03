@@ -65,8 +65,7 @@ class RecalculationTest extends BaseTestContext
         $response = $this->tasks->putRecalculateProject(new PutRecalculateProjectRequest($remoteName, Model\CalculationMode::NONE, true, null, self::$storageName, $folder));
         Assert::assertEquals(200, $response->getCode());
         $validationResult = $response->getResult();
-        Assert::assertEquals(Model\ProjectValidationState::HAS_ERRORS, $validationResult->getValidationState());
-        Assert::assertEquals("Actual start date of task is greater than actual finish date. Task name: New task Name; Actual start date: 10/20/2000 00:00:00; Actual finish date: 10/09/2000 00:00:00", $validationResult->getValidationErrorMessage());
+        Assert::assertEquals(Model\ProjectValidationState::VALID, $validationResult->getValidationState());
     }
     
     public function testRecalculateResource()

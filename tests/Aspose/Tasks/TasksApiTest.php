@@ -48,7 +48,7 @@ class TasksApiTest extends BaseTestContext
             'Project\ImportProjectTest',
             'Project\GetPageCountTest',
             'Project\TaskDocumentFormatTest',
-            'ProjectOnline\ProjectListTest',
+            'ProjectOnline\ProjectOnlineTest',
             'Recalculation\RecalculationTest',
             'Reports\ReportTest',
             'Resources\ResourcesTest',

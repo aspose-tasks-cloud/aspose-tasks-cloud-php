@@ -43,7 +43,7 @@ class PutImportFromProjectOnlineRequest
      * @param string $storage The document storage.
      * @param string $folder The document folder.
      */
-    public function __construct($name, $site_url, $guid, $token, $format = null, $storage = null, $folder = null)
+    public function __construct($name, $site_url, $guid, $token = null, $user_name = null, $x_sharepoint_password = null, $format = null, $storage = null, $folder = null)
     {
         $this->name = $name;
         $this->site_url = $site_url;
@@ -52,6 +52,8 @@ class PutImportFromProjectOnlineRequest
         $this->format = $format;
         $this->storage = $storage;
         $this->folder = $folder;
+        $this->user_name = $user_name;
+        $this->x_sharepoint_password = $x_sharepoint_password;
     }
 
     /*
@@ -88,4 +90,14 @@ class PutImportFromProjectOnlineRequest
      * The document folder.
      */
     public $folder;
+
+    /*
+     * The user name for the sharepoint site.
+     */
+    public $user_name;
+
+    /*
+     * The password for the SharePoint site.
+     */
+    public $x_sharepoint_password;
 }

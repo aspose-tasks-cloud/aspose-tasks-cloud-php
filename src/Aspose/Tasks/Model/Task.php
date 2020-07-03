@@ -167,7 +167,8 @@ class Task implements ArrayAccess
         'commitment_type' => 'int',
         'baselines' => '\Aspose\Tasks\Model\TaskBaseline[]',
         'extended_attributes' => '\Aspose\Tasks\Model\ExtendedAttribute[]',
-        'outline_codes' => '\Aspose\Tasks\Model\OutlineCode[]'
+        'outline_codes' => '\Aspose\Tasks\Model\OutlineCode[]',
+        'warning' => 'bool'
     ];
 
     /*
@@ -287,7 +288,8 @@ class Task implements ArrayAccess
         'commitment_type' => 'int32',
         'baselines' => null,
         'extended_attributes' => null,
-        'outline_codes' => null
+        'outline_codes' => null,
+        'warning' => null
     ];
 
     /*
@@ -428,7 +430,8 @@ class Task implements ArrayAccess
         'commitment_type' => 'CommitmentType',
         'baselines' => 'Baselines',
         'extended_attributes' => 'ExtendedAttributes',
-        'outline_codes' => 'OutlineCodes'
+        'outline_codes' => 'OutlineCodes',
+        'warning' => 'Warning'
     ];
 
     /*
@@ -548,7 +551,8 @@ class Task implements ArrayAccess
         'commitment_type' => 'setCommitmentType',
         'baselines' => 'setBaselines',
         'extended_attributes' => 'setExtendedAttributes',
-        'outline_codes' => 'setOutlineCodes'
+        'outline_codes' => 'setOutlineCodes',
+        'warning' => 'setWarning'
     ];
 
     /*
@@ -668,7 +672,8 @@ class Task implements ArrayAccess
         'commitment_type' => 'getCommitmentType',
         'baselines' => 'getBaselines',
         'extended_attributes' => 'getExtendedAttributes',
-        'outline_codes' => 'getOutlineCodes'
+        'outline_codes' => 'getOutlineCodes',
+        'warning' => 'getWarning'
     ];
 
     /*
@@ -843,6 +848,7 @@ class Task implements ArrayAccess
         $this->container['baselines'] = isset($data['baselines']) ? $data['baselines'] : null;
         $this->container['extended_attributes'] = isset($data['extended_attributes']) ? $data['extended_attributes'] : null;
         $this->container['outline_codes'] = isset($data['outline_codes']) ? $data['outline_codes'] : null;
+        $this->container['warning'] = isset($data['warning']) ? $data['warning'] : null;
     }
 
     /*
@@ -4094,6 +4100,30 @@ class Task implements ArrayAccess
     public function setOutlineCodes($outline_codes)
     {
         $this->container['outline_codes'] = $outline_codes;
+
+        return $this;
+    }
+
+    /*
+     * Gets warning
+     *
+     * @return bool
+     */
+    public function getWarning()
+    {
+        return $this->container['warning'];
+    }
+
+    /*
+     * Sets warning
+     *
+     * @param bool $warning Represents the flag which indicates that task has schedule discrepancies.
+     *
+     * @return $this
+     */
+    public function setWarning($warning)
+    {
+        $this->container['warning'] = $warning;
 
         return $this;
     }
