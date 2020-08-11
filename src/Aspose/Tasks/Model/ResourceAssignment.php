@@ -120,7 +120,8 @@ class ResourceAssignment implements ArrayAccess
         'budget_work' => 'string',
         'rate_scale' => '\Aspose\Tasks\Model\RateScaleType',
         'baselines' => '\Aspose\Tasks\Model\AssignmentBaseline[]',
-        'extended_attributes' => '\Aspose\Tasks\Model\ExtendedAttribute[]'
+        'extended_attributes' => '\Aspose\Tasks\Model\ExtendedAttribute[]',
+        'timephased_data' => '\Aspose\Tasks\Model\TimephasedData[]'
     ];
 
     /*
@@ -193,7 +194,8 @@ class ResourceAssignment implements ArrayAccess
         'budget_work' => 'time-span',
         'rate_scale' => null,
         'baselines' => null,
-        'extended_attributes' => null
+        'extended_attributes' => null,
+        'timephased_data' => null
     ];
 
     /*
@@ -287,7 +289,8 @@ class ResourceAssignment implements ArrayAccess
         'budget_work' => 'BudgetWork',
         'rate_scale' => 'RateScale',
         'baselines' => 'Baselines',
-        'extended_attributes' => 'ExtendedAttributes'
+        'extended_attributes' => 'ExtendedAttributes',
+        'timephased_data' => 'TimephasedData'
     ];
 
     /*
@@ -360,7 +363,8 @@ class ResourceAssignment implements ArrayAccess
         'budget_work' => 'setBudgetWork',
         'rate_scale' => 'setRateScale',
         'baselines' => 'setBaselines',
-        'extended_attributes' => 'setExtendedAttributes'
+        'extended_attributes' => 'setExtendedAttributes',
+        'timephased_data' => 'setTimephasedData'
     ];
 
     /*
@@ -433,7 +437,8 @@ class ResourceAssignment implements ArrayAccess
         'budget_work' => 'getBudgetWork',
         'rate_scale' => 'getRateScale',
         'baselines' => 'getBaselines',
-        'extended_attributes' => 'getExtendedAttributes'
+        'extended_attributes' => 'getExtendedAttributes',
+        'timephased_data' => 'getTimephasedData'
     ];
 
     /*
@@ -561,6 +566,7 @@ class ResourceAssignment implements ArrayAccess
         $this->container['rate_scale'] = isset($data['rate_scale']) ? $data['rate_scale'] : null;
         $this->container['baselines'] = isset($data['baselines']) ? $data['baselines'] : null;
         $this->container['extended_attributes'] = isset($data['extended_attributes']) ? $data['extended_attributes'] : null;
+        $this->container['timephased_data'] = isset($data['timephased_data']) ? $data['timephased_data'] : null;
     }
 
     /*
@@ -2432,6 +2438,28 @@ class ResourceAssignment implements ArrayAccess
     public function setRateScale($rate_scale)
     {
         $this->container['rate_scale'] = $rate_scale;
+
+        return $this;
+    }
+
+    /*
+     * Gets timephased_data
+     *
+     * @return \Aspose\Tasks\Model\TimephasedData[]
+     */
+    public function getTimephasedData()
+    {
+        return $this->container['timephased_data'];
+    }
+
+    /*
+     * Sets timephased_data
+     *
+     * @param \Aspose\Tasks\Model\TimephasedData[] $timephased_data Collection of TimephasedData objects.
+     */
+    public function setTimephasedData($timephased_data)
+    {
+        $this->container['timephased_data'] = $timephased_data;
 
         return $this;
     }

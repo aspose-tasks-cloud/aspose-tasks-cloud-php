@@ -36,7 +36,7 @@ class PutImportFromProjectOnlineRequest
      * Initializes a new instance of the PutImportFromProjectOnlineRequest class.
      *
      * @param string $name The name of the resulting file.
-     * @param string $site_url The url of sharepoint site. For example, "https://your_company_name.sharepoint.com"
+     * @param string $site_url The URL of PWA (Project Web Access) API of Project Online
      * @param string $guid Guid of the project to import.
      * @param string $token Authorization token for the SharePoint.
      * @param string $format Format of the resulting file.
@@ -62,7 +62,7 @@ class PutImportFromProjectOnlineRequest
     public $name;
 
     /*
-     * The url of sharepoint site. For example, "https://your_company_name.sharepoint.com"
+     * The URL of PWA (Project Web Access) API of Project Online
      */
     public $site_url;
 

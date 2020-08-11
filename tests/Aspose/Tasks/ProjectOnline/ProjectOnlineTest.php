@@ -41,7 +41,7 @@ class ProjectOnlineTest extends BaseTestContext
         static::markTestSkipped('Ignored because real credentials for project server online is required');
 
         $response = $this->tasks->getProjectList(new GetProjectListRequest
-        ('https://your_company_name.sharepoint.com', 'SOMESECRETTOKEN'));
+        ('http://project_server_instance.local/sites/pwa', 'SOMESECRETTOKEN'));
 
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotEmpty($response->getProjects());
@@ -52,7 +52,7 @@ class ProjectOnlineTest extends BaseTestContext
         static::markTestSkipped('Ignored because real credentials for project server online is required');
 
         $response = $this->tasks->getProjectList(new GetProjectListRequest
-        ('https://your_company_name.sharepoint.com', null, 'SomeLogin', 'SomePassword'));
+        ('http://project_server_instance.local/sites/pwa', null, 'SomeLogin', 'SomePassword'));
 
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotEmpty($response->getProjects());
@@ -66,7 +66,7 @@ class ProjectOnlineTest extends BaseTestContext
         $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
 
         $response = $this->tasks->createNewProject(new CreateNewProjectRequest
-        ($remoteName, 'https://your_company_name.sharepoint.com', null, $folder, self::$storageName, 'SOMESECRETTOKEN'));
+        ($remoteName, 'http://project_server_instance.local/sites/pwa', null, $folder, self::$storageName, 'SOMESECRETTOKEN'));
 
         Assert::assertEquals(200, $response->getCode());
     }
@@ -79,7 +79,7 @@ class ProjectOnlineTest extends BaseTestContext
         $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
 
         $response = $this->tasks->createNewProject(new CreateNewProjectRequest
-        ($remoteName, 'https://your_company_name.sharepoint.com', null, $folder, self::$storageName, null, 'SomeLogin', 'SomePassword'));
+        ($remoteName, 'http://project_server_instance.local/sites/pwa', null, $folder, self::$storageName, null, 'SomeLogin', 'SomePassword'));
 
         Assert::assertEquals(200, $response->getCode());
     }
@@ -92,7 +92,7 @@ class ProjectOnlineTest extends BaseTestContext
         $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
 
         $response = $this->tasks->updateProject(new UpdateProjectRequest
-        ($remoteName, 'https://your_company_name.sharepoint.com', null, $folder, self::$storageName, 'SOMESECRETTOKEN'));
+        ($remoteName, 'http://project_server_instance.local/sites/pwa', null, $folder, self::$storageName, 'SOMESECRETTOKEN'));
 
         Assert::assertEquals(200, $response->getCode());
     }
@@ -105,7 +105,7 @@ class ProjectOnlineTest extends BaseTestContext
         $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
 
         $response = $this->tasks->updateProject(new UpdateProjectRequest
-        ($remoteName, 'https://your_company_name.sharepoint.com', null, $folder, self::$storageName, null, 'SomeLogin', 'SomePassword'));
+        ($remoteName, 'http://project_server_instance.local/sites/pwa', null, $folder, self::$storageName, null, 'SomeLogin', 'SomePassword'));
 
         Assert::assertEquals(200, $response->getCode());
     }

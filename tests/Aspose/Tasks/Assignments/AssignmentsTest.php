@@ -30,6 +30,7 @@ include_once(realpath(dirname(__FILE__) . '/..') . "/BaseTestContext.php");
 use Aspose\Tasks\Model\Requests;
 use PHPUnit\Framework\Assert;
 use Aspose\Tasks\Model\CalculationMode;
+use Aspose\Tasks\Model;
 
 class AssignmentsTest extends BaseTestContext
 {
@@ -131,30 +132,86 @@ class AssignmentsTest extends BaseTestContext
             Assert::assertEquals(1, $assignment->getResourceUid());
         }
     }
-    
+
     public function testEditAssignment()
     {
         $remoteName = "testEditAssignment.mpp";
         $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
-        
+
         $response = $this->tasks->getAssignment(new Requests\GetAssignmentRequest($remoteName, 63, self::$storageName, $folder));
-        
+
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotNull($response->getAssignment());
         Assert::assertEquals(34, $response->getAssignment()->getTaskUid());
-        
+
         $assignment = $response->getAssignment();
         $assignment->setTaskUid(0);
-        
+
         $putResponse = $this->tasks->putAssignment(new Requests\PutAssignmentRequest($remoteName, 63, $assignment, CalculationMode::AUTOMATIC, true, self::$storageName, $folder, null));
-        
+
         Assert::assertEquals(200, $putResponse->getCode());
-        
+
         $response = $this->tasks->getAssignment(new Requests\GetAssignmentRequest($remoteName, 63, self::$storageName, $folder));
-        
+
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotNull($response->getAssignment());
         Assert::assertEquals(0, $response->getAssignment()->getTaskUid());
+    }
+
+    public function testEditAssignmentWithTimephasedDataAndBaselines()
+    {
+        $remoteName = "testEditAssignmentWithTimephasedDataAndBaselines.mpp";
+        $folder = $this->uploadTestFile("sample.mpp", $remoteName, '');
+
+        $response = $this->tasks->getAssignment(new Requests\GetAssignmentRequest($remoteName, 1, self::$storageName, $folder));
+
+        Assert::assertEquals(200, $response->getCode());
+        $assignment = $response->getAssignment();
+        $assignment->setCost(100);
+        $assignment->setStart(new DateTime("2001-10-10T00:00:00"));
+        $assignment->setFinish(new DateTime("2002-10-10T00:00:00"));
+        $assignmentBaseline = new Model\AssignmentBaseline();
+        $assignmentBaseline->setStart(new DateTime("2002-10-10T00:00:00"));
+        $assignment->setBaselines(array($assignmentBaseline));
+        $assignment->setActualWork("10:10:10");
+        $assignment->setActualCost(100);
+        $assignment->setActualStart(new DateTime("2001-10-10T00:00:00"));
+        $assignment->setActualFinish(new DateTime("2002-10-10T00:00:00"));
+        $assignment->setActualOvertimeWork("100:10:10");
+        $assignment->setWork("80:0:0");
+        $assignment->setUid(1);
+        $assignment->setVac(10);
+        $assignment->setWorkContour(Model\WorkContourType::CONTOURED);
+        $timephasedData = new Model\TimephasedData();
+        $timephasedData->setUid($assignment->getUid());
+        $timephasedData->setStart(new DateTime("2001-10-10T09:00:00"));
+        $timephasedData->setFinish(new DateTime("2001-10-10T14:00:00"));
+        $timephasedData->setUnit(Model\TimeUnitType::HOUR);
+        $timephasedData->setValue("4:0:0");
+        $timephasedData->setTimephasedDataType(Model\TimephasedDataType::ASSIGNMENT_REMAINING_WORK);
+        $assignment->setTimephasedData(array($timephasedData));
+
+        $putResponse = $this->tasks->putAssignment(new Requests\PutAssignmentRequest($remoteName, 1, $assignment, CalculationMode::NONE, false, self::$storageName, $folder, null));
+
+        Assert::assertEquals(200, $putResponse->getCode());
+        Assert::assertEquals($assignment->getUid(), $putResponse->getAssignment()->getUid());
+        Assert::assertEquals($assignment->getVac(), $putResponse->getAssignment()->getVac());
+        Assert::assertEquals($assignment->getCost(), $putResponse->getAssignment()->getCost());
+        Assert::assertEquals($assignment->getStart(), $putResponse->getAssignment()->getStart());
+        Assert::assertEquals($assignment->getFinish(), $putResponse->getAssignment()->getFinish());
+        Assert::assertEquals("80.00:00:00", $putResponse->getAssignment()->getWork());
+        Assert::assertEquals($assignment->getActualWork(), $putResponse->getAssignment()->getActualWork());
+        Assert::assertEquals($assignment->getActualStart(), $putResponse->getAssignment()->getActualStart());
+        Assert::assertEquals($assignment->getActualFinish(), $putResponse->getAssignment()->getActualFinish());
+        Assert::assertEquals("100.10:10:00", $putResponse->getAssignment()->getActualOvertimeWork());
+        Assert::assertEquals(1, count($putResponse->getAssignment()->getBaselines()));
+        Assert::assertEquals($assignmentBaseline->getStart(), $putResponse->getAssignment()->getBaselines()[0]->getStart());
+        Assert::assertEquals(1, count($putResponse->getAssignment()->getTimephasedData()));
+        Assert::assertEquals($timephasedData->getUid(), $putResponse->getAssignment()->getTimephasedData()[0]->getUid());
+        Assert::assertEquals("PT4H0M0S", $putResponse->getAssignment()->getTimephasedData()[0]->getValue());
+        Assert::assertEquals($timephasedData->getStart(), $putResponse->getAssignment()->getTimephasedData()[0]->getStart());
+        Assert::assertEquals($timephasedData->getFinish(), $putResponse->getAssignment()->getTimephasedData()[0]->getFinish());
+        Assert::assertEquals($timephasedData->getTimephasedDataType(), $putResponse->getAssignment()->getTimephasedData()[0]->getTimephasedDataType());
     }
     
   

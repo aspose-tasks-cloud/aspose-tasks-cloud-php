@@ -37,7 +37,7 @@ class GetProjectListRequest
     /*
      * Initializes a new instance of the GetProjectListRequest class.
      *
-     * @param string $site_url The url of sharepoint site.
+     * @param string $site_url The URL of PWA (Project Web Access) API of Project Online.
      * @param string $token Authorization token for the SharePoint.
      * @param string $user_name  The user name for the sharepoint site
      * @param string $x_sharepoint_password The password for the SharePoint site.
@@ -51,7 +51,7 @@ class GetProjectListRequest
     }
 
     /*
-     * The url of sharepoint site. For example, "https://your_company_name.sharepoint.com".
+     * The URL of PWA (Project Web Access) API of Project Online.
      */
     public $site_url;
 

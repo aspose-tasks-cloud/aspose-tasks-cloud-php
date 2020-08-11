@@ -37,7 +37,7 @@ class UpdateProjectRequest
      * Initializes a new instance of the UpdateProjectRequest class.
      *
      * @param string $name The file name
-     * @param string $site_url  The url of sharepoint site. For example, "https://your_company_name.sharepoint.com"
+     * @param string $site_url  The URL of PWA (Project Web Access) API of Project Online
      * @param string $user_name  The user name for the sharepoint site
      * @param \Aspose\Tasks\Model\ProjectServerSaveOptionsDTO $save_options Dispensable save options for Project Server\Project Online
      * @param string $folder The document storage
@@ -73,7 +73,7 @@ class UpdateProjectRequest
     public $folder;
 
     /*
-     * The url of sharepoint site. For example, "https://your_company_name.sharepoint.com"
+     * The URL of PWA (Project Web Access) API of Project Online
      */
     public $site_url;
 

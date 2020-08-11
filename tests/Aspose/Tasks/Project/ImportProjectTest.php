@@ -83,7 +83,7 @@ class ImportProjectTest extends BaseTestContext
         $remoteName = "testImportFromProjectOnline.pdf";
 
         $response = $this->tasks->putImportFromProjectOnline(new Requests\PutImportFromProjectOnlineRequest($remoteName,
-            "your_company_name.sharepoint.com",
+            "http://project_server_instance.local/sites/pwa",
             "262e5ead-1048-4a26-b558-c5eab06bcc5b",
             "SOMESECRETTOKEN",
             null,
@@ -104,7 +104,7 @@ class ImportProjectTest extends BaseTestContext
         $remoteName = "testImportFromProjectOnline.pdf";
 
         $response = $this->tasks->putImportFromProjectOnline(new Requests\PutImportFromProjectOnlineRequest($remoteName,
-            "your_company_name.sharepoint.com",
+            "http://project_server_instance.local/sites/pwa",
             "262e5ead-1048-4a26-b558-c5eab06bcc5b",
             null,
             "SomeLogin",
