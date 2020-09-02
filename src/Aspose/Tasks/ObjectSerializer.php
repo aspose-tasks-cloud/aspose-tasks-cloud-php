@@ -110,19 +110,6 @@ class ObjectSerializer
 
     /*
      * Take value and turn it into a string suitable for inclusion in
-     * the path, by url-encoding.
-     *
-     * @param string $value a string which will be part of the path
-     *
-     * @return string the serialized object
-     */
-    public static function toPathValue($value)
-    {
-        return rawurlencode(self::toString($value));
-    }
-
-    /*
-     * Take value and turn it into a string suitable for inclusion in
      * the query, by imploding comma-separated if it's an object.
      * If it's a string, pass through unchanged. It will be url-encoded
      * later.

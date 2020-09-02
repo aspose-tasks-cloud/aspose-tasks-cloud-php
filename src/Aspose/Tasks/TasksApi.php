@@ -274,12 +274,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->assignment_uid !== null) {
             $localName = lcfirst('AssignmentUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->assignment_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->assignment_uid, $resourcePath);
         }
 
         // query params
@@ -287,7 +287,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -297,7 +297,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -307,7 +307,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -584,12 +584,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->calendar_uid !== null) {
             $localName = lcfirst('CalendarUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->calendar_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->calendar_uid, $resourcePath);
         }
 
         // query params
@@ -597,7 +597,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -607,7 +607,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -617,7 +617,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -898,17 +898,17 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->calendar_uid !== null) {
             $localName = lcfirst('CalendarUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->calendar_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->calendar_uid, $resourcePath);
         }
         // path params
         if ($request->index !== null) {
             $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->index, $resourcePath);
         }
 
         // query params
@@ -916,7 +916,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -926,7 +926,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -936,7 +936,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -1213,12 +1213,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->index !== null) {
             $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->index, $resourcePath);
         }
 
         // query params
@@ -1226,7 +1226,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -1236,7 +1236,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -1513,12 +1513,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->index !== null) {
             $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->index, $resourcePath);
         }
 
         // query params
@@ -1526,7 +1526,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -1536,7 +1536,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -1813,12 +1813,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->resource_uid !== null) {
             $localName = lcfirst('ResourceUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->resource_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->resource_uid, $resourcePath);
         }
 
         // query params
@@ -1826,7 +1826,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -1836,7 +1836,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -1846,7 +1846,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2123,12 +2123,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -2136,7 +2136,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2146,7 +2146,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2156,7 +2156,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2433,12 +2433,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->index !== null) {
             $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->index, $resourcePath);
         }
 
         // query params
@@ -2446,7 +2446,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2456,7 +2456,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2466,7 +2466,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2743,12 +2743,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->assignment_uid !== null) {
             $localName = lcfirst('AssignmentUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->assignment_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->assignment_uid, $resourcePath);
         }
 
         // query params
@@ -2756,7 +2756,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2766,7 +2766,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -2888,7 +2888,7 @@ class TasksApi
             $localName = lcfirst('userName');
             $localValue = is_bool($request->user_name) ? ($request->user_name ? 'true' : 'false') : $request->user_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3017,7 +3017,7 @@ class TasksApi
             $localName = lcfirst('userName');
             $localValue = is_bool($request->user_name) ? ($request->user_name ? 'true' : 'false') : $request->user_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3027,7 +3027,7 @@ class TasksApi
         $localName = lcfirst('SiteUrl');
         $localValue = is_bool($request->site_url) ? ($request->site_url ? 'true' : 'false') : $request->site_url;
         if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
         } else {
             $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
         }
@@ -3037,7 +3037,7 @@ class TasksApi
             $localName = lcfirst('Name');
             $localValue = is_bool($request->name) ? ($request->name ? 'true' : 'false') : $request->name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3048,7 +3048,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3059,7 +3059,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3187,7 +3187,7 @@ class TasksApi
             $localName = lcfirst('userName');
             $localValue = is_bool($request->user_name) ? ($request->user_name ? 'true' : 'false') : $request->user_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3197,7 +3197,7 @@ class TasksApi
         $localName = lcfirst('SiteUrl');
         $localValue = is_bool($request->site_url) ? ($request->site_url ? 'true' : 'false') : $request->site_url;
         if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
         } else {
             $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
         }
@@ -3207,7 +3207,7 @@ class TasksApi
             $localName = lcfirst('Name');
             $localValue = is_bool($request->name) ? ($request->name ? 'true' : 'false') : $request->name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3218,7 +3218,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3229,7 +3229,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3508,12 +3508,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->assignment_uid !== null) {
             $localName = lcfirst('AssignmentUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->assignment_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->assignment_uid, $resourcePath);
         }
 
         // query params
@@ -3521,7 +3521,7 @@ class TasksApi
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3531,7 +3531,7 @@ class TasksApi
             $localName = lcfirst('StartDate');
             $localValue = is_bool($request->start_date) ? ($request->start_date ? 'true' : 'false') : $request->start_date;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3541,7 +3541,7 @@ class TasksApi
             $localName = lcfirst('EndDate');
             $localValue = is_bool($request->end_date) ? ($request->end_date ? 'true' : 'false') : $request->end_date;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3551,7 +3551,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3824,7 +3824,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -3832,7 +3832,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -3842,7 +3842,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -4119,12 +4119,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->calendar_uid !== null) {
             $localName = lcfirst('CalendarUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->calendar_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->calendar_uid, $resourcePath);
         }
 
         // query params
@@ -4132,7 +4132,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -4142,7 +4142,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -4419,12 +4419,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->calendar_uid !== null) {
             $localName = lcfirst('CalendarUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->calendar_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->calendar_uid, $resourcePath);
         }
 
         // query params
@@ -4432,7 +4432,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -4442,7 +4442,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -4719,12 +4719,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->calendar_uid !== null) {
             $localName = lcfirst('CalendarUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->calendar_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->calendar_uid, $resourcePath);
         }
 
         // query params
@@ -4732,7 +4732,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -4742,7 +4742,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -5015,7 +5015,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -5023,7 +5023,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -5033,7 +5033,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -5306,7 +5306,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -5314,7 +5314,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -5324,7 +5324,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -5597,7 +5597,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -5605,7 +5605,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -5615,7 +5615,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -5892,12 +5892,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->property_name !== null) {
             $localName = lcfirst('PropertyName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->property_name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->property_name, $resourcePath);
         }
 
         // query params
@@ -5905,7 +5905,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -5915,7 +5915,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -6192,12 +6192,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->index !== null) {
             $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->index, $resourcePath);
         }
 
         // query params
@@ -6205,7 +6205,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -6215,7 +6215,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -6488,7 +6488,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -6496,7 +6496,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -6506,7 +6506,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -6783,12 +6783,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->index !== null) {
             $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->index, $resourcePath);
         }
 
         // query params
@@ -6796,7 +6796,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -6806,7 +6806,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7079,7 +7079,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -7087,7 +7087,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7097,7 +7097,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7370,7 +7370,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -7378,7 +7378,7 @@ class TasksApi
             $localName = lcfirst('PageSize');
             $localValue = is_bool($request->page_size) ? ($request->page_size ? 'true' : 'false') : $request->page_size;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7388,7 +7388,7 @@ class TasksApi
             $localName = lcfirst('PresentationFormat');
             $localValue = is_bool($request->presentation_format) ? ($request->presentation_format ? 'true' : 'false') : $request->presentation_format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7398,7 +7398,7 @@ class TasksApi
             $localName = lcfirst('Timescale');
             $localValue = is_bool($request->timescale) ? ($request->timescale ? 'true' : 'false') : $request->timescale;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7408,7 +7408,7 @@ class TasksApi
             $localName = lcfirst('StartDate');
             $localValue = is_bool($request->start_date) ? ($request->start_date ? 'true' : 'false') : $request->start_date;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7418,7 +7418,7 @@ class TasksApi
             $localName = lcfirst('EndDate');
             $localValue = is_bool($request->end_date) ? ($request->end_date ? 'true' : 'false') : $request->end_date;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7428,7 +7428,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7701,7 +7701,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -7709,7 +7709,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7719,7 +7719,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -7996,7 +7996,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -8004,7 +8004,7 @@ class TasksApi
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8014,7 +8014,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8024,7 +8024,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8301,12 +8301,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->resource_uid !== null) {
             $localName = lcfirst('ResourceUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->resource_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->resource_uid, $resourcePath);
         }
 
         // query params
@@ -8314,7 +8314,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8324,7 +8324,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8601,12 +8601,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->resource_uid !== null) {
             $localName = lcfirst('ResourceUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->resource_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->resource_uid, $resourcePath);
         }
 
         // query params
@@ -8614,7 +8614,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8624,7 +8624,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8901,12 +8901,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->resource_uid !== null) {
             $localName = lcfirst('ResourceUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->resource_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->resource_uid, $resourcePath);
         }
 
         // query params
@@ -8914,7 +8914,7 @@ class TasksApi
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8924,7 +8924,7 @@ class TasksApi
             $localName = lcfirst('StartDate');
             $localValue = is_bool($request->start_date) ? ($request->start_date ? 'true' : 'false') : $request->start_date;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8934,7 +8934,7 @@ class TasksApi
             $localName = lcfirst('EndDate');
             $localValue = is_bool($request->end_date) ? ($request->end_date ? 'true' : 'false') : $request->end_date;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -8944,7 +8944,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9217,7 +9217,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -9225,7 +9225,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9235,7 +9235,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9512,7 +9512,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -9520,7 +9520,7 @@ class TasksApi
             $localName = lcfirst('TaskUid');
             $localValue = is_bool($request->task_uid) ? ($request->task_uid ? 'true' : 'false') : $request->task_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9530,7 +9530,7 @@ class TasksApi
             $localName = lcfirst('DistributionType');
             $localValue = is_bool($request->distribution_type) ? ($request->distribution_type ? 'true' : 'false') : $request->distribution_type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9540,7 +9540,7 @@ class TasksApi
             $localName = lcfirst('Optimistic');
             $localValue = is_bool($request->optimistic) ? ($request->optimistic ? 'true' : 'false') : $request->optimistic;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9550,7 +9550,7 @@ class TasksApi
             $localName = lcfirst('Pessimistic');
             $localValue = is_bool($request->pessimistic) ? ($request->pessimistic ? 'true' : 'false') : $request->pessimistic;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9560,7 +9560,7 @@ class TasksApi
             $localName = lcfirst('ConfidenceLevel');
             $localValue = is_bool($request->confidence_level) ? ($request->confidence_level ? 'true' : 'false') : $request->confidence_level;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9570,7 +9570,7 @@ class TasksApi
             $localName = lcfirst('Iterations');
             $localValue = is_bool($request->iterations) ? ($request->iterations ? 'true' : 'false') : $request->iterations;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9580,7 +9580,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9590,7 +9590,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9600,7 +9600,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9877,12 +9877,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -9890,7 +9890,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -9900,7 +9900,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -10177,12 +10177,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -10190,7 +10190,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -10200,7 +10200,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -10473,7 +10473,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -10481,7 +10481,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -10491,7 +10491,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -10768,7 +10768,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -10776,7 +10776,7 @@ class TasksApi
             $localName = lcfirst('Format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -10786,7 +10786,7 @@ class TasksApi
             $localName = lcfirst('ReturnAsZipArchive');
             $localValue = is_bool($request->return_as_zip_archive) ? ($request->return_as_zip_archive ? 'true' : 'false') : $request->return_as_zip_archive;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -10796,7 +10796,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -10806,7 +10806,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11079,7 +11079,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -11087,7 +11087,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11097,7 +11097,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11374,12 +11374,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -11387,7 +11387,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11397,7 +11397,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11674,12 +11674,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -11687,7 +11687,7 @@ class TasksApi
             $localName = lcfirst('Type');
             $localValue = is_bool($request->type) ? ($request->type ? 'true' : 'false') : $request->type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11697,7 +11697,7 @@ class TasksApi
             $localName = lcfirst('StartDate');
             $localValue = is_bool($request->start_date) ? ($request->start_date ? 'true' : 'false') : $request->start_date;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11707,7 +11707,7 @@ class TasksApi
             $localName = lcfirst('EndDate');
             $localValue = is_bool($request->end_date) ? ($request->end_date ? 'true' : 'false') : $request->end_date;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11717,7 +11717,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -11990,7 +11990,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -11998,7 +11998,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12008,7 +12008,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12281,7 +12281,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -12289,7 +12289,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12562,7 +12562,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -12570,7 +12570,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12580,7 +12580,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12861,7 +12861,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -12869,7 +12869,7 @@ class TasksApi
             $localName = lcfirst('TaskUid');
             $localValue = is_bool($request->task_uid) ? ($request->task_uid ? 'true' : 'false') : $request->task_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12879,7 +12879,7 @@ class TasksApi
             $localName = lcfirst('ResourceUid');
             $localValue = is_bool($request->resource_uid) ? ($request->resource_uid ? 'true' : 'false') : $request->resource_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12889,7 +12889,7 @@ class TasksApi
             $localName = lcfirst('Units');
             $localValue = is_bool($request->units) ? ($request->units ? 'true' : 'false') : $request->units;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12899,7 +12899,7 @@ class TasksApi
             $localName = lcfirst('cost');
             $localValue = is_bool($request->cost) ? ($request->cost ? 'true' : 'false') : $request->cost;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12909,7 +12909,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12919,7 +12919,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -12929,7 +12929,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13206,7 +13206,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -13214,7 +13214,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13224,7 +13224,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13234,7 +13234,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13516,12 +13516,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->calendar_uid !== null) {
             $localName = lcfirst('CalendarUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->calendar_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->calendar_uid, $resourcePath);
         }
 
         // query params
@@ -13529,7 +13529,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13539,7 +13539,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13549,7 +13549,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13831,12 +13831,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->property_name !== null) {
             $localName = lcfirst('PropertyName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->property_name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->property_name, $resourcePath);
         }
 
         // query params
@@ -13844,7 +13844,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13854,7 +13854,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -13864,7 +13864,7 @@ class TasksApi
             $localName = lcfirst('Filename');
             $localValue = is_bool($request->filename) ? ($request->filename ? 'true' : 'false') : $request->filename;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14138,7 +14138,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -14146,7 +14146,7 @@ class TasksApi
             $localName = lcfirst('ResourceName');
             $localValue = is_bool($request->resource_name) ? ($request->resource_name ? 'true' : 'false') : $request->resource_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14156,7 +14156,7 @@ class TasksApi
             $localName = lcfirst('BeforeResourceId');
             $localValue = is_bool($request->before_resource_id) ? ($request->before_resource_id ? 'true' : 'false') : $request->before_resource_id;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14166,7 +14166,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14176,7 +14176,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14186,7 +14186,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14459,7 +14459,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -14467,7 +14467,7 @@ class TasksApi
             $localName = lcfirst('TaskName');
             $localValue = is_bool($request->task_name) ? ($request->task_name ? 'true' : 'false') : $request->task_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14477,7 +14477,7 @@ class TasksApi
             $localName = lcfirst('BeforeTaskId');
             $localValue = is_bool($request->before_task_id) ? ($request->before_task_id ? 'true' : 'false') : $request->before_task_id;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14487,7 +14487,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14497,7 +14497,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14507,7 +14507,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14788,7 +14788,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -14796,7 +14796,7 @@ class TasksApi
             $localName = lcfirst('Format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14806,7 +14806,7 @@ class TasksApi
             $localName = lcfirst('ReturnAsZipArchive');
             $localValue = is_bool($request->return_as_zip_archive) ? ($request->return_as_zip_archive ? 'true' : 'false') : $request->return_as_zip_archive;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14816,7 +14816,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -14826,7 +14826,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15104,7 +15104,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -15112,7 +15112,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15122,7 +15122,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15132,7 +15132,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15422,7 +15422,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -15430,7 +15430,7 @@ class TasksApi
             $localName = lcfirst('ParentTaskUid');
             $localValue = is_bool($request->parent_task_uid) ? ($request->parent_task_uid ? 'true' : 'false') : $request->parent_task_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15440,7 +15440,7 @@ class TasksApi
             $localName = lcfirst('TaskName');
             $localValue = is_bool($request->task_name) ? ($request->task_name ? 'true' : 'false') : $request->task_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15450,7 +15450,7 @@ class TasksApi
             $localName = lcfirst('CalendarName');
             $localValue = is_bool($request->calendar_name) ? ($request->calendar_name ? 'true' : 'false') : $request->calendar_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15460,7 +15460,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15470,7 +15470,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15480,7 +15480,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15762,12 +15762,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->assignment_uid !== null) {
             $localName = lcfirst('AssignmentUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->assignment_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->assignment_uid, $resourcePath);
         }
 
         // query params
@@ -15775,7 +15775,7 @@ class TasksApi
             $localName = lcfirst('Mode');
             $localValue = is_bool($request->mode) ? ($request->mode ? 'true' : 'false') : $request->mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15785,7 +15785,7 @@ class TasksApi
             $localName = lcfirst('Recalculate');
             $localValue = is_bool($request->recalculate) ? ($request->recalculate ? 'true' : 'false') : $request->recalculate;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15795,7 +15795,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15805,7 +15805,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -15815,7 +15815,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16097,7 +16097,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -16105,7 +16105,7 @@ class TasksApi
             $localName = lcfirst('CalendarUid');
             $localValue = is_bool($request->calendar_uid) ? ($request->calendar_uid ? 'true' : 'false') : $request->calendar_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16115,7 +16115,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16125,7 +16125,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16135,7 +16135,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16421,17 +16421,17 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->calendar_uid !== null) {
             $localName = lcfirst('CalendarUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->calendar_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->calendar_uid, $resourcePath);
         }
         // path params
         if ($request->index !== null) {
             $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->index, $resourcePath);
         }
 
         // query params
@@ -16439,7 +16439,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16449,7 +16449,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16459,7 +16459,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16741,12 +16741,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->property_name !== null) {
             $localName = lcfirst('PropertyName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->property_name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->property_name, $resourcePath);
         }
 
         // query params
@@ -16754,7 +16754,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16764,7 +16764,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -16774,7 +16774,7 @@ class TasksApi
             $localName = lcfirst('Filename');
             $localValue = is_bool($request->filename) ? ($request->filename ? 'true' : 'false') : $request->filename;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17052,7 +17052,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -17060,7 +17060,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17070,7 +17070,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17080,7 +17080,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17369,7 +17369,7 @@ class TasksApi
             $localName = lcfirst('DatabaseType');
             $localValue = is_bool($request->database_type) ? ($request->database_type ? 'true' : 'false') : $request->database_type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17379,7 +17379,7 @@ class TasksApi
             $localName = lcfirst('ProjectUid');
             $localValue = is_bool($request->project_uid) ? ($request->project_uid ? 'true' : 'false') : $request->project_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17389,7 +17389,7 @@ class TasksApi
             $localName = lcfirst('Filename');
             $localValue = is_bool($request->filename) ? ($request->filename ? 'true' : 'false') : $request->filename;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17399,7 +17399,7 @@ class TasksApi
             $localName = lcfirst('Format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17409,7 +17409,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17419,7 +17419,7 @@ class TasksApi
             $localName = lcfirst('DatabaseSchema');
             $localValue = is_bool($request->database_schema) ? ($request->database_schema ? 'true' : 'false') : $request->database_schema;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17701,7 +17701,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -17709,7 +17709,7 @@ class TasksApi
             $localName = lcfirst('ProjectUid');
             $localValue = is_bool($request->project_uid) ? ($request->project_uid ? 'true' : 'false') : $request->project_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17719,7 +17719,7 @@ class TasksApi
             $localName = lcfirst('Filename');
             $localValue = is_bool($request->filename) ? ($request->filename ? 'true' : 'false') : $request->filename;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17729,7 +17729,7 @@ class TasksApi
             $localName = lcfirst('FileType');
             $localValue = is_bool($request->file_type) ? ($request->file_type ? 'true' : 'false') : $request->file_type;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17739,7 +17739,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -17749,7 +17749,7 @@ class TasksApi
             $localName = lcfirst('OutputFileFormat');
             $localValue = is_bool($request->output_file_format) ? ($request->output_file_format ? 'true' : 'false') : $request->output_file_format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18031,7 +18031,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // custom header params
@@ -18050,7 +18050,7 @@ class TasksApi
             $localName = lcfirst('userName');
             $localValue = is_bool($request->user_name) ? ($request->user_name ? 'true' : 'false') : $request->user_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18060,7 +18060,7 @@ class TasksApi
         $localName = lcfirst('SiteUrl');
         $localValue = is_bool($request->site_url) ? ($request->site_url ? 'true' : 'false') : $request->site_url;
         if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
         } else {
             $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
         }
@@ -18070,7 +18070,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18080,7 +18080,7 @@ class TasksApi
             $localName = lcfirst('Format');
             $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18090,7 +18090,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18372,12 +18372,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -18385,7 +18385,7 @@ class TasksApi
             $localName = lcfirst('ParentTaskUid');
             $localValue = is_bool($request->parent_task_uid) ? ($request->parent_task_uid ? 'true' : 'false') : $request->parent_task_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18395,7 +18395,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18405,7 +18405,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18415,7 +18415,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18696,12 +18696,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -18709,7 +18709,7 @@ class TasksApi
             $localName = lcfirst('BeforeTaskUid');
             $localValue = is_bool($request->before_task_uid) ? ($request->before_task_uid ? 'true' : 'false') : $request->before_task_uid;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18719,7 +18719,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18729,7 +18729,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -18739,7 +18739,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19012,7 +19012,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -19020,7 +19020,7 @@ class TasksApi
             $localName = lcfirst('Mode');
             $localValue = is_bool($request->mode) ? ($request->mode ? 'true' : 'false') : $request->mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19030,7 +19030,7 @@ class TasksApi
             $localName = lcfirst('Validate');
             $localValue = is_bool($request->validate) ? ($request->validate ? 'true' : 'false') : $request->validate;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19040,7 +19040,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19050,7 +19050,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19060,7 +19060,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19333,7 +19333,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -19341,7 +19341,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19351,7 +19351,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19361,7 +19361,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19638,7 +19638,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -19646,7 +19646,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19656,7 +19656,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19666,7 +19666,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19944,7 +19944,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -19952,7 +19952,7 @@ class TasksApi
             $localName = lcfirst('SetZeroOrHundredPercentCompleteOnly');
             $localValue = is_bool($request->set_zero_or_hundred_percent_complete_only) ? ($request->set_zero_or_hundred_percent_complete_only ? 'true' : 'false') : $request->set_zero_or_hundred_percent_complete_only;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19962,7 +19962,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19972,7 +19972,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -19982,7 +19982,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20260,7 +20260,7 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
 
         // query params
@@ -20268,7 +20268,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20278,7 +20278,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20288,7 +20288,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20570,12 +20570,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->resource_uid !== null) {
             $localName = lcfirst('ResourceUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->resource_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->resource_uid, $resourcePath);
         }
 
         // query params
@@ -20583,7 +20583,7 @@ class TasksApi
             $localName = lcfirst('Mode');
             $localValue = is_bool($request->mode) ? ($request->mode ? 'true' : 'false') : $request->mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20593,7 +20593,7 @@ class TasksApi
             $localName = lcfirst('Recalculate');
             $localValue = is_bool($request->recalculate) ? ($request->recalculate ? 'true' : 'false') : $request->recalculate;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20603,7 +20603,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20613,7 +20613,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20623,7 +20623,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20905,12 +20905,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -20918,7 +20918,7 @@ class TasksApi
             $localName = lcfirst('Mode');
             $localValue = is_bool($request->mode) ? ($request->mode ? 'true' : 'false') : $request->mode;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20928,7 +20928,7 @@ class TasksApi
             $localName = lcfirst('Recalculate');
             $localValue = is_bool($request->recalculate) ? ($request->recalculate ? 'true' : 'false') : $request->recalculate;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20938,7 +20938,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20948,7 +20948,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -20958,7 +20958,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -21240,12 +21240,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->index !== null) {
             $localName = lcfirst('Index');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->index, $resourcePath);
         }
 
         // query params
@@ -21253,7 +21253,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -21263,7 +21263,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -21273,7 +21273,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -21555,12 +21555,12 @@ class TasksApi
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
         }
         // path params
         if ($request->task_uid !== null) {
             $localName = lcfirst('TaskUid');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->task_uid), $resourcePath);
+            $resourcePath = str_replace('{' . $localName . '}', $request->task_uid, $resourcePath);
         }
 
         // query params
@@ -21568,7 +21568,7 @@ class TasksApi
             $localName = lcfirst('FileName');
             $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -21578,7 +21578,7 @@ class TasksApi
             $localName = lcfirst('Storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -21588,7 +21588,7 @@ class TasksApi
             $localName = lcfirst('Folder');
             $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
             } else {
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
@@ -22483,7 +22483,7 @@ class TasksApi
         if ($path !== null) {
             $resourcePath = str_replace(
                 '{' . 'path' . '}',
-                ObjectSerializer::toPathValue($path),
+                $path,
                 $resourcePath
             );
         }
@@ -22685,7 +22685,7 @@ class TasksApi
         if ($path !== null) {
             $resourcePath = str_replace(
                 '{' . 'path' . '}',
-                ObjectSerializer::toPathValue($path),
+                $path,
                 $resourcePath
             );
         }
@@ -22814,7 +22814,7 @@ class TasksApi
         if ($path !== null) {
             $resourcePath = str_replace(
                 '{' . 'path' . '}',
-                ObjectSerializer::toPathValue($path),
+                $path,
                 $resourcePath
             );
         }
