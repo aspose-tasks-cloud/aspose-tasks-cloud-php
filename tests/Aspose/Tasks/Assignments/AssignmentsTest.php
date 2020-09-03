@@ -89,7 +89,6 @@ class AssignmentsTest extends BaseTestContext
     {
         $remoteName = "testGetAssignment.mpp";
         $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
-        
         $request = new Requests\GetAssignmentRequest($remoteName, 63, self::$storageName, $folder);
         $result = $this->tasks->getAssignment($request);
         

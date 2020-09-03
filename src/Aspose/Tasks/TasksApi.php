@@ -22794,7 +22794,7 @@ class TasksApi
             );
         }
 
-        $resourcePath = '/tasks/storage/file/{path}';
+        $resourcePath = '/v3.0/tasks/storage/file/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

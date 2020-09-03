@@ -52,6 +52,7 @@ class TasksApiTest extends BaseTestContext
             'Recalculation\RecalculationTest',
             'Reports\ReportTest',
             'Resources\ResourcesTest',
+            'Storage\FilesTest',
             'TaskLinks\TaskLinksTest',
             'Tasks\TasksTest',
             'Tasks\TasksExtendedAttributesTest',
