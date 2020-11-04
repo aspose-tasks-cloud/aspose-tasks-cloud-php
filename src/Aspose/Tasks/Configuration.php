@@ -96,6 +96,14 @@ class Configuration
      */
     protected $host = 'https://api.aspose.cloud';
 
+
+    /*
+     * The auth url
+     *
+     * @var string
+     */
+    protected $authUrl = '';
+
     /*
      * The version
      *
@@ -135,7 +143,7 @@ class Configuration
      * Version of Aspose.Tasks Cloud API
      *
      */
-    protected $clientVersion = '20.8';
+    protected $clientVersion = '20.11';
 
     /*
      * Constructor
@@ -356,6 +364,19 @@ class Configuration
     }
 
     /*
+     * Sets the auth url
+     *
+     * @param string $authUrl auth url
+     *
+     * @return $this
+     */
+    public function setAuthUrl($authUrl)
+    {
+        $this->authUrl = $authUrl;
+        return $this;
+    }
+
+    /*
      * Gets the host
      *
      * @return string Host
@@ -363,6 +384,16 @@ class Configuration
     public function getHost()
     {
         return $this->host;
+    }
+
+    /*
+     * Gets the auth url
+     *
+     * @return string url
+     */
+    public function getAuthUrl()
+    {
+        return $this->authUrl;
     }
 
     /*

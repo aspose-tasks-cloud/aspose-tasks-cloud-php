@@ -195,7 +195,7 @@ class AssignmentsTest extends BaseTestContext
         Assert::assertEquals(200, $putResponse->getCode());
         Assert::assertEquals($assignment->getUid(), $putResponse->getAssignment()->getUid());
         Assert::assertEquals($assignment->getVac(), $putResponse->getAssignment()->getVac());
-        Assert::assertEquals($assignment->getCost(), $putResponse->getAssignment()->getCost());
+        Assert::assertNotEquals($assignment->getCost(), $putResponse->getAssignment()->getCost(), "Calculated fields must be overwritten");
         Assert::assertEquals($assignment->getStart(), $putResponse->getAssignment()->getStart());
         Assert::assertEquals($assignment->getFinish(), $putResponse->getAssignment()->getFinish());
         Assert::assertEquals("80.00:00:00", $putResponse->getAssignment()->getWork());

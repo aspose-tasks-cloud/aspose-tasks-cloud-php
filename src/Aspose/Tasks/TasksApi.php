@@ -14284,13 +14284,13 @@ class TasksApi
     public function postTask(Requests\PostTaskRequest $request)
     {
         try {
-             list($response) = $this->postTaskWithHttpInfo($request);
-             return $response;
+            list($response) = $this->postTaskWithHttpInfo($request);
+            return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->postTaskWithHttpInfo($request);
-             return $response;
-        } 
+            list($response) = $this->postTaskWithHttpInfo($request);
+            return $response;
+        }
     }
 
     /*
@@ -14324,7 +14324,7 @@ class TasksApi
                     $this->_requestToken();
                     throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                 }
-          
+
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
@@ -14337,7 +14337,7 @@ class TasksApi
                     $content = json_decode($content);
                 }
             }
-            
+
             if ($this->config->getDebug()) {
                 $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
             }
@@ -14350,10 +14350,10 @@ class TasksApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-            case 200:
+                case 200:
                     $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\TaskItemResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
-                break;
+                    break;
             }
             throw $e;
         }
@@ -14369,7 +14369,7 @@ class TasksApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTaskAsync(Requests\PostTaskRequest $request) 
+    public function postTaskAsync(Requests\PostTaskRequest $request)
     {
         return $this->postTaskAsyncWithHttpInfo($request)
             ->then(
@@ -14389,7 +14389,7 @@ class TasksApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTaskAsyncWithHttpInfo(Requests\PostTaskRequest $request) 
+    public function postTaskAsyncWithHttpInfo(Requests\PostTaskRequest $request)
     {
         $returnType = '\Aspose\Tasks\Model\TaskItemResponse';
         $request = $this->PostTaskRequest($request);
@@ -14407,7 +14407,7 @@ class TasksApi
                             $content = json_decode($content);
                         }
                     }
-                    
+
                     if ($this->config->getDebug()) {
                         $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
                     }
@@ -14418,15 +14418,15 @@ class TasksApi
                         $response->getHeaders()
                     ];
                 },
-                function ($exception) {        
+                function ($exception) {
                     $response = $exception->getResponse();
                     $statusCode = $response->getStatusCode();
-          
+
                     if ($exception instanceof RepeatRequestException) {
                         $this->_requestToken();
                         throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
                     }
-          
+
                     throw new ApiException(
                         sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
                     );
@@ -14455,7 +14455,7 @@ class TasksApi
         $headerParams = [];
         $httpBody = "";
         $multipart = false;
-    
+
         // path params
         if ($request->name !== null) {
             $localName = lcfirst('Name');
@@ -14512,8 +14512,8 @@ class TasksApi
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
-    
-    
+
+
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
 
         // body params
@@ -14558,7 +14558,7 @@ class TasksApi
                 $httpBody = $formParams["data"];
             }
         }
-    
+
         $this->_requestToken();
 
         if ($this->config->getAccessToken() !== null) {
@@ -14569,7 +14569,7 @@ class TasksApi
         if ($this->config->getUserAgent()) {
             $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
         }
-    
+
         $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
 
         $headers = array_merge(
@@ -14577,7 +14577,7 @@ class TasksApi
             $headerParams,
             $headers
         );
-    
+
         $req = new Request(
             'POST',
             $this->config->getHost() . $resourcePath,
@@ -14587,7 +14587,314 @@ class TasksApi
         if ($this->config->getDebug()) {
             $this->_writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
         }
-        
+
+        return $req;
+    }
+
+    /*
+     * Operation postTasks
+     *
+     * Add a new tasks to a project.
+     *
+     * @param Requests\PostTasksRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\TaskItemsResponse
+     */
+    public function postTasks(Requests\PostTasksRequest $request)
+    {
+        try {
+            list($response) = $this->postTasksWithHttpInfo($request);
+            return $response;
+        }
+        catch(RepeatRequestException $e) {
+            list($response) = $this->postTasksWithHttpInfo($request);
+            return $response;
+        }
+    }
+
+    /*
+     * Operation postTasksWithHttpInfo
+     *
+     * Add a new tasks to a project.
+     *
+     * @param Requests\PostTasksRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\TaskItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postTasksWithHttpInfo(Requests\PostTasksRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\TaskItemsResponse';
+        $request = $this->PostTasksRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\TaskItemsResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation postTasksAsync
+     *
+     * Add a new tasks to a project.
+     *
+     * @param Requests\PostTasksRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postTasksAsync(Requests\PostTasksRequest $request)
+    {
+        return $this->postTasksAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation postTasksAsyncWithHttpInfo
+     *
+     * Add a new tasks to a project.
+     *
+     * @param Requests\PostTasksRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postTasksAsyncWithHttpInfo(Requests\PostTasksRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\TaskItemsResponse';
+        $request = $this->PostTasksRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'postTasks'
+     *
+     * @param Requests\PostTasksRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function PostTasksRequest(Requests\PostTasksRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling postTasks');
+        }
+
+        // verify the required parameter 'requests' is set
+        if ($request->requests === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $requests when calling postTasks');
+        }
+
+        $resourcePath = '/tasks/{name}/tasks/batch';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('Name');
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
+        }
+
+        // query params
+        if ($request->file_name !== null) {
+            $localName = lcfirst('FileName');
+            $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('Storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('Folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+
+
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        $_tempBody = $this->_prepareBodyParameter($request->requests);
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $req = new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+
         return $req;
     }
 
@@ -22137,7 +22444,7 @@ class TasksApi
             elseif($bodyParameterValue instanceof \DateTime) {
             	$tempBody = "\"" . $bodyParameterValue->format(\DATE_ISO8601) . "\"";
             } elseif (is_array($bodyParameterValue)) {
-                $tempBody = implode(',', $bodyParameterValue);
+                $tempBody = '[ ' . implode(', ', $bodyParameterValue) . ' ]';
             }
             else {
             	$tempBody = $bodyParameterValue;
@@ -22900,7 +23207,7 @@ class TasksApi
      */
     private function _requestToken()
     {
-        $requestUrl = $this->config->getHost() . "/connect/token";
+        $requestUrl = $this->config->getAuthUrl() ?: ($this->config->getHost() . "/connect/token");
         $postData = "grant_type=client_credentials" . "&client_id=" . $this->config->getAppSid() . "&client_secret=" . $this->config->getAppKey();
         $header = ["Content-Type" => "application/x-www-form-urlencoded"];
         $response = $this->client->send(new Request('POST', $requestUrl, $header, $postData));

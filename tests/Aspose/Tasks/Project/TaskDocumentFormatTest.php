@@ -43,9 +43,9 @@ class TaskDocumentFormatTest extends BaseTestContext
             Model\ProjectFileFormat::CSV, false, self::$storageName, $folder));
         
         Assert::assertNotNull($response);
-        Assert::assertEquals("ID;Task_Name;Outline_Level;Duration;Start_Date;Finish_Date;Percent_Comp;Cost;Work\r\n", $response->current());
+        Assert::assertContains("ID;Task_Name;Outline_Level;Duration;Start_Date;Finish_Date;Percent_Comp;Cost;Work", $response->current());
         $response->next();
-        Assert::assertEquals("1;Five to Eight Weeks Before Moving;1;16 days;Thu 01.01.04 08:00;Thu 22.01.04 17:00;0%;$0;0 hrs\r\n", $response->current());
+        Assert::assertContains("1;Five to Eight Weeks Before Moving;1;16 days;Thu 01.01.04 08:00;Thu 22.01.04 17:00;0%;$0;0 hrs", $response->current());
     }
     
     public function testGetDocumentInCsvFormatWithSaveOptions()
@@ -81,7 +81,7 @@ class TaskDocumentFormatTest extends BaseTestContext
             Model\ProjectFileFormat::CSV, $saveOptionsSerialized, false, self::$storageName, $folder));
         
         Assert::assertNotNull($response);
-        Assert::assertEquals("Five to Eight Weeks Before Moving,16 days\r\n", $response->current());
+        Assert::assertContains("Five to Eight Weeks Before Moving,16 days", $response->current());
     }
     
     public function testGetDocumentAsZippedHtml()
