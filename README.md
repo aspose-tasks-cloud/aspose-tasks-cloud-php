@@ -67,27 +67,31 @@ require_once('vendor/autoload.php');
 ```
 See [composer.json](composer.json) for details about the referenced packages.
 
-## Convert MPP to CSV in the Cloud
+## Convert MPP to CSV in PHP
 
 ```php
-$remoteName = "GetDocumentInCsvFormat.mpp";
-$folder = $this->uploadFile("template.mpp", $remoteName, '');
+	// Get your ClientId and ClientSecret from https://dashboard.aspose.cloud (free registration required).
 
-$response = $this->tasks->getTaskDocumentWithFormat(new GetTaskDocumentWithFormatRequest($remoteName,
-    Model\ProjectFileFormat::CSV, false, self::$storageName, $folder));
+	$config = new Configuration();
+    $config->setAppSid("MY_CLIENT_ID");
+	$config->setAppKey("MY_CLIENT_SECRET");
 
-Assert::assertNotNull($response);
-Assert::assertEquals("ID;Task_Name;Outline_Level;Duration;Start_Date;Finish_Date;Percent_Comp;Cost;Work\r\n", $response->current());
-$response->next();
-Assert::assertEquals("1;Five to Eight Weeks Before Moving;1;16 days;Thu 01.01.04 08:00;Thu 22.01.04 17:00;0%;$0;0 hrs\r\n", $response->current());
+	$api = new TasksApi(null, $config);
 
+	// upload file to cloud
+	$fullName = 'template.mpp';
+	$upload_result = $api->uploadFile($Path = realpath(__DIR__ . '/../../..') . '/TestData/' . $fullName, $fullName);
+
+	// save as pdf file
+	$request = new Requests\GetTaskDocumentWithFormatRequest($fullName, Model\ProjectFileFormat::CSV, false));
+	$result = $api->getTaskDocumentWithFormat($request);
 ```
 
 ## Aspose.Tasks Cloud SDKs in Popular Languages
 
 | .NET | PHP | Python| Node.js | Go |
 |---|---|---|---|---|
-| [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-ph) |[GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-php) | [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-python) | [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-node) |[GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-go)|
-| [NuGet](https://www.nuget.org/packages/Aspose.tasks-Cloud/)| [Composer](https://packagist.org/packages/aspose/tasks-cloud-php) | [PIP](https://pypi.org/project/aspose-tasks-cloud/) | [NPM](https://www.npmjs.com/package/aspose-tasks-cloud) | [Go.Dev](https://pkg.go.dev/github.com/aspose-tasks-cloud/aspose-tasks-cloud-go/) |
+| [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-dotnet) |[GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-php) | [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-python) | [GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-node) |[GitHub](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-go)|
+| [NuGet](https://www.nuget.org/packages/Aspose.tasks-Cloud/)| [Composer](https://packagist.org/packages/aspose/tasks-cloud-php) | [PIP](https://pypi.org/project/aspose-tasks-cloud/) | [NPM](https://www.npmjs.com/package/@asposecloud/aspose-tasks-cloud) | [Go.Dev](https://pkg.go.dev/github.com/aspose-tasks-cloud/aspose-tasks-cloud-go/) |
 
 [Product Page](https://products.aspose.cloud/tasks/php) | [Documentation](https://docs.aspose.cloud/display/taskscloud/Home) | [API Reference](https://apireference.aspose.cloud/tasks/) | [Code Samples](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-php) | [Blog](https://blog.aspose.cloud/category/tasks/) | [Free Support](https://forum.aspose.cloud/c/tasks) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
