@@ -168,7 +168,8 @@ class Task implements ArrayAccess
         'baselines' => '\Aspose\Tasks\Model\TaskBaseline[]',
         'extended_attributes' => '\Aspose\Tasks\Model\ExtendedAttribute[]',
         'outline_codes' => '\Aspose\Tasks\Model\OutlineCode[]',
-        'warning' => 'bool'
+        'warning' => 'bool',
+        'activityId' => 'string'
     ];
 
     /*
@@ -289,7 +290,8 @@ class Task implements ArrayAccess
         'baselines' => null,
         'extended_attributes' => null,
         'outline_codes' => null,
-        'warning' => null
+        'warning' => null,
+        'activityId'=> null
     ];
 
     /*
@@ -431,7 +433,8 @@ class Task implements ArrayAccess
         'baselines' => 'Baselines',
         'extended_attributes' => 'ExtendedAttributes',
         'outline_codes' => 'OutlineCodes',
-        'warning' => 'Warning'
+        'warning' => 'Warning',
+        'activityId' => 'ActivityId'
     ];
 
     /*
@@ -552,7 +555,8 @@ class Task implements ArrayAccess
         'baselines' => 'setBaselines',
         'extended_attributes' => 'setExtendedAttributes',
         'outline_codes' => 'setOutlineCodes',
-        'warning' => 'setWarning'
+        'warning' => 'setWarning',
+        'activityId' => 'setActivityId'
     ];
 
     /*
@@ -673,7 +677,8 @@ class Task implements ArrayAccess
         'baselines' => 'getBaselines',
         'extended_attributes' => 'getExtendedAttributes',
         'outline_codes' => 'getOutlineCodes',
-        'warning' => 'getWarning'
+        'warning' => 'getWarning',
+        'activityId' => 'getActivityId'
     ];
 
     /*
@@ -849,6 +854,7 @@ class Task implements ArrayAccess
         $this->container['extended_attributes'] = isset($data['extended_attributes']) ? $data['extended_attributes'] : null;
         $this->container['outline_codes'] = isset($data['outline_codes']) ? $data['outline_codes'] : null;
         $this->container['warning'] = isset($data['warning']) ? $data['warning'] : null;
+        $this->container['activityId'] = isset($data['activityId']) ? $data['activityId'] : null;
     }
 
     /*
@@ -4124,6 +4130,30 @@ class Task implements ArrayAccess
     public function setWarning($warning)
     {
         $this->container['warning'] = $warning;
+
+        return $this;
+    }
+
+    /*
+     * Gets activityId
+     *
+     * @return string
+     */
+    public function getActivityId()
+    {
+        return $this->container['activityId'];
+    }
+
+    /*
+     * Sets activityId
+     *
+     * @param string $activityId Represents activity id field - a task's unique identifier used by Primavera (only applicable to Primavera projects).
+     *
+     * @return $this
+     */
+    public function setActivityId($activityId)
+    {
+        $this->container['activityId'] = $activityId;
 
         return $this;
     }

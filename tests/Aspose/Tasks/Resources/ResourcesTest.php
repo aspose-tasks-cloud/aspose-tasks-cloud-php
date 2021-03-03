@@ -129,15 +129,19 @@ class ResourcesTest extends BaseTestContext
     public function testDeleteResource()
     {
         $remoteName = "testDeleteResource.mpp";
-        $folder = $this->uploadTestFile("Home move plan.mpp", $remoteName, '');
-        
-        $response = $this->tasks->deleteResource(new Requests\DeleteResourceRequest($remoteName, 0, self::$storageName, $folder));
+        $folder = $this->uploadTestFile("Plan_with_resource.mpp", $remoteName, '');
+
+        $getRequest = new Requests\GetResourcesRequest($remoteName, self::$storageName, $folder);
+        $response = $this->tasks->GetResources($getRequest);
+        $resourcesCountBeforeDelete = count($response->getResources()->getResourceItem());
+
+        $response = $this->tasks->deleteResource(new Requests\DeleteResourceRequest($remoteName, 1, self::$storageName, $folder));
         Assert::assertEquals(200, $response->getCode());
         
-        $response = $this->tasks->GetResources(new Requests\GetResourcesRequest($remoteName, self::$storageName, $folder));
+        $response = $this->tasks->GetResources($getRequest);
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotNull($response->getResources());
         Assert::assertNotNull($response->getResources()->getResourceItem());
-        Assert::assertEquals(0, count($response->getResources()->getResourceItem()));
+        Assert::assertLessThan($resourcesCountBeforeDelete, count($response->getResources()->getResourceItem()));
     }
 }
