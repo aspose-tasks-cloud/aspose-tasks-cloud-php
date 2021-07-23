@@ -2,7 +2,7 @@
 
 # Manipulate MS Project Files in PHP via Cloud REST API
 
-Aspose.Tasks for Cloud offers the ability to manipulate and convert Microsoft Project MPT, MPP, MPX & Oracle Primavera XER, XML, and PrimaveraP6XML files in PHP. [Aspose.Tasks Cloud SDK for PHP](https://products.aspose.cloud/tasks/php) wraps the REST API to make it easier for the developers to integrate MS Project Task Management features in their own cloud-based PHP applications.
+Aspose.Tasks for Cloud offers the ability to manipulate and convert Microsoft Project MPT, MPP, MPX & Oracle Primavera XER, XML, and PrimaveraP6XML files in PHP. [Aspose.Tasks Cloud SDK for PHP](https://products.aspose.cloud/tasks/php) wraps the REST API to make it easier for the developers to integrate MS Project Task Management features in their own cloud-based PHP applications on Linux, MacOS, Windows or Android.
 
 Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/taskscloud/Developer+Guide) & [API Reference](https://apireference.aspose.cloud/tasks/) to know all about Aspose.Tasks Cloud API.
 
