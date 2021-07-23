@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/api-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/tasks-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/tasks-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/tasks-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-tasks-cloud/aspose-tasks-cloud-php)](https://github.com/aspose-tasks-cloud/aspose-tasks-cloud-php/blob/master/LICENSE) ![GitHub last commit](https://img.shields.io/github/last-commit/Aspose-tasks-Cloud/aspose-tasks-cloud-php)
 
-# Manipulate Project Files via PHP Cloud REST API
+# Manipulate MS Project Files in PHP via Cloud REST API
 
-Aspose.Tasks for Cloud offers the ability to manipulate and convert Microsoft Project MPT, MPP, MPX & Oracle Primavera XER, XML, and PrimaveraP6XML files in the Cloud. [Aspose.Tasks Cloud SDK for Go](https://products.aspose.cloud/tasks/go) wraps the REST API to make it easier for the developers to integrate Task Management features in their own cloud-based Go applications.
+Aspose.Tasks for Cloud offers the ability to manipulate and convert Microsoft Project MPT, MPP, MPX & Oracle Primavera XER, XML, and PrimaveraP6XML files in PHP. [Aspose.Tasks Cloud SDK for PHP](https://products.aspose.cloud/tasks/php) wraps the REST API to make it easier for the developers to integrate MS Project Task Management features in their own cloud-based PHP applications.
 
 Feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/taskscloud/Developer+Guide) & [API Reference](https://apireference.aspose.cloud/tasks/) to know all about Aspose.Tasks Cloud API.
 
@@ -67,7 +67,7 @@ require_once('vendor/autoload.php');
 ```
 See [composer.json](composer.json) for details about the referenced packages.
 
-## Convert MPP to CSV in PHP
+## Convert MS Project MPP to PDF in PHP
 
 ```php
 	// Get your ClientId and ClientSecret from https://dashboard.aspose.cloud (free registration required).
@@ -83,8 +83,8 @@ See [composer.json](composer.json) for details about the referenced packages.
 	$upload_result = $api->uploadFile($Path = realpath(__DIR__ . '/../../..') . '/TestData/' . $fullName, $fullName);
 
 	// save as pdf file
-	$request = new Requests\GetTaskDocumentWithFormatRequest($fullName, Model\ProjectFileFormat::CSV, false));
-	$result = $api->getTaskDocumentWithFormat($request);
+	$request = new Requests\GetReportPdfRequest($fullName, Model\ReportType::MILESTONES, self::$storageName, $folder));
+	$result = $api->getReportPdf($request);
 ```
 
 ## Aspose.Tasks Cloud SDKs in Popular Languages
