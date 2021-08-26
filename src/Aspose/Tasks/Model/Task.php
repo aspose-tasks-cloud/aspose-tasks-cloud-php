@@ -97,6 +97,7 @@ class Task implements ArrayAccess
         'fixed_cost_accrual' => '\Aspose\Tasks\Model\CostAccrualType',
         'free_slack' => 'int',
         'guid' => 'string',
+        'has_overallocated_resource' => 'bool',
         'hide_bar' => 'bool',
         'ignore_resource_calendar' => 'bool',
         'late_finish' => '\DateTime',
@@ -219,6 +220,7 @@ class Task implements ArrayAccess
         'fixed_cost_accrual' => null,
         'free_slack' => 'int32',
         'guid' => null,
+        'has_overallocated_resource' => null,
         'hide_bar' => null,
         'ignore_resource_calendar' => null,
         'late_finish' => 'date-time',
@@ -362,6 +364,7 @@ class Task implements ArrayAccess
         'fixed_cost_accrual' => 'FixedCostAccrual',
         'free_slack' => 'FreeSlack',
         'guid' => 'GUID',
+        'has_overallocated_resource' => 'HasOverallocatedResource',
         'hide_bar' => 'HideBar',
         'ignore_resource_calendar' => 'IgnoreResourceCalendar',
         'late_finish' => 'LateFinish',
@@ -484,6 +487,7 @@ class Task implements ArrayAccess
         'fixed_cost_accrual' => 'setFixedCostAccrual',
         'free_slack' => 'setFreeSlack',
         'guid' => 'setGuid',
+        'has_overallocated_resource' => 'setHasOverallocatedResource',
         'hide_bar' => 'setHideBar',
         'ignore_resource_calendar' => 'setIgnoreResourceCalendar',
         'late_finish' => 'setLateFinish',
@@ -606,6 +610,7 @@ class Task implements ArrayAccess
         'fixed_cost_accrual' => 'getFixedCostAccrual',
         'free_slack' => 'getFreeSlack',
         'guid' => 'getGuid',
+        'has_overallocated_resource' => 'getHasOverallocatedResource',
         'hide_bar' => 'getHideBar',
         'ignore_resource_calendar' => 'getIgnoreResourceCalendar',
         'late_finish' => 'getLateFinish',
@@ -782,6 +787,7 @@ class Task implements ArrayAccess
         $this->container['fixed_cost_accrual'] = isset($data['fixed_cost_accrual']) ? $data['fixed_cost_accrual'] : null;
         $this->container['free_slack'] = isset($data['free_slack']) ? $data['free_slack'] : null;
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
+        $this->container['has_overallocated_resource'] = isset($data['has_overallocated_resource']) ? $data['has_overallocated_resource'] : null;
         $this->container['hide_bar'] = isset($data['hide_bar']) ? $data['hide_bar'] : null;
         $this->container['ignore_resource_calendar'] = isset($data['ignore_resource_calendar']) ? $data['ignore_resource_calendar'] : null;
         $this->container['late_finish'] = isset($data['late_finish']) ? $data['late_finish'] : null;
@@ -2402,6 +2408,31 @@ class Task implements ArrayAccess
     public function setGuid($guid)
     {
         $this->container['guid'] = $guid;
+
+        return $this;
+    }
+
+    /*
+     * Gets has_overallocated_resource
+     *
+     * @return bool
+     */
+    public function getHasOverallocatedResource()
+    {
+        return $this->container['has_overallocated_resource'];
+    }
+
+    /*
+     * Sets has_overallocated_resource
+     *
+     * @param bool $has_overallocated_resource Indicates whether the task has an resource assigned which has more work
+     * on assigned tasks than can be completed within normal working capacity.
+     *
+     * @return $this
+     */
+    public function setHasOverallocatedResource($has_overallocated_resource)
+    {
+        $this->container['has_overallocated_resource'] = $has_overallocated_resource;
 
         return $this;
     }

@@ -143,7 +143,7 @@ class Configuration
      * Version of Aspose.Tasks Cloud API
      *
      */
-    protected $clientVersion = '21.2';
+    protected $clientVersion = '21.8';
 
     /*
      * Constructor
