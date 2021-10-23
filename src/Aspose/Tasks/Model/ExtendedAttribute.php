@@ -64,7 +64,8 @@ class ExtendedAttribute implements ArrayAccess
         'numeric_value' => 'float',
         'date_value' => '\DateTime',
         'flag_value' => 'bool',
-        'text_value' => 'string'
+        'text_value' => 'string',
+        'is_error_value' => 'bool'
     ];
 
     /*
@@ -81,7 +82,8 @@ class ExtendedAttribute implements ArrayAccess
         'numeric_value' => 'decimal',
         'date_value' => 'date-time',
         'flag_value' => null,
-        'text_value' => null
+        'text_value' => null,
+        'is_error_value' => null
     ];
 
     /*
@@ -119,7 +121,8 @@ class ExtendedAttribute implements ArrayAccess
         'numeric_value' => 'NumericValue',
         'date_value' => 'DateValue',
         'flag_value' => 'FlagValue',
-        'text_value' => 'TextValue'
+        'text_value' => 'TextValue',
+        'is_error_value' => 'IsErrorValue'
     ];
 
     /*
@@ -136,7 +139,8 @@ class ExtendedAttribute implements ArrayAccess
         'numeric_value' => 'setNumericValue',
         'date_value' => 'setDateValue',
         'flag_value' => 'setFlagValue',
-        'text_value' => 'setTextValue'
+        'text_value' => 'setTextValue',
+        'is_error_value' => 'setIsErrorValue'
     ];
 
     /*
@@ -153,7 +157,8 @@ class ExtendedAttribute implements ArrayAccess
         'numeric_value' => 'getNumericValue',
         'date_value' => 'getDateValue',
         'flag_value' => 'getFlagValue',
-        'text_value' => 'getTextValue'
+        'text_value' => 'getTextValue',
+        'is_error_value' => 'getIsErrorValue'
     ];
 
     /*
@@ -225,6 +230,7 @@ class ExtendedAttribute implements ArrayAccess
         $this->container['date_value'] = isset($data['date_value']) ? $data['date_value'] : null;
         $this->container['flag_value'] = isset($data['flag_value']) ? $data['flag_value'] : null;
         $this->container['text_value'] = isset($data['text_value']) ? $data['text_value'] : null;
+        $this->container['is_error_value'] = isset($data['is_error_value']) ? $data['is_error_value'] : null;
     }
 
     /*
@@ -491,6 +497,31 @@ class ExtendedAttribute implements ArrayAccess
 
         return $this;
     }
+
+    /*
+     * Gets is_error_value
+     *
+     * @return bool
+     */
+    public function getIsErrorValue()
+    {
+        return $this->container['is_error_value'];
+    }
+
+    /*
+     * Sets text_value
+     *
+     * @param string $text_value Gets or sets whether calculation of extended attribute's value resulted in an error.
+     *
+     * @return $this
+     */
+    public function setIsErrorValue($is_error_value)
+    {
+        $this->container['is_error_value'] = $is_error_value;
+
+        return $this;
+    }
+
     /*
      * Returns true if offset exists. False otherwise.
      *
