@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ProjectListResponse.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -12,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -26,17 +25,18 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+/*
+ * ProjectListResponse
+ */
 
 namespace Aspose\Tasks\Model;
-
-
-use Aspose\Tasks\ObjectSerializer;
+use \Aspose\Tasks\ObjectSerializer;
 
 /*
  * ProjectListResponse
  *
  */
-class ProjectListResponse extends AsposeResponse
+class ProjectListResponse extends AsposeResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -92,7 +92,7 @@ class ProjectListResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'projects' => 'Projects'
+        'projects' => 'projects'
     ];
 
     /*
@@ -154,6 +154,11 @@ class ProjectListResponse extends AsposeResponse
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
+
     /*
      * Constructor
      *
@@ -208,7 +213,7 @@ class ProjectListResponse extends AsposeResponse
     /*
      * Sets projects
      *
-     * @param \Aspose\Tasks\Model\ProjectList $projects
+     * @param \Aspose\Tasks\Model\ProjectList $projects projects
      *
      * @return $this
      */
@@ -288,3 +293,5 @@ class ProjectListResponse extends AsposeResponse
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

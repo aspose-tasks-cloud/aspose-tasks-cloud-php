@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetAssignmentRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,29 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for getAssignment" operation.
+ * Request model for getAssignment operation.
  */
 class GetAssignmentRequest
 {
-    /*
-     * Initializes a new instance of the GetAssignmentRequest class.
-     *  
-     * @param string $name The name of the file.
-     * @param int $assignment_uid Assignment Uid
-     * @param string $storage The document storage.
-     * @param string $folder The document folder.
-     */
-    public function __construct($name, $assignment_uid, $storage = null, $folder = null)             
-    {
-        $this->name = $name;
-        $this->assignment_uid = $assignment_uid;
-        $this->storage = $storage;
-        $this->folder = $folder;
-    }
-
     /*
      * The name of the file.
      */
@@ -68,4 +52,89 @@ class GetAssignmentRequest
      * The document folder.
      */
     public $folder;
+    
+	
+    /*
+     * Initializes a new instance of the GetAssignmentRequest class.
+     *  
+     * @param string $name The name of the file.
+     * @param int $assignment_uid Assignment Uid
+     * @param string $storage The document storage.
+     * @param string $folder The document folder.
+     */
+    public function __construct($name, $assignment_uid, $storage = null, $folder = null)             
+    {
+        $this->name = $name;
+        $this->assignment_uid = $assignment_uid;
+        $this->storage = $storage;
+        $this->folder = $folder;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Assignment Uid
+     */
+    public function get_assignment_uid()
+    {
+        return $this->assignment_uid;
+    }
+
+    /*
+     * Assignment Uid
+     */
+    public function set_assignment_uid($value)
+    {
+        $this->assignment_uid = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * The document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
 }

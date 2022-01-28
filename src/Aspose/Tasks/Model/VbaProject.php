@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="VbaProject.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -107,13 +107,13 @@ class VbaProject implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'compilation_arguments' => 'CompilationArguments',
-        'description' => 'Description',
-        'help_context_id' => 'HelpContextId',
-        'help_file' => 'HelpFile',
-        'modules' => 'Modules',
-        'name' => 'Name',
-        'references' => 'References'
+        'compilation_arguments' => 'compilationArguments',
+        'description' => 'description',
+        'help_context_id' => 'helpContextId',
+        'help_file' => 'helpFile',
+        'modules' => 'modules',
+        'name' => 'name',
+        'references' => 'references'
     ];
 
     /*
@@ -210,9 +210,9 @@ class VbaProject implements ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['help_context_id'] = isset($data['help_context_id']) ? $data['help_context_id'] : null;
         $this->container['help_file'] = isset($data['help_file']) ? $data['help_file'] : null;
-        $this->container['modules'] = isset($data['modules']) ? $data['modules'] : null;
+        $this->container['modules'] = isset($data['modules']) ? $data['modules'] : array();
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['references'] = isset($data['references']) ? $data['references'] : null;
+        $this->container['references'] = isset($data['references']) ? $data['references'] : array();
     }
 
     /*

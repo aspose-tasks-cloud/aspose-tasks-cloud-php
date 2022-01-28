@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WorkWeek.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -100,10 +100,10 @@ class WorkWeek implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'from_date' => 'FromDate',
-        'to_date' => 'ToDate',
-        'week_days' => 'WeekDays'
+        'name' => 'name',
+        'from_date' => 'fromDate',
+        'to_date' => 'toDate',
+        'week_days' => 'weekDays'
     ];
 
     /*
@@ -193,7 +193,7 @@ class WorkWeek implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['from_date'] = isset($data['from_date']) ? $data['from_date'] : null;
         $this->container['to_date'] = isset($data['to_date']) ? $data['to_date'] : null;
-        $this->container['week_days'] = isset($data['week_days']) ? $data['week_days'] : null;
+        $this->container['week_days'] = isset($data['week_days']) ? $data['week_days'] : array();
     }
 
     /*

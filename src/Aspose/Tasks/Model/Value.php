@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Value.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -105,12 +105,12 @@ class Value implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'Id',
-        'val' => 'Val',
-        'date_time_value' => 'DateTimeValue',
-        'duration_value' => 'DurationValue',
-        'description' => 'Description',
-        'phonetic' => 'Phonetic'
+        'id' => 'id',
+        'val' => 'val',
+        'date_time_value' => 'dateTimeValue',
+        'duration_value' => 'durationValue',
+        'description' => 'description',
+        'phonetic' => 'phonetic'
     ];
 
     /*

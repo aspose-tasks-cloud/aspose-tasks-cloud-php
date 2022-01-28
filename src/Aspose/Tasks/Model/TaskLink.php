@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TaskLink.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -106,13 +106,13 @@ class TaskLink implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'link' => 'Link',
-        'index' => 'Index',
-        'predecessor_uid' => 'PredecessorUid',
-        'successor_uid' => 'SuccessorUid',
-        'link_type' => 'LinkType',
-        'lag' => 'Lag',
-        'lag_format' => 'LagFormat'
+        'link' => 'link',
+        'index' => 'index',
+        'predecessor_uid' => 'predecessorUid',
+        'successor_uid' => 'successorUid',
+        'link_type' => 'linkType',
+        'lag' => 'lag',
+        'lag_format' => 'lagFormat'
     ];
 
     /*

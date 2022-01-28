@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AssignmentItems.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -92,7 +92,7 @@ class AssignmentItems extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'assignment_item' => 'AssignmentItem'
+        'assignment_item' => 'assignmentItem'
     ];
 
     /*
@@ -169,7 +169,7 @@ class AssignmentItems extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['assignment_item'] = isset($data['assignment_item']) ? $data['assignment_item'] : null;
+        $this->container['assignment_item'] = isset($data['assignment_item']) ? $data['assignment_item'] : array();
     }
 
     /*

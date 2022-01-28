@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetTaskDocumentWithFormatRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,31 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for getTaskDocumentWithFormat" operation.
+ * Request model for getTaskDocumentWithFormat operation.
  */
 class GetTaskDocumentWithFormatRequest
 {
-    /*
-     * Initializes a new instance of the GetTaskDocumentWithFormatRequest class.
-     *  
-     * @param string $name The name of the file.
-     * @param string $format The format of the resulting file.
-     * @param bool $return_as_zip_archive If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.
-     * @param string $storage The document storage.
-     * @param string $folder The document folder.
-     */
-    public function __construct($name, $format, $return_as_zip_archive = null, $storage = null, $folder = null)             
-    {
-        $this->name = $name;
-        $this->format = $format;
-        $this->return_as_zip_archive = $return_as_zip_archive;
-        $this->storage = $storage;
-        $this->folder = $folder;
-    }
-
     /*
      * The name of the file.
      */
@@ -75,4 +57,108 @@ class GetTaskDocumentWithFormatRequest
      * The document folder.
      */
     public $folder;
+    
+	
+    /*
+     * Initializes a new instance of the GetTaskDocumentWithFormatRequest class.
+     *  
+     * @param string $name The name of the file.
+     * @param string $format The format of the resulting file.
+     * @param bool $return_as_zip_archive If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.
+     * @param string $storage The document storage.
+     * @param string $folder The document folder.
+     */
+    public function __construct($name, $format, $return_as_zip_archive = null, $storage = null, $folder = null)             
+    {
+        $this->name = $name;
+        $this->format = $format;
+        $this->return_as_zip_archive = $return_as_zip_archive;
+        $this->storage = $storage;
+        $this->folder = $folder;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * The format of the resulting file.
+     */
+    public function get_format()
+    {
+        return $this->format;
+    }
+
+    /*
+     * The format of the resulting file.
+     */
+    public function set_format($value)
+    {
+        $this->format = $value;
+        return $this;
+    }
+	
+    /*
+     * If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.
+     */
+    public function get_return_as_zip_archive()
+    {
+        return $this->return_as_zip_archive;
+    }
+
+    /*
+     * If parameter is true, HTML resources are included as separate files and returned along with the resulting html file as a zip package.
+     */
+    public function set_return_as_zip_archive($value)
+    {
+        $this->return_as_zip_archive = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * The document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
 }

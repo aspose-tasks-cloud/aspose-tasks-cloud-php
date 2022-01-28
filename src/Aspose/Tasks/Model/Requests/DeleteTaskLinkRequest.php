@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteTaskLinkRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,31 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for deleteTaskLink" operation.
+ * Request model for deleteTaskLink operation.
  */
 class DeleteTaskLinkRequest
 {
-    /*
-     * Initializes a new instance of the DeleteTaskLinkRequest class.
-     *  
-     * @param string $name The name of the file.
-     * @param int $index Index of the task link object. See TaskLink.Index property.
-     * @param string $storage The document storage.
-     * @param string $folder The document folder.
-     * @param string $file_name The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
-     */
-    public function __construct($name, $index, $storage = null, $folder = null, $file_name = null)             
-    {
-        $this->name = $name;
-        $this->index = $index;
-        $this->storage = $storage;
-        $this->folder = $folder;
-        $this->file_name = $file_name;
-    }
-
     /*
      * The name of the file.
      */
@@ -75,4 +57,108 @@ class DeleteTaskLinkRequest
      * The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
      */
     public $file_name;
+    
+	
+    /*
+     * Initializes a new instance of the DeleteTaskLinkRequest class.
+     *  
+     * @param string $name The name of the file.
+     * @param int $index Index of the task link object. See TaskLink.Index property.
+     * @param string $storage The document storage.
+     * @param string $folder The document folder.
+     * @param string $file_name The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
+     */
+    public function __construct($name, $index, $storage = null, $folder = null, $file_name = null)             
+    {
+        $this->name = $name;
+        $this->index = $index;
+        $this->storage = $storage;
+        $this->folder = $folder;
+        $this->file_name = $file_name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Index of the task link object. See TaskLink.Index property.
+     */
+    public function get_index()
+    {
+        return $this->index;
+    }
+
+    /*
+     * Index of the task link object. See TaskLink.Index property.
+     */
+    public function set_index($value)
+    {
+        $this->index = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * The document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
+     */
+    public function get_file_name()
+    {
+        return $this->file_name;
+    }
+
+    /*
+     * The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
+     */
+    public function set_file_name($value)
+    {
+        $this->file_name = $value;
+        return $this;
+    }
 }

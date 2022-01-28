@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CustomFieldType.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -73,15 +73,6 @@ class CustomFieldType
             self::OUTLINE_CODE,
             self::RBS,
         ];
-    }
-
-    /*
-     * Gets whether enum is bitwise
-     * @return bool
-     */
-    public static function getIsBitwise()
-    {
-        return false;
     }
 }
 

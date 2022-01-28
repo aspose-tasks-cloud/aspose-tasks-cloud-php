@@ -39,7 +39,8 @@ class FilesTest extends BaseTestContext
         $remoteName = "testDownloadFile.mpp";
         $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
         $remoteFullName = $folder . $remoteName;
-        $response = $this->tasks->downloadFile($remoteFullName);
+        $downloadRequest = new Requests\DownloadFileRequest($remoteFullName);
+        $response = $this->tasks->downloadFile($downloadRequest);
 
         Assert::assertNotNull($response);
         Assert::assertTrue($response->valid());

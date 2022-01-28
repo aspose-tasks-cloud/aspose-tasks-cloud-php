@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ObjectSerializer.php">
- *   Copyright (c) 2019 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,22 +64,22 @@ class ObjectSerializer
                     && method_exists($swaggerType, 'getAllowableEnumValues')
                     && method_exists($swaggerType, 'getIsBitwise'))
                 {
-                        if ($swaggerType::getIsBitwise()) {
-                            $valuesList = explode(",", $value);
-                            foreach ($valuesList as $currentValue) {
-                                $currentValue = trim($currentValue);
-                                if (!in_array($currentValue, $swaggerType::getAllowableEnumValues())) {
-                                    $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
-                                    throw new \InvalidArgumentException("Invalid value '$currentValue' for enum '$swaggerType', must be one of: '$imploded'");
-                                 }
-                            }
-                        }
-			else {
-                            if (!in_array($value, $swaggerType::getAllowableEnumValues())) {
+                    if ($swaggerType::getIsBitwise()) {
+                        $valuesList = explode(",", $value);
+                        foreach ($valuesList as $currentValue) {
+                            $currentValue = trim($currentValue);
+                            if (!in_array($currentValue, $swaggerType::getAllowableEnumValues())) {
                                 $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
-                                throw new \InvalidArgumentException("Invalid value '$value' for enum '$swaggerType', must be one of: '$imploded'");
+                                throw new \InvalidArgumentException("Invalid value '$currentValue' for enum '$swaggerType', must be one of: '$imploded'");
                             }
                         }
+                    }
+                    else {
+                        if (!in_array($value, $swaggerType::getAllowableEnumValues())) {
+                            $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
+                            throw new \InvalidArgumentException("Invalid value '$value' for enum '$swaggerType', must be one of: '$imploded'");
+                        }
+                    }
                 }
                 if ($value !== null) {
                     $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $swaggerType, $formats[$property]);
@@ -106,6 +106,19 @@ class ObjectSerializer
         } else {
             return $filename;
         }
+    }
+
+    /*
+     * Take value and turn it into a string suitable for inclusion in
+     * the path, by url-encoding.
+     *
+     * @param string $value a string which will be part of the path
+     *
+     * @return string the serialized object
+     */
+    public static function toPathValue($value)
+    {
+        return rawurlencode(self::toString($value));
     }
 
     /*
@@ -257,7 +270,7 @@ class ObjectSerializer
             // this graceful.
             if (!empty($data)) {
 
-		// Parse MS date format ()
+                // Parse MS date format ()
                 if(preg_match('/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})*/', $data, $matches)) {
 	                $dateInUtc = $matches[0] . "+0000";
                     return \DateTime::createFromFormat(DATE_ISO8601, $dateInUtc);
@@ -307,12 +320,13 @@ class ObjectSerializer
             $instance = new $class();
             foreach ($instance::swaggerTypes() as $property => $type) {
                 $propertySetter = $instance::setters()[$property];
+                $propInCamelCase = ucfirst($instance::attributeMap()[$property]);
 
-                if (!isset($propertySetter) || !isset($data->{$instance::attributeMap()[$property]})) {
+                if (!isset($propertySetter) || !isset($data->{$propInCamelCase})) {
                     continue;
                 }
 
-                $propertyValue = $data->{$instance::attributeMap()[$property]};
+                $propertyValue = $data->{$propInCamelCase};
                 if (isset($propertyValue)) {
                     $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
                 }

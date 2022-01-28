@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Error.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,24 +25,32 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+/*
+ * Error
+ */
+
 namespace Aspose\Tasks\Model;
 
 use \ArrayAccess;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
- *  Error class
+ * Error
+ *
+ * @description Error
  */
-class Error implements ModelInterface, ArrayAccess
+class Error implements ArrayAccess
 {
     const DISCRIMINATOR = null;
-    /**
+
+    /*
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = 'Error';
-    /**
+    protected static $swaggerModelName = "Error";
+
+    /*
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -53,7 +61,8 @@ class Error implements ModelInterface, ArrayAccess
         'description' => 'string',
         'inner_error' => '\Aspose\Tasks\Model\ErrorDetails'
     ];
-    /**
+
+    /*
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -64,7 +73,8 @@ class Error implements ModelInterface, ArrayAccess
         'description' => null,
         'inner_error' => null
     ];
-    /**
+
+    /*
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -73,7 +83,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return self::$swaggerTypes;
     }
-    /**
+
+    /*
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -82,19 +93,21 @@ class Error implements ModelInterface, ArrayAccess
     {
         return self::$swaggerFormats;
     }
-    /**
+
+    /*
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'Code',
-        'message' => 'Message',
-        'description' => 'Description',
-        'inner_error' => 'InnerError'
+        'code' => 'code',
+        'message' => 'message',
+        'description' => 'description',
+        'inner_error' => 'innerError'
     ];
-    /**
+
+    /*
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +118,8 @@ class Error implements ModelInterface, ArrayAccess
         'description' => 'setDescription',
         'inner_error' => 'setInnerError'
     ];
-    /**
+
+    /*
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -116,7 +130,8 @@ class Error implements ModelInterface, ArrayAccess
         'description' => 'getDescription',
         'inner_error' => 'getInnerError'
     ];
-    /**
+
+    /*
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -126,7 +141,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return self::$attributeMap;
     }
-    /**
+
+    /*
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +151,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return self::$setters;
     }
-    /**
+
+    /*
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -144,7 +161,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return self::$getters;
     }
-    /**
+
+    /*
      * The original name of the model.
      *
      * @return string
@@ -154,14 +172,18 @@ class Error implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    
 
-    /**
+    
+
+    /*
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
-    /**
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -174,7 +196,8 @@ class Error implements ModelInterface, ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['inner_error'] = isset($data['inner_error']) ? $data['inner_error'] : null;
     }
-    /**
+
+    /*
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -182,9 +205,11 @@ class Error implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
         return $invalidProperties;
     }
-    /**
+
+    /*
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -192,9 +217,12 @@ class Error implements ModelInterface, ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
-    /**
+
+
+    /*
      * Gets code
      *
      * @return string
@@ -203,7 +231,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return $this->container['code'];
     }
-    /**
+
+    /*
      * Sets code
      *
      * @param string $code Code
@@ -213,9 +242,11 @@ class Error implements ModelInterface, ArrayAccess
     public function setCode($code)
     {
         $this->container['code'] = $code;
+
         return $this;
     }
-    /**
+
+    /*
      * Gets message
      *
      * @return string
@@ -224,7 +255,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return $this->container['message'];
     }
-    /**
+
+    /*
      * Sets message
      *
      * @param string $message Message
@@ -234,9 +266,11 @@ class Error implements ModelInterface, ArrayAccess
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
         return $this;
     }
-    /**
+
+    /*
      * Gets description
      *
      * @return string
@@ -245,7 +279,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return $this->container['description'];
     }
-    /**
+
+    /*
      * Sets description
      *
      * @param string $description Description
@@ -255,9 +290,11 @@ class Error implements ModelInterface, ArrayAccess
     public function setDescription($description)
     {
         $this->container['description'] = $description;
+
         return $this;
     }
-    /**
+
+    /*
      * Gets inner_error
      *
      * @return \Aspose\Tasks\Model\ErrorDetails
@@ -266,7 +303,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return $this->container['inner_error'];
     }
-    /**
+
+    /*
      * Sets inner_error
      *
      * @param \Aspose\Tasks\Model\ErrorDetails $inner_error Inner Error
@@ -276,9 +314,10 @@ class Error implements ModelInterface, ArrayAccess
     public function setInnerError($inner_error)
     {
         $this->container['inner_error'] = $inner_error;
+
         return $this;
     }
-    /**
+    /*
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -289,7 +328,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return isset($this->container[$offset]);
     }
-    /**
+
+    /*
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -300,7 +340,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-    /**
+
+    /*
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -316,7 +357,8 @@ class Error implements ModelInterface, ArrayAccess
             $this->container[$offset] = $value;
         }
     }
-    /**
+
+    /*
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -327,7 +369,8 @@ class Error implements ModelInterface, ArrayAccess
     {
         unset($this->container[$offset]);
     }
-    /**
+
+    /*
      * Gets the string presentation of the object
      *
      * @return string
@@ -340,6 +383,9 @@ class Error implements ModelInterface, ArrayAccess
                 JSON_PRETTY_PRINT
             );
         }
+
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TaskBaseline.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -103,12 +103,12 @@ class TaskBaseline extends Baseline
      * @var string[]
      */
     protected static $attributeMap = [
-        'start' => 'Start',
-        'finish' => 'Finish',
-        'duration' => 'Duration',
-        'fixed_cost' => 'FixedCost',
-        'duration_format' => 'DurationFormat',
-        'estimated_duration' => 'EstimatedDuration'
+        'start' => 'start',
+        'finish' => 'finish',
+        'duration' => 'duration',
+        'fixed_cost' => 'fixedCost',
+        'duration_format' => 'durationFormat',
+        'estimated_duration' => 'estimatedDuration'
     ];
 
     /*
@@ -212,6 +212,24 @@ class TaskBaseline extends Baseline
     {
         $invalidProperties = parent::listInvalidProperties();
 
+        if ($this->container['start'] === null) {
+            $invalidProperties[] = "'start' can't be null";
+        }
+        if ($this->container['finish'] === null) {
+            $invalidProperties[] = "'finish' can't be null";
+        }
+        if ($this->container['duration'] === null) {
+            $invalidProperties[] = "'duration' can't be null";
+        }
+        if ($this->container['fixed_cost'] === null) {
+            $invalidProperties[] = "'fixed_cost' can't be null";
+        }
+        if ($this->container['duration_format'] === null) {
+            $invalidProperties[] = "'duration_format' can't be null";
+        }
+        if ($this->container['estimated_duration'] === null) {
+            $invalidProperties[] = "'estimated_duration' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -227,6 +245,24 @@ class TaskBaseline extends Baseline
             return false;
         }
 
+        if ($this->container['start'] === null) {
+            return false;
+        }
+        if ($this->container['finish'] === null) {
+            return false;
+        }
+        if ($this->container['duration'] === null) {
+            return false;
+        }
+        if ($this->container['fixed_cost'] === null) {
+            return false;
+        }
+        if ($this->container['duration_format'] === null) {
+            return false;
+        }
+        if ($this->container['estimated_duration'] === null) {
+            return false;
+        }
         return true;
     }
 

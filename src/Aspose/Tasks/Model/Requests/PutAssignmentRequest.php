@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutAssignmentRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,37 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for putAssignment" operation.
+ * Request model for putAssignment operation.
  */
 class PutAssignmentRequest
 {
-    /*
-     * Initializes a new instance of the PutAssignmentRequest class.
-     *  
-     * @param string $name The file name
-     * @param int $assignment_uid Assignment UID
-     * @param \Aspose\Tasks\Model\ResourceAssignment $assignment Assignment DTO
-     * @param string $mode Project's calculation mode
-     * @param bool $recalculate boolean value
-     * @param string $storage The document storage
-     * @param string $folder The document storage
-     * @param string $file_name The filename to save Changes
-     */
-    public function __construct($name, $assignment_uid, $assignment, $mode = null, $recalculate = null, $storage = null, $folder = null, $file_name = null)             
-    {
-        $this->name = $name;
-        $this->assignment_uid = $assignment_uid;
-        $this->assignment = $assignment;
-        $this->mode = $mode;
-        $this->recalculate = $recalculate;
-        $this->storage = $storage;
-        $this->folder = $folder;
-        $this->file_name = $file_name;
-    }
-
     /*
      * The file name
      */
@@ -96,4 +72,165 @@ class PutAssignmentRequest
      * The filename to save Changes
      */
     public $file_name;
+    
+	
+    /*
+     * Initializes a new instance of the PutAssignmentRequest class.
+     *  
+     * @param string $name The file name
+     * @param int $assignment_uid Assignment UID
+     * @param \Aspose\Tasks\Model\ResourceAssignment $assignment Assignment DTO
+     * @param string $mode Project's calculation mode
+     * @param bool $recalculate boolean value
+     * @param string $storage The document storage
+     * @param string $folder The document storage
+     * @param string $file_name The filename to save Changes
+     */
+    public function __construct($name, $assignment_uid, $assignment, $mode = null, $recalculate = null, $storage = null, $folder = null, $file_name = null)             
+    {
+        $this->name = $name;
+        $this->assignment_uid = $assignment_uid;
+        $this->assignment = $assignment;
+        $this->mode = $mode;
+        $this->recalculate = $recalculate;
+        $this->storage = $storage;
+        $this->folder = $folder;
+        $this->file_name = $file_name;
+    }
+
+    /*
+     * The file name
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The file name
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Assignment UID
+     */
+    public function get_assignment_uid()
+    {
+        return $this->assignment_uid;
+    }
+
+    /*
+     * Assignment UID
+     */
+    public function set_assignment_uid($value)
+    {
+        $this->assignment_uid = $value;
+        return $this;
+    }
+	
+    /*
+     * Assignment DTO
+     */
+    public function get_assignment()
+    {
+        return $this->assignment;
+    }
+
+    /*
+     * Assignment DTO
+     */
+    public function set_assignment($value)
+    {
+        $this->assignment = $value;
+        return $this;
+    }
+	
+    /*
+     * Project's calculation mode
+     */
+    public function get_mode()
+    {
+        return $this->mode;
+    }
+
+    /*
+     * Project's calculation mode
+     */
+    public function set_mode($value)
+    {
+        $this->mode = $value;
+        return $this;
+    }
+	
+    /*
+     * boolean value
+     */
+    public function get_recalculate()
+    {
+        return $this->recalculate;
+    }
+
+    /*
+     * boolean value
+     */
+    public function set_recalculate($value)
+    {
+        $this->recalculate = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document storage
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * The filename to save Changes
+     */
+    public function get_file_name()
+    {
+        return $this->file_name;
+    }
+
+    /*
+     * The filename to save Changes
+     */
+    public function set_file_name($value)
+    {
+        $this->file_name = $value;
+        return $this;
+    }
 }

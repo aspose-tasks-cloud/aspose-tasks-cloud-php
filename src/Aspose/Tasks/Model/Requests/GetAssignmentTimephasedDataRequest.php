@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetAssignmentTimephasedDataRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,33 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for getAssignmentTimephasedData" operation.
+ * Request model for getAssignmentTimephasedData operation.
  */
 class GetAssignmentTimephasedDataRequest
 {
-    /*
-     * Initializes a new instance of the GetAssignmentTimephasedDataRequest class.
-     *  
-     * @param string $name The name of the file.
-     * @param int $assignment_uid Uid of assignment to get timephased data for.
-     * @param string $type Type of timephased data to get.
-     * @param \DateTime $start_date Start date.
-     * @param \DateTime $end_date End date.
-     * @param string $folder The document folder.
-     */
-    public function __construct($name, $assignment_uid, $type = null, $start_date = null, $end_date = null, $folder = null)             
-    {
-        $this->name = $name;
-        $this->assignment_uid = $assignment_uid;
-        $this->type = $type;
-        $this->start_date = $start_date;
-        $this->end_date = $end_date;
-        $this->folder = $folder;
-    }
-
     /*
      * The name of the file.
      */
@@ -82,4 +62,151 @@ class GetAssignmentTimephasedDataRequest
      * The document folder.
      */
     public $folder;
+	
+    /*
+     * The document storage.
+     */
+    public $storage;
+    
+	
+    /*
+     * Initializes a new instance of the GetAssignmentTimephasedDataRequest class.
+     *  
+     * @param string $name The name of the file.
+     * @param int $assignment_uid Uid of assignment to get timephased data for.
+     * @param string $type Type of timephased data to get.
+     * @param \DateTime $start_date Start date.
+     * @param \DateTime $end_date End date.
+     * @param string $folder The document folder.
+     * @param string $storage The document storage.
+     */
+    public function __construct($name, $assignment_uid, $type = null, $start_date = null, $end_date = null, $folder = null, $storage = null)             
+    {
+        $this->name = $name;
+        $this->assignment_uid = $assignment_uid;
+        $this->type = $type;
+        $this->start_date = $start_date;
+        $this->end_date = $end_date;
+        $this->folder = $folder;
+        $this->storage = $storage;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * Uid of assignment to get timephased data for.
+     */
+    public function get_assignment_uid()
+    {
+        return $this->assignment_uid;
+    }
+
+    /*
+     * Uid of assignment to get timephased data for.
+     */
+    public function set_assignment_uid($value)
+    {
+        $this->assignment_uid = $value;
+        return $this;
+    }
+	
+    /*
+     * Type of timephased data to get.
+     */
+    public function get_type()
+    {
+        return $this->type;
+    }
+
+    /*
+     * Type of timephased data to get.
+     */
+    public function set_type($value)
+    {
+        $this->type = $value;
+        return $this;
+    }
+	
+    /*
+     * Start date.
+     */
+    public function get_start_date()
+    {
+        return $this->start_date;
+    }
+
+    /*
+     * Start date.
+     */
+    public function set_start_date($value)
+    {
+        $this->start_date = $value;
+        return $this;
+    }
+	
+    /*
+     * End date.
+     */
+    public function get_end_date()
+    {
+        return $this->end_date;
+    }
+
+    /*
+     * End date.
+     */
+    public function set_end_date($value)
+    {
+        $this->end_date = $value;
+        return $this;
+    }
+	
+    /*
+     * The document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
 }

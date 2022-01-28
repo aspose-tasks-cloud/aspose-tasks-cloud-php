@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OutlineCodeDefinition.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -121,20 +121,20 @@ class OutlineCodeDefinition implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'guid' => 'Guid',
-        'field_id' => 'FieldId',
-        'field_name' => 'FieldName',
-        'alias' => 'Alias',
-        'phonetic_alias' => 'PhoneticAlias',
-        'values' => 'Values',
-        'enterprise' => 'Enterprise',
-        'enterprise_outline_code_alias' => 'EnterpriseOutlineCodeAlias',
-        'resource_substitution_enabled' => 'ResourceSubstitutionEnabled',
-        'leaf_only' => 'LeafOnly',
-        'all_levels_required' => 'AllLevelsRequired',
-        'only_table_values_allowed' => 'OnlyTableValuesAllowed',
-        'masks' => 'Masks',
-        'show_indent' => 'ShowIndent'
+        'guid' => 'guid',
+        'field_id' => 'fieldId',
+        'field_name' => 'fieldName',
+        'alias' => 'alias',
+        'phonetic_alias' => 'phoneticAlias',
+        'values' => 'values',
+        'enterprise' => 'enterprise',
+        'enterprise_outline_code_alias' => 'enterpriseOutlineCodeAlias',
+        'resource_substitution_enabled' => 'resourceSubstitutionEnabled',
+        'leaf_only' => 'leafOnly',
+        'all_levels_required' => 'allLevelsRequired',
+        'only_table_values_allowed' => 'onlyTableValuesAllowed',
+        'masks' => 'masks',
+        'show_indent' => 'showIndent'
     ];
 
     /*
@@ -246,14 +246,14 @@ class OutlineCodeDefinition implements ArrayAccess
         $this->container['field_name'] = isset($data['field_name']) ? $data['field_name'] : null;
         $this->container['alias'] = isset($data['alias']) ? $data['alias'] : null;
         $this->container['phonetic_alias'] = isset($data['phonetic_alias']) ? $data['phonetic_alias'] : null;
-        $this->container['values'] = isset($data['values']) ? $data['values'] : null;
+        $this->container['values'] = isset($data['values']) ? $data['values'] : array();
         $this->container['enterprise'] = isset($data['enterprise']) ? $data['enterprise'] : null;
         $this->container['enterprise_outline_code_alias'] = isset($data['enterprise_outline_code_alias']) ? $data['enterprise_outline_code_alias'] : null;
         $this->container['resource_substitution_enabled'] = isset($data['resource_substitution_enabled']) ? $data['resource_substitution_enabled'] : null;
         $this->container['leaf_only'] = isset($data['leaf_only']) ? $data['leaf_only'] : null;
         $this->container['all_levels_required'] = isset($data['all_levels_required']) ? $data['all_levels_required'] : null;
         $this->container['only_table_values_allowed'] = isset($data['only_table_values_allowed']) ? $data['only_table_values_allowed'] : null;
-        $this->container['masks'] = isset($data['masks']) ? $data['masks'] : null;
+        $this->container['masks'] = isset($data['masks']) ? $data['masks'] : array();
         $this->container['show_indent'] = isset($data['show_indent']) ? $data['show_indent'] : null;
     }
 

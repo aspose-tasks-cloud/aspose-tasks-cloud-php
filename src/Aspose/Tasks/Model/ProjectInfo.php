@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ProjectInfo.php">
- *   Copyright (c) 2019 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -12,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -32,9 +31,8 @@
 
 namespace Aspose\Tasks\Model;
 
-
-use ArrayAccess;
-use Aspose\Tasks\ObjectSerializer;
+use \ArrayAccess;
+use \Aspose\Tasks\ObjectSerializer;
 
 /*
  * ProjectInfo
@@ -60,10 +58,10 @@ class ProjectInfo implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'createdDate' => '\DateTime',
-        'isCheckedOut' => 'bool',
-        'lastPublishedDate' => '\DateTime',
-        'lastSavedDate' => '\DateTime',
+        'created_date' => '\DateTime',
+        'is_checked_out' => 'bool',
+        'last_published_date' => '\DateTime',
+        'last_saved_date' => '\DateTime',
         'description' => 'string'
     ];
 
@@ -73,12 +71,12 @@ class ProjectInfo implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'id' => null,
+        'id' => 'guid',
         'name' => null,
-        'createdDate' => 'date-time',
-        'isCheckedOut' => null,
-        'lastPublishedDate' => 'date-time',
-        'lastSavedDate' => 'date-time',
+        'created_date' => 'date-time',
+        'is_checked_out' => null,
+        'last_published_date' => 'date-time',
+        'last_saved_date' => 'date-time',
         'description' => null
     ];
 
@@ -109,13 +107,13 @@ class ProjectInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'Id',
-        'name' => 'Name',
-        'createdDate' => 'CreatedDate',
-        'isCheckedOut' => 'IsCheckedOut',
-        'lastPublishedDate' => 'LastPublishedDate',
-        'lastSavedDate' => 'LastSavedDate',
-        'description' => 'Description'
+        'id' => 'id',
+        'name' => 'name',
+        'created_date' => 'createdDate',
+        'is_checked_out' => 'isCheckedOut',
+        'last_published_date' => 'lastPublishedDate',
+        'last_saved_date' => 'lastSavedDate',
+        'description' => 'description'
     ];
 
     /*
@@ -126,10 +124,10 @@ class ProjectInfo implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'createdDate' => 'setCreatedDate',
-        'isCheckedOut' => 'setIsCheckedOut',
-        'lastPublishedDate' => 'setLastPublishedDate',
-        'lastSavedDate' => 'setLastSavedDate',
+        'created_date' => 'setCreatedDate',
+        'is_checked_out' => 'setIsCheckedOut',
+        'last_published_date' => 'setLastPublishedDate',
+        'last_saved_date' => 'setLastSavedDate',
         'description' => 'setDescription'
     ];
 
@@ -141,10 +139,10 @@ class ProjectInfo implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'createdDate' => 'getCreatedDate',
-        'isCheckedOut' => 'getIsCheckedOut',
-        'lastPublishedDate' => 'getLastPublishedDate',
-        'lastSavedDate' => 'getLastSavedDate',
+        'created_date' => 'getCreatedDate',
+        'is_checked_out' => 'getIsCheckedOut',
+        'last_published_date' => 'getLastPublishedDate',
+        'last_saved_date' => 'getLastSavedDate',
         'description' => 'getDescription'
     ];
 
@@ -189,6 +187,10 @@ class ProjectInfo implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /*
      * Associative array for storing property values
      *
@@ -206,10 +208,10 @@ class ProjectInfo implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['createdDate'] = isset($data['createdDate']) ? $data['createdDate'] : null;
-        $this->container['isCheckedOut'] = isset($data['isCheckedOut']) ? $data['isCheckedOut'] : null;
-        $this->container['lastPublishedDate'] = isset($data['lastPublishedDate']) ? $data['lastPublishedDate'] : null;
-        $this->container['lastSavedDate'] = isset($data['lastSavedDate']) ? $data['lastSavedDate'] : null;
+        $this->container['created_date'] = isset($data['created_date']) ? $data['created_date'] : null;
+        $this->container['is_checked_out'] = isset($data['is_checked_out']) ? $data['is_checked_out'] : null;
+        $this->container['last_published_date'] = isset($data['last_published_date']) ? $data['last_published_date'] : null;
+        $this->container['last_saved_date'] = isset($data['last_saved_date']) ? $data['last_saved_date'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
 
@@ -225,6 +227,18 @@ class ProjectInfo implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
+        if ($this->container['created_date'] === null) {
+            $invalidProperties[] = "'created_date' can't be null";
+        }
+        if ($this->container['is_checked_out'] === null) {
+            $invalidProperties[] = "'is_checked_out' can't be null";
+        }
+        if ($this->container['last_published_date'] === null) {
+            $invalidProperties[] = "'last_published_date' can't be null";
+        }
+        if ($this->container['last_saved_date'] === null) {
+            $invalidProperties[] = "'last_saved_date' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -238,6 +252,18 @@ class ProjectInfo implements ArrayAccess
     {
 
         if ($this->container['id'] === null) {
+            return false;
+        }
+        if ($this->container['created_date'] === null) {
+            return false;
+        }
+        if ($this->container['is_checked_out'] === null) {
+            return false;
+        }
+        if ($this->container['last_published_date'] === null) {
+            return false;
+        }
+        if ($this->container['last_saved_date'] === null) {
             return false;
         }
         return true;
@@ -255,6 +281,20 @@ class ProjectInfo implements ArrayAccess
     }
 
     /*
+     * Sets id
+     *
+     * @param string $id The unique identifier of the project.
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /*
      * Gets name
      *
      * @return string
@@ -265,43 +305,113 @@ class ProjectInfo implements ArrayAccess
     }
 
     /*
-     * Gets createdDate
+     * Sets name
      *
-     * @return DateTime
+     * @param string $name The name of the project.
+     *
+     * @return $this
      */
-    public function getCreatedDate()
+    public function setName($name)
     {
-        return $this->container['createdDate'];
+        $this->container['name'] = $name;
+
+        return $this;
     }
 
     /*
-     * Gets isCheckedOut
+     * Gets created_date
+     *
+     * @return \DateTime
+     */
+    public function getCreatedDate()
+    {
+        return $this->container['created_date'];
+    }
+
+    /*
+     * Sets created_date
+     *
+     * @param \DateTime $created_date The date and time when the project was created.
+     *
+     * @return $this
+     */
+    public function setCreatedDate($created_date)
+    {
+        $this->container['created_date'] = $created_date;
+
+        return $this;
+    }
+
+    /*
+     * Gets is_checked_out
      *
      * @return bool
      */
     public function getIsCheckedOut()
     {
-        return $this->container['isCheckedOut'];
+        return $this->container['is_checked_out'];
     }
 
     /*
-     * Gets lastPublishedDate
+     * Sets is_checked_out
      *
-     * @return DateTime
+     * @param bool $is_checked_out Value indicating whether the project is checked out.
+     *
+     * @return $this
+     */
+    public function setIsCheckedOut($is_checked_out)
+    {
+        $this->container['is_checked_out'] = $is_checked_out;
+
+        return $this;
+    }
+
+    /*
+     * Gets last_published_date
+     *
+     * @return \DateTime
      */
     public function getLastPublishedDate()
     {
-        return $this->container['lastPublishedDate'];
+        return $this->container['last_published_date'];
     }
 
     /*
-     * Gets lastSavedDate
+     * Sets last_published_date
      *
-     * @return DateTime
+     * @param \DateTime $last_published_date The most recent date when the project was published.
+     *
+     * @return $this
+     */
+    public function setLastPublishedDate($last_published_date)
+    {
+        $this->container['last_published_date'] = $last_published_date;
+
+        return $this;
+    }
+
+    /*
+     * Gets last_saved_date
+     *
+     * @return \DateTime
      */
     public function getLastSavedDate()
     {
-        return $this->container['lastSavedDate'];
+        return $this->container['last_saved_date'];
+    }
+
+    /*
+     * Sets last_saved_date
+     *
+     * @param \DateTime $last_saved_date The most recent date when the project was saved.
+     *
+     * @return $this
+     */
+    public function setLastSavedDate($last_saved_date)
+    {
+        $this->container['last_saved_date'] = $last_saved_date;
+
+        return $this;
     }
 
     /*
@@ -315,93 +425,9 @@ class ProjectInfo implements ArrayAccess
     }
 
     /*
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /*
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /*
-     * Sets createdDate
-     *
-     * @param DateTime $createdDate createdDate
-     *
-     * @return $this
-     */
-    public function setCreatedDate($createdDate)
-    {
-        $this->container['createdDate'] = $createdDate;
-
-        return $this;
-    }
-
-    /*
-     * Sets isCheckedOut
-     *
-     * @param bool $isCheckedOut isCheckedOut
-     *
-     * @return $this
-     */
-    public function setIsCheckedOut($isCheckedOut)
-    {
-        $this->container['isCheckedOut'] = $isCheckedOut;
-
-        return $this;
-    }
-
-    /*
-     * Sets lastPublishedDate
-     *
-     * @param DateTime $lastPublishedDate lastPublishedDate
-     *
-     * @return $this
-     */
-    public function setLastPublishedDate($lastPublishedDate)
-    {
-        $this->container['lastPublishedDate'] = $lastPublishedDate;
-
-        return $this;
-    }
-
-    /*
-     * Sets lastSavedDate
-     *
-     * @param DateTime $lastSavedDate lastSavedDate
-     *
-     * @return $this
-     */
-    public function setLastSavedDate($lastSavedDate)
-    {
-        $this->container['lastSavedDate'] = $lastSavedDate;
-
-        return $this;
-    }
-
-    /*
      * Sets description
      *
-     * @param string $description description
+     * @param string $description The description of the project.
      *
      * @return $this
      */
@@ -411,8 +437,6 @@ class ProjectInfo implements ArrayAccess
 
         return $this;
     }
-
-
     /*
      * Returns true if offset exists. False otherwise.
      *

@@ -48,42 +48,6 @@ class TaskDocumentFormatTest extends BaseTestContext
         Assert::assertContains("1;Five to Eight Weeks Before Moving;1;16 days;Thu 01.01.04 08:00;Thu 22.01.04 17:00;0%;$0;0 hrs", $response->current());
     }
     
-    public function testGetDocumentInCsvFormatWithSaveOptions()
-    {
-        $remoteName = "testGetDocumentInCsvFormatWithSaveOptions.mpp";
-        $folder = $this->uploadTestFile("Home move plan.mpp", $remoteName, '');
-        
-        // SaveOptions parameters is a json-serialized representation of
-        // Aspose.Tasks's SaveOptions class or its format-specific inheritors (Like CsvOptions, etc):
-        // See Aspose.Tasks reference: https://apireference.aspose.com/net/tasks/aspose.tasks.saving/saveoptions
-        
-        $saveOptionsSerialized = new stdClass();
-        $saveOptionsSerialized->TextDelimiter = "Comma";
-        $saveOptionsSerialized->IncludeHeaders = false;
-        $saveOptionsSerialized->NonExistingTestProperty = false;
-        $saveOptionsSerialized->View = new stdClass();
-        
-        $column1 = new stdClass();
-        $column1->Type = "GanttChartColumn";
-        $column1->Name = "TestColumn1";
-        $column1->Property = "Name";
-        $column1->Width = 120;
-        
-        $column2 = new stdClass();
-        $column2->Type = "GanttChartColumn";
-        $column2->Name = "TestColumn2";
-        $column2->Property = "Duration";
-        $column2->Width = 120;
-        
-        $saveOptionsSerialized->View->Columns = array($column1, $column2);
-
-        $response = $this->tasks->postTaskDocumentWithFormat(new PostTaskDocumentWithFormatRequest($remoteName,
-            Model\ProjectFileFormat::CSV, $saveOptionsSerialized, false, self::$storageName, $folder));
-        
-        Assert::assertNotNull($response);
-        Assert::assertContains("Five to Eight Weeks Before Moving,16 days", $response->current());
-    }
-    
     public function testGetDocumentAsZippedHtml()
     {
         $remoteName = "testGetDocumentAsZippedHtml.mpp";

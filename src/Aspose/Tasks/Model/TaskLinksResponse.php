@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TaskLinksResponse.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,7 +93,7 @@ class TaskLinksResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'task_links' => 'TaskLinks'
+        'task_links' => 'taskLinks'
     ];
 
     /*
@@ -170,7 +170,7 @@ class TaskLinksResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['task_links'] = isset($data['task_links']) ? $data['task_links'] : null;
+        $this->container['task_links'] = isset($data['task_links']) ? $data['task_links'] : array();
     }
 
     /*

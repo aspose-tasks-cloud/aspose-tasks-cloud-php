@@ -1,20 +1,20 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="RepeatRequestException.php">
- *  Copyright (c) 2018 Aspose.Tasks Cloud
+ * <copyright company="Aspose" file="StorageExistsRequest.php">
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -26,11 +26,43 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Tasks;
+namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Class for handling repeat request
+ * Request model for storageExists operation.
  */
-class RepeatRequestException extends ApiException
+class StorageExistsRequest
 {
+    /*
+     * Storage name
+     */
+    public $storage_name;
+    
+	
+    /*
+     * Initializes a new instance of the StorageExistsRequest class.
+     *  
+     * @param string $storage_name Storage name
+     */
+    public function __construct($storage_name)             
+    {
+        $this->storage_name = $storage_name;
+    }
+
+    /*
+     * Storage name
+     */
+    public function get_storage_name()
+    {
+        return $this->storage_name;
+    }
+
+    /*
+     * Storage name
+     */
+    public function set_storage_name($value)
+    {
+        $this->storage_name = $value;
+        return $this;
+    }
 }

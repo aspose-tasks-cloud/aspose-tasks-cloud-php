@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OutlineCode.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -99,9 +99,9 @@ class OutlineCode implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'field_id' => 'FieldId',
-        'value_id' => 'ValueId',
-        'value_guid' => 'ValueGuid'
+        'field_id' => 'fieldId',
+        'value_id' => 'valueId',
+        'value_guid' => 'valueGuid'
     ];
 
     /*

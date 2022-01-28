@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ResourceItemsResponse.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -92,7 +92,7 @@ class ResourceItemsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'resources' => 'Resources'
+        'resources' => 'resources'
     ];
 
     /*

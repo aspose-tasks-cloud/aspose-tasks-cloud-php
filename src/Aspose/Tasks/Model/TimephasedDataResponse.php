@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TimephasedDataResponse.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,7 +93,7 @@ class TimephasedDataResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'items' => 'Items'
+        'items' => 'items'
     ];
 
     /*
@@ -170,7 +170,7 @@ class TimephasedDataResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
+        $this->container['items'] = isset($data['items']) ? $data['items'] : array();
     }
 
     /*

@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TaskCreationRequest.php">
- *   Copyright (c) 2020 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -37,7 +37,6 @@ use \Aspose\Tasks\ObjectSerializer;
 /*
  * TaskCreationRequest
  *
- * @description Request for create task.
  */
 class TaskCreationRequest implements ArrayAccess
 {
@@ -68,8 +67,8 @@ class TaskCreationRequest implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'task_name' => null,
-        'parent_task_uid' => null,
-        'before_task_id' => null
+        'parent_task_uid' => 'int32',
+        'before_task_id' => 'int32'
     ];
 
     /*
@@ -99,9 +98,9 @@ class TaskCreationRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'task_name' => 'TaskName',
-        'parent_task_uid' => 'ParentTaskUid',
-        'before_task_id' => 'BeforeTaskId'
+        'task_name' => 'taskName',
+        'parent_task_uid' => 'parentTaskUid',
+        'before_task_id' => 'beforeTaskId'
     ];
 
     /*
@@ -167,6 +166,10 @@ class TaskCreationRequest implements ArrayAccess
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
     /*
      * Associative array for storing property values
      *
@@ -182,11 +185,9 @@ class TaskCreationRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-
         $this->container['task_name'] = isset($data['task_name']) ? $data['task_name'] : null;
         $this->container['parent_task_uid'] = isset($data['parent_task_uid']) ? $data['parent_task_uid'] : null;
         $this->container['before_task_id'] = isset($data['before_task_id']) ? $data['before_task_id'] : null;
-
     }
 
     /*
@@ -209,6 +210,7 @@ class TaskCreationRequest implements ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
 
@@ -274,7 +276,7 @@ class TaskCreationRequest implements ArrayAccess
     /*
      * Sets before_task_id
      *
-     * @return int Id of task before which new task will be inserted
+     * @param int $before_task_id Id of task before which new task will be inserted.
      *
      * @return $this
      */
@@ -284,7 +286,6 @@ class TaskCreationRequest implements ArrayAccess
 
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *

@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WBSCodeMask.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -100,10 +100,10 @@ class WBSCodeMask implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'level' => 'Level',
-        'length' => 'Length',
-        'sequence' => 'Sequence',
-        'separator' => 'Separator'
+        'level' => 'level',
+        'length' => 'length',
+        'sequence' => 'sequence',
+        'separator' => 'separator'
     ];
 
     /*

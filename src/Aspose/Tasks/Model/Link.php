@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Link.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -101,10 +101,10 @@ class Link implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'href' => 'Href',
-        'rel' => 'Rel',
-        'type' => 'Type',
-        'title' => 'Title'
+        'href' => 'href',
+        'rel' => 'rel',
+        'type' => 'type',
+        'title' => 'title'
     ];
 
     /*

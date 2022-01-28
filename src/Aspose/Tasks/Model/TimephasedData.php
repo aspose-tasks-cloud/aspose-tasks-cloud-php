@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TimephasedData.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -105,12 +105,12 @@ class TimephasedData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'uid' => 'Uid',
-        'start' => 'Start',
-        'finish' => 'Finish',
-        'unit' => 'Unit',
-        'value' => 'Value',
-        'timephased_data_type' => 'TimephasedDataType'
+        'uid' => 'uid',
+        'start' => 'start',
+        'finish' => 'finish',
+        'unit' => 'unit',
+        'value' => 'value',
+        'timephased_data_type' => 'timephasedDataType'
     ];
 
     /*

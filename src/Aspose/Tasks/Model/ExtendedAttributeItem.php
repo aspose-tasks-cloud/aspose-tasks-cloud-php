@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ExtendedAttributeItem.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -102,11 +102,11 @@ class ExtendedAttributeItem implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'link' => 'Link',
-        'index' => 'Index',
-        'field_name' => 'FieldName',
-        'alias' => 'Alias',
-        'field_id' => 'FieldId'
+        'link' => 'link',
+        'index' => 'index',
+        'field_name' => 'fieldName',
+        'alias' => 'alias',
+        'field_id' => 'fieldId'
     ];
 
     /*

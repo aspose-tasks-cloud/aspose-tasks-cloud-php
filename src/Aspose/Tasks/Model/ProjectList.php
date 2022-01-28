@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ProjectList.php">
- *   Copyright (c) 2019 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -36,7 +36,7 @@ use \Aspose\Tasks\ObjectSerializer;
  * ProjectList
  *
  */
-class ProjectList extends LinkElement
+class ProjectList extends LinkElement 
 {
     const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class ProjectList extends LinkElement
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'projectInfo' => '\Aspose\Tasks\Model\ProjectInfo[]'
+        'project_info' => '\Aspose\Tasks\Model\ProjectInfo[]'
     ];
 
     /*
@@ -62,7 +62,7 @@ class ProjectList extends LinkElement
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'projectInfo' => null
+        'project_info' => null
     ];
 
     /*
@@ -92,7 +92,7 @@ class ProjectList extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'projectInfo' => 'ProjectInfo'
+        'project_info' => 'projectInfo'
     ];
 
     /*
@@ -101,7 +101,7 @@ class ProjectList extends LinkElement
      * @var string[]
      */
     protected static $setters = [
-        'projectInfo' => 'setProjectInfo'
+        'project_info' => 'setProjectInfo'
     ];
 
     /*
@@ -110,7 +110,7 @@ class ProjectList extends LinkElement
      * @var string[]
      */
     protected static $getters = [
-        'projectInfo' => 'getProjectInfo'
+        'project_info' => 'getProjectInfo'
     ];
 
     /*
@@ -154,6 +154,11 @@ class ProjectList extends LinkElement
         return self::$swaggerModelName;
     }
 
+    
+
+    
+
+
     /*
      * Constructor
      *
@@ -164,7 +169,7 @@ class ProjectList extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['projectInfo'] = isset($data['projectInfo']) ? $data['projectInfo'] : null;
+        $this->container['project_info'] = isset($data['project_info']) ? $data['project_info'] : array();
     }
 
     /*
@@ -196,25 +201,25 @@ class ProjectList extends LinkElement
 
 
     /*
-     * Gets projectInfo
+     * Gets project_info
      *
      * @return \Aspose\Tasks\Model\ProjectInfo[]
      */
     public function getProjectInfo()
     {
-        return $this->container['projectInfo'];
+        return $this->container['project_info'];
     }
 
     /*
-     * Sets projectInfo
+     * Sets project_info
      *
-     * @param \Aspose\Tasks\Model\ProjectInfo[] $projectInfo projectInfo
+     * @param \Aspose\Tasks\Model\ProjectInfo[] $project_info project_info
      *
      * @return $this
      */
-    public function setProjectInfo($projectInfo)
+    public function setProjectInfo($project_info)
     {
-        $this->container['projectInfo'] = $projectInfo;
+        $this->container['project_info'] = $project_info;
 
         return $this;
     }

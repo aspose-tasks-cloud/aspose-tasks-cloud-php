@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ResourceAssignment.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,8 +57,8 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'task_uid' => 'int',
-        'guid' => 'string',
         'resource_uid' => 'int',
+        'guid' => 'string',
         'uid' => 'int',
         'percent_work_complete' => 'int',
         'actual_cost' => 'float',
@@ -131,8 +131,8 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'task_uid' => 'int32',
-        'guid' => null,
         'resource_uid' => 'int32',
+        'guid' => null,
         'uid' => 'int32',
         'percent_work_complete' => 'int32',
         'actual_cost' => 'decimal',
@@ -225,72 +225,72 @@ class ResourceAssignment implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'task_uid' => 'TaskUid',
-        'guid' => 'Guid',
-        'resource_uid' => 'ResourceUid',
-        'uid' => 'Uid',
-        'percent_work_complete' => 'PercentWorkComplete',
-        'actual_cost' => 'ActualCost',
-        'actual_finish' => 'ActualFinish',
-        'actual_overtime_cost' => 'ActualOvertimeCost',
-        'actual_overtime_work' => 'ActualOvertimeWork',
-        'actual_start' => 'ActualStart',
-        'actual_work' => 'ActualWork',
-        'acwp' => 'Acwp',
-        'confirmed' => 'Confirmed',
-        'cost' => 'Cost',
-        'cost_rate_table_type' => 'CostRateTableType',
-        'cost_variance' => 'CostVariance',
-        'cv' => 'Cv',
-        'delay' => 'Delay',
-        'finish' => 'Finish',
-        'finish_variance' => 'FinishVariance',
-        'hyperlink' => 'Hyperlink',
-        'hyperlink_address' => 'HyperlinkAddress',
-        'hyperlink_sub_address' => 'HyperlinkSubAddress',
-        'work_variance' => 'WorkVariance',
-        'has_fixed_rate_units' => 'HasFixedRateUnits',
-        'fixed_material' => 'FixedMaterial',
-        'leveling_delay' => 'LevelingDelay',
-        'leveling_delay_format' => 'LevelingDelayFormat',
-        'linked_fields' => 'LinkedFields',
-        'milestone' => 'Milestone',
-        'notes' => 'Notes',
-        'overallocated' => 'Overallocated',
-        'overtime_cost' => 'OvertimeCost',
-        'overtime_work' => 'OvertimeWork',
-        'peak_units' => 'PeakUnits',
-        'regular_work' => 'RegularWork',
-        'remaining_cost' => 'RemainingCost',
-        'remaining_overtime_cost' => 'RemainingOvertimeCost',
-        'remaining_overtime_work' => 'RemainingOvertimeWork',
-        'remaining_work' => 'RemainingWork',
-        'response_pending' => 'ResponsePending',
-        'start' => 'Start',
-        'stop' => 'Stop',
-        'resume' => 'Resume',
-        'start_variance' => 'StartVariance',
-        'summary' => 'Summary',
-        'sv' => 'Sv',
-        'units' => 'Units',
-        'update_needed' => 'UpdateNeeded',
-        'vac' => 'Vac',
-        'work' => 'Work',
-        'work_contour' => 'WorkContour',
-        'bcws' => 'Bcws',
-        'bcwp' => 'Bcwp',
-        'booking_type' => 'BookingType',
-        'actual_work_protected' => 'ActualWorkProtected',
-        'actual_overtime_work_protected' => 'ActualOvertimeWorkProtected',
-        'creation_date' => 'CreationDate',
-        'assn_owner' => 'AssnOwner',
-        'assn_owner_guid' => 'AssnOwnerGuid',
-        'budget_cost' => 'BudgetCost',
-        'budget_work' => 'BudgetWork',
-        'rate_scale' => 'RateScale',
-        'baselines' => 'Baselines',
-        'extended_attributes' => 'ExtendedAttributes',
-        'timephased_data' => 'TimephasedData'
+        'task_uid' => 'taskUid',
+        'resource_uid' => 'resourceUid',
+        'guid' => 'guid',
+        'uid' => 'uid',
+        'percent_work_complete' => 'percentWorkComplete',
+        'actual_cost' => 'actualCost',
+        'actual_finish' => 'actualFinish',
+        'actual_overtime_cost' => 'actualOvertimeCost',
+        'actual_overtime_work' => 'actualOvertimeWork',
+        'actual_start' => 'actualStart',
+        'actual_work' => 'actualWork',
+        'acwp' => 'acwp',
+        'confirmed' => 'confirmed',
+        'cost' => 'cost',
+        'cost_rate_table_type' => 'costRateTableType',
+        'cost_variance' => 'costVariance',
+        'cv' => 'cv',
+        'delay' => 'delay',
+        'finish' => 'finish',
+        'finish_variance' => 'finishVariance',
+        'hyperlink' => 'hyperlink',
+        'hyperlink_address' => 'hyperlinkAddress',
+        'hyperlink_sub_address' => 'hyperlinkSubAddress',
+        'work_variance' => 'workVariance',
+        'has_fixed_rate_units' => 'hasFixedRateUnits',
+        'fixed_material' => 'fixedMaterial',
+        'leveling_delay' => 'levelingDelay',
+        'leveling_delay_format' => 'levelingDelayFormat',
+        'linked_fields' => 'linkedFields',
+        'milestone' => 'milestone',
+        'notes' => 'notes',
+        'overallocated' => 'overallocated',
+        'overtime_cost' => 'overtimeCost',
+        'overtime_work' => 'overtimeWork',
+        'peak_units' => 'peakUnits',
+        'regular_work' => 'regularWork',
+        'remaining_cost' => 'remainingCost',
+        'remaining_overtime_cost' => 'remainingOvertimeCost',
+        'remaining_overtime_work' => 'remainingOvertimeWork',
+        'remaining_work' => 'remainingWork',
+        'response_pending' => 'responsePending',
+        'start' => 'start',
+        'stop' => 'stop',
+        'resume' => 'resume',
+        'start_variance' => 'startVariance',
+        'summary' => 'summary',
+        'sv' => 'sv',
+        'units' => 'units',
+        'update_needed' => 'updateNeeded',
+        'vac' => 'vac',
+        'work' => 'work',
+        'work_contour' => 'workContour',
+        'bcws' => 'bcws',
+        'bcwp' => 'bcwp',
+        'booking_type' => 'bookingType',
+        'actual_work_protected' => 'actualWorkProtected',
+        'actual_overtime_work_protected' => 'actualOvertimeWorkProtected',
+        'creation_date' => 'creationDate',
+        'assn_owner' => 'assnOwner',
+        'assn_owner_guid' => 'assnOwnerGuid',
+        'budget_cost' => 'budgetCost',
+        'budget_work' => 'budgetWork',
+        'rate_scale' => 'rateScale',
+        'baselines' => 'baselines',
+        'extended_attributes' => 'extendedAttributes',
+        'timephased_data' => 'timephasedData'
     ];
 
     /*
@@ -300,8 +300,8 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $setters = [
         'task_uid' => 'setTaskUid',
-        'guid' => 'setGuid',
         'resource_uid' => 'setResourceUid',
+        'guid' => 'setGuid',
         'uid' => 'setUid',
         'percent_work_complete' => 'setPercentWorkComplete',
         'actual_cost' => 'setActualCost',
@@ -374,8 +374,8 @@ class ResourceAssignment implements ArrayAccess
      */
     protected static $getters = [
         'task_uid' => 'getTaskUid',
-        'guid' => 'getGuid',
         'resource_uid' => 'getResourceUid',
+        'guid' => 'getGuid',
         'uid' => 'getUid',
         'percent_work_complete' => 'getPercentWorkComplete',
         'actual_cost' => 'getActualCost',
@@ -502,8 +502,8 @@ class ResourceAssignment implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['task_uid'] = isset($data['task_uid']) ? $data['task_uid'] : -1;
-        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['resource_uid'] = isset($data['resource_uid']) ? $data['resource_uid'] : -1;
+        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
         $this->container['percent_work_complete'] = isset($data['percent_work_complete']) ? $data['percent_work_complete'] : null;
         $this->container['actual_cost'] = isset($data['actual_cost']) ? $data['actual_cost'] : null;
@@ -564,9 +564,9 @@ class ResourceAssignment implements ArrayAccess
         $this->container['budget_cost'] = isset($data['budget_cost']) ? $data['budget_cost'] : null;
         $this->container['budget_work'] = isset($data['budget_work']) ? $data['budget_work'] : null;
         $this->container['rate_scale'] = isset($data['rate_scale']) ? $data['rate_scale'] : null;
-        $this->container['baselines'] = isset($data['baselines']) ? $data['baselines'] : null;
-        $this->container['extended_attributes'] = isset($data['extended_attributes']) ? $data['extended_attributes'] : null;
-        $this->container['timephased_data'] = isset($data['timephased_data']) ? $data['timephased_data'] : null;
+        $this->container['baselines'] = isset($data['baselines']) ? $data['baselines'] : array();
+        $this->container['extended_attributes'] = isset($data['extended_attributes']) ? $data['extended_attributes'] : array();
+        $this->container['timephased_data'] = isset($data['timephased_data']) ? $data['timephased_data'] : array();
     }
 
     /*
@@ -955,30 +955,6 @@ class ResourceAssignment implements ArrayAccess
     }
 
     /*
-     * Gets guid
-     *
-     * @return string
-     */
-    public function getGuid()
-    {
-        return $this->container['guid'];
-    }
-
-    /*
-     * Sets guid
-     *
-     * @param int $guid Returns or sets the global unique identifier of an assignment.
-     *
-     * @return $this
-     */
-    public function setGuid($guid)
-    {
-        $this->container['guid'] = $guid;
-
-        return $this;
-    }
-
-    /*
      * Gets resource_uid
      *
      * @return int
@@ -998,6 +974,30 @@ class ResourceAssignment implements ArrayAccess
     public function setResourceUid($resource_uid)
     {
         $this->container['resource_uid'] = $resource_uid;
+
+        return $this;
+    }
+
+    /*
+     * Gets guid
+     *
+     * @return string
+     */
+    public function getGuid()
+    {
+        return $this->container['guid'];
+    }
+
+    /*
+     * Sets guid
+     *
+     * @param string $guid Returns or sets the global unique identifier of an assignment.
+     *
+     * @return $this
+     */
+    public function setGuid($guid)
+    {
+        $this->container['guid'] = $guid;
 
         return $this;
     }
@@ -2443,28 +2443,6 @@ class ResourceAssignment implements ArrayAccess
     }
 
     /*
-     * Gets timephased_data
-     *
-     * @return \Aspose\Tasks\Model\TimephasedData[]
-     */
-    public function getTimephasedData()
-    {
-        return $this->container['timephased_data'];
-    }
-
-    /*
-     * Sets timephased_data
-     *
-     * @param \Aspose\Tasks\Model\TimephasedData[] $timephased_data Collection of TimephasedData objects.
-     */
-    public function setTimephasedData($timephased_data)
-    {
-        $this->container['timephased_data'] = $timephased_data;
-
-        return $this;
-    }
-
-    /*
      * Gets baselines
      *
      * @return \Aspose\Tasks\Model\AssignmentBaseline[]
@@ -2508,6 +2486,30 @@ class ResourceAssignment implements ArrayAccess
     public function setExtendedAttributes($extended_attributes)
     {
         $this->container['extended_attributes'] = $extended_attributes;
+
+        return $this;
+    }
+
+    /*
+     * Gets timephased_data
+     *
+     * @return \Aspose\Tasks\Model\TimephasedData[]
+     */
+    public function getTimephasedData()
+    {
+        return $this->container['timephased_data'];
+    }
+
+    /*
+     * Sets timephased_data
+     *
+     * @param \Aspose\Tasks\Model\TimephasedData[] $timephased_data Represents a collection of TimephasedData objects.
+     *
+     * @return $this
+     */
+    public function setTimephasedData($timephased_data)
+    {
+        $this->container['timephased_data'] = $timephased_data;
 
         return $this;
     }

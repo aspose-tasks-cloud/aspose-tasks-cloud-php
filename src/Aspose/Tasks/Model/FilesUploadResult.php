@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FilesUploadResult.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,24 +25,32 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+/*
+ * FilesUploadResult
+ */
+
 namespace Aspose\Tasks\Model;
 
 use \ArrayAccess;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
- * File upload result.
+ * FilesUploadResult
+ *
+ * @description File upload result
  */
-class FilesUploadResult implements ModelInterface, ArrayAccess
+class FilesUploadResult implements ArrayAccess
 {
     const DISCRIMINATOR = null;
-    /**
+
+    /*
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = 'FilesUploadResult';
-    /**
+    protected static $swaggerModelName = "FilesUploadResult";
+
+    /*
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -51,7 +59,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
         'uploaded' => 'string[]',
         'errors' => '\Aspose\Tasks\Model\Error[]'
     ];
-    /**
+
+    /*
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +69,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
         'uploaded' => null,
         'errors' => null
     ];
-    /**
+
+    /*
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -69,7 +79,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return self::$swaggerTypes;
     }
-    /**
+
+    /*
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -78,17 +89,19 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return self::$swaggerFormats;
     }
-    /**
+
+    /*
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'uploaded' => 'Uploaded',
-        'errors' => 'Errors'
+        'uploaded' => 'uploaded',
+        'errors' => 'errors'
     ];
-    /**
+
+    /*
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -97,7 +110,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
         'uploaded' => 'setUploaded',
         'errors' => 'setErrors'
     ];
-    /**
+
+    /*
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -106,7 +120,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
         'uploaded' => 'getUploaded',
         'errors' => 'getErrors'
     ];
-    /**
+
+    /*
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -116,7 +131,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return self::$attributeMap;
     }
-    /**
+
+    /*
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -125,7 +141,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return self::$setters;
     }
-    /**
+
+    /*
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -134,7 +151,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return self::$getters;
     }
-    /**
+
+    /*
      * The original name of the model.
      *
      * @return string
@@ -144,14 +162,18 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    
 
-    /**
+    
+
+    /*
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
-    /**
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -159,10 +181,11 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['uploaded'] = isset($data['uploaded']) ? $data['uploaded'] : null;
-        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['uploaded'] = isset($data['uploaded']) ? $data['uploaded'] : array();
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : array();
     }
-    /**
+
+    /*
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -170,9 +193,11 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
         return $invalidProperties;
     }
-    /**
+
+    /*
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -180,9 +205,12 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
      */
     public function valid()
     {
+
         return true;
     }
-    /**
+
+
+    /*
      * Gets uploaded
      *
      * @return string[]
@@ -191,7 +219,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return $this->container['uploaded'];
     }
-    /**
+
+    /*
      * Sets uploaded
      *
      * @param string[] $uploaded List of uploaded file names
@@ -201,9 +230,11 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     public function setUploaded($uploaded)
     {
         $this->container['uploaded'] = $uploaded;
+
         return $this;
     }
-    /**
+
+    /*
      * Gets errors
      *
      * @return \Aspose\Tasks\Model\Error[]
@@ -212,7 +243,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return $this->container['errors'];
     }
-    /**
+
+    /*
      * Sets errors
      *
      * @param \Aspose\Tasks\Model\Error[] $errors List of errors.
@@ -222,9 +254,10 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     public function setErrors($errors)
     {
         $this->container['errors'] = $errors;
+
         return $this;
     }
-    /**
+    /*
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -235,7 +268,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return isset($this->container[$offset]);
     }
-    /**
+
+    /*
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -246,7 +280,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-    /**
+
+    /*
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -262,7 +297,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
             $this->container[$offset] = $value;
         }
     }
-    /**
+
+    /*
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -273,7 +309,8 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
     {
         unset($this->container[$offset]);
     }
-    /**
+
+    /*
      * Gets the string presentation of the object
      *
      * @return string
@@ -286,6 +323,9 @@ class FilesUploadResult implements ModelInterface, ArrayAccess
                 JSON_PRETTY_PRINT
             );
         }
+
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

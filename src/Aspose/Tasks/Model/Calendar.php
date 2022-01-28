@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Calendar.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -105,12 +105,12 @@ class Calendar implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'uid' => 'Uid',
-        'days' => 'Days',
-        'is_base_calendar' => 'IsBaseCalendar',
-        'base_calendar' => 'BaseCalendar',
-        'is_baseline_calendar' => 'IsBaselineCalendar'
+        'name' => 'name',
+        'uid' => 'uid',
+        'days' => 'days',
+        'is_base_calendar' => 'isBaseCalendar',
+        'base_calendar' => 'baseCalendar',
+        'is_baseline_calendar' => 'isBaselineCalendar'
     ];
 
     /*
@@ -203,7 +203,7 @@ class Calendar implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
-        $this->container['days'] = isset($data['days']) ? $data['days'] : null;
+        $this->container['days'] = isset($data['days']) ? $data['days'] : array();
         $this->container['is_base_calendar'] = isset($data['is_base_calendar']) ? $data['is_base_calendar'] : null;
         $this->container['base_calendar'] = isset($data['base_calendar']) ? $data['base_calendar'] : null;
         $this->container['is_baseline_calendar'] = isset($data['is_baseline_calendar']) ? $data['is_baseline_calendar'] : null;

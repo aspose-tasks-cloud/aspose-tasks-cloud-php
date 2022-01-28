@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ErrorDetails.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,24 +25,32 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+/*
+ * ErrorDetails
+ */
+
 namespace Aspose\Tasks\Model;
 
 use \ArrayAccess;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
- * ErrorDetails Class
+ * ErrorDetails
+ *
+ * @description The error details
  */
-class ErrorDetails implements ModelInterface, ArrayAccess
+class ErrorDetails implements ArrayAccess
 {
     const DISCRIMINATOR = null;
-    /**
+
+    /*
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = 'ErrorDetails';
-    /**
+    protected static $swaggerModelName = "ErrorDetails";
+
+    /*
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -51,7 +59,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
         'request_id' => 'string',
         'date' => '\DateTime'
     ];
-    /**
+
+    /*
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +69,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
         'request_id' => null,
         'date' => 'date-time'
     ];
-    /**
+
+    /*
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -69,7 +79,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return self::$swaggerTypes;
     }
-    /**
+
+    /*
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -78,17 +89,19 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return self::$swaggerFormats;
     }
-    /**
+
+    /*
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'request_id' => 'RequestId',
-        'date' => 'Date'
+        'request_id' => 'requestId',
+        'date' => 'date'
     ];
-    /**
+
+    /*
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -97,7 +110,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
         'request_id' => 'setRequestId',
         'date' => 'setDate'
     ];
-    /**
+
+    /*
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -106,7 +120,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
         'request_id' => 'getRequestId',
         'date' => 'getDate'
     ];
-    /**
+
+    /*
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -116,7 +131,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return self::$attributeMap;
     }
-    /**
+
+    /*
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -125,7 +141,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return self::$setters;
     }
-    /**
+
+    /*
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -134,7 +151,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return self::$getters;
     }
-    /**
+
+    /*
      * The original name of the model.
      *
      * @return string
@@ -144,14 +162,18 @@ class ErrorDetails implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    
 
-    /**
+    
+
+    /*
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
-    /**
+
+    /*
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -162,7 +184,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
         $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
     }
-    /**
+
+    /*
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -170,12 +193,14 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
         }
         return $invalidProperties;
     }
-    /**
+
+    /*
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -183,12 +208,15 @@ class ErrorDetails implements ModelInterface, ArrayAccess
      */
     public function valid()
     {
+
         if ($this->container['date'] === null) {
             return false;
         }
         return true;
     }
-    /**
+
+
+    /*
      * Gets request_id
      *
      * @return string
@@ -197,7 +225,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return $this->container['request_id'];
     }
-    /**
+
+    /*
      * Sets request_id
      *
      * @param string $request_id The request id
@@ -207,9 +236,11 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     public function setRequestId($request_id)
     {
         $this->container['request_id'] = $request_id;
+
         return $this;
     }
-    /**
+
+    /*
      * Gets date
      *
      * @return \DateTime
@@ -218,7 +249,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return $this->container['date'];
     }
-    /**
+
+    /*
      * Sets date
      *
      * @param \DateTime $date Date
@@ -228,9 +260,10 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     public function setDate($date)
     {
         $this->container['date'] = $date;
+
         return $this;
     }
-    /**
+    /*
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -241,7 +274,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return isset($this->container[$offset]);
     }
-    /**
+
+    /*
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -252,7 +286,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-    /**
+
+    /*
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -268,7 +303,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
             $this->container[$offset] = $value;
         }
     }
-    /**
+
+    /*
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -279,7 +315,8 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     {
         unset($this->container[$offset]);
     }
-    /**
+
+    /*
      * Gets the string presentation of the object
      *
      * @return string
@@ -292,6 +329,9 @@ class ErrorDetails implements ModelInterface, ArrayAccess
                 JSON_PRETTY_PRINT
             );
         }
+
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
+

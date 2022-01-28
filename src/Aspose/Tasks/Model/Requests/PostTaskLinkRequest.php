@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostTaskLinkRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,31 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for postTaskLink" operation.
+ * Request model for postTaskLink operation.
  */
 class PostTaskLinkRequest
 {
-    /*
-     * Initializes a new instance of the PostTaskLinkRequest class.
-     *  
-     * @param string $name The name of the file.
-     * @param \Aspose\Tasks\Model\TaskLink $task_link The TaskLink object representation that should be added.
-     * @param string $storage The document storage.
-     * @param string $folder The document folder.
-     * @param string $file_name The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
-     */
-    public function __construct($name, $task_link, $storage = null, $folder = null, $file_name = null)             
-    {
-        $this->name = $name;
-        $this->task_link = $task_link;
-        $this->storage = $storage;
-        $this->folder = $folder;
-        $this->file_name = $file_name;
-    }
-
     /*
      * The name of the file.
      */
@@ -75,4 +57,108 @@ class PostTaskLinkRequest
      * The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
      */
     public $file_name;
+    
+	
+    /*
+     * Initializes a new instance of the PostTaskLinkRequest class.
+     *  
+     * @param string $name The name of the file.
+     * @param \Aspose\Tasks\Model\TaskLink $task_link The TaskLink object representation that should be added.
+     * @param string $storage The document storage.
+     * @param string $folder The document folder.
+     * @param string $file_name The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
+     */
+    public function __construct($name, $task_link, $storage = null, $folder = null, $file_name = null)             
+    {
+        $this->name = $name;
+        $this->task_link = $task_link;
+        $this->storage = $storage;
+        $this->folder = $folder;
+        $this->file_name = $file_name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * The TaskLink object representation that should be added.
+     */
+    public function get_task_link()
+    {
+        return $this->task_link;
+    }
+
+    /*
+     * The TaskLink object representation that should be added.
+     */
+    public function set_task_link($value)
+    {
+        $this->task_link = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * The document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
+     */
+    public function get_file_name()
+    {
+        return $this->file_name;
+    }
+
+    /*
+     * The name of the project document to save changes to.  If this parameter is omitted then the changes will be saved to the source project document.
+     */
+    public function set_file_name($value)
+    {
+        $this->file_name = $value;
+        return $this;
+    }
 }

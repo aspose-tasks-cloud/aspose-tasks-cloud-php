@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ResourceItem.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -101,10 +101,10 @@ class ResourceItem implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'link' => 'Link',
-        'uid' => 'Uid',
-        'id' => 'Id',
-        'name' => 'Name'
+        'link' => 'link',
+        'uid' => 'uid',
+        'id' => 'id',
+        'name' => 'name'
     ];
 
     /*

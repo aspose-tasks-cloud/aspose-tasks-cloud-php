@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetVbaProjectRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,25 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for getVbaProject" operation.
+ * Request model for getVbaProject operation.
  */
 class GetVbaProjectRequest
 {
-    /*
-     * Initializes a new instance of the GetVbaProjectRequest class.
-     *  
-     * @param string $name The name of the file
-     * @param string $folder The folder storage
-     */
-    public function __construct($name, $folder = null)             
-    {
-        $this->name = $name;
-        $this->folder = $folder;
-    }
-
     /*
      * The name of the file
      */
@@ -54,4 +42,75 @@ class GetVbaProjectRequest
      * The folder storage
      */
     public $folder;
+	
+    /*
+     * The document storage.
+     */
+    public $storage;
+    
+	
+    /*
+     * Initializes a new instance of the GetVbaProjectRequest class.
+     *  
+     * @param string $name The name of the file
+     * @param string $folder The folder storage
+     * @param string $storage The document storage.
+     */
+    public function __construct($name, $folder = null, $storage = null)             
+    {
+        $this->name = $name;
+        $this->folder = $folder;
+        $this->storage = $storage;
+    }
+
+    /*
+     * The name of the file
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The name of the file
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * The folder storage
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The folder storage
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
 }

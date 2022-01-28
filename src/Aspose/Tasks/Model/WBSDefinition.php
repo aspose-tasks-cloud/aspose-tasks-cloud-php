@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WBSDefinition.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -100,10 +100,10 @@ class WBSDefinition implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code_prefix' => 'CodePrefix',
-        'generate_wbs_code' => 'GenerateWBSCode',
-        'verify_uniqueness' => 'VerifyUniqueness',
-        'code_mask_collection' => 'CodeMaskCollection'
+        'code_prefix' => 'codePrefix',
+        'generate_wbs_code' => 'generateWBSCode',
+        'verify_uniqueness' => 'verifyUniqueness',
+        'code_mask_collection' => 'codeMaskCollection'
     ];
 
     /*
@@ -193,7 +193,7 @@ class WBSDefinition implements ArrayAccess
         $this->container['code_prefix'] = isset($data['code_prefix']) ? $data['code_prefix'] : null;
         $this->container['generate_wbs_code'] = isset($data['generate_wbs_code']) ? $data['generate_wbs_code'] : null;
         $this->container['verify_uniqueness'] = isset($data['verify_uniqueness']) ? $data['verify_uniqueness'] : null;
-        $this->container['code_mask_collection'] = isset($data['code_mask_collection']) ? $data['code_mask_collection'] : null;
+        $this->container['code_mask_collection'] = isset($data['code_mask_collection']) ? $data['code_mask_collection'] : array();
     }
 
     /*

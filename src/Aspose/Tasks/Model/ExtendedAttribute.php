@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ExtendedAttribute.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -113,16 +113,16 @@ class ExtendedAttribute implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'field_id' => 'FieldId',
-        'attribute_type' => 'AttributeType',
-        'value_guid' => 'ValueGuid',
-        'lookup_value_id' => 'LookupValueId',
-        'duration_value' => 'DurationValue',
-        'numeric_value' => 'NumericValue',
-        'date_value' => 'DateValue',
-        'flag_value' => 'FlagValue',
-        'text_value' => 'TextValue',
-        'is_error_value' => 'IsErrorValue'
+        'field_id' => 'fieldId',
+        'attribute_type' => 'attributeType',
+        'value_guid' => 'valueGuid',
+        'lookup_value_id' => 'lookupValueId',
+        'duration_value' => 'durationValue',
+        'numeric_value' => 'numericValue',
+        'date_value' => 'dateValue',
+        'flag_value' => 'flagValue',
+        'text_value' => 'textValue',
+        'is_error_value' => 'isErrorValue'
     ];
 
     /*
@@ -254,6 +254,9 @@ class ExtendedAttribute implements ArrayAccess
         if ($this->container['flag_value'] === null) {
             $invalidProperties[] = "'flag_value' can't be null";
         }
+        if ($this->container['is_error_value'] === null) {
+            $invalidProperties[] = "'is_error_value' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -276,6 +279,9 @@ class ExtendedAttribute implements ArrayAccess
             return false;
         }
         if ($this->container['flag_value'] === null) {
+            return false;
+        }
+        if ($this->container['is_error_value'] === null) {
             return false;
         }
         return true;
@@ -509,9 +515,9 @@ class ExtendedAttribute implements ArrayAccess
     }
 
     /*
-     * Sets text_value
+     * Sets is_error_value
      *
-     * @param string $text_value Gets or sets whether calculation of extended attribute's value resulted in an error.
+     * @param bool $is_error_value Gets whether calculation of extended attribute's value resulted in an error.
      *
      * @return $this
      */
@@ -521,7 +527,6 @@ class ExtendedAttribute implements ArrayAccess
 
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *

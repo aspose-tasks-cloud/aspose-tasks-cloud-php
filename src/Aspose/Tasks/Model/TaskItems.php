@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TaskItems.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -92,7 +92,7 @@ class TaskItems extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'task_item' => 'TaskItem'
+        'task_item' => 'taskItem'
     ];
 
     /*
@@ -169,7 +169,7 @@ class TaskItems extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['task_item'] = isset($data['task_item']) ? $data['task_item'] : null;
+        $this->container['task_item'] = isset($data['task_item']) ? $data['task_item'] : array();
     }
 
     /*

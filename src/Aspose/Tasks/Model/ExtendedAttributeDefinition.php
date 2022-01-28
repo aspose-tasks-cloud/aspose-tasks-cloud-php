@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ExtendedAttributeDefinition.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -137,28 +137,28 @@ class ExtendedAttributeDefinition implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'field_id' => 'FieldId',
-        'field_name' => 'FieldName',
-        'cf_type' => 'CfType',
-        'guid' => 'Guid',
-        'element_type' => 'ElementType',
-        'max_multi_values' => 'MaxMultiValues',
-        'user_def' => 'UserDef',
-        'alias' => 'Alias',
-        'secondary_pid' => 'SecondaryPid',
-        'auto_roll_down' => 'AutoRollDown',
-        'default_guid' => 'DefaultGuid',
-        'lookup_uid' => 'LookupUid',
-        'phonetics_alias' => 'PhoneticsAlias',
-        'rollup_type' => 'RollupType',
-        'calculation_type' => 'CalculationType',
-        'formula' => 'Formula',
-        'restrict_values' => 'RestrictValues',
-        'valuelist_sort_order' => 'ValuelistSortOrder',
-        'append_new_values' => 'AppendNewValues',
-        'default' => 'Default',
-        'value_list' => 'ValueList',
-        'secondary_guid' => 'SecondaryGuid'
+        'field_id' => 'fieldId',
+        'field_name' => 'fieldName',
+        'cf_type' => 'cfType',
+        'guid' => 'guid',
+        'element_type' => 'elementType',
+        'max_multi_values' => 'maxMultiValues',
+        'user_def' => 'userDef',
+        'alias' => 'alias',
+        'secondary_pid' => 'secondaryPid',
+        'auto_roll_down' => 'autoRollDown',
+        'default_guid' => 'defaultGuid',
+        'lookup_uid' => 'lookupUid',
+        'phonetics_alias' => 'phoneticsAlias',
+        'rollup_type' => 'rollupType',
+        'calculation_type' => 'calculationType',
+        'formula' => 'formula',
+        'restrict_values' => 'restrictValues',
+        'valuelist_sort_order' => 'valuelistSortOrder',
+        'append_new_values' => 'appendNewValues',
+        'default' => 'default',
+        'value_list' => 'valueList',
+        'secondary_guid' => 'secondaryGuid'
     ];
 
     /*
@@ -301,7 +301,7 @@ class ExtendedAttributeDefinition implements ArrayAccess
         $this->container['valuelist_sort_order'] = isset($data['valuelist_sort_order']) ? $data['valuelist_sort_order'] : null;
         $this->container['append_new_values'] = isset($data['append_new_values']) ? $data['append_new_values'] : null;
         $this->container['default'] = isset($data['default']) ? $data['default'] : null;
-        $this->container['value_list'] = isset($data['value_list']) ? $data['value_list'] : null;
+        $this->container['value_list'] = isset($data['value_list']) ? $data['value_list'] : array();
         $this->container['secondary_guid'] = isset($data['secondary_guid']) ? $data['secondary_guid'] : null;
     }
 

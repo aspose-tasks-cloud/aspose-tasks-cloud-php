@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DocumentProperties.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,7 +93,7 @@ class DocumentProperties extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'list' => 'List'
+        'list' => 'list'
     ];
 
     /*
@@ -170,7 +170,7 @@ class DocumentProperties extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['list'] = isset($data['list']) ? $data['list'] : null;
+        $this->container['list'] = isset($data['list']) ? $data['list'] : array();
     }
 
     /*

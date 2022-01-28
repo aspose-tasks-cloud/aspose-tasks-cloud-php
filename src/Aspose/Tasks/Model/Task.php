@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Task.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -170,7 +170,7 @@ class Task implements ArrayAccess
         'extended_attributes' => '\Aspose\Tasks\Model\ExtendedAttribute[]',
         'outline_codes' => '\Aspose\Tasks\Model\OutlineCode[]',
         'warning' => 'bool',
-        'activityId' => 'string'
+        'activity_id' => 'string'
     ];
 
     /*
@@ -293,7 +293,7 @@ class Task implements ArrayAccess
         'extended_attributes' => null,
         'outline_codes' => null,
         'warning' => null,
-        'activityId'=> null
+        'activity_id' => null
     ];
 
     /*
@@ -323,121 +323,121 @@ class Task implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'uid' => 'Uid',
-        'id' => 'Id',
-        'name' => 'Name',
-        'duration_text' => 'DurationText',
-        'duration' => 'Duration',
-        'start' => 'Start',
-        'finish' => 'Finish',
-        'start_text' => 'StartText',
-        'finish_text' => 'FinishText',
-        'percent_complete' => 'PercentComplete',
-        'percent_work_complete' => 'PercentWorkComplete',
-        'is_active' => 'IsActive',
-        'actual_cost' => 'ActualCost',
-        'actual_duration' => 'ActualDuration',
-        'actual_finish' => 'ActualFinish',
-        'actual_overtime_cost' => 'ActualOvertimeCost',
-        'actual_overtime_work' => 'ActualOvertimeWork',
-        'actual_work_protected' => 'ActualWorkProtected',
-        'actual_overtime_work_protected' => 'ActualOvertimeWorkProtected',
-        'actual_start' => 'ActualStart',
-        'budget_work' => 'BudgetWork',
-        'budget_cost' => 'BudgetCost',
-        'constraint_date' => 'ConstraintDate',
-        'constraint_type' => 'ConstraintType',
-        'contact' => 'Contact',
-        'cost' => 'Cost',
-        'cv' => 'Cv',
-        'deadline' => 'Deadline',
-        'duration_variance' => 'DurationVariance',
-        'early_finish' => 'EarlyFinish',
-        'early_start' => 'EarlyStart',
-        'is_effort_driven' => 'IsEffortDriven',
-        'is_external_task' => 'IsExternalTask',
-        'external_task_project' => 'ExternalTaskProject',
-        'external_id' => 'ExternalId',
-        'finish_slack' => 'FinishSlack',
-        'finish_variance' => 'FinishVariance',
-        'fixed_cost' => 'FixedCost',
-        'fixed_cost_accrual' => 'FixedCostAccrual',
-        'free_slack' => 'FreeSlack',
-        'guid' => 'GUID',
-        'has_overallocated_resource' => 'HasOverallocatedResource',
-        'hide_bar' => 'HideBar',
-        'ignore_resource_calendar' => 'IgnoreResourceCalendar',
-        'late_finish' => 'LateFinish',
-        'late_start' => 'LateStart',
-        'is_level_assignments' => 'IsLevelAssignments',
-        'can_leveling_split' => 'CanLevelingSplit',
-        'leveling_delay' => 'LevelingDelay',
-        'is_marked' => 'IsMarked',
-        'is_milestone' => 'IsMilestone',
-        'is_critical' => 'IsCritical',
-        'is_subproject' => 'IsSubproject',
-        'is_subproject_read_only' => 'IsSubprojectReadOnly',
-        'subproject_name' => 'SubprojectName',
-        'is_summary' => 'IsSummary',
-        'subtasks_uids' => 'SubtasksUids',
-        'outline_level' => 'OutlineLevel',
-        'is_over_allocated' => 'IsOverAllocated',
-        'is_estimated' => 'IsEstimated',
-        'overtime_cost' => 'OvertimeCost',
-        'overtime_work' => 'OvertimeWork',
-        'physical_percent_complete' => 'PhysicalPercentComplete',
-        'pre_leveled_finish' => 'PreLeveledFinish',
-        'pre_leveled_start' => 'PreLeveledStart',
-        'is_recurring' => 'IsRecurring',
-        'regular_work' => 'RegularWork',
-        'remaining_cost' => 'RemainingCost',
-        'remaining_duration' => 'RemainingDuration',
-        'remaining_overtime_cost' => 'RemainingOvertimeCost',
-        'remaining_overtime_work' => 'RemainingOvertimeWork',
-        'remaining_work' => 'RemainingWork',
-        'resume' => 'Resume',
-        'is_resume_valid' => 'IsResumeValid',
-        'stop' => 'Stop',
-        'is_rollup' => 'IsRollup',
-        'start_slack' => 'StartSlack',
-        'start_variance' => 'StartVariance',
-        'calendar_uid' => 'CalendarUid',
-        'is_manual' => 'IsManual',
-        'manual_start' => 'ManualStart',
-        'manual_finish' => 'ManualFinish',
-        'manual_duration' => 'ManualDuration',
-        'total_slack' => 'TotalSlack',
-        'type' => 'Type',
-        'wbs' => 'Wbs',
-        'priority' => 'Priority',
-        'work' => 'Work',
-        'work_variance' => 'WorkVariance',
-        'notes_text' => 'NotesText',
-        'notes_rtf' => 'NotesRTF',
-        'acwp' => 'Acwp',
-        'bcws' => 'Bcws',
-        'bcwp' => 'Bcwp',
-        'leveling_delay_format' => 'LevelingDelayFormat',
-        'predecessors' => 'Predecessors',
-        'successors' => 'Successors',
-        'ignore_warnings' => 'IgnoreWarnings',
-        'is_expanded' => 'IsExpanded',
-        'display_on_timeline' => 'DisplayOnTimeline',
-        'display_as_summary' => 'DisplayAsSummary',
-        'hyperlink' => 'Hyperlink',
-        'hyperlink_address' => 'HyperlinkAddress',
-        'hyperlink_sub_address' => 'HyperlinkSubAddress',
-        'earned_value_method' => 'EarnedValueMethod',
-        'is_published' => 'IsPublished',
-        'status_manager' => 'StatusManager',
-        'commitment_start' => 'CommitmentStart',
-        'commitment_finish' => 'CommitmentFinish',
-        'commitment_type' => 'CommitmentType',
-        'baselines' => 'Baselines',
-        'extended_attributes' => 'ExtendedAttributes',
-        'outline_codes' => 'OutlineCodes',
-        'warning' => 'Warning',
-        'activityId' => 'ActivityId'
+        'uid' => 'uid',
+        'id' => 'id',
+        'name' => 'name',
+        'duration_text' => 'durationText',
+        'duration' => 'duration',
+        'start' => 'start',
+        'finish' => 'finish',
+        'start_text' => 'startText',
+        'finish_text' => 'finishText',
+        'percent_complete' => 'percentComplete',
+        'percent_work_complete' => 'percentWorkComplete',
+        'is_active' => 'isActive',
+        'actual_cost' => 'actualCost',
+        'actual_duration' => 'actualDuration',
+        'actual_finish' => 'actualFinish',
+        'actual_overtime_cost' => 'actualOvertimeCost',
+        'actual_overtime_work' => 'actualOvertimeWork',
+        'actual_work_protected' => 'actualWorkProtected',
+        'actual_overtime_work_protected' => 'actualOvertimeWorkProtected',
+        'actual_start' => 'actualStart',
+        'budget_work' => 'budgetWork',
+        'budget_cost' => 'budgetCost',
+        'constraint_date' => 'constraintDate',
+        'constraint_type' => 'constraintType',
+        'contact' => 'contact',
+        'cost' => 'cost',
+        'cv' => 'cv',
+        'deadline' => 'deadline',
+        'duration_variance' => 'durationVariance',
+        'early_finish' => 'earlyFinish',
+        'early_start' => 'earlyStart',
+        'is_effort_driven' => 'isEffortDriven',
+        'is_external_task' => 'isExternalTask',
+        'external_task_project' => 'externalTaskProject',
+        'external_id' => 'externalId',
+        'finish_slack' => 'finishSlack',
+        'finish_variance' => 'finishVariance',
+        'fixed_cost' => 'fixedCost',
+        'fixed_cost_accrual' => 'fixedCostAccrual',
+        'free_slack' => 'freeSlack',
+        'guid' => 'guid',
+        'has_overallocated_resource' => 'hasOverallocatedResource',
+        'hide_bar' => 'hideBar',
+        'ignore_resource_calendar' => 'ignoreResourceCalendar',
+        'late_finish' => 'lateFinish',
+        'late_start' => 'lateStart',
+        'is_level_assignments' => 'isLevelAssignments',
+        'can_leveling_split' => 'canLevelingSplit',
+        'leveling_delay' => 'levelingDelay',
+        'is_marked' => 'isMarked',
+        'is_milestone' => 'isMilestone',
+        'is_critical' => 'isCritical',
+        'is_subproject' => 'isSubproject',
+        'is_subproject_read_only' => 'isSubprojectReadOnly',
+        'subproject_name' => 'subprojectName',
+        'is_summary' => 'isSummary',
+        'subtasks_uids' => 'subtasksUids',
+        'outline_level' => 'outlineLevel',
+        'is_over_allocated' => 'isOverAllocated',
+        'is_estimated' => 'isEstimated',
+        'overtime_cost' => 'overtimeCost',
+        'overtime_work' => 'overtimeWork',
+        'physical_percent_complete' => 'physicalPercentComplete',
+        'pre_leveled_finish' => 'preLeveledFinish',
+        'pre_leveled_start' => 'preLeveledStart',
+        'is_recurring' => 'isRecurring',
+        'regular_work' => 'regularWork',
+        'remaining_cost' => 'remainingCost',
+        'remaining_duration' => 'remainingDuration',
+        'remaining_overtime_cost' => 'remainingOvertimeCost',
+        'remaining_overtime_work' => 'remainingOvertimeWork',
+        'remaining_work' => 'remainingWork',
+        'resume' => 'resume',
+        'is_resume_valid' => 'isResumeValid',
+        'stop' => 'stop',
+        'is_rollup' => 'isRollup',
+        'start_slack' => 'startSlack',
+        'start_variance' => 'startVariance',
+        'calendar_uid' => 'calendarUid',
+        'is_manual' => 'isManual',
+        'manual_start' => 'manualStart',
+        'manual_finish' => 'manualFinish',
+        'manual_duration' => 'manualDuration',
+        'total_slack' => 'totalSlack',
+        'type' => 'type',
+        'wbs' => 'wbs',
+        'priority' => 'priority',
+        'work' => 'work',
+        'work_variance' => 'workVariance',
+        'notes_text' => 'notesText',
+        'notes_rtf' => 'notesRTF',
+        'acwp' => 'acwp',
+        'bcws' => 'bcws',
+        'bcwp' => 'bcwp',
+        'leveling_delay_format' => 'levelingDelayFormat',
+        'predecessors' => 'predecessors',
+        'successors' => 'successors',
+        'ignore_warnings' => 'ignoreWarnings',
+        'is_expanded' => 'isExpanded',
+        'display_on_timeline' => 'displayOnTimeline',
+        'display_as_summary' => 'displayAsSummary',
+        'hyperlink' => 'hyperlink',
+        'hyperlink_address' => 'hyperlinkAddress',
+        'hyperlink_sub_address' => 'hyperlinkSubAddress',
+        'earned_value_method' => 'earnedValueMethod',
+        'is_published' => 'isPublished',
+        'status_manager' => 'statusManager',
+        'commitment_start' => 'commitmentStart',
+        'commitment_finish' => 'commitmentFinish',
+        'commitment_type' => 'commitmentType',
+        'baselines' => 'baselines',
+        'extended_attributes' => 'extendedAttributes',
+        'outline_codes' => 'outlineCodes',
+        'warning' => 'warning',
+        'activity_id' => 'activityId'
     ];
 
     /*
@@ -560,7 +560,7 @@ class Task implements ArrayAccess
         'extended_attributes' => 'setExtendedAttributes',
         'outline_codes' => 'setOutlineCodes',
         'warning' => 'setWarning',
-        'activityId' => 'setActivityId'
+        'activity_id' => 'setActivityId'
     ];
 
     /*
@@ -683,7 +683,7 @@ class Task implements ArrayAccess
         'extended_attributes' => 'getExtendedAttributes',
         'outline_codes' => 'getOutlineCodes',
         'warning' => 'getWarning',
-        'activityId' => 'getActivityId'
+        'activity_id' => 'getActivityId'
     ];
 
     /*
@@ -802,7 +802,7 @@ class Task implements ArrayAccess
         $this->container['is_subproject_read_only'] = isset($data['is_subproject_read_only']) ? $data['is_subproject_read_only'] : null;
         $this->container['subproject_name'] = isset($data['subproject_name']) ? $data['subproject_name'] : null;
         $this->container['is_summary'] = isset($data['is_summary']) ? $data['is_summary'] : null;
-        $this->container['subtasks_uids'] = isset($data['subtasks_uids']) ? $data['subtasks_uids'] : null;
+        $this->container['subtasks_uids'] = isset($data['subtasks_uids']) ? $data['subtasks_uids'] : array();
         $this->container['outline_level'] = isset($data['outline_level']) ? $data['outline_level'] : null;
         $this->container['is_over_allocated'] = isset($data['is_over_allocated']) ? $data['is_over_allocated'] : null;
         $this->container['is_estimated'] = isset($data['is_estimated']) ? $data['is_estimated'] : null;
@@ -856,11 +856,11 @@ class Task implements ArrayAccess
         $this->container['commitment_start'] = isset($data['commitment_start']) ? $data['commitment_start'] : null;
         $this->container['commitment_finish'] = isset($data['commitment_finish']) ? $data['commitment_finish'] : null;
         $this->container['commitment_type'] = isset($data['commitment_type']) ? $data['commitment_type'] : null;
-        $this->container['baselines'] = isset($data['baselines']) ? $data['baselines'] : null;
-        $this->container['extended_attributes'] = isset($data['extended_attributes']) ? $data['extended_attributes'] : null;
-        $this->container['outline_codes'] = isset($data['outline_codes']) ? $data['outline_codes'] : null;
-        $this->container['warning'] = isset($data['warning']) ? $data['warning'] : null;
-        $this->container['activityId'] = isset($data['activityId']) ? $data['activityId'] : null;
+        $this->container['baselines'] = isset($data['baselines']) ? $data['baselines'] : array();
+        $this->container['extended_attributes'] = isset($data['extended_attributes']) ? $data['extended_attributes'] : array();
+        $this->container['outline_codes'] = isset($data['outline_codes']) ? $data['outline_codes'] : array();
+        $this->container['warning'] = isset($data['warning']) ? $data['warning'] : false;
+        $this->container['activity_id'] = isset($data['activity_id']) ? $data['activity_id'] : null;
     }
 
     /*
@@ -973,6 +973,9 @@ class Task implements ArrayAccess
         }
         if ($this->container['free_slack'] === null) {
             $invalidProperties[] = "'free_slack' can't be null";
+        }
+        if ($this->container['has_overallocated_resource'] === null) {
+            $invalidProperties[] = "'has_overallocated_resource' can't be null";
         }
         if ($this->container['hide_bar'] === null) {
             $invalidProperties[] = "'hide_bar' can't be null";
@@ -1142,6 +1145,9 @@ class Task implements ArrayAccess
         if ($this->container['commitment_type'] === null) {
             $invalidProperties[] = "'commitment_type' can't be null";
         }
+        if ($this->container['warning'] === null) {
+            $invalidProperties[] = "'warning' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -1254,6 +1260,9 @@ class Task implements ArrayAccess
             return false;
         }
         if ($this->container['free_slack'] === null) {
+            return false;
+        }
+        if ($this->container['has_overallocated_resource'] === null) {
             return false;
         }
         if ($this->container['hide_bar'] === null) {
@@ -1422,6 +1431,9 @@ class Task implements ArrayAccess
             return false;
         }
         if ($this->container['commitment_type'] === null) {
+            return false;
+        }
+        if ($this->container['warning'] === null) {
             return false;
         }
         return true;
@@ -2425,8 +2437,7 @@ class Task implements ArrayAccess
     /*
      * Sets has_overallocated_resource
      *
-     * @param bool $has_overallocated_resource Indicates whether the task has an resource assigned which has more work
-     * on assigned tasks than can be completed within normal working capacity.
+     * @param bool $has_overallocated_resource Indicates whether the task has an resource assigned which has more work on assigned tasks than can be completed within normal working capacity.
      *
      * @return $this
      */
@@ -4166,25 +4177,25 @@ class Task implements ArrayAccess
     }
 
     /*
-     * Gets activityId
+     * Gets activity_id
      *
      * @return string
      */
     public function getActivityId()
     {
-        return $this->container['activityId'];
+        return $this->container['activity_id'];
     }
 
     /*
-     * Sets activityId
+     * Sets activity_id
      *
-     * @param string $activityId Represents activity id field - a task's unique identifier used by Primavera (only applicable to Primavera projects).
+     * @param string $activity_id Represents activity id field - a task's unique identifier used by Primavera (only applicable to Primavera projects).
      *
      * @return $this
      */
-    public function setActivityId($activityId)
+    public function setActivityId($activity_id)
     {
-        $this->container['activityId'] = $activityId;
+        $this->container['activity_id'] = $activity_id;
 
         return $this;
     }

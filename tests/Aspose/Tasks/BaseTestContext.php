@@ -29,6 +29,7 @@
 
 use Aspose\Tasks\Configuration;
 use Aspose\Tasks\TasksApi;
+use Aspose\Tasks\Model\Requests;
 abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
 {
     protected $tasks;
@@ -49,6 +50,7 @@ abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
         /*
          * To run with your own credentials please, replace parameter in methods 'setAppKey' and 'setAppSid' accordingly to your's AppSid and AppKey
          */
+        $this->config->setHost('https://api.aspose.cloud');
         $this->config->setAppKey("yourAppKey");
         $this->config->setAppSid("yourAppSid");
 
@@ -61,7 +63,8 @@ abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
     public function tearDown()
     {
         foreach ($this->uploadedTestFiles as $uploadedTestFile) {
-           $this->tasks->deleteFile($uploadedTestFile);
+            $request = new Requests\DeleteFileRequest($uploadedTestFile);
+            $this->tasks->deleteFile($request);
         }
 
     }
@@ -75,7 +78,8 @@ abstract class BaseTestContext extends \PHPUnit_Framework_TestCase
         $fullName = self::$baseTestPath . $subfolder . $remoteName;
         
         $file = realpath(__DIR__ . '/../../..') . '/TestData/' . $localName;
-        $response = $this->tasks->uploadFile($Path = $fullName, $file);
+        $request = new Requests\UploadFileRequest($fullName, $file);
+        $response = $this->tasks->uploadFile($request);
         $this->uploadedTestFiles[] = $fullName;
         return self::$baseTestPath . $subfolder;
     }

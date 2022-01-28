@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AssignmentItem.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -101,10 +101,10 @@ class AssignmentItem implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'link' => 'Link',
-        'uid' => 'Uid',
-        'task_uid' => 'TaskUid',
-        'resource_uid' => 'ResourceUid'
+        'link' => 'link',
+        'uid' => 'uid',
+        'task_uid' => 'taskUid',
+        'resource_uid' => 'resourceUid'
     ];
 
     /*

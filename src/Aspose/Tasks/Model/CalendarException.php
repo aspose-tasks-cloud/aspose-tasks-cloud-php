@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CalendarException.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -123,21 +123,21 @@ class CalendarException implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'index' => 'Index',
-        'entered_by_occurrences' => 'EnteredByOccurrences',
-        'from_date' => 'FromDate',
-        'to_date' => 'ToDate',
-        'occurrences' => 'Occurrences',
-        'name' => 'Name',
-        'type' => 'Type',
-        'period' => 'Period',
-        'days_of_week' => 'DaysOfWeek',
-        'month_item' => 'MonthItem',
-        'month_position' => 'MonthPosition',
-        'month' => 'Month',
-        'month_day' => 'MonthDay',
-        'day_working' => 'DayWorking',
-        'working_times' => 'WorkingTimes'
+        'index' => 'index',
+        'entered_by_occurrences' => 'enteredByOccurrences',
+        'from_date' => 'fromDate',
+        'to_date' => 'toDate',
+        'occurrences' => 'occurrences',
+        'name' => 'name',
+        'type' => 'type',
+        'period' => 'period',
+        'days_of_week' => 'daysOfWeek',
+        'month_item' => 'monthItem',
+        'month_position' => 'monthPosition',
+        'month' => 'month',
+        'month_day' => 'monthDay',
+        'day_working' => 'dayWorking',
+        'working_times' => 'workingTimes'
     ];
 
     /*

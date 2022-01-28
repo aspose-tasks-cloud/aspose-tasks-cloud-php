@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RecurringInfo.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -135,27 +135,27 @@ class RecurringInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'recurrence_pattern' => 'RecurrencePattern',
-        'start_date' => 'StartDate',
-        'end_date' => 'EndDate',
-        'duration' => 'Duration',
-        'occurrences' => 'Occurrences',
-        'use_end_date' => 'UseEndDate',
-        'daily_repetitions' => 'DailyRepetitions',
-        'daily_use_workdays' => 'DailyUseWorkdays',
-        'weekly_repetitions' => 'WeeklyRepetitions',
-        'weekly_days' => 'WeeklyDays',
-        'monthly_use_ordinal_day' => 'MonthlyUseOrdinalDay',
-        'monthly_ordinal_number' => 'MonthlyOrdinalNumber',
-        'monthly_ordinal_day' => 'MonthlyOrdinalDay',
-        'monthly_ordinal_repetitions' => 'MonthlyOrdinalRepetitions',
-        'monthly_day' => 'MonthlyDay',
-        'monthly_repetitions' => 'MonthlyRepetitions',
-        'yearly_use_ordinal_day' => 'YearlyUseOrdinalDay',
-        'yearly_date' => 'YearlyDate',
-        'yearly_ordinal_number' => 'YearlyOrdinalNumber',
-        'yearly_ordinal_day' => 'YearlyOrdinalDay',
-        'yearly_ordinal_month' => 'YearlyOrdinalMonth'
+        'recurrence_pattern' => 'recurrencePattern',
+        'start_date' => 'startDate',
+        'end_date' => 'endDate',
+        'duration' => 'duration',
+        'occurrences' => 'occurrences',
+        'use_end_date' => 'useEndDate',
+        'daily_repetitions' => 'dailyRepetitions',
+        'daily_use_workdays' => 'dailyUseWorkdays',
+        'weekly_repetitions' => 'weeklyRepetitions',
+        'weekly_days' => 'weeklyDays',
+        'monthly_use_ordinal_day' => 'monthlyUseOrdinalDay',
+        'monthly_ordinal_number' => 'monthlyOrdinalNumber',
+        'monthly_ordinal_day' => 'monthlyOrdinalDay',
+        'monthly_ordinal_repetitions' => 'monthlyOrdinalRepetitions',
+        'monthly_day' => 'monthlyDay',
+        'monthly_repetitions' => 'monthlyRepetitions',
+        'yearly_use_ordinal_day' => 'yearlyUseOrdinalDay',
+        'yearly_date' => 'yearlyDate',
+        'yearly_ordinal_number' => 'yearlyOrdinalNumber',
+        'yearly_ordinal_day' => 'yearlyOrdinalDay',
+        'yearly_ordinal_month' => 'yearlyOrdinalMonth'
     ];
 
     /*

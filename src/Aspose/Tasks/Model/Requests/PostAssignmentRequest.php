@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostAssignmentRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,37 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for postAssignment" operation.
+ * Request model for postAssignment operation.
  */
 class PostAssignmentRequest
 {
-    /*
-     * Initializes a new instance of the PostAssignmentRequest class.
-     *  
-     * @param string $name The name of the file.
-     * @param int $task_uid The unique id of the task to be assigned.
-     * @param int $resource_uid The unique id of the resource to be assigned.
-     * @param double $units The units for the new assignment. If not specified, 'cost' value is used.
-     * @param double $cost The cost for a new assignment. If not specified, default value is used.
-     * @param string $file_name The name of the project document to save changes to. If this parameter is omitted then the changes will be saved to the source project document.
-     * @param string $storage The document storage.
-     * @param string $folder The document folder.
-     */
-    public function __construct($name, $task_uid, $resource_uid, $units = null, $cost = null, $file_name = null, $storage = null, $folder = null)
-    {
-        $this->name = $name;
-        $this->task_uid = $task_uid;
-        $this->resource_uid = $resource_uid;
-        $this->units = $units;
-        $this->cost = $cost;
-        $this->file_name = $file_name;
-        $this->storage = $storage;
-        $this->folder = $folder;
-    }
-
     /*
      * The name of the file.
      */
@@ -71,12 +47,12 @@ class PostAssignmentRequest
      * The unique id of the resource to be assigned.
      */
     public $resource_uid;
-
+	
     /*
-     * The units for the new assignment. Default value is 1.
+     * The units for the new assignment. If not specified, 'cost' value is used.
      */
     public $units;
-
+	
     /*
      * The cost for a new assignment. If not specified, default value is used.
      */
@@ -96,4 +72,165 @@ class PostAssignmentRequest
      * The document folder.
      */
     public $folder;
+    
+	
+    /*
+     * Initializes a new instance of the PostAssignmentRequest class.
+     *  
+     * @param string $name The name of the file.
+     * @param int $task_uid The unique id of the task to be assigned.
+     * @param int $resource_uid The unique id of the resource to be assigned.
+     * @param double $units The units for the new assignment. If not specified, 'cost' value is used.
+     * @param float $cost The cost for a new assignment. If not specified, default value is used.
+     * @param string $file_name The name of the project document to save changes to. If this parameter is omitted then the changes will be saved to the source project document.
+     * @param string $storage The document storage.
+     * @param string $folder The document folder.
+     */
+    public function __construct($name, $task_uid, $resource_uid, $units = null, $cost = null, $file_name = null, $storage = null, $folder = null)             
+    {
+        $this->name = $name;
+        $this->task_uid = $task_uid;
+        $this->resource_uid = $resource_uid;
+        $this->units = $units;
+        $this->cost = $cost;
+        $this->file_name = $file_name;
+        $this->storage = $storage;
+        $this->folder = $folder;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
+	
+    /*
+     * The unique id of the task to be assigned.
+     */
+    public function get_task_uid()
+    {
+        return $this->task_uid;
+    }
+
+    /*
+     * The unique id of the task to be assigned.
+     */
+    public function set_task_uid($value)
+    {
+        $this->task_uid = $value;
+        return $this;
+    }
+	
+    /*
+     * The unique id of the resource to be assigned.
+     */
+    public function get_resource_uid()
+    {
+        return $this->resource_uid;
+    }
+
+    /*
+     * The unique id of the resource to be assigned.
+     */
+    public function set_resource_uid($value)
+    {
+        $this->resource_uid = $value;
+        return $this;
+    }
+	
+    /*
+     * The units for the new assignment. If not specified, 'cost' value is used.
+     */
+    public function get_units()
+    {
+        return $this->units;
+    }
+
+    /*
+     * The units for the new assignment. If not specified, 'cost' value is used.
+     */
+    public function set_units($value)
+    {
+        $this->units = $value;
+        return $this;
+    }
+	
+    /*
+     * The cost for a new assignment. If not specified, default value is used.
+     */
+    public function get_cost()
+    {
+        return $this->cost;
+    }
+
+    /*
+     * The cost for a new assignment. If not specified, default value is used.
+     */
+    public function set_cost($value)
+    {
+        $this->cost = $value;
+        return $this;
+    }
+	
+    /*
+     * The name of the project document to save changes to. If this parameter is omitted then the changes will be saved to the source project document.
+     */
+    public function get_file_name()
+    {
+        return $this->file_name;
+    }
+
+    /*
+     * The name of the project document to save changes to. If this parameter is omitted then the changes will be saved to the source project document.
+     */
+    public function set_file_name($value)
+    {
+        $this->file_name = $value;
+        return $this;
+    }
+	
+    /*
+     * The document storage.
+     */
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
+	
+    /*
+     * The document folder.
+     */
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
 }

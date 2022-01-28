@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CalendarWorkWeeksResponse.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,7 +93,7 @@ class CalendarWorkWeeksResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'calendar_work_weeks' => 'CalendarWorkWeeks'
+        'calendar_work_weeks' => 'calendarWorkWeeks'
     ];
 
     /*
@@ -170,7 +170,7 @@ class CalendarWorkWeeksResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['calendar_work_weeks'] = isset($data['calendar_work_weeks']) ? $data['calendar_work_weeks'] : null;
+        $this->container['calendar_work_weeks'] = isset($data['calendar_work_weeks']) ? $data['calendar_work_weeks'] : array();
     }
 
     /*

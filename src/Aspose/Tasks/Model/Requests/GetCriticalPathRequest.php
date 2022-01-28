@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetCriticalPathRequest.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,13 +25,30 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+
 namespace Aspose\Tasks\Model\Requests;
 
 /*
- * Request model for getCriticalPath" operation.
+ * Request model for getCriticalPath operation.
  */
 class GetCriticalPathRequest
 {
+    /*
+     * The name of the file.
+     */
+    public $name;
+	
+    /*
+     * The document storage.
+     */
+    public $storage;
+	
+    /*
+     * The document folder.
+     */
+    public $folder;
+    
+	
     /*
      * Initializes a new instance of the GetCriticalPathRequest class.
      *  
@@ -50,15 +66,51 @@ class GetCriticalPathRequest
     /*
      * The name of the file.
      */
-    public $name;
+    public function get_name()
+    {
+        return $this->name;
+    }
+
+    /*
+     * The name of the file.
+     */
+    public function set_name($value)
+    {
+        $this->name = $value;
+        return $this;
+    }
 	
     /*
      * The document storage.
      */
-    public $storage;
+    public function get_storage()
+    {
+        return $this->storage;
+    }
+
+    /*
+     * The document storage.
+     */
+    public function set_storage($value)
+    {
+        $this->storage = $value;
+        return $this;
+    }
 	
     /*
      * The document folder.
      */
-    public $folder;
+    public function get_folder()
+    {
+        return $this->folder;
+    }
+
+    /*
+     * The document folder.
+     */
+    public function set_folder($value)
+    {
+        $this->folder = $value;
+        return $this;
+    }
 }

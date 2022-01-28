@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OutlineCodeItems.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -92,7 +92,7 @@ class OutlineCodeItems extends LinkElement
      * @var string[]
      */
     protected static $attributeMap = [
-        'list' => 'List'
+        'list' => 'list'
     ];
 
     /*
@@ -169,7 +169,7 @@ class OutlineCodeItems extends LinkElement
     {
         parent::__construct($data);
 
-        $this->container['list'] = isset($data['list']) ? $data['list'] : null;
+        $this->container['list'] = isset($data['list']) ? $data['list'] : array();
     }
 
     /*

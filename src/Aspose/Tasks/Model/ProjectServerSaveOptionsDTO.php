@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ProjectServerSaveOptionsDTO.php">
- *   Copyright (c) 2020 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -11,10 +11,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
+ * 
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,13 +30,16 @@
  */
 
 namespace Aspose\Tasks\Model;
+
+use \ArrayAccess;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
  * ProjectServerSaveOptionsDTO
  *
+ * @description Allows to specify additional options when project is saved to Project Server or Project Online.
  */
-class ProjectServerSaveOptionsDTO
+class ProjectServerSaveOptionsDTO implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -67,8 +70,8 @@ class ProjectServerSaveOptionsDTO
     protected static $swaggerFormats = [
         'project_name' => null,
         'project_guid' => null,
-        'timeout' => null,
-        'polling_interval' => null
+        'timeout' => 'time-span',
+        'polling_interval' => 'time-span'
     ];
 
     /*
@@ -98,10 +101,10 @@ class ProjectServerSaveOptionsDTO
      * @var string[]
      */
     protected static $attributeMap = [
-        'project_name' => 'ProjectName',
-        'project_guid' => 'ProjectGuid',
-        'timeout' => 'Timeout',
-        'polling_interval' => 'PollingInterval'
+        'project_name' => 'projectName',
+        'project_guid' => 'projectGuid',
+        'timeout' => 'timeout',
+        'polling_interval' => 'pollingInterval'
     ];
 
     /*
@@ -136,7 +139,7 @@ class ProjectServerSaveOptionsDTO
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -146,7 +149,7 @@ class ProjectServerSaveOptionsDTO
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -156,7 +159,7 @@ class ProjectServerSaveOptionsDTO
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -168,6 +171,17 @@ class ProjectServerSaveOptionsDTO
     {
         return self::$swaggerModelName;
     }
+
+    
+
+    
+
+    /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /*
      * Constructor
@@ -192,6 +206,12 @@ class ProjectServerSaveOptionsDTO
     {
         $invalidProperties = [];
 
+        if ($this->container['timeout'] === null) {
+            $invalidProperties[] = "'timeout' can't be null";
+        }
+        if ($this->container['polling_interval'] === null) {
+            $invalidProperties[] = "'polling_interval' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -203,8 +223,16 @@ class ProjectServerSaveOptionsDTO
      */
     public function valid()
     {
+
+        if ($this->container['timeout'] === null) {
+            return false;
+        }
+        if ($this->container['polling_interval'] === null) {
+            return false;
+        }
         return true;
     }
+
 
     /*
      * Gets project_name
@@ -219,7 +247,7 @@ class ProjectServerSaveOptionsDTO
     /*
      * Sets project_name
      *
-     * @param string $project_name project_name
+     * @param string $project_name Gets or sets name of a project which is displayed in Project Server \\ Project     Online projects list. Should be unique within Project Server \\ Project Online     instance. Is the value is omitted, the value of Prj.Name property will be used     instead.
      *
      * @return $this
      */
@@ -235,7 +263,6 @@ class ProjectServerSaveOptionsDTO
      *
      * @return string
      */
-
     public function getProjectGuid()
     {
         return $this->container['project_guid'];
@@ -244,7 +271,7 @@ class ProjectServerSaveOptionsDTO
     /*
      * Sets project_guid
      *
-     * @param string $project_guid project_guid
+     * @param string $project_guid Gets or sets unique identifier of a project. Should be unique within Project     Server \\ Project Online instance.
      *
      * @return $this
      */
@@ -268,7 +295,7 @@ class ProjectServerSaveOptionsDTO
     /*
      * Sets timeout
      *
-     * @param string $timeout timeout
+     * @param string $timeout Gets or sets timeout used when waiting for processing of save project request     by a Project Server's queue processing service. The default value for this property     is 1 minute. The processing time may be longer for large projects or in case when Project     Server instance is too busy responding to other requests.
      *
      * @return $this
      */
@@ -292,7 +319,7 @@ class ProjectServerSaveOptionsDTO
     /*
      * Sets polling_interval
      *
-     * @param string $polling_interval polling_interval
+     * @param string $polling_interval Gets or sets interval between queue job status requests. The default value is     2 seconds.
      *
      * @return $this
      */
@@ -302,7 +329,6 @@ class ProjectServerSaveOptionsDTO
 
         return $this;
     }
-
     /*
      * Returns true if offset exists. False otherwise.
      *
@@ -310,7 +336,7 @@ class ProjectServerSaveOptionsDTO
      *
      * @return boolean
      */
-        public function offsetExists($offset)
+    public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }

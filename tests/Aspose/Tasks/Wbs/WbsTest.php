@@ -40,8 +40,8 @@ class WbsTest extends BaseTestContext
         $response = $this->tasks->getWbsDefinition(new Requests\GetWbsDefinitionRequest($remoteName, self::$storageName, $folder));
         
         Assert::assertEquals(200, $response->getCode());
-        Assert::assertEquals(true, $response->getWBSDefinition()->getGenerateWBSCode());
-        Assert::assertEquals(true, $response->getWBSDefinition()->getVerifyUniqueness());
+        Assert::assertEquals(true, $response->getWbsDefinition()->getGenerateWbsCode());
+        Assert::assertEquals(true, $response->getWbsDefinition()->getVerifyUniqueness());
     }
     
     public function testRenumberWbsCode()

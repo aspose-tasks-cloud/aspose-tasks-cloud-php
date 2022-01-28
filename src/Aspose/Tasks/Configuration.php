@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Configuration.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -95,21 +95,13 @@ class Configuration
      * @var string
      */
     protected $host = 'https://api.aspose.cloud';
-
-
+	
     /*
-     * The auth url
-     *
+     * Version of API to use, possible values are v1, v1.1, v2, v3.0
+     * default value is v3.0
      * @var string
      */
-    protected $authUrl = '';
-
-    /*
-     * The version
-     *
-     * @var string
-     */
-    protected $version = 'v3.0';
+    protected $base_path = "v3.0";
 
     /*
      * User agent of the HTTP request, set to "PHP-Swagger" by default
@@ -143,7 +135,7 @@ class Configuration
      * Version of Aspose.Tasks Cloud API
      *
      */
-    protected $clientVersion = '21.10';
+    protected $clientVersion = '22.01';
 
     /*
      * Constructor
@@ -151,6 +143,7 @@ class Configuration
     public function __construct()
     {
         $this->tempFolderPath = sys_get_temp_dir();
+        date_default_timezone_set('UTC');
     }
     
     /*
@@ -364,19 +357,6 @@ class Configuration
     }
 
     /*
-     * Sets the auth url
-     *
-     * @param string $authUrl auth url
-     *
-     * @return $this
-     */
-    public function setAuthUrl($authUrl)
-    {
-        $this->authUrl = $authUrl;
-        return $this;
-    }
-
-    /*
      * Gets the host
      *
      * @return string Host
@@ -385,25 +365,28 @@ class Configuration
     {
         return $this->host;
     }
-
+	
     /*
-     * Gets the auth url
+     * Sets the base_path
      *
-     * @return string url
+     * @param string $base_path api version
+     *
+     * @return $this
      */
-    public function getAuthUrl()
+    public function setBasePath($base_path)
     {
-        return $this->authUrl;
+        $this->base_path = $base_path;
+        return $this;
     }
 
     /*
-     * Gets the API version
+     * Gets the base_path
      *
-     * @return string Version
+     * @return string base_path
      */
-    public function getVersion()
+    public function getBasePath()
     {
-        return $this->version;
+        return $this->base_path;
     }
 
     /*
@@ -539,7 +522,7 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Tasks) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 1.0' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 3.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

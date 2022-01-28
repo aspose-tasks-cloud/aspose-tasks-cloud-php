@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="VbaModule.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -99,9 +99,9 @@ class VbaModule implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'attributes' => 'Attributes',
-        'name' => 'Name',
-        'source_code' => 'SourceCode'
+        'attributes' => 'attributes',
+        'name' => 'name',
+        'source_code' => 'sourceCode'
     ];
 
     /*
@@ -186,7 +186,7 @@ class VbaModule implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
+        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : array();
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['source_code'] = isset($data['source_code']) ? $data['source_code'] : null;
     }

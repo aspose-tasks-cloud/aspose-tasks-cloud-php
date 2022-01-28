@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WBSSequence.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,15 +59,6 @@ class WBSSequence
             self::ORDERED_LOWERCASE_LETTERS,
             self::UNORDERED_CHARACTERS,
         ];
-    }
-
-    /*
-     * Gets whether enum is bitwise
-     * @return bool
-     */
-    public static function getIsBitwise()
-    {
-        return false;
     }
 }
 

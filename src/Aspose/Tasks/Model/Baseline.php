@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Baseline.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -103,11 +103,11 @@ class Baseline implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'baseline_number' => 'BaselineNumber',
-        'work' => 'Work',
-        'cost' => 'Cost',
-        'bcws' => 'Bcws',
-        'bcwp' => 'Bcwp'
+        'baseline_number' => 'baselineNumber',
+        'work' => 'work',
+        'cost' => 'cost',
+        'bcws' => 'bcws',
+        'bcwp' => 'bcwp'
     ];
 
     /*

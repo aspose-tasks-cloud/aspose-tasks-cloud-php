@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OutlineValue.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -107,13 +107,13 @@ class OutlineValue implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value_id' => 'ValueId',
-        'field_guid' => 'FieldGuid',
-        'type' => 'Type',
-        'parent_value_id' => 'ParentValueId',
-        'value' => 'Value',
-        'description' => 'Description',
-        'is_collapsed' => 'IsCollapsed'
+        'value_id' => 'valueId',
+        'field_guid' => 'fieldGuid',
+        'type' => 'type',
+        'parent_value_id' => 'parentValueId',
+        'value' => 'value',
+        'description' => 'description',
+        'is_collapsed' => 'isCollapsed'
     ];
 
     /*

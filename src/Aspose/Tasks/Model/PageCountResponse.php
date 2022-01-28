@@ -1,8 +1,8 @@
 <?php
-/*
+/**
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PageCountResponse.php">
- *   Copyright (c) 2018 Aspose.Tasks Cloud
+ *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,7 +93,7 @@ class PageCountResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'page_count' => 'PageCount'
+        'page_count' => 'pageCount'
     ];
 
     /*
@@ -182,6 +182,9 @@ class PageCountResponse extends AsposeResponse
     {
         $invalidProperties = parent::listInvalidProperties();
 
+        if ($this->container['page_count'] === null) {
+            $invalidProperties[] = "'page_count' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -197,6 +200,9 @@ class PageCountResponse extends AsposeResponse
             return false;
         }
 
+        if ($this->container['page_count'] === null) {
+            return false;
+        }
         return true;
     }
 

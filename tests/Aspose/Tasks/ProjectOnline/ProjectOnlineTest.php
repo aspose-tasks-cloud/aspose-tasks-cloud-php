@@ -29,6 +29,7 @@
 include_once(realpath(dirname(__FILE__) . '/..') . "/BaseTestContext.php");
 
 use Aspose\Tasks\Model\Requests\CreateNewProjectRequest;
+use Aspose\Tasks\Model\Requests\PutImportProjectFromProjectOnlineRequest;
 use PHPUnit\Framework\Assert;
 use Aspose\Tasks\Model\Requests;
 use Aspose\Tasks\Model;
@@ -106,6 +107,32 @@ class ProjectOnlineTest extends BaseTestContext
 
         $response = $this->tasks->updateProject(new UpdateProjectRequest
         ($remoteName, 'http://project_server_instance.local/sites/pwa', null, $folder, self::$storageName, null, 'SomeLogin', 'SomePassword'));
+
+        Assert::assertEquals(200, $response->getCode());
+    }
+
+    public function testPutImportProjectFromProjectOnlineByTokenCredential()
+    {
+        static::markTestSkipped('Ignored because real credentials for project server online is required');
+
+        $remoteName = "testUpdateProject.mpp";
+        $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
+
+        $response = $this->tasks->putImportProjectFromProjectOnline(new PutImportProjectFromProjectOnlineRequest
+        ($remoteName, 'Some-Guid','http://project_server_instance.local/sites/pwa', null, null, $folder, self::$storageName, 'SOMESECRETTOKEN'));
+
+        Assert::assertEquals(200, $response->getCode());
+    }
+
+    public function testPutImportProjectFromProjectOnlineByLoginAndPasswordCredentials()
+    {
+        static::markTestSkipped('Ignored because real credentials for project server online is required');
+
+        $remoteName = "testUpdateProject.mpp";
+        $folder = $this->uploadTestFile("NewProductDev.mpp", $remoteName, '');
+
+        $response = $this->tasks->putImportProjectFromProjectOnline(new PutImportProjectFromProjectOnlineRequest
+        ($remoteName, 'Some-Guid','http://project_server_instance.local/sites/pwa', 'SomeLogin', null,$folder, self::$storageName, null, 'SomePassword'));
 
         Assert::assertEquals(200, $response->getCode());
     }
