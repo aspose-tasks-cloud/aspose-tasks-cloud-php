@@ -56,6 +56,7 @@ class Resource implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'is_root' => 'bool',
         'name' => 'string',
         'uid' => 'int',
         'id' => 'int',
@@ -140,6 +141,7 @@ class Resource implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'is_root' => null,
         'name' => null,
         'uid' => 'int32',
         'id' => 'int32',
@@ -245,6 +247,7 @@ class Resource implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'is_root' => 'isRoot',
         'name' => 'name',
         'uid' => 'uid',
         'id' => 'id',
@@ -329,6 +332,7 @@ class Resource implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'is_root' => 'setIsRoot',
         'name' => 'setName',
         'uid' => 'setUid',
         'id' => 'setId',
@@ -413,6 +417,7 @@ class Resource implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'is_root' => 'getIsRoot',
         'name' => 'getName',
         'uid' => 'getUid',
         'id' => 'getId',
@@ -551,6 +556,7 @@ class Resource implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['is_root'] = isset($data['is_root']) ? $data['is_root'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -638,6 +644,9 @@ class Resource implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['is_root'] === null) {
+            $invalidProperties[] = "'is_root' can't be null";
+        }
         if ($this->container['uid'] === null) {
             $invalidProperties[] = "'uid' can't be null";
         }
@@ -809,6 +818,9 @@ class Resource implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['is_root'] === null) {
+            return false;
+        }
         if ($this->container['uid'] === null) {
             return false;
         }
@@ -971,6 +983,30 @@ class Resource implements ArrayAccess
         return true;
     }
 
+
+    /*
+     * Gets is_root
+     *
+     * @return bool
+     */
+    public function getIsRoot()
+    {
+        return $this->container['is_root'];
+    }
+
+    /*
+     * Sets is_root
+     *
+     * @param bool $is_root Gets the flag indicating whether resource is a root resource. Root resource is         a special resource which is intended to support internals of MS Project's formats         and is not intended to be used directly from the user's code.
+     *
+     * @return $this
+     */
+    public function setIsRoot($is_root)
+    {
+        $this->container['is_root'] = $is_root;
+
+        return $this;
+    }
 
     /*
      * Gets name

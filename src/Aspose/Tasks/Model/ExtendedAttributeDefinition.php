@@ -71,6 +71,7 @@ class ExtendedAttributeDefinition implements ArrayAccess
         'phonetics_alias' => 'string',
         'rollup_type' => '\Aspose\Tasks\Model\RollupType',
         'calculation_type' => '\Aspose\Tasks\Model\CalculationType',
+        'summary_rows_calculation_type' => '\Aspose\Tasks\Model\SummaryRowsCalculationType',
         'formula' => 'string',
         'restrict_values' => 'bool',
         'valuelist_sort_order' => 'int',
@@ -101,6 +102,7 @@ class ExtendedAttributeDefinition implements ArrayAccess
         'phonetics_alias' => null,
         'rollup_type' => null,
         'calculation_type' => null,
+        'summary_rows_calculation_type' => null,
         'formula' => null,
         'restrict_values' => null,
         'valuelist_sort_order' => 'int32',
@@ -152,6 +154,7 @@ class ExtendedAttributeDefinition implements ArrayAccess
         'phonetics_alias' => 'phoneticsAlias',
         'rollup_type' => 'rollupType',
         'calculation_type' => 'calculationType',
+        'summary_rows_calculation_type' => 'summaryRowsCalculationType',
         'formula' => 'formula',
         'restrict_values' => 'restrictValues',
         'valuelist_sort_order' => 'valuelistSortOrder',
@@ -182,6 +185,7 @@ class ExtendedAttributeDefinition implements ArrayAccess
         'phonetics_alias' => 'setPhoneticsAlias',
         'rollup_type' => 'setRollupType',
         'calculation_type' => 'setCalculationType',
+        'summary_rows_calculation_type' => 'setSummaryRowsCalculationType',
         'formula' => 'setFormula',
         'restrict_values' => 'setRestrictValues',
         'valuelist_sort_order' => 'setValuelistSortOrder',
@@ -212,6 +216,7 @@ class ExtendedAttributeDefinition implements ArrayAccess
         'phonetics_alias' => 'getPhoneticsAlias',
         'rollup_type' => 'getRollupType',
         'calculation_type' => 'getCalculationType',
+        'summary_rows_calculation_type' => 'getSummaryRowsCalculationType',
         'formula' => 'getFormula',
         'restrict_values' => 'getRestrictValues',
         'valuelist_sort_order' => 'getValuelistSortOrder',
@@ -296,6 +301,7 @@ class ExtendedAttributeDefinition implements ArrayAccess
         $this->container['phonetics_alias'] = isset($data['phonetics_alias']) ? $data['phonetics_alias'] : null;
         $this->container['rollup_type'] = isset($data['rollup_type']) ? $data['rollup_type'] : null;
         $this->container['calculation_type'] = isset($data['calculation_type']) ? $data['calculation_type'] : null;
+        $this->container['summary_rows_calculation_type'] = isset($data['summary_rows_calculation_type']) ? $data['summary_rows_calculation_type'] : null;
         $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
         $this->container['restrict_values'] = isset($data['restrict_values']) ? $data['restrict_values'] : null;
         $this->container['valuelist_sort_order'] = isset($data['valuelist_sort_order']) ? $data['valuelist_sort_order'] : null;
@@ -334,6 +340,9 @@ class ExtendedAttributeDefinition implements ArrayAccess
         }
         if ($this->container['calculation_type'] === null) {
             $invalidProperties[] = "'calculation_type' can't be null";
+        }
+        if ($this->container['summary_rows_calculation_type'] === null) {
+            $invalidProperties[] = "'summary_rows_calculation_type' can't be null";
         }
         if ($this->container['restrict_values'] === null) {
             $invalidProperties[] = "'restrict_values' can't be null";
@@ -375,6 +384,9 @@ class ExtendedAttributeDefinition implements ArrayAccess
             return false;
         }
         if ($this->container['calculation_type'] === null) {
+            return false;
+        }
+        if ($this->container['summary_rows_calculation_type'] === null) {
             return false;
         }
         if ($this->container['restrict_values'] === null) {
@@ -746,6 +758,30 @@ class ExtendedAttributeDefinition implements ArrayAccess
     public function setCalculationType($calculation_type)
     {
         $this->container['calculation_type'] = $calculation_type;
+
+        return $this;
+    }
+
+    /*
+     * Gets summary_rows_calculation_type
+     *
+     * @return \Aspose\Tasks\Model\SummaryRowsCalculationType
+     */
+    public function getSummaryRowsCalculationType()
+    {
+        return $this->container['summary_rows_calculation_type'];
+    }
+
+    /*
+     * Sets summary_rows_calculation_type
+     *
+     * @param \Aspose\Tasks\Model\SummaryRowsCalculationType $summary_rows_calculation_type Gets or sets the type of calculation of the custom attribute's value for summary rows.
+     *
+     * @return $this
+     */
+    public function setSummaryRowsCalculationType($summary_rows_calculation_type)
+    {
+        $this->container['summary_rows_calculation_type'] = $summary_rows_calculation_type;
 
         return $this;
     }
