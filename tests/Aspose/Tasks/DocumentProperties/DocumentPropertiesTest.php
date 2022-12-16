@@ -41,7 +41,7 @@ class DocumentPropertiesTest extends BaseTestContext
         $response = $this->tasks->getDocumentProperties(new Requests\GetDocumentPropertiesRequest($remoteName, self::$storageName, $folder));
         
         Assert::assertEquals(200, $response->getCode());
-        Assert::assertEquals(52, count($response->getProperties()->getList()));
+        Assert::assertEquals(63, count($response->getProperties()->getList()));
         Assert::assertEquals("Title", $response->getProperties()->getList()[0]->getName());
         Assert::assertEquals("Home Move", $response->getProperties()->getList()[0]->getValue());
     }
@@ -73,7 +73,7 @@ class DocumentPropertiesTest extends BaseTestContext
         
         $response = $this->tasks->getDocumentProperties(new Requests\GetDocumentPropertiesRequest($remoteName, self::$storageName, $folder));
         Assert::assertEquals(200, $response->getCode());
-        Assert::assertEquals(52, count($response->getProperties()->getList()));
+        Assert::assertEquals(63, count($response->getProperties()->getList()));
         
         foreach($response->getProperties()->getList() as $p)
         {
@@ -102,7 +102,7 @@ class DocumentPropertiesTest extends BaseTestContext
         
         $response = $this->tasks->getDocumentProperties(new Requests\GetDocumentPropertiesRequest($remoteName, self::$storageName, $folder));
         Assert::assertEquals(200, $response->getCode());
-        Assert::assertEquals(52, count($response->getProperties()->getList()));
+        Assert::assertEquals(63, count($response->getProperties()->getList()));
         
         foreach($response->getProperties()->getList() as $p)
         {
@@ -131,7 +131,7 @@ class DocumentPropertiesTest extends BaseTestContext
         
         $response = $this->tasks->getDocumentProperties(new Requests\GetDocumentPropertiesRequest($remoteName, self::$storageName, $folder));
         Assert::assertEquals(200, $response->getCode());
-        Assert::assertEquals(52, count($response->getProperties()->getList()));
+        Assert::assertEquals(63, count($response->getProperties()->getList()));
         
         foreach($response->getProperties()->getList() as $p)
         {

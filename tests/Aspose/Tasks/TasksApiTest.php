@@ -27,11 +27,13 @@
 */
 
 namespace Aspose\Tasks\Test;
+
 use PHPUnit\Framework\Assert;
 
 use BaseTestContext;
 use ReflectionFunctionAbstract;
-include_once dirname(__FILE__).'\BaseTestContext.php';
+
+include_once dirname(__FILE__) . '\BaseTestContext.php';
 
 class TasksApiTest extends BaseTestContext
 {
@@ -57,25 +59,40 @@ class TasksApiTest extends BaseTestContext
             'Tasks\TasksTest',
             'Tasks\TasksExtendedAttributesTest',
             'Tasks\TaskRecurringInfoTest',
+            'Tasks\TaskPrimaveraPropertiesTest',
             'TimephasedData\TimephasedDataTest',
             'Vba\VbaTest',
             'Wbs\WbsTest'
         );
-        
+
+        $ignoredApiMethods = [
+            'copyFile',
+            'deleteFile',
+            'moveFile',
+            'uploadFile',
+            'copyFolder',
+            'createFolder',
+            'deleteFolder',
+            'getFilesList',
+            'moveFolder',
+            'getDiscUsage',
+            'getFileVersions',
+            'objectExists',
+            'storageExists'
+        ];
+
         $apiClass = new \ReflectionClass('Aspose\Tasks\TasksApi');
         $testMethods = [];
-        foreach ($classarr as $cls)
-        {
-            $fullname = dirname(__FILE__).'\\'. $cls . '.php';
+        foreach ($classarr as $cls) {
+            $fullname = dirname(__FILE__) . '\\' . $cls . '.php';
             include_once $fullname;
             $e = explode('\\', $cls);
             $className = array_pop($e);
             $refClass = new \ReflectionClass($className);
-            foreach($refClass->getMethods() as $testFixtureMethod) {
-                if($testFixtureMethod->class == $className) {
+            foreach ($refClass->getMethods() as $testFixtureMethod) {
+                if ($testFixtureMethod->class == $className) {
                     $apiCalls = self::getApiFunctionCallFromFunctionBody($testFixtureMethod);
-                    foreach($apiCalls as $apiCall)
-                    {
+                    foreach ($apiCalls as $apiCall) {
                         $testMethods[$apiCall] = true;
                     }
                 }
@@ -85,18 +102,15 @@ class TasksApiTest extends BaseTestContext
         $methods = $apiClass->getMethods(\ReflectionMethod::IS_PROTECTED);
         $errorList = "";
 
-        foreach ($methods as $method)
-        {
+        foreach ($methods as $method) {
             $methodName = "";
             try {
                 $methodName = lcfirst(str_replace("Request", '', $method->getName()));
-                if(!array_key_exists($methodName, $testMethods) || !$testMethods[$methodName])
-                {
+                if ((!array_key_exists($methodName, $testMethods) || !$testMethods[$methodName])
+                    && !in_array($methodName, $ignoredApiMethods)) {
                     $errorList = $errorList . $methodName . "\n";
                 }
-            }
-            catch (\ReflectionException $e)
-            {
+            } catch (\ReflectionException $e) {
                 $errorList = $errorList . $methodName . "\n";
             }
             unset($method);
@@ -104,23 +118,23 @@ class TasksApiTest extends BaseTestContext
 
         Assert::assertEquals(0, strlen($errorList), "Uncovered API methods\n" . $errorList);
     }
-    
+
     private function getApiFunctionCallFromFunctionBody(ReflectionFunctionAbstract $func)
     {
         $filename = $func->getFileName();
         $start_line = $func->getStartLine() - 1; // it's actually - 1, otherwise you wont get the function() block
         $end_line = $func->getEndLine();
         $length = $end_line - $start_line;
-        
+
         $source = file($filename);
         $result = array();
-            
-        foreach(array_slice($source, $start_line, $length) as $codeLine) {
+
+        foreach (array_slice($source, $start_line, $length) as $codeLine) {
             if (preg_match('/\$this->tasks->([a-zA-Z0-9]+)\(/', $codeLine, $match)) {
                 $result[] = $match[1];
             }
-       }
-       
-       return $result;
+        }
+
+        return $result;
     }
 }
