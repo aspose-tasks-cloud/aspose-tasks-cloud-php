@@ -62,6 +62,7 @@ class TasksApiTest extends BaseTestContext
             'Tasks\TaskPrimaveraPropertiesTest',
             'TimephasedData\TimephasedDataTest',
             'Vba\VbaTest',
+            'Views\ViewsTest',
             'Wbs\WbsTest'
         );
 

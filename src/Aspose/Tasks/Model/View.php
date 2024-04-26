@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ProjectIdsResponse.php">
+ * <copyright company="Aspose" file="View.php">
  *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,20 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * ProjectIdsResponse
+ * View
  */
 
 namespace Aspose\Tasks\Model;
+
+use \ArrayAccess;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
- * ProjectIdsResponse
+ * View
  *
- * @description ProjectIds response
+ * @description Represents a view in Project
  */
-class ProjectIdsResponse extends AsposeResponse 
+class View implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +48,7 @@ class ProjectIdsResponse extends AsposeResponse
      *
      * @var string
      */
-    protected static $swaggerModelName = "ProjectIdsResponse";
+    protected static $swaggerModelName = "View";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +56,11 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'project_ids' => 'string[]'
+        'show_in_menu' => 'bool',
+        'type' => '\Aspose\Tasks\Model\ItemType',
+        'screen' => '\Aspose\Tasks\Model\ViewScreen',
+        'name' => 'string',
+        'uid' => 'int'
     ];
 
     /*
@@ -63,7 +69,11 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'project_ids' => null
+        'show_in_menu' => null,
+        'type' => null,
+        'screen' => null,
+        'name' => null,
+        'uid' => 'int32'
     ];
 
     /*
@@ -73,7 +83,7 @@ class ProjectIdsResponse extends AsposeResponse
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -83,7 +93,7 @@ class ProjectIdsResponse extends AsposeResponse
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -93,7 +103,11 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'project_ids' => 'projectIds'
+        'show_in_menu' => 'showInMenu',
+        'type' => 'type',
+        'screen' => 'screen',
+        'name' => 'name',
+        'uid' => 'uid'
     ];
 
     /*
@@ -102,7 +116,11 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $setters = [
-        'project_ids' => 'setProjectIds'
+        'show_in_menu' => 'setShowInMenu',
+        'type' => 'setType',
+        'screen' => 'setScreen',
+        'name' => 'setName',
+        'uid' => 'setUid'
     ];
 
     /*
@@ -111,7 +129,11 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $getters = [
-        'project_ids' => 'getProjectIds'
+        'show_in_menu' => 'getShowInMenu',
+        'type' => 'getType',
+        'screen' => 'getScreen',
+        'name' => 'getName',
+        'uid' => 'getUid'
     ];
 
     /*
@@ -122,7 +144,7 @@ class ProjectIdsResponse extends AsposeResponse
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -132,7 +154,7 @@ class ProjectIdsResponse extends AsposeResponse
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -142,7 +164,7 @@ class ProjectIdsResponse extends AsposeResponse
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -159,6 +181,12 @@ class ProjectIdsResponse extends AsposeResponse
 
     
 
+    /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /*
      * Constructor
@@ -168,9 +196,11 @@ class ProjectIdsResponse extends AsposeResponse
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
-        $this->container['project_ids'] = isset($data['project_ids']) ? $data['project_ids'] : array();
+        $this->container['show_in_menu'] = isset($data['show_in_menu']) ? $data['show_in_menu'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['screen'] = isset($data['screen']) ? $data['screen'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
     }
 
     /*
@@ -180,8 +210,20 @@ class ProjectIdsResponse extends AsposeResponse
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
+        if ($this->container['show_in_menu'] === null) {
+            $invalidProperties[] = "'show_in_menu' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        if ($this->container['screen'] === null) {
+            $invalidProperties[] = "'screen' can't be null";
+        }
+        if ($this->container['uid'] === null) {
+            $invalidProperties[] = "'uid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -193,34 +235,139 @@ class ProjectIdsResponse extends AsposeResponse
      */
     public function valid()
     {
-        if (!parent::valid()) {
+
+        if ($this->container['show_in_menu'] === null) {
             return false;
         }
-
+        if ($this->container['type'] === null) {
+            return false;
+        }
+        if ($this->container['screen'] === null) {
+            return false;
+        }
+        if ($this->container['uid'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /*
-     * Gets project_ids
+     * Gets show_in_menu
      *
-     * @return string[]
+     * @return bool
      */
-    public function getProjectIds()
+    public function getShowInMenu()
     {
-        return $this->container['project_ids'];
+        return $this->container['show_in_menu'];
     }
 
     /*
-     * Sets project_ids
+     * Sets show_in_menu
      *
-     * @param string[] $project_ids UIds of the project
+     * @param bool $show_in_menu Gets or sets a value indicating whether Microsoft Project shows the single view  name in the View or the Other Views drop-down lists in the Ribbon
      *
      * @return $this
      */
-    public function setProjectIds($project_ids)
+    public function setShowInMenu($show_in_menu)
     {
-        $this->container['project_ids'] = $project_ids;
+        $this->container['show_in_menu'] = $show_in_menu;
+
+        return $this;
+    }
+
+    /*
+     * Gets type
+     *
+     * @return \Aspose\Tasks\Model\ItemType
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /*
+     * Sets type
+     *
+     * @param \Aspose\Tasks\Model\ItemType $type Gets the type of item in the single view, such as tasks or resources. Read-only.
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /*
+     * Gets screen
+     *
+     * @return \Aspose\Tasks\Model\ViewScreen
+     */
+    public function getScreen()
+    {
+        return $this->container['screen'];
+    }
+
+    /*
+     * Sets screen
+     *
+     * @param \Aspose\Tasks\Model\ViewScreen $screen Gets the screen type for the single view. Read-only.
+     *
+     * @return $this
+     */
+    public function setScreen($screen)
+    {
+        $this->container['screen'] = $screen;
+
+        return $this;
+    }
+
+    /*
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /*
+     * Sets name
+     *
+     * @param string $name Gets or sets the name of a View object.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /*
+     * Gets uid
+     *
+     * @return int
+     */
+    public function getUid()
+    {
+        return $this->container['uid'];
+    }
+
+    /*
+     * Sets uid
+     *
+     * @param int $uid Gets the unique identifier of a view.
+     *
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        $this->container['uid'] = $uid;
 
         return $this;
     }

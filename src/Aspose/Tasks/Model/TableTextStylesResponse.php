@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ProjectIdsResponse.php">
+ * <copyright company="Aspose" file="TableTextStylesResponse.php">
  *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * ProjectIdsResponse
+ * TableTextStylesResponse
  */
 
 namespace Aspose\Tasks\Model;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
- * ProjectIdsResponse
+ * TableTextStylesResponse
  *
- * @description ProjectIds response
+ * @description TableTextStyles Response
  */
-class ProjectIdsResponse extends AsposeResponse 
+class TableTextStylesResponse extends AsposeResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class ProjectIdsResponse extends AsposeResponse
      *
      * @var string
      */
-    protected static $swaggerModelName = "ProjectIdsResponse";
+    protected static $swaggerModelName = "TableTextStylesResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'project_ids' => 'string[]'
+        'items' => '\Aspose\Tasks\Model\TableTextStyle[]'
     ];
 
     /*
@@ -63,7 +63,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'project_ids' => null
+        'items' => null
     ];
 
     /*
@@ -93,7 +93,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'project_ids' => 'projectIds'
+        'items' => 'items'
     ];
 
     /*
@@ -102,7 +102,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $setters = [
-        'project_ids' => 'setProjectIds'
+        'items' => 'setItems'
     ];
 
     /*
@@ -111,7 +111,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $getters = [
-        'project_ids' => 'getProjectIds'
+        'items' => 'getItems'
     ];
 
     /*
@@ -170,7 +170,7 @@ class ProjectIdsResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['project_ids'] = isset($data['project_ids']) ? $data['project_ids'] : array();
+        $this->container['items'] = isset($data['items']) ? $data['items'] : array();
     }
 
     /*
@@ -202,25 +202,25 @@ class ProjectIdsResponse extends AsposeResponse
 
 
     /*
-     * Gets project_ids
+     * Gets items
      *
-     * @return string[]
+     * @return \Aspose\Tasks\Model\TableTextStyle[]
      */
-    public function getProjectIds()
+    public function getItems()
     {
-        return $this->container['project_ids'];
+        return $this->container['items'];
     }
 
     /*
-     * Sets project_ids
+     * Sets items
      *
-     * @param string[] $project_ids UIds of the project
+     * @param \Aspose\Tasks\Model\TableTextStyle[] $items Array of table text styles of specified view
      *
      * @return $this
      */
-    public function setProjectIds($project_ids)
+    public function setItems($items)
     {
-        $this->container['project_ids'] = $project_ids;
+        $this->container['items'] = $items;
 
         return $this;
     }

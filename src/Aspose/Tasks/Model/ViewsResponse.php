@@ -1,7 +1,7 @@
 <?php
 /**
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ProjectIdsResponse.php">
+ * <copyright company="Aspose" file="ViewsResponse.php">
  *   Copyright (c) 2021 Aspose.Tasks Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * ProjectIdsResponse
+ * ViewsResponse
  */
 
 namespace Aspose\Tasks\Model;
 use \Aspose\Tasks\ObjectSerializer;
 
 /*
- * ProjectIdsResponse
+ * ViewsResponse
  *
- * @description ProjectIds response
+ * @description Views Response.
  */
-class ProjectIdsResponse extends AsposeResponse 
+class ViewsResponse extends AsposeResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class ProjectIdsResponse extends AsposeResponse
      *
      * @var string
      */
-    protected static $swaggerModelName = "ProjectIdsResponse";
+    protected static $swaggerModelName = "ViewsResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'project_ids' => 'string[]'
+        'views' => '\Aspose\Tasks\Model\View[]'
     ];
 
     /*
@@ -63,7 +63,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'project_ids' => null
+        'views' => null
     ];
 
     /*
@@ -93,7 +93,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'project_ids' => 'projectIds'
+        'views' => 'views'
     ];
 
     /*
@@ -102,7 +102,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $setters = [
-        'project_ids' => 'setProjectIds'
+        'views' => 'setViews'
     ];
 
     /*
@@ -111,7 +111,7 @@ class ProjectIdsResponse extends AsposeResponse
      * @var string[]
      */
     protected static $getters = [
-        'project_ids' => 'getProjectIds'
+        'views' => 'getViews'
     ];
 
     /*
@@ -170,7 +170,7 @@ class ProjectIdsResponse extends AsposeResponse
     {
         parent::__construct($data);
 
-        $this->container['project_ids'] = isset($data['project_ids']) ? $data['project_ids'] : array();
+        $this->container['views'] = isset($data['views']) ? $data['views'] : array();
     }
 
     /*
@@ -202,25 +202,25 @@ class ProjectIdsResponse extends AsposeResponse
 
 
     /*
-     * Gets project_ids
+     * Gets views
      *
-     * @return string[]
+     * @return \Aspose\Tasks\Model\View[]
      */
-    public function getProjectIds()
+    public function getViews()
     {
-        return $this->container['project_ids'];
+        return $this->container['views'];
     }
 
     /*
-     * Sets project_ids
+     * Sets views
      *
-     * @param string[] $project_ids UIds of the project
+     * @param \Aspose\Tasks\Model\View[] $views Views of the project
      *
      * @return $this
      */
-    public function setProjectIds($project_ids)
+    public function setViews($views)
     {
-        $this->container['project_ids'] = $project_ids;
+        $this->container['views'] = $views;
 
         return $this;
     }

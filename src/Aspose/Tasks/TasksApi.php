@@ -25028,6 +25028,1821 @@ class TasksApi
 
 
     /*
+     * Operation createTableTextStyle
+     *
+     * Create table text style in specified view.
+     *
+     * @param Requests\CreateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\AsposeResponse
+     */
+    public function createTableTextStyle(Requests\CreateTableTextStyleRequest $request)
+    {
+        try {
+             list($response) = $this->createTableTextStyleWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->createTableTextStyleWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation createTableTextStyleWithHttpInfo
+     *
+     * Create table text style in specified view.
+     *
+     * @param Requests\CreateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createTableTextStyleWithHttpInfo(Requests\CreateTableTextStyleRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $request = $this->CreateTableTextStyleRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\AsposeResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation createTableTextStyleAsync
+     *
+     * Create table text style in specified view.
+     *
+     * @param Requests\CreateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createTableTextStyleAsync(Requests\CreateTableTextStyleRequest $request) 
+    {
+        return $this->createTableTextStyleAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation createTableTextStyleAsyncWithHttpInfo
+     *
+     * Create table text style in specified view.
+     *
+     * @param Requests\CreateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createTableTextStyleAsyncWithHttpInfo(Requests\CreateTableTextStyleRequest $request) 
+    {
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $request = $this->CreateTableTextStyleRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'createTableTextStyle'
+     *
+     * @param Requests\CreateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function createTableTextStyleRequest(Requests\CreateTableTextStyleRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling createTableTextStyle');
+        }
+        // verify the required parameter 'view_uid' is set
+        if ($request->view_uid === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $view_uid when calling createTableTextStyle');
+        }
+        // verify the required parameter 'table_text_style' is set
+        if ($request->table_text_style === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $table_text_style when calling createTableTextStyle');
+        }
+
+        $resourcePath = '/tasks/{name}/views/{viewUid}/tabletextstyles';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
+        }
+        // path params
+        if ($request->view_uid !== null) {
+            $localName = lcfirst('viewUid');
+            $resourcePath = str_replace('{' . $localName . '}', $request->view_uid, $resourcePath);
+        }
+
+        // query params
+        if ($request->file_name !== null) {
+            $localName = lcfirst('fileName');
+            $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        $_tempBody = $this->_prepareBodyParameter($request->table_text_style);
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                // for HTTP post (form)
+                $httpBody = $formParams['file'];
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+
+    /*
+     * Operation deleteTableTextStyle
+     *
+     * Delete specified table text style from specified view.
+     *
+     * @param Requests\DeleteTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\AsposeResponse
+     */
+    public function deleteTableTextStyle(Requests\DeleteTableTextStyleRequest $request)
+    {
+        try {
+             list($response) = $this->deleteTableTextStyleWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->deleteTableTextStyleWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation deleteTableTextStyleWithHttpInfo
+     *
+     * Delete specified table text style from specified view.
+     *
+     * @param Requests\DeleteTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteTableTextStyleWithHttpInfo(Requests\DeleteTableTextStyleRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $request = $this->DeleteTableTextStyleRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\AsposeResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation deleteTableTextStyleAsync
+     *
+     * Delete specified table text style from specified view.
+     *
+     * @param Requests\DeleteTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteTableTextStyleAsync(Requests\DeleteTableTextStyleRequest $request) 
+    {
+        return $this->deleteTableTextStyleAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation deleteTableTextStyleAsyncWithHttpInfo
+     *
+     * Delete specified table text style from specified view.
+     *
+     * @param Requests\DeleteTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteTableTextStyleAsyncWithHttpInfo(Requests\DeleteTableTextStyleRequest $request) 
+    {
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $request = $this->DeleteTableTextStyleRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'deleteTableTextStyle'
+     *
+     * @param Requests\DeleteTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function deleteTableTextStyleRequest(Requests\DeleteTableTextStyleRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteTableTextStyle');
+        }
+        // verify the required parameter 'view_uid' is set
+        if ($request->view_uid === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $view_uid when calling deleteTableTextStyle');
+        }
+        // verify the required parameter 'row_uid' is set
+        if ($request->row_uid === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $row_uid when calling deleteTableTextStyle');
+        }
+
+        $resourcePath = '/tasks/{name}/views/{viewUid}/tabletextstyles/{rowUid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
+        }
+        // path params
+        if ($request->view_uid !== null) {
+            $localName = lcfirst('viewUid');
+            $resourcePath = str_replace('{' . $localName . '}', $request->view_uid, $resourcePath);
+        }
+        // path params
+        if ($request->row_uid !== null) {
+            $localName = lcfirst('rowUid');
+            $resourcePath = str_replace('{' . $localName . '}', $request->row_uid, $resourcePath);
+        }
+
+        // query params
+        if ($request->field !== null) {
+            $localName = lcfirst('field');
+            $localValue = is_bool($request->field) ? ($request->field ? 'true' : 'false') : $request->field;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->file_name !== null) {
+            $localName = lcfirst('fileName');
+            $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                // for HTTP post (form)
+                $httpBody = $formParams['file'];
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('DELETE', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+
+    /*
+     * Operation getAllTableTextStyles
+     *
+     * Read all table text styles from specified view.
+     *
+     * @param Requests\GetAllTableTextStylesRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\TableTextStylesResponse
+     */
+    public function getAllTableTextStyles(Requests\GetAllTableTextStylesRequest $request)
+    {
+        try {
+             list($response) = $this->getAllTableTextStylesWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getAllTableTextStylesWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation getAllTableTextStylesWithHttpInfo
+     *
+     * Read all table text styles from specified view.
+     *
+     * @param Requests\GetAllTableTextStylesRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\TableTextStylesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAllTableTextStylesWithHttpInfo(Requests\GetAllTableTextStylesRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\TableTextStylesResponse';
+        $request = $this->GetAllTableTextStylesRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\TableTextStylesResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getAllTableTextStylesAsync
+     *
+     * Read all table text styles from specified view.
+     *
+     * @param Requests\GetAllTableTextStylesRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAllTableTextStylesAsync(Requests\GetAllTableTextStylesRequest $request) 
+    {
+        return $this->getAllTableTextStylesAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getAllTableTextStylesAsyncWithHttpInfo
+     *
+     * Read all table text styles from specified view.
+     *
+     * @param Requests\GetAllTableTextStylesRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAllTableTextStylesAsyncWithHttpInfo(Requests\GetAllTableTextStylesRequest $request) 
+    {
+        $returnType = '\Aspose\Tasks\Model\TableTextStylesResponse';
+        $request = $this->GetAllTableTextStylesRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'getAllTableTextStyles'
+     *
+     * @param Requests\GetAllTableTextStylesRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getAllTableTextStylesRequest(Requests\GetAllTableTextStylesRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getAllTableTextStyles');
+        }
+        // verify the required parameter 'view_uid' is set
+        if ($request->view_uid === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $view_uid when calling getAllTableTextStyles');
+        }
+
+        $resourcePath = '/tasks/{name}/views/{viewUid}/tabletextstyles';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
+        }
+        // path params
+        if ($request->view_uid !== null) {
+            $localName = lcfirst('viewUid');
+            $resourcePath = str_replace('{' . $localName . '}', $request->view_uid, $resourcePath);
+        }
+
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                // for HTTP post (form)
+                $httpBody = $formParams['file'];
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+
+    /*
+     * Operation getTableTextStyle
+     *
+     * Read specified table text style from specified view.
+     *
+     * @param Requests\GetTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\TableTextStyleResponse
+     */
+    public function getTableTextStyle(Requests\GetTableTextStyleRequest $request)
+    {
+        try {
+             list($response) = $this->getTableTextStyleWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getTableTextStyleWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation getTableTextStyleWithHttpInfo
+     *
+     * Read specified table text style from specified view.
+     *
+     * @param Requests\GetTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\TableTextStyleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTableTextStyleWithHttpInfo(Requests\GetTableTextStyleRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\TableTextStyleResponse';
+        $request = $this->GetTableTextStyleRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\TableTextStyleResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getTableTextStyleAsync
+     *
+     * Read specified table text style from specified view.
+     *
+     * @param Requests\GetTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTableTextStyleAsync(Requests\GetTableTextStyleRequest $request) 
+    {
+        return $this->getTableTextStyleAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getTableTextStyleAsyncWithHttpInfo
+     *
+     * Read specified table text style from specified view.
+     *
+     * @param Requests\GetTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTableTextStyleAsyncWithHttpInfo(Requests\GetTableTextStyleRequest $request) 
+    {
+        $returnType = '\Aspose\Tasks\Model\TableTextStyleResponse';
+        $request = $this->GetTableTextStyleRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'getTableTextStyle'
+     *
+     * @param Requests\GetTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getTableTextStyleRequest(Requests\GetTableTextStyleRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getTableTextStyle');
+        }
+        // verify the required parameter 'view_uid' is set
+        if ($request->view_uid === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $view_uid when calling getTableTextStyle');
+        }
+        // verify the required parameter 'row_uid' is set
+        if ($request->row_uid === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $row_uid when calling getTableTextStyle');
+        }
+
+        $resourcePath = '/tasks/{name}/views/{viewUid}/tabletextstyles/{rowUid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
+        }
+        // path params
+        if ($request->view_uid !== null) {
+            $localName = lcfirst('viewUid');
+            $resourcePath = str_replace('{' . $localName . '}', $request->view_uid, $resourcePath);
+        }
+        // path params
+        if ($request->row_uid !== null) {
+            $localName = lcfirst('rowUid');
+            $resourcePath = str_replace('{' . $localName . '}', $request->row_uid, $resourcePath);
+        }
+
+        // query params
+        if ($request->field !== null) {
+            $localName = lcfirst('field');
+            $localValue = is_bool($request->field) ? ($request->field ? 'true' : 'false') : $request->field;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                // for HTTP post (form)
+                $httpBody = $formParams['file'];
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+
+    /*
+     * Operation getViews
+     *
+     * Read all project views.
+     *
+     * @param Requests\GetViewsRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\ViewsResponse
+     */
+    public function getViews(Requests\GetViewsRequest $request)
+    {
+        try {
+             list($response) = $this->getViewsWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getViewsWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation getViewsWithHttpInfo
+     *
+     * Read all project views.
+     *
+     * @param Requests\GetViewsRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\ViewsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getViewsWithHttpInfo(Requests\GetViewsRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\ViewsResponse';
+        $request = $this->GetViewsRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\ViewsResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation getViewsAsync
+     *
+     * Read all project views.
+     *
+     * @param Requests\GetViewsRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getViewsAsync(Requests\GetViewsRequest $request) 
+    {
+        return $this->getViewsAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation getViewsAsyncWithHttpInfo
+     *
+     * Read all project views.
+     *
+     * @param Requests\GetViewsRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getViewsAsyncWithHttpInfo(Requests\GetViewsRequest $request) 
+    {
+        $returnType = '\Aspose\Tasks\Model\ViewsResponse';
+        $request = $this->GetViewsRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'getViews'
+     *
+     * @param Requests\GetViewsRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getViewsRequest(Requests\GetViewsRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getViews');
+        }
+
+        $resourcePath = '/tasks/{name}/views';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
+        }
+
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                // for HTTP post (form)
+                $httpBody = $formParams['file'];
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+
+    /*
+     * Operation updateTableTextStyle
+     *
+     * Update table text style in specified view.
+     *
+     * @param Requests\UpdateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Tasks\Model\AsposeResponse
+     */
+    public function updateTableTextStyle(Requests\UpdateTableTextStyleRequest $request)
+    {
+        try {
+             list($response) = $this->updateTableTextStyleWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->updateTableTextStyleWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /*
+     * Operation updateTableTextStyleWithHttpInfo
+     *
+     * Update table text style in specified view.
+     *
+     * @param Requests\UpdateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Tasks\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Tasks\Model\AsposeResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateTableTextStyleWithHttpInfo(Requests\UpdateTableTextStyleRequest $request)
+    {
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $request = $this->UpdateTableTextStyleRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null, $e->getResponse() ? $e->getResponse()->getBody() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Tasks\Model\AsposeResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation updateTableTextStyleAsync
+     *
+     * Update table text style in specified view.
+     *
+     * @param Requests\UpdateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateTableTextStyleAsync(Requests\UpdateTableTextStyleRequest $request) 
+    {
+        return $this->updateTableTextStyleAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation updateTableTextStyleAsyncWithHttpInfo
+     *
+     * Update table text style in specified view.
+     *
+     * @param Requests\UpdateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateTableTextStyleAsyncWithHttpInfo(Requests\UpdateTableTextStyleRequest $request) 
+    {
+        $returnType = '\Aspose\Tasks\Model\AsposeResponse';
+        $request = $this->UpdateTableTextStyleRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'updateTableTextStyle'
+     *
+     * @param Requests\UpdateTableTextStyleRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateTableTextStyleRequest(Requests\UpdateTableTextStyleRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling updateTableTextStyle');
+        }
+        // verify the required parameter 'view_uid' is set
+        if ($request->view_uid === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $view_uid when calling updateTableTextStyle');
+        }
+        // verify the required parameter 'table_text_style' is set
+        if ($request->table_text_style === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $table_text_style when calling updateTableTextStyle');
+        }
+
+        $resourcePath = '/tasks/{name}/views/{viewUid}/tabletextstyles';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', $request->name, $resourcePath);
+        }
+        // path params
+        if ($request->view_uid !== null) {
+            $localName = lcfirst('viewUid');
+            $resourcePath = str_replace('{' . $localName . '}', $request->view_uid, $resourcePath);
+        }
+
+        // query params
+        if ($request->file_name !== null) {
+            $localName = lcfirst('fileName');
+            $localValue = is_bool($request->file_name) ? ($request->file_name ? 'true' : 'false') : $request->file_name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', $localValue, $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        $_tempBody = $this->_prepareBodyParameter($request->table_text_style);
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                // for HTTP post (form)
+                $httpBody = $formParams['file'];
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+
+    /*
      * Operation getWbsDefinition
      *
      * Get a project's WBS Definition.
