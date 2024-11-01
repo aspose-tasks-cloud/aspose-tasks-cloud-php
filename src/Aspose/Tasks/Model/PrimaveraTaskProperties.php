@@ -65,7 +65,28 @@ class PrimaveraTaskProperties implements ArrayAccess
         'raw_duration_type' => 'string',
         'raw_activity_type' => 'string',
         'raw_complete_percent_type' => 'string',
-        'raw_status' => 'string'
+        'raw_status' => 'string',
+        'duration_percent_complete' => 'double',
+        'physical_percent_complete' => 'double',
+        'actual_non_labor_units' => 'double',
+        'actual_labor_units' => 'double',
+        'units_percent_complete' => 'double',
+        'remaining_labor_units' => 'double',
+        'remaining_non_labor_units' => 'double',
+        'duration_type' => '\Aspose\Tasks\Model\PrimaveraDurationType',
+        'activity_type' => '\Aspose\Tasks\Model\PrimaveraActivityType',
+        'percent_complete_type' => '\Aspose\Tasks\Model\PrimaveraPercentCompleteType',
+        'actual_labor_cost' => 'float',
+        'actual_nonlabor_cost' => 'float',
+        'actual_material_cost' => 'float',
+        'actual_expense_cost' => 'float',
+        'remaining_expense_cost' => 'float',
+        'actual_total_cost' => 'float',
+        'budgeted_total_cost' => 'float',
+        'budgeted_labor_cost' => 'float',
+        'budgeted_nonlabor_cost' => 'float',
+        'budgeted_material_cost' => 'float',
+        'budgeted_expense_cost' => 'float'
     ];
 
     /*
@@ -83,7 +104,28 @@ class PrimaveraTaskProperties implements ArrayAccess
         'raw_duration_type' => null,
         'raw_activity_type' => null,
         'raw_complete_percent_type' => null,
-        'raw_status' => null
+        'raw_status' => null,
+        'duration_percent_complete' => 'double',
+        'physical_percent_complete' => 'double',
+        'actual_non_labor_units' => 'double',
+        'actual_labor_units' => 'double',
+        'units_percent_complete' => 'double',
+        'remaining_labor_units' => 'double',
+        'remaining_non_labor_units' => 'double',
+        'duration_type' => null,
+        'activity_type' => null,
+        'percent_complete_type' => null,
+        'actual_labor_cost' => 'decimal',
+        'actual_nonlabor_cost' => 'decimal',
+        'actual_material_cost' => 'decimal',
+        'actual_expense_cost' => 'decimal',
+        'remaining_expense_cost' => 'decimal',
+        'actual_total_cost' => 'decimal',
+        'budgeted_total_cost' => 'decimal',
+        'budgeted_labor_cost' => 'decimal',
+        'budgeted_nonlabor_cost' => 'decimal',
+        'budgeted_material_cost' => 'decimal',
+        'budgeted_expense_cost' => 'decimal'
     ];
 
     /*
@@ -122,7 +164,28 @@ class PrimaveraTaskProperties implements ArrayAccess
         'raw_duration_type' => 'rawDurationType',
         'raw_activity_type' => 'rawActivityType',
         'raw_complete_percent_type' => 'rawCompletePercentType',
-        'raw_status' => 'rawStatus'
+        'raw_status' => 'rawStatus',
+        'duration_percent_complete' => 'durationPercentComplete',
+        'physical_percent_complete' => 'physicalPercentComplete',
+        'actual_non_labor_units' => 'actualNonLaborUnits',
+        'actual_labor_units' => 'actualLaborUnits',
+        'units_percent_complete' => 'unitsPercentComplete',
+        'remaining_labor_units' => 'remainingLaborUnits',
+        'remaining_non_labor_units' => 'remainingNonLaborUnits',
+        'duration_type' => 'durationType',
+        'activity_type' => 'activityType',
+        'percent_complete_type' => 'percentCompleteType',
+        'actual_labor_cost' => 'actualLaborCost',
+        'actual_nonlabor_cost' => 'actualNonlaborCost',
+        'actual_material_cost' => 'actualMaterialCost',
+        'actual_expense_cost' => 'actualExpenseCost',
+        'remaining_expense_cost' => 'remainingExpenseCost',
+        'actual_total_cost' => 'actualTotalCost',
+        'budgeted_total_cost' => 'budgetedTotalCost',
+        'budgeted_labor_cost' => 'budgetedLaborCost',
+        'budgeted_nonlabor_cost' => 'budgetedNonlaborCost',
+        'budgeted_material_cost' => 'budgetedMaterialCost',
+        'budgeted_expense_cost' => 'budgetedExpenseCost'
     ];
 
     /*
@@ -140,7 +203,28 @@ class PrimaveraTaskProperties implements ArrayAccess
         'raw_duration_type' => 'setRawDurationType',
         'raw_activity_type' => 'setRawActivityType',
         'raw_complete_percent_type' => 'setRawCompletePercentType',
-        'raw_status' => 'setRawStatus'
+        'raw_status' => 'setRawStatus',
+        'duration_percent_complete' => 'setDurationPercentComplete',
+        'physical_percent_complete' => 'setPhysicalPercentComplete',
+        'actual_non_labor_units' => 'setActualNonLaborUnits',
+        'actual_labor_units' => 'setActualLaborUnits',
+        'units_percent_complete' => 'setUnitsPercentComplete',
+        'remaining_labor_units' => 'setRemainingLaborUnits',
+        'remaining_non_labor_units' => 'setRemainingNonLaborUnits',
+        'duration_type' => 'setDurationType',
+        'activity_type' => 'setActivityType',
+        'percent_complete_type' => 'setPercentCompleteType',
+        'actual_labor_cost' => 'setActualLaborCost',
+        'actual_nonlabor_cost' => 'setActualNonlaborCost',
+        'actual_material_cost' => 'setActualMaterialCost',
+        'actual_expense_cost' => 'setActualExpenseCost',
+        'remaining_expense_cost' => 'setRemainingExpenseCost',
+        'actual_total_cost' => 'setActualTotalCost',
+        'budgeted_total_cost' => 'setBudgetedTotalCost',
+        'budgeted_labor_cost' => 'setBudgetedLaborCost',
+        'budgeted_nonlabor_cost' => 'setBudgetedNonlaborCost',
+        'budgeted_material_cost' => 'setBudgetedMaterialCost',
+        'budgeted_expense_cost' => 'setBudgetedExpenseCost'
     ];
 
     /*
@@ -158,7 +242,28 @@ class PrimaveraTaskProperties implements ArrayAccess
         'raw_duration_type' => 'getRawDurationType',
         'raw_activity_type' => 'getRawActivityType',
         'raw_complete_percent_type' => 'getRawCompletePercentType',
-        'raw_status' => 'getRawStatus'
+        'raw_status' => 'getRawStatus',
+        'duration_percent_complete' => 'getDurationPercentComplete',
+        'physical_percent_complete' => 'getPhysicalPercentComplete',
+        'actual_non_labor_units' => 'getActualNonLaborUnits',
+        'actual_labor_units' => 'getActualLaborUnits',
+        'units_percent_complete' => 'getUnitsPercentComplete',
+        'remaining_labor_units' => 'getRemainingLaborUnits',
+        'remaining_non_labor_units' => 'getRemainingNonLaborUnits',
+        'duration_type' => 'getDurationType',
+        'activity_type' => 'getActivityType',
+        'percent_complete_type' => 'getPercentCompleteType',
+        'actual_labor_cost' => 'getActualLaborCost',
+        'actual_nonlabor_cost' => 'getActualNonlaborCost',
+        'actual_material_cost' => 'getActualMaterialCost',
+        'actual_expense_cost' => 'getActualExpenseCost',
+        'remaining_expense_cost' => 'getRemainingExpenseCost',
+        'actual_total_cost' => 'getActualTotalCost',
+        'budgeted_total_cost' => 'getBudgetedTotalCost',
+        'budgeted_labor_cost' => 'getBudgetedLaborCost',
+        'budgeted_nonlabor_cost' => 'getBudgetedNonlaborCost',
+        'budgeted_material_cost' => 'getBudgetedMaterialCost',
+        'budgeted_expense_cost' => 'getBudgetedExpenseCost'
     ];
 
     /*
@@ -231,6 +336,27 @@ class PrimaveraTaskProperties implements ArrayAccess
         $this->container['raw_activity_type'] = isset($data['raw_activity_type']) ? $data['raw_activity_type'] : null;
         $this->container['raw_complete_percent_type'] = isset($data['raw_complete_percent_type']) ? $data['raw_complete_percent_type'] : null;
         $this->container['raw_status'] = isset($data['raw_status']) ? $data['raw_status'] : null;
+        $this->container['duration_percent_complete'] = isset($data['duration_percent_complete']) ? $data['duration_percent_complete'] : null;
+        $this->container['physical_percent_complete'] = isset($data['physical_percent_complete']) ? $data['physical_percent_complete'] : null;
+        $this->container['actual_non_labor_units'] = isset($data['actual_non_labor_units']) ? $data['actual_non_labor_units'] : null;
+        $this->container['actual_labor_units'] = isset($data['actual_labor_units']) ? $data['actual_labor_units'] : null;
+        $this->container['units_percent_complete'] = isset($data['units_percent_complete']) ? $data['units_percent_complete'] : null;
+        $this->container['remaining_labor_units'] = isset($data['remaining_labor_units']) ? $data['remaining_labor_units'] : null;
+        $this->container['remaining_non_labor_units'] = isset($data['remaining_non_labor_units']) ? $data['remaining_non_labor_units'] : null;
+        $this->container['duration_type'] = isset($data['duration_type']) ? $data['duration_type'] : null;
+        $this->container['activity_type'] = isset($data['activity_type']) ? $data['activity_type'] : null;
+        $this->container['percent_complete_type'] = isset($data['percent_complete_type']) ? $data['percent_complete_type'] : null;
+        $this->container['actual_labor_cost'] = isset($data['actual_labor_cost']) ? $data['actual_labor_cost'] : null;
+        $this->container['actual_nonlabor_cost'] = isset($data['actual_nonlabor_cost']) ? $data['actual_nonlabor_cost'] : null;
+        $this->container['actual_material_cost'] = isset($data['actual_material_cost']) ? $data['actual_material_cost'] : null;
+        $this->container['actual_expense_cost'] = isset($data['actual_expense_cost']) ? $data['actual_expense_cost'] : null;
+        $this->container['remaining_expense_cost'] = isset($data['remaining_expense_cost']) ? $data['remaining_expense_cost'] : null;
+        $this->container['actual_total_cost'] = isset($data['actual_total_cost']) ? $data['actual_total_cost'] : null;
+        $this->container['budgeted_total_cost'] = isset($data['budgeted_total_cost']) ? $data['budgeted_total_cost'] : null;
+        $this->container['budgeted_labor_cost'] = isset($data['budgeted_labor_cost']) ? $data['budgeted_labor_cost'] : null;
+        $this->container['budgeted_nonlabor_cost'] = isset($data['budgeted_nonlabor_cost']) ? $data['budgeted_nonlabor_cost'] : null;
+        $this->container['budgeted_material_cost'] = isset($data['budgeted_material_cost']) ? $data['budgeted_material_cost'] : null;
+        $this->container['budgeted_expense_cost'] = isset($data['budgeted_expense_cost']) ? $data['budgeted_expense_cost'] : null;
     }
 
     /*
@@ -257,6 +383,69 @@ class PrimaveraTaskProperties implements ArrayAccess
         if ($this->container['remaining_late_finish'] === null) {
             $invalidProperties[] = "'remaining_late_finish' can't be null";
         }
+        if ($this->container['duration_percent_complete'] === null) {
+            $invalidProperties[] = "'duration_percent_complete' can't be null";
+        }
+        if ($this->container['physical_percent_complete'] === null) {
+            $invalidProperties[] = "'physical_percent_complete' can't be null";
+        }
+        if ($this->container['actual_non_labor_units'] === null) {
+            $invalidProperties[] = "'actual_non_labor_units' can't be null";
+        }
+        if ($this->container['actual_labor_units'] === null) {
+            $invalidProperties[] = "'actual_labor_units' can't be null";
+        }
+        if ($this->container['units_percent_complete'] === null) {
+            $invalidProperties[] = "'units_percent_complete' can't be null";
+        }
+        if ($this->container['remaining_labor_units'] === null) {
+            $invalidProperties[] = "'remaining_labor_units' can't be null";
+        }
+        if ($this->container['remaining_non_labor_units'] === null) {
+            $invalidProperties[] = "'remaining_non_labor_units' can't be null";
+        }
+        if ($this->container['duration_type'] === null) {
+            $invalidProperties[] = "'duration_type' can't be null";
+        }
+        if ($this->container['activity_type'] === null) {
+            $invalidProperties[] = "'activity_type' can't be null";
+        }
+        if ($this->container['percent_complete_type'] === null) {
+            $invalidProperties[] = "'percent_complete_type' can't be null";
+        }
+        if ($this->container['actual_labor_cost'] === null) {
+            $invalidProperties[] = "'actual_labor_cost' can't be null";
+        }
+        if ($this->container['actual_nonlabor_cost'] === null) {
+            $invalidProperties[] = "'actual_nonlabor_cost' can't be null";
+        }
+        if ($this->container['actual_material_cost'] === null) {
+            $invalidProperties[] = "'actual_material_cost' can't be null";
+        }
+        if ($this->container['actual_expense_cost'] === null) {
+            $invalidProperties[] = "'actual_expense_cost' can't be null";
+        }
+        if ($this->container['remaining_expense_cost'] === null) {
+            $invalidProperties[] = "'remaining_expense_cost' can't be null";
+        }
+        if ($this->container['actual_total_cost'] === null) {
+            $invalidProperties[] = "'actual_total_cost' can't be null";
+        }
+        if ($this->container['budgeted_total_cost'] === null) {
+            $invalidProperties[] = "'budgeted_total_cost' can't be null";
+        }
+        if ($this->container['budgeted_labor_cost'] === null) {
+            $invalidProperties[] = "'budgeted_labor_cost' can't be null";
+        }
+        if ($this->container['budgeted_nonlabor_cost'] === null) {
+            $invalidProperties[] = "'budgeted_nonlabor_cost' can't be null";
+        }
+        if ($this->container['budgeted_material_cost'] === null) {
+            $invalidProperties[] = "'budgeted_material_cost' can't be null";
+        }
+        if ($this->container['budgeted_expense_cost'] === null) {
+            $invalidProperties[] = "'budgeted_expense_cost' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -282,6 +471,69 @@ class PrimaveraTaskProperties implements ArrayAccess
             return false;
         }
         if ($this->container['remaining_late_finish'] === null) {
+            return false;
+        }
+        if ($this->container['duration_percent_complete'] === null) {
+            return false;
+        }
+        if ($this->container['physical_percent_complete'] === null) {
+            return false;
+        }
+        if ($this->container['actual_non_labor_units'] === null) {
+            return false;
+        }
+        if ($this->container['actual_labor_units'] === null) {
+            return false;
+        }
+        if ($this->container['units_percent_complete'] === null) {
+            return false;
+        }
+        if ($this->container['remaining_labor_units'] === null) {
+            return false;
+        }
+        if ($this->container['remaining_non_labor_units'] === null) {
+            return false;
+        }
+        if ($this->container['duration_type'] === null) {
+            return false;
+        }
+        if ($this->container['activity_type'] === null) {
+            return false;
+        }
+        if ($this->container['percent_complete_type'] === null) {
+            return false;
+        }
+        if ($this->container['actual_labor_cost'] === null) {
+            return false;
+        }
+        if ($this->container['actual_nonlabor_cost'] === null) {
+            return false;
+        }
+        if ($this->container['actual_material_cost'] === null) {
+            return false;
+        }
+        if ($this->container['actual_expense_cost'] === null) {
+            return false;
+        }
+        if ($this->container['remaining_expense_cost'] === null) {
+            return false;
+        }
+        if ($this->container['actual_total_cost'] === null) {
+            return false;
+        }
+        if ($this->container['budgeted_total_cost'] === null) {
+            return false;
+        }
+        if ($this->container['budgeted_labor_cost'] === null) {
+            return false;
+        }
+        if ($this->container['budgeted_nonlabor_cost'] === null) {
+            return false;
+        }
+        if ($this->container['budgeted_material_cost'] === null) {
+            return false;
+        }
+        if ($this->container['budgeted_expense_cost'] === null) {
             return false;
         }
         return true;
@@ -524,6 +776,510 @@ class PrimaveraTaskProperties implements ArrayAccess
     public function setRawStatus($raw_status)
     {
         $this->container['raw_status'] = $raw_status;
+
+        return $this;
+    }
+
+    /*
+     * Gets duration_percent_complete
+     *
+     * @return double
+     */
+    public function getDurationPercentComplete()
+    {
+        return $this->container['duration_percent_complete'];
+    }
+
+    /*
+     * Sets duration_percent_complete
+     *
+     * @param double $duration_percent_complete Gets the value of duration percent complete.
+     *
+     * @return $this
+     */
+    public function setDurationPercentComplete($duration_percent_complete)
+    {
+        $this->container['duration_percent_complete'] = $duration_percent_complete;
+
+        return $this;
+    }
+
+    /*
+     * Gets physical_percent_complete
+     *
+     * @return double
+     */
+    public function getPhysicalPercentComplete()
+    {
+        return $this->container['physical_percent_complete'];
+    }
+
+    /*
+     * Sets physical_percent_complete
+     *
+     * @param double $physical_percent_complete Gets the value of Physical Percent Complete.
+     *
+     * @return $this
+     */
+    public function setPhysicalPercentComplete($physical_percent_complete)
+    {
+        $this->container['physical_percent_complete'] = $physical_percent_complete;
+
+        return $this;
+    }
+
+    /*
+     * Gets actual_non_labor_units
+     *
+     * @return double
+     */
+    public function getActualNonLaborUnits()
+    {
+        return $this->container['actual_non_labor_units'];
+    }
+
+    /*
+     * Sets actual_non_labor_units
+     *
+     * @param double $actual_non_labor_units Gets the value of actual non labor units.
+     *
+     * @return $this
+     */
+    public function setActualNonLaborUnits($actual_non_labor_units)
+    {
+        $this->container['actual_non_labor_units'] = $actual_non_labor_units;
+
+        return $this;
+    }
+
+    /*
+     * Gets actual_labor_units
+     *
+     * @return double
+     */
+    public function getActualLaborUnits()
+    {
+        return $this->container['actual_labor_units'];
+    }
+
+    /*
+     * Sets actual_labor_units
+     *
+     * @param double $actual_labor_units Gets the value of actual labor units.
+     *
+     * @return $this
+     */
+    public function setActualLaborUnits($actual_labor_units)
+    {
+        $this->container['actual_labor_units'] = $actual_labor_units;
+
+        return $this;
+    }
+
+    /*
+     * Gets units_percent_complete
+     *
+     * @return double
+     */
+    public function getUnitsPercentComplete()
+    {
+        return $this->container['units_percent_complete'];
+    }
+
+    /*
+     * Sets units_percent_complete
+     *
+     * @param double $units_percent_complete Gets the value of units percent complete.
+     *
+     * @return $this
+     */
+    public function setUnitsPercentComplete($units_percent_complete)
+    {
+        $this->container['units_percent_complete'] = $units_percent_complete;
+
+        return $this;
+    }
+
+    /*
+     * Gets remaining_labor_units
+     *
+     * @return double
+     */
+    public function getRemainingLaborUnits()
+    {
+        return $this->container['remaining_labor_units'];
+    }
+
+    /*
+     * Sets remaining_labor_units
+     *
+     * @param double $remaining_labor_units Gets the value of remaining labor units.
+     *
+     * @return $this
+     */
+    public function setRemainingLaborUnits($remaining_labor_units)
+    {
+        $this->container['remaining_labor_units'] = $remaining_labor_units;
+
+        return $this;
+    }
+
+    /*
+     * Gets remaining_non_labor_units
+     *
+     * @return double
+     */
+    public function getRemainingNonLaborUnits()
+    {
+        return $this->container['remaining_non_labor_units'];
+    }
+
+    /*
+     * Sets remaining_non_labor_units
+     *
+     * @param double $remaining_non_labor_units Gets the value of remaining non labor units.
+     *
+     * @return $this
+     */
+    public function setRemainingNonLaborUnits($remaining_non_labor_units)
+    {
+        $this->container['remaining_non_labor_units'] = $remaining_non_labor_units;
+
+        return $this;
+    }
+
+    /*
+     * Gets duration_type
+     *
+     * @return \Aspose\Tasks\Model\PrimaveraDurationType
+     */
+    public function getDurationType()
+    {
+        return $this->container['duration_type'];
+    }
+
+    /*
+     * Sets duration_type
+     *
+     * @param \Aspose\Tasks\Model\PrimaveraDurationType $duration_type Gets the value of 'Duration Type' field of the activity.
+     *
+     * @return $this
+     */
+    public function setDurationType($duration_type)
+    {
+        $this->container['duration_type'] = $duration_type;
+
+        return $this;
+    }
+
+    /*
+     * Gets activity_type
+     *
+     * @return \Aspose\Tasks\Model\PrimaveraActivityType
+     */
+    public function getActivityType()
+    {
+        return $this->container['activity_type'];
+    }
+
+    /*
+     * Sets activity_type
+     *
+     * @param \Aspose\Tasks\Model\PrimaveraActivityType $activity_type Gets the value of 'Activity Type' field.
+     *
+     * @return $this
+     */
+    public function setActivityType($activity_type)
+    {
+        $this->container['activity_type'] = $activity_type;
+
+        return $this;
+    }
+
+    /*
+     * Gets percent_complete_type
+     *
+     * @return \Aspose\Tasks\Model\PrimaveraPercentCompleteType
+     */
+    public function getPercentCompleteType()
+    {
+        return $this->container['percent_complete_type'];
+    }
+
+    /*
+     * Sets percent_complete_type
+     *
+     * @param \Aspose\Tasks\Model\PrimaveraPercentCompleteType $percent_complete_type Gets the value of '% Complete Type' field of the activity.
+     *
+     * @return $this
+     */
+    public function setPercentCompleteType($percent_complete_type)
+    {
+        $this->container['percent_complete_type'] = $percent_complete_type;
+
+        return $this;
+    }
+
+    /*
+     * Gets actual_labor_cost
+     *
+     * @return float
+     */
+    public function getActualLaborCost()
+    {
+        return $this->container['actual_labor_cost'];
+    }
+
+    /*
+     * Sets actual_labor_cost
+     *
+     * @param float $actual_labor_cost Gets the value of actual labor cost.
+     *
+     * @return $this
+     */
+    public function setActualLaborCost($actual_labor_cost)
+    {
+        $this->container['actual_labor_cost'] = $actual_labor_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets actual_nonlabor_cost
+     *
+     * @return float
+     */
+    public function getActualNonlaborCost()
+    {
+        return $this->container['actual_nonlabor_cost'];
+    }
+
+    /*
+     * Sets actual_nonlabor_cost
+     *
+     * @param float $actual_nonlabor_cost Gets the value of actual non labor cost.
+     *
+     * @return $this
+     */
+    public function setActualNonlaborCost($actual_nonlabor_cost)
+    {
+        $this->container['actual_nonlabor_cost'] = $actual_nonlabor_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets actual_material_cost
+     *
+     * @return float
+     */
+    public function getActualMaterialCost()
+    {
+        return $this->container['actual_material_cost'];
+    }
+
+    /*
+     * Sets actual_material_cost
+     *
+     * @param float $actual_material_cost Gets the value of actual material cost.
+     *
+     * @return $this
+     */
+    public function setActualMaterialCost($actual_material_cost)
+    {
+        $this->container['actual_material_cost'] = $actual_material_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets actual_expense_cost
+     *
+     * @return float
+     */
+    public function getActualExpenseCost()
+    {
+        return $this->container['actual_expense_cost'];
+    }
+
+    /*
+     * Sets actual_expense_cost
+     *
+     * @param float $actual_expense_cost Gets the value of actual expense cost.
+     *
+     * @return $this
+     */
+    public function setActualExpenseCost($actual_expense_cost)
+    {
+        $this->container['actual_expense_cost'] = $actual_expense_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets remaining_expense_cost
+     *
+     * @return float
+     */
+    public function getRemainingExpenseCost()
+    {
+        return $this->container['remaining_expense_cost'];
+    }
+
+    /*
+     * Sets remaining_expense_cost
+     *
+     * @param float $remaining_expense_cost Gets the value of remaining expense cost.
+     *
+     * @return $this
+     */
+    public function setRemainingExpenseCost($remaining_expense_cost)
+    {
+        $this->container['remaining_expense_cost'] = $remaining_expense_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets actual_total_cost
+     *
+     * @return float
+     */
+    public function getActualTotalCost()
+    {
+        return $this->container['actual_total_cost'];
+    }
+
+    /*
+     * Sets actual_total_cost
+     *
+     * @param float $actual_total_cost Gets the total value of actual costs.
+     *
+     * @return $this
+     */
+    public function setActualTotalCost($actual_total_cost)
+    {
+        $this->container['actual_total_cost'] = $actual_total_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets budgeted_total_cost
+     *
+     * @return float
+     */
+    public function getBudgetedTotalCost()
+    {
+        return $this->container['budgeted_total_cost'];
+    }
+
+    /*
+     * Sets budgeted_total_cost
+     *
+     * @param float $budgeted_total_cost Gets the total value of budgeted (or planned) costs.
+     *
+     * @return $this
+     */
+    public function setBudgetedTotalCost($budgeted_total_cost)
+    {
+        $this->container['budgeted_total_cost'] = $budgeted_total_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets budgeted_labor_cost
+     *
+     * @return float
+     */
+    public function getBudgetedLaborCost()
+    {
+        return $this->container['budgeted_labor_cost'];
+    }
+
+    /*
+     * Sets budgeted_labor_cost
+     *
+     * @param float $budgeted_labor_cost Gets the value of budgeted (or planned) labor cost.
+     *
+     * @return $this
+     */
+    public function setBudgetedLaborCost($budgeted_labor_cost)
+    {
+        $this->container['budgeted_labor_cost'] = $budgeted_labor_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets budgeted_nonlabor_cost
+     *
+     * @return float
+     */
+    public function getBudgetedNonlaborCost()
+    {
+        return $this->container['budgeted_nonlabor_cost'];
+    }
+
+    /*
+     * Sets budgeted_nonlabor_cost
+     *
+     * @param float $budgeted_nonlabor_cost Gets the value of budgeted (or planned) non labor cost.
+     *
+     * @return $this
+     */
+    public function setBudgetedNonlaborCost($budgeted_nonlabor_cost)
+    {
+        $this->container['budgeted_nonlabor_cost'] = $budgeted_nonlabor_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets budgeted_material_cost
+     *
+     * @return float
+     */
+    public function getBudgetedMaterialCost()
+    {
+        return $this->container['budgeted_material_cost'];
+    }
+
+    /*
+     * Sets budgeted_material_cost
+     *
+     * @param float $budgeted_material_cost Gets the value of of budgeted (or planned) material cost.
+     *
+     * @return $this
+     */
+    public function setBudgetedMaterialCost($budgeted_material_cost)
+    {
+        $this->container['budgeted_material_cost'] = $budgeted_material_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets budgeted_expense_cost
+     *
+     * @return float
+     */
+    public function getBudgetedExpenseCost()
+    {
+        return $this->container['budgeted_expense_cost'];
+    }
+
+    /*
+     * Sets budgeted_expense_cost
+     *
+     * @param float $budgeted_expense_cost Gets the value of budgeted (or planned) expense cost.
+     *
+     * @return $this
+     */
+    public function setBudgetedExpenseCost($budgeted_expense_cost)
+    {
+        $this->container['budgeted_expense_cost'] = $budgeted_expense_cost;
 
         return $this;
     }

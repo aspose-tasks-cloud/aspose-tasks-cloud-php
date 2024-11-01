@@ -31,6 +31,9 @@ use PHPUnit\Framework\Assert;
 
 use Aspose\Tasks\Model;
 use Aspose\Tasks\Model\Requests;
+use Aspose\Tasks\Model\PrimaveraDurationType;
+use Aspose\Tasks\Model\PrimaveraActivityType;
+use Aspose\Tasks\Model\PrimaveraPercentCompleteType;
 
 class TaskPrimaveraPropertiesTest extends BaseTestContext
 {
@@ -55,5 +58,8 @@ class TaskPrimaveraPropertiesTest extends BaseTestContext
         Assert::assertEquals("Task Dependent", $entity->getRawActivityType());
         Assert::assertEquals("Units", $entity->getRawCompletePercentType());
         Assert::assertEquals("Not Started", $entity->getRawStatus());
+        Assert::assertEquals(PrimaveraDurationType::FIXED_UNITS, $entity->getDurationType());
+        Assert::assertEquals(PrimaveraActivityType::TASK_DEPENDENT, $entity->getActivityType());
+        Assert::assertEquals(PrimaveraPercentCompleteType::UNITS, $entity->getPercentCompleteType());
     }
 }

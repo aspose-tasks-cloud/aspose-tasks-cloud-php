@@ -61,6 +61,7 @@ class CalendarsTest extends BaseTestContext
         
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotNull($response->getCalendar());
+        Assert::assertEquals("3F979F74-B9D3-4E5F-98DC-5E08060A0C30", $response->getCalendar()->getGuid());
         Assert::assertEquals("Standard", $response->getCalendar()->getName());
         Assert::assertEquals(7, count($response->getCalendar()->getDays()));
         Assert::assertEquals(true, $response->getCalendar()->getIsBaseCalendar());

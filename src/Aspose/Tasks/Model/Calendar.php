@@ -56,6 +56,7 @@ class Calendar implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'guid' => 'string',
         'name' => 'string',
         'uid' => 'int',
         'days' => '\Aspose\Tasks\Model\WeekDay[]',
@@ -70,6 +71,7 @@ class Calendar implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'guid' => null,
         'name' => null,
         'uid' => 'int32',
         'days' => null,
@@ -105,6 +107,7 @@ class Calendar implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'guid' => 'guid',
         'name' => 'name',
         'uid' => 'uid',
         'days' => 'days',
@@ -119,6 +122,7 @@ class Calendar implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'guid' => 'setGuid',
         'name' => 'setName',
         'uid' => 'setUid',
         'days' => 'setDays',
@@ -133,6 +137,7 @@ class Calendar implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'guid' => 'getGuid',
         'name' => 'getName',
         'uid' => 'getUid',
         'days' => 'getDays',
@@ -201,6 +206,7 @@ class Calendar implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
         $this->container['days'] = isset($data['days']) ? $data['days'] : array();
@@ -251,6 +257,30 @@ class Calendar implements ArrayAccess
         return true;
     }
 
+
+    /*
+     * Gets guid
+     *
+     * @return string
+     */
+    public function getGuid()
+    {
+        return $this->container['guid'];
+    }
+
+    /*
+     * Sets guid
+     *
+     * @param string $guid Gets calendar's Guid.
+     *
+     * @return $this
+     */
+    public function setGuid($guid)
+    {
+        $this->container['guid'] = $guid;
+
+        return $this;
+    }
 
     /*
      * Gets name

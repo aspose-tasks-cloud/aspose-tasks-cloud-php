@@ -337,7 +337,7 @@ class View implements ArrayAccess
     /*
      * Sets name
      *
-     * @param string $name Gets or sets the name of a View object.
+     * @param string $name Gets or sets the name of a view object.
      *
      * @return $this
      */
