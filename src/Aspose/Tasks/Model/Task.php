@@ -82,6 +82,7 @@ class Task implements ArrayAccess
         'constraint_type' => '\Aspose\Tasks\Model\ConstraintType',
         'contact' => 'string',
         'cost' => 'float',
+        'outline_number' => 'string',
         'cv' => 'double',
         'deadline' => '\DateTime',
         'duration_variance' => 'string',
@@ -170,7 +171,8 @@ class Task implements ArrayAccess
         'extended_attributes' => '\Aspose\Tasks\Model\ExtendedAttribute[]',
         'outline_codes' => '\Aspose\Tasks\Model\OutlineCode[]',
         'warning' => 'bool',
-        'activity_id' => 'string'
+        'activity_id' => 'string',
+        'external_uid' => 'int'
     ];
 
     /*
@@ -205,6 +207,7 @@ class Task implements ArrayAccess
         'constraint_type' => null,
         'contact' => null,
         'cost' => 'decimal',
+        'outline_number' => null,
         'cv' => 'double',
         'deadline' => 'date-time',
         'duration_variance' => 'time-span',
@@ -293,7 +296,8 @@ class Task implements ArrayAccess
         'extended_attributes' => null,
         'outline_codes' => null,
         'warning' => null,
-        'activity_id' => null
+        'activity_id' => null,
+        'external_uid' => 'int32'
     ];
 
     /*
@@ -349,6 +353,7 @@ class Task implements ArrayAccess
         'constraint_type' => 'constraintType',
         'contact' => 'contact',
         'cost' => 'cost',
+        'outline_number' => 'outlineNumber',
         'cv' => 'cv',
         'deadline' => 'deadline',
         'duration_variance' => 'durationVariance',
@@ -437,7 +442,8 @@ class Task implements ArrayAccess
         'extended_attributes' => 'extendedAttributes',
         'outline_codes' => 'outlineCodes',
         'warning' => 'warning',
-        'activity_id' => 'activityId'
+        'activity_id' => 'activityId',
+        'external_uid' => 'externalUid'
     ];
 
     /*
@@ -472,6 +478,7 @@ class Task implements ArrayAccess
         'constraint_type' => 'setConstraintType',
         'contact' => 'setContact',
         'cost' => 'setCost',
+        'outline_number' => 'setOutlineNumber',
         'cv' => 'setCv',
         'deadline' => 'setDeadline',
         'duration_variance' => 'setDurationVariance',
@@ -560,7 +567,8 @@ class Task implements ArrayAccess
         'extended_attributes' => 'setExtendedAttributes',
         'outline_codes' => 'setOutlineCodes',
         'warning' => 'setWarning',
-        'activity_id' => 'setActivityId'
+        'activity_id' => 'setActivityId',
+        'external_uid' => 'setExternalUid'
     ];
 
     /*
@@ -595,6 +603,7 @@ class Task implements ArrayAccess
         'constraint_type' => 'getConstraintType',
         'contact' => 'getContact',
         'cost' => 'getCost',
+        'outline_number' => 'getOutlineNumber',
         'cv' => 'getCv',
         'deadline' => 'getDeadline',
         'duration_variance' => 'getDurationVariance',
@@ -683,7 +692,8 @@ class Task implements ArrayAccess
         'extended_attributes' => 'getExtendedAttributes',
         'outline_codes' => 'getOutlineCodes',
         'warning' => 'getWarning',
-        'activity_id' => 'getActivityId'
+        'activity_id' => 'getActivityId',
+        'external_uid' => 'getExternalUid'
     ];
 
     /*
@@ -772,6 +782,7 @@ class Task implements ArrayAccess
         $this->container['constraint_type'] = isset($data['constraint_type']) ? $data['constraint_type'] : null;
         $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
         $this->container['cost'] = isset($data['cost']) ? $data['cost'] : null;
+        $this->container['outline_number'] = isset($data['outline_number']) ? $data['outline_number'] : null;
         $this->container['cv'] = isset($data['cv']) ? $data['cv'] : null;
         $this->container['deadline'] = isset($data['deadline']) ? $data['deadline'] : null;
         $this->container['duration_variance'] = isset($data['duration_variance']) ? $data['duration_variance'] : null;
@@ -861,6 +872,7 @@ class Task implements ArrayAccess
         $this->container['outline_codes'] = isset($data['outline_codes']) ? $data['outline_codes'] : array();
         $this->container['warning'] = isset($data['warning']) ? $data['warning'] : false;
         $this->container['activity_id'] = isset($data['activity_id']) ? $data['activity_id'] : null;
+        $this->container['external_uid'] = isset($data['external_uid']) ? $data['external_uid'] : null;
     }
 
     /*
@@ -1148,6 +1160,9 @@ class Task implements ArrayAccess
         if ($this->container['warning'] === null) {
             $invalidProperties[] = "'warning' can't be null";
         }
+        if ($this->container['external_uid'] === null) {
+            $invalidProperties[] = "'external_uid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -1434,6 +1449,9 @@ class Task implements ArrayAccess
             return false;
         }
         if ($this->container['warning'] === null) {
+            return false;
+        }
+        if ($this->container['external_uid'] === null) {
             return false;
         }
         return true;
@@ -2060,6 +2078,30 @@ class Task implements ArrayAccess
     public function setCost($cost)
     {
         $this->container['cost'] = $cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets outline_number
+     *
+     * @return string
+     */
+    public function getOutlineNumber()
+    {
+        return $this->container['outline_number'];
+    }
+
+    /*
+     * Sets outline_number
+     *
+     * @param string $outline_number Gets or sets a value of OutlineNumber.
+     *
+     * @return $this
+     */
+    public function setOutlineNumber($outline_number)
+    {
+        $this->container['outline_number'] = $outline_number;
 
         return $this;
     }
@@ -4196,6 +4238,30 @@ class Task implements ArrayAccess
     public function setActivityId($activity_id)
     {
         $this->container['activity_id'] = $activity_id;
+
+        return $this;
+    }
+
+    /*
+     * Gets external_uid
+     *
+     * @return int
+     */
+    public function getExternalUid()
+    {
+        return $this->container['external_uid'];
+    }
+
+    /*
+     * Sets external_uid
+     *
+     * @param int $external_uid Contains the external task's Unique identifier when the task is external.
+     *
+     * @return $this
+     */
+    public function setExternalUid($external_uid)
+    {
+        $this->container['external_uid'] = $external_uid;
 
         return $this;
     }

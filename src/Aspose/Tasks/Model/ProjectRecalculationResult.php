@@ -57,7 +57,8 @@ class ProjectRecalculationResult implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'validation_state' => '\Aspose\Tasks\Model\ProjectValidationState',
-        'validation_error_message' => 'string'
+        'validation_error_message' => 'string',
+        'failed_task_uid' => 'int'
     ];
 
     /*
@@ -67,7 +68,8 @@ class ProjectRecalculationResult implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'validation_state' => null,
-        'validation_error_message' => null
+        'validation_error_message' => null,
+        'failed_task_uid' => 'int32'
     ];
 
     /*
@@ -98,7 +100,8 @@ class ProjectRecalculationResult implements ArrayAccess
      */
     protected static $attributeMap = [
         'validation_state' => 'validationState',
-        'validation_error_message' => 'validationErrorMessage'
+        'validation_error_message' => 'validationErrorMessage',
+        'failed_task_uid' => 'failedTaskUid'
     ];
 
     /*
@@ -108,7 +111,8 @@ class ProjectRecalculationResult implements ArrayAccess
      */
     protected static $setters = [
         'validation_state' => 'setValidationState',
-        'validation_error_message' => 'setValidationErrorMessage'
+        'validation_error_message' => 'setValidationErrorMessage',
+        'failed_task_uid' => 'setFailedTaskUid'
     ];
 
     /*
@@ -118,7 +122,8 @@ class ProjectRecalculationResult implements ArrayAccess
      */
     protected static $getters = [
         'validation_state' => 'getValidationState',
-        'validation_error_message' => 'getValidationErrorMessage'
+        'validation_error_message' => 'getValidationErrorMessage',
+        'failed_task_uid' => 'getFailedTaskUid'
     ];
 
     /*
@@ -183,6 +188,7 @@ class ProjectRecalculationResult implements ArrayAccess
     {
         $this->container['validation_state'] = isset($data['validation_state']) ? $data['validation_state'] : null;
         $this->container['validation_error_message'] = isset($data['validation_error_message']) ? $data['validation_error_message'] : null;
+        $this->container['failed_task_uid'] = isset($data['failed_task_uid']) ? $data['failed_task_uid'] : null;
     }
 
     /*
@@ -260,6 +266,30 @@ class ProjectRecalculationResult implements ArrayAccess
     public function setValidationErrorMessage($validation_error_message)
     {
         $this->container['validation_error_message'] = $validation_error_message;
+
+        return $this;
+    }
+
+    /*
+     * Gets failed_task_uid
+     *
+     * @return int
+     */
+    public function getFailedTaskUid()
+    {
+        return $this->container['failed_task_uid'];
+    }
+
+    /*
+     * Sets failed_task_uid
+     *
+     * @param int $failed_task_uid Gets the task uid which caused the validation error.
+     *
+     * @return $this
+     */
+    public function setFailedTaskUid($failed_task_uid)
+    {
+        $this->container['failed_task_uid'] = $failed_task_uid;
 
         return $this;
     }

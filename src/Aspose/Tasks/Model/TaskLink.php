@@ -61,7 +61,8 @@ class TaskLink implements ArrayAccess
         'successor_uid' => 'int',
         'link_type' => '\Aspose\Tasks\Model\TaskLinkType',
         'lag' => 'int',
-        'lag_format' => '\Aspose\Tasks\Model\TimeUnitType'
+        'lag_format' => '\Aspose\Tasks\Model\TimeUnitType',
+        'link_lag_time_span' => 'string'
     ];
 
     /*
@@ -76,7 +77,8 @@ class TaskLink implements ArrayAccess
         'successor_uid' => 'int32',
         'link_type' => null,
         'lag' => 'int32',
-        'lag_format' => null
+        'lag_format' => null,
+        'link_lag_time_span' => 'time-span'
     ];
 
     /*
@@ -112,7 +114,8 @@ class TaskLink implements ArrayAccess
         'successor_uid' => 'successorUid',
         'link_type' => 'linkType',
         'lag' => 'lag',
-        'lag_format' => 'lagFormat'
+        'lag_format' => 'lagFormat',
+        'link_lag_time_span' => 'linkLagTimeSpan'
     ];
 
     /*
@@ -127,7 +130,8 @@ class TaskLink implements ArrayAccess
         'successor_uid' => 'setSuccessorUid',
         'link_type' => 'setLinkType',
         'lag' => 'setLag',
-        'lag_format' => 'setLagFormat'
+        'lag_format' => 'setLagFormat',
+        'link_lag_time_span' => 'setLinkLagTimeSpan'
     ];
 
     /*
@@ -142,7 +146,8 @@ class TaskLink implements ArrayAccess
         'successor_uid' => 'getSuccessorUid',
         'link_type' => 'getLinkType',
         'lag' => 'getLag',
-        'lag_format' => 'getLagFormat'
+        'lag_format' => 'getLagFormat',
+        'link_lag_time_span' => 'getLinkLagTimeSpan'
     ];
 
     /*
@@ -212,6 +217,7 @@ class TaskLink implements ArrayAccess
         $this->container['link_type'] = isset($data['link_type']) ? $data['link_type'] : null;
         $this->container['lag'] = isset($data['lag']) ? $data['lag'] : null;
         $this->container['lag_format'] = isset($data['lag_format']) ? $data['lag_format'] : null;
+        $this->container['link_lag_time_span'] = isset($data['link_lag_time_span']) ? $data['link_lag_time_span'] : null;
     }
 
     /*
@@ -241,6 +247,9 @@ class TaskLink implements ArrayAccess
         if ($this->container['lag_format'] === null) {
             $invalidProperties[] = "'lag_format' can't be null";
         }
+        if ($this->container['link_lag_time_span'] === null) {
+            $invalidProperties[] = "'link_lag_time_span' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -269,6 +278,9 @@ class TaskLink implements ArrayAccess
             return false;
         }
         if ($this->container['lag_format'] === null) {
+            return false;
+        }
+        if ($this->container['link_lag_time_span'] === null) {
             return false;
         }
         return true;
@@ -439,6 +451,30 @@ class TaskLink implements ArrayAccess
     public function setLagFormat($lag_format)
     {
         $this->container['lag_format'] = $lag_format;
+
+        return $this;
+    }
+
+    /*
+     * Gets link_lag_time_span
+     *
+     * @return string
+     */
+    public function getLinkLagTimeSpan()
+    {
+        return $this->container['link_lag_time_span'];
+    }
+
+    /*
+     * Sets link_lag_time_span
+     *
+     * @param string $link_lag_time_span Gets or sets lag duration, depending on LagFormat.
+     *
+     * @return $this
+     */
+    public function setLinkLagTimeSpan($link_lag_time_span)
+    {
+        $this->container['link_lag_time_span'] = $link_lag_time_span;
 
         return $this;
     }

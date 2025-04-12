@@ -90,6 +90,7 @@ class TaskLinksTest extends BaseTestContext
         Assert::assertEquals(Model\TaskLinkType::START_TO_FINISH, $response->getTaskLinks()[0]->getLinkType());
         Assert::assertEquals(9600, $response->getTaskLinks()[0]->getLag());
         Assert::assertEquals(Model\TimeUnitType::DAY, $response->getTaskLinks()[0]->getLagFormat());
+        Assert::assertEquals("16:00:00", $response->getTaskLinks()[0]->getLinkLagTimeSpan());
     }
     
     public function testDeleteTaskLink()
