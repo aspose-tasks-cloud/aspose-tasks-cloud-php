@@ -44,8 +44,8 @@ class VbaTest extends BaseTestContext
         Assert::assertEquals(200, $response->getCode());
         Assert::assertNotNull($response->getVbaProject());
         Assert::assertNotNull($response->getVbaProject()->getModules());
-        Assert::assertEquals(7, count($response->getVbaProject()->getModules()));
-        Assert::assertEquals("Module1", $response->getVbaProject()->getModules()[0]->getName());
-        Assert::assertTrue(strpos($response->getVbaProject()->getModules()[0]->getSourceCode(), 'Type MEMORYSTATUS') === 0);
+        Assert::assertEquals(8, count($response->getVbaProject()->getModules()));
+        Assert::assertEquals("Module1", $response->getVbaProject()->getModules()[1]->getName());
+        Assert::assertTrue(strpos($response->getVbaProject()->getModules()[1]->getSourceCode(), 'Type MEMORYSTATUS') === 0);
     }
 }
