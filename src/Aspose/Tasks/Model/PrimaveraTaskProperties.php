@@ -86,7 +86,11 @@ class PrimaveraTaskProperties implements ArrayAccess
         'budgeted_labor_cost' => 'float',
         'budgeted_nonlabor_cost' => 'float',
         'budgeted_material_cost' => 'float',
-        'budgeted_expense_cost' => 'float'
+        'budgeted_expense_cost' => 'float',
+        'primary_constraint_type' => '\Aspose\Tasks\Model\PrimaveraConstraintType',
+        'primary_constraint_date' => '\DateTime',
+        'secondary_constraint_type' => '\Aspose\Tasks\Model\PrimaveraConstraintType',
+        'secondary_constraint_date' => '\DateTime'
     ];
 
     /*
@@ -125,7 +129,11 @@ class PrimaveraTaskProperties implements ArrayAccess
         'budgeted_labor_cost' => 'decimal',
         'budgeted_nonlabor_cost' => 'decimal',
         'budgeted_material_cost' => 'decimal',
-        'budgeted_expense_cost' => 'decimal'
+        'budgeted_expense_cost' => 'decimal',
+        'primary_constraint_type' => null,
+        'primary_constraint_date' => 'date-time',
+        'secondary_constraint_type' => null,
+        'secondary_constraint_date' => 'date-time'
     ];
 
     /*
@@ -185,7 +193,11 @@ class PrimaveraTaskProperties implements ArrayAccess
         'budgeted_labor_cost' => 'budgetedLaborCost',
         'budgeted_nonlabor_cost' => 'budgetedNonlaborCost',
         'budgeted_material_cost' => 'budgetedMaterialCost',
-        'budgeted_expense_cost' => 'budgetedExpenseCost'
+        'budgeted_expense_cost' => 'budgetedExpenseCost',
+        'primary_constraint_type' => 'primaryConstraintType',
+        'primary_constraint_date' => 'primaryConstraintDate',
+        'secondary_constraint_type' => 'secondaryConstraintType',
+        'secondary_constraint_date' => 'secondaryConstraintDate'
     ];
 
     /*
@@ -224,7 +236,11 @@ class PrimaveraTaskProperties implements ArrayAccess
         'budgeted_labor_cost' => 'setBudgetedLaborCost',
         'budgeted_nonlabor_cost' => 'setBudgetedNonlaborCost',
         'budgeted_material_cost' => 'setBudgetedMaterialCost',
-        'budgeted_expense_cost' => 'setBudgetedExpenseCost'
+        'budgeted_expense_cost' => 'setBudgetedExpenseCost',
+        'primary_constraint_type' => 'setPrimaryConstraintType',
+        'primary_constraint_date' => 'setPrimaryConstraintDate',
+        'secondary_constraint_type' => 'setSecondaryConstraintType',
+        'secondary_constraint_date' => 'setSecondaryConstraintDate'
     ];
 
     /*
@@ -263,7 +279,11 @@ class PrimaveraTaskProperties implements ArrayAccess
         'budgeted_labor_cost' => 'getBudgetedLaborCost',
         'budgeted_nonlabor_cost' => 'getBudgetedNonlaborCost',
         'budgeted_material_cost' => 'getBudgetedMaterialCost',
-        'budgeted_expense_cost' => 'getBudgetedExpenseCost'
+        'budgeted_expense_cost' => 'getBudgetedExpenseCost',
+        'primary_constraint_type' => 'getPrimaryConstraintType',
+        'primary_constraint_date' => 'getPrimaryConstraintDate',
+        'secondary_constraint_type' => 'getSecondaryConstraintType',
+        'secondary_constraint_date' => 'getSecondaryConstraintDate'
     ];
 
     /*
@@ -357,6 +377,10 @@ class PrimaveraTaskProperties implements ArrayAccess
         $this->container['budgeted_nonlabor_cost'] = isset($data['budgeted_nonlabor_cost']) ? $data['budgeted_nonlabor_cost'] : null;
         $this->container['budgeted_material_cost'] = isset($data['budgeted_material_cost']) ? $data['budgeted_material_cost'] : null;
         $this->container['budgeted_expense_cost'] = isset($data['budgeted_expense_cost']) ? $data['budgeted_expense_cost'] : null;
+        $this->container['primary_constraint_type'] = isset($data['primary_constraint_type']) ? $data['primary_constraint_type'] : null;
+        $this->container['primary_constraint_date'] = isset($data['primary_constraint_date']) ? $data['primary_constraint_date'] : null;
+        $this->container['secondary_constraint_type'] = isset($data['secondary_constraint_type']) ? $data['secondary_constraint_type'] : null;
+        $this->container['secondary_constraint_date'] = isset($data['secondary_constraint_date']) ? $data['secondary_constraint_date'] : null;
     }
 
     /*
@@ -446,6 +470,18 @@ class PrimaveraTaskProperties implements ArrayAccess
         if ($this->container['budgeted_expense_cost'] === null) {
             $invalidProperties[] = "'budgeted_expense_cost' can't be null";
         }
+        if ($this->container['primary_constraint_type'] === null) {
+            $invalidProperties[] = "'primary_constraint_type' can't be null";
+        }
+        if ($this->container['primary_constraint_date'] === null) {
+            $invalidProperties[] = "'primary_constraint_date' can't be null";
+        }
+        if ($this->container['secondary_constraint_type'] === null) {
+            $invalidProperties[] = "'secondary_constraint_type' can't be null";
+        }
+        if ($this->container['secondary_constraint_date'] === null) {
+            $invalidProperties[] = "'secondary_constraint_date' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -534,6 +570,18 @@ class PrimaveraTaskProperties implements ArrayAccess
             return false;
         }
         if ($this->container['budgeted_expense_cost'] === null) {
+            return false;
+        }
+        if ($this->container['primary_constraint_type'] === null) {
+            return false;
+        }
+        if ($this->container['primary_constraint_date'] === null) {
+            return false;
+        }
+        if ($this->container['secondary_constraint_type'] === null) {
+            return false;
+        }
+        if ($this->container['secondary_constraint_date'] === null) {
             return false;
         }
         return true;
@@ -1280,6 +1328,102 @@ class PrimaveraTaskProperties implements ArrayAccess
     public function setBudgetedExpenseCost($budgeted_expense_cost)
     {
         $this->container['budgeted_expense_cost'] = $budgeted_expense_cost;
+
+        return $this;
+    }
+
+    /*
+     * Gets primary_constraint_type
+     *
+     * @return \Aspose\Tasks\Model\PrimaveraConstraintType
+     */
+    public function getPrimaryConstraintType()
+    {
+        return $this->container['primary_constraint_type'];
+    }
+
+    /*
+     * Sets primary_constraint_type
+     *
+     * @param \Aspose\Tasks\Model\PrimaveraConstraintType $primary_constraint_type Gets a type of primary constraint.
+     *
+     * @return $this
+     */
+    public function setPrimaryConstraintType($primary_constraint_type)
+    {
+        $this->container['primary_constraint_type'] = $primary_constraint_type;
+
+        return $this;
+    }
+
+    /*
+     * Gets primary_constraint_date
+     *
+     * @return \DateTime
+     */
+    public function getPrimaryConstraintDate()
+    {
+        return $this->container['primary_constraint_date'];
+    }
+
+    /*
+     * Sets primary_constraint_date
+     *
+     * @param \DateTime $primary_constraint_date Gets the date of primary constraint.
+     *
+     * @return $this
+     */
+    public function setPrimaryConstraintDate($primary_constraint_date)
+    {
+        $this->container['primary_constraint_date'] = $primary_constraint_date;
+
+        return $this;
+    }
+
+    /*
+     * Gets secondary_constraint_type
+     *
+     * @return \Aspose\Tasks\Model\PrimaveraConstraintType
+     */
+    public function getSecondaryConstraintType()
+    {
+        return $this->container['secondary_constraint_type'];
+    }
+
+    /*
+     * Sets secondary_constraint_type
+     *
+     * @param \Aspose\Tasks\Model\PrimaveraConstraintType $secondary_constraint_type Gets a type of secondary constraint.
+     *
+     * @return $this
+     */
+    public function setSecondaryConstraintType($secondary_constraint_type)
+    {
+        $this->container['secondary_constraint_type'] = $secondary_constraint_type;
+
+        return $this;
+    }
+
+    /*
+     * Gets secondary_constraint_date
+     *
+     * @return \DateTime
+     */
+    public function getSecondaryConstraintDate()
+    {
+        return $this->container['secondary_constraint_date'];
+    }
+
+    /*
+     * Sets secondary_constraint_date
+     *
+     * @param \DateTime $secondary_constraint_date Gets the date of secondary constraint.
+     *
+     * @return $this
+     */
+    public function setSecondaryConstraintDate($secondary_constraint_date)
+    {
+        $this->container['secondary_constraint_date'] = $secondary_constraint_date;
 
         return $this;
     }
